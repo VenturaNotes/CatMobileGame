@@ -141,6 +141,7 @@
       <sprite>sprites\spr_bestiary</sprite>
     </sprites>
     <sprite>sprites\spr_hill</sprite>
+    <sprite>sprites\spr_sound</sprite>
     <sprite>sprites\spr_wall</sprite>
   </sprites>
   <backgrounds name="background">
@@ -321,8 +322,11 @@
       <object>objects\obj_return</object>
       <object>objects\obj_selecting</object>
     </objects>
+    <object>objects\obj_sound</object>
+    <object>objects\obj_init</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_init</room>
     <rooms name="Main Menu">
       <room>rooms\rm_menu</room>
       <room>rooms\rm_credits</room>
