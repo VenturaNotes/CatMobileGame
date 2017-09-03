@@ -135,6 +135,7 @@
       <sprite>sprites\spr_fire</sprite>
       <sprite>sprites\spr_return</sprite>
       <sprite>sprites\spr_background_controls</sprite>
+      <sprite>sprites\spr_selection</sprite>
     </sprites>
     <sprites name="Gallery">
       <sprite>sprites\spr_bestiary</sprite>
@@ -149,9 +150,19 @@
     <background>background\spr_credits</background>
     <background>background\bck_mountains</background>
     <background>background\bck_mountains2</background>
-    <background>background\bck_world1</background>
     <background>background\bck_gallery</background>
     <background>background\bck_settings</background>
+    <background>background\bck_worldSelection</background>
+    <backgrounds name="Worlds">
+      <background>background\bck_world1</background>
+      <background>background\bck_world2</background>
+      <background>background\bck_world3</background>
+      <background>background\bck_world4</background>
+      <background>background\bck_world5</background>
+      <background>background\bck_world6</background>
+      <background>background\bck_world7</background>
+      <background>background\bck_world8</background>
+    </backgrounds>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -188,6 +199,7 @@
       <script>scripts\scr_reset.gml</script>
     </scripts>
     <script>scripts\scr_buttons.gml</script>
+    <script>scripts\scr_selection.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_text</font>
@@ -259,6 +271,9 @@
           <object>objects\obj_kill25</object>
         </objects>
       </objects>
+      <objects name="rm_worldSelection">
+        <object>objects\obj_selection</object>
+      </objects>
     </objects>
     <objects name="Displays gameover and takes you to a room">
       <object>objects\obj_gameover2</object>
@@ -304,6 +319,7 @@
     </objects>
     <objects name="Return you back to original room">
       <object>objects\obj_return</object>
+      <object>objects\obj_selecting</object>
     </objects>
   </objects>
   <rooms name="rooms">
@@ -317,11 +333,33 @@
       <room>rooms\rm_bestiary</room>
     </rooms>
     <rooms name="Levels">
+      <room>rooms\rm_worldSelection</room>
       <rooms name="World1">
         <room>rooms\rm_world1</room>
         <room>rooms\rm_game11</room>
         <room>rooms\rm_game12</room>
         <room>rooms\rm_game13</room>
+      </rooms>
+      <rooms name="World2">
+        <room>rooms\rm_world2</room>
+      </rooms>
+      <rooms name="World3">
+        <room>rooms\rm_world3</room>
+      </rooms>
+      <rooms name="World4">
+        <room>rooms\rm_world4</room>
+      </rooms>
+      <rooms name="World5">
+        <room>rooms\rm_world5</room>
+      </rooms>
+      <rooms name="World6">
+        <room>rooms\rm_world6</room>
+      </rooms>
+      <rooms name="World7">
+        <room>rooms\rm_world7</room>
+      </rooms>
+      <rooms name="World8">
+        <room>rooms\rm_world8</room>
       </rooms>
     </rooms>
     <rooms name="Endless Runs">
