@@ -56,7 +56,7 @@
     <instance objName="obj_endless" x="468" y="288" name="inst_E7F5CC1C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_gallery" x="468" y="384" name="inst_FADE4DBF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_settings" x="468" y="480" name="inst_48A4D778" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_calthaos" x="480" y="64" name="inst_E2F8DA84" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_calthaos" x="348" y="36" name="inst_E2F8DA84" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shop" x="864" y="448" name="inst_9B007F05" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>

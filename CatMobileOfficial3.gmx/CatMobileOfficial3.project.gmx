@@ -304,7 +304,6 @@
     <object>objects\obj_wall</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_test</room>
     <rooms name="Main Menu">
       <room>rooms\rm_menu</room>
       <room>rooms\rm_credits</room>
@@ -330,6 +329,9 @@
     </rooms>
     <rooms name="Pause">
       <room>rooms\rm_pause</room>
+    </rooms>
+    <rooms name="Tests">
+      <room>rooms\rm_test</room>
     </rooms>
   </rooms>
   <help>
