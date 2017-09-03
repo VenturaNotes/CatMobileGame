@@ -339,6 +339,11 @@
         <room>rooms\rm_game11</room>
         <room>rooms\rm_game12</room>
         <room>rooms\rm_game13</room>
+        <room>rooms\rm_game14</room>
+        <room>rooms\rm_game15</room>
+        <room>rooms\rm_game16</room>
+        <room>rooms\rm_game17</room>
+        <room>rooms\rm_game18</room>
       </rooms>
       <rooms name="World2">
         <room>rooms\rm_world2</room>

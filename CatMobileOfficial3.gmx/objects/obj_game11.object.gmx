@@ -471,21 +471,21 @@ if(stop == 0)
         draw_set_font(fnt_text);
         draw_set_color(c_black);
         draw_set_halign(fa_center);
-        draw_text(room_width/2,100,"Try jumping and shooting an angled shot in the air to shoot downwards.");
+        draw_text(room_width/2,100,"Jump and press the angled shot to shoot downwards.");
     }
     else if(stage7 == 0)
     {
         draw_set_font(fnt_text);
         draw_set_color(c_black);
         draw_set_halign(fa_center);
-        draw_text_ext(room_width/2,100, "Once your weapon is charged and ready for use, strike the enemies with a powerful slash", 30, 700);
+        draw_text_ext(room_width/2,100, "Once your Weapon is charged, strike with a powerful slash!", 30, 700);
     }
     else if(stage8 == 0)
     {
         draw_set_font(fnt_text);
         draw_set_color(c_black);
         draw_set_halign(fa_center);
-        draw_text_ext(room_width/2,100, "Lookie, your meow of destruction is fully charged. Unleash havoc amongst these goons.", 30, 700);
+        draw_text_ext(room_width/2,100, "Now unleash your Ultimate amongst these goons!", 30, 700);
     }
     else if(stage9 == 0)
     {
