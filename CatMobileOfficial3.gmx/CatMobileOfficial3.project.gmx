@@ -100,6 +100,7 @@
       <sprite>sprites\spr_straight</sprite>
       <sprite>sprites\spr_angled</sprite>
       <sprite>sprites\spr_up</sprite>
+      <sprite>sprites\spr_switch</sprite>
     </sprites>
     <sprites name="Ground">
       <sprite>sprites\spr_gr</sprite>
@@ -186,6 +187,7 @@
       <script>scripts\scr_savegame.gml</script>
       <script>scripts\scr_reset.gml</script>
     </scripts>
+    <script>scripts\scr_buttons.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_text</font>
@@ -226,6 +228,7 @@
       <object>objects\obj_angled</object>
       <object>objects\obj_straight</object>
       <object>objects\obj_up</object>
+      <object>objects\obj_switch</object>
     </objects>
     <objects name="tests">
       <object>objects\obj_debugging</object>
@@ -290,6 +293,7 @@
     <objects name="Ground">
       <object>objects\obj_gr</object>
       <object>objects\obj_hill</object>
+      <object>objects\obj_wall</object>
     </objects>
     <objects name="Win in Regular Levels">
       <object>objects\obj_win</object>
@@ -301,7 +305,6 @@
     <objects name="Return you back to original room">
       <object>objects\obj_return</object>
     </objects>
-    <object>objects\obj_wall</object>
   </objects>
   <rooms name="rooms">
     <rooms name="Main Menu">

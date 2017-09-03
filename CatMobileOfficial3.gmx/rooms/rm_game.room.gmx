@@ -11,14 +11,7 @@
   <colour>12632256</colour>
   <showcolour>0</showcolour>
   <code>scr_level();
-
-instance_create(70,491,obj_left);
-instance_create(200,491,obj_right);
-instance_create(350,491,obj_melee);
-instance_create(room_width/2+35,491,obj_MOD); //-48,1
-instance_create(855,491,obj_up); 
-instance_create(660,491,obj_straight);
-instance_create(739,491,obj_angled);
+scr_buttons();
 
 instance_create(300,50,obj_pause2);</code>
   <enableViews>0</enableViews>
