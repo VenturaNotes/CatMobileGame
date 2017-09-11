@@ -13,7 +13,7 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>960</width>
-  <height>540</height>
-  <data>images\spr_credits.png</data>
+  <width>595</width>
+  <height>46</height>
+  <data>images\bck_treadmill.png</data>
 </background>

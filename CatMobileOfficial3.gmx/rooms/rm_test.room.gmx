@@ -12,17 +12,18 @@
   <showcolour>0</showcolour>
   <code>scr_level();
 
-instance_create(70,491,obj_left);
-instance_create(200,491,obj_right);
-instance_create(350,491,obj_melee);
-instance_create(room_width/2+35,491,obj_MOD); //-48,1
-instance_create(855,491,obj_up); 
-instance_create(660,491,obj_straight);
-instance_create(739,491,obj_angled);
+instance_create(view_xview[0]+50,view_yview[0]+491,obj_left);
+instance_create(view_xview[0]+150,view_yview[0]+491,obj_right);
+instance_create(view_xview[0]+290,view_yview[0]+491,obj_melee);
+instance_create(view_xview[0]+440,view_yview[0]+491,obj_switch);
+instance_create(view_xview[0]+590,view_yview[0]+491,obj_MOD);
+instance_create(view_xview[0]+725,view_yview[0]+491,obj_angled);
+instance_create(view_xview[0]+815,view_yview[0]+491,obj_straight);
+instance_create(view_xview[0]+910,view_yview[0]+491,obj_up); 
 
 instance_create(300,50,obj_paws);</code>
   <enableViews>-1</enableViews>
-  <clearViewBackground>-1</clearViewBackground>
+  <clearViewBackground>0</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
   <makerSettings>
     <isSet>0</isSet>
@@ -41,9 +42,9 @@ instance_create(300,50,obj_paws);</code>
     <yoffset>0</yoffset>
   </makerSettings>
   <backgrounds>
-    <background visible="-1" foreground="0" name="blue_sky" x="0" y="0" htiled="0" vtiled="0" hspeed="0" vspeed="0" stretch="-1"/>
+    <background visible="-1" foreground="0" name="blue_sky" x="0" y="0" htiled="0" vtiled="0" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="-1" foreground="0" name="bck_clouds" x="0" y="0" htiled="-1" vtiled="0" hspeed="0" vspeed="0" stretch="0"/>
-    <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="0" hspeed="0" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="0" name="" x="0" y="0" htiled="0" vtiled="0" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -62,13 +63,16 @@ instance_create(300,50,obj_paws);</code>
   </views>
   <instances>
     <instance objName="obj_controls" x="15" y="96" name="inst_C57A3738" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player" x="149" y="319" name="inst_2C5EC5D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_position" x="24" y="130" name="inst_0CA82659" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player" x="405" y="152" name="inst_2C5EC5D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_multitouch" x="45" y="96" name="inst_82010BDC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_heart" x="131" y="55" name="inst_0B27505B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_debugging" x="0" y="96" name="inst_72815635" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_kills" x="864" y="32" name="inst_8AC0C2CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_background_controls" x="480" y="491" name="inst_F6F58C24" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_gameover2" x="30" y="96" name="inst_267C8875" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treadmill" x="0" y="397" name="inst_BEF05E52" locked="0" code="" scaleX="1.61344540119171" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_display" x="153" y="164" name="inst_934A013E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -143,12 +143,13 @@
     <sprite>sprites\spr_hill</sprite>
     <sprite>sprites\spr_sound</sprite>
     <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\spr_boundary</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\blue_sky</background>
     <background>background\bck_clouds</background>
     <background>background\background2</background>
-    <background>background\spr_credits</background>
+    <background>background\bck_credits</background>
     <background>background\bck_mountains</background>
     <background>background\bck_mountains2</background>
     <background>background\bck_gallery</background>
@@ -164,6 +165,7 @@
       <background>background\bck_world7</background>
       <background>background\bck_world8</background>
     </backgrounds>
+    <background>background\bck_treadmill</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -207,7 +209,6 @@
   </fonts>
   <objects name="objects">
     <objects name="Player">
-      <object>objects\obj_player</object>
       <object>objects\obj_player_head</object>
       <objects name="Attack">
         <object>objects\obj_player_attack_hitbox</object>
@@ -223,10 +224,6 @@
       </objects>
     </objects>
     <objects name="Monsters">
-      <object>objects\obj_monster2</object>
-      <object>objects\obj_monster3</object>
-      <object>objects\obj_monster4</object>
-      <object>objects\obj_monster5</object>
       <object>objects\obj_monster2_attack</object>
       <object>objects\obj_monster3_attack</object>
       <object>objects\obj_monster4_ice</object>
@@ -307,8 +304,6 @@
       <object>objects\obj_cosineas</object>
     </objects>
     <objects name="Ground">
-      <object>objects\obj_gr</object>
-      <object>objects\obj_hill</object>
       <object>objects\obj_wall</object>
     </objects>
     <objects name="Win in Regular Levels">
@@ -324,6 +319,23 @@
     </objects>
     <object>objects\obj_sound</object>
     <object>objects\obj_init</object>
+    <objects name="MAKER">
+      <object>objects\obj_boundary</object>
+      <object>objects\obj_player</object>
+      <objects name="Monsters">
+        <object>objects\obj_monster2</object>
+        <object>objects\obj_monster3</object>
+        <object>objects\obj_monster4</object>
+        <object>objects\obj_monster5</object>
+      </objects>
+      <objects name="Ground">
+        <object>objects\obj_hill</object>
+        <object>objects\obj_treadmill</object>
+        <object>objects\obj_gr</object>
+      </objects>
+    </objects>
+    <object>objects\obj_position</object>
+    <object>objects\obj_display</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>

@@ -49,6 +49,7 @@ eye = 0;
 eye2 = 0;
 
 fix = 0;
+
 </string>
           </argument>
         </arguments>
@@ -234,6 +235,10 @@ if (state == 4) //Attack animation
         fix = 1;
     }
 }
+
+background_x[0] = view_xview[0];
+background_y[0] = view_yview[0];
+background_y[1] = view_yview[0];
 
 //Death
 if(obj_heart.hearts &lt;= 0)
