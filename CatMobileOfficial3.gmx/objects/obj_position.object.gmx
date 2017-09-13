@@ -25,13 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>obj_switch.x = view_xview[0]+440;
-obj_switch.y = view_yview[0]+491;
-
-obj_MOD.x = view_xview[0]+590;
-obj_MOD.y = view_yview[0]+491;
-
-obj_angled.x = view_xview[0]+725;
+            <string>obj_angled.x = view_xview[0]+725;
 obj_angled.y = view_yview[0]+491;
 
 obj_straight.x = view_xview[0]+815;

@@ -14,6 +14,6 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>960</width>
-  <height>640</height>
-  <data>images\blue_sky.png</data>
+  <height>540</height>
+  <data>images\bck_sky2.png</data>
 </background>

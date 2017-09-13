@@ -132,7 +132,6 @@
       <sprite>sprites\spr_win</sprite>
     </sprites>
     <sprites name="Level Design">
-      <sprite>sprites\spr_fire</sprite>
       <sprite>sprites\spr_return</sprite>
       <sprite>sprites\spr_background_controls</sprite>
       <sprite>sprites\spr_selection</sprite>
@@ -146,9 +145,9 @@
     <sprite>sprites\spr_boundary</sprite>
   </sprites>
   <backgrounds name="background">
-    <background>background\blue_sky</background>
+    <background>background\bck_sky</background>
     <background>background\bck_clouds</background>
-    <background>background\background2</background>
+    <background>background\bck_sky2</background>
     <background>background\bck_credits</background>
     <background>background\bck_mountains</background>
     <background>background\bck_mountains2</background>
@@ -189,9 +188,6 @@
     <scripts name="Takes you to a room">
       <script>scripts\scr_menu.gml</script>
       <script>scripts\scr_world1.gml</script>
-    </scripts>
-    <scripts name="Fire Particles">
-      <script>scripts\init_particles.gml</script>
     </scripts>
     <scripts name="Gives Music to Level">
       <script>scripts\scr_level.gml</script>
@@ -308,10 +304,6 @@
     </objects>
     <objects name="Win in Regular Levels">
       <object>objects\obj_win</object>
-      <object>objects\obj_flag</object>
-    </objects>
-    <objects name="Particles">
-      <object>objects\obj_fire</object>
     </objects>
     <objects name="Return you back to original room">
       <object>objects\obj_return</object>
@@ -333,9 +325,9 @@
         <object>objects\obj_treadmill</object>
         <object>objects\obj_gr</object>
       </objects>
+      <object>objects\obj_flag</object>
     </objects>
-    <object>objects\obj_position</object>
-    <object>objects\obj_display</object>
+    <object>objects\obj_background</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>

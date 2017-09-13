@@ -71,7 +71,7 @@ for (var i = 0; i &lt; 4;i++) // 4 touch
             obj_straight.image_alpha = .5;
         }
         
-        if(obj_left.hover == true &amp;&amp; control2 == 0)
+        if(position_meeting(xx,yy,obj_left) &amp;&amp; control2 == 0)
         {
             control2 = 1;
             if (obj_player.x &gt; 75 &amp;&amp; (obj_player.state = 0 || obj_player.state = 1 || obj_player.state == 10))
@@ -112,7 +112,7 @@ for (var i = 0; i &lt; 4;i++) // 4 touch
             obj_up.image_alpha = .5;
         }
         
-        if(obj_right.hover == true &amp;&amp; control4 == 0)
+        if(position_meeting(xx,yy,obj_right) &amp;&amp; control4 == 0)
         {
             control4 = 1;
              if (obj_player.x &lt; room_width-300 &amp;&amp; (obj_player.state == 0 || obj_player.state == 3 || obj_player.state == 10))
@@ -151,14 +151,10 @@ for (var i = 0; i &lt; 4;i++) // 4 touch
                     obj_player.kills = 0;
                     audio_play_sound(snd_MOD_shot,3,false);
                     audio_sound_gain(snd_MOD_shot,0.3,0);
-                    with(obj_fire)
-                    {
-                        instance_destroy();
-                    }
                 }
         }
         
-        if(obj_melee.hover == true &amp;&amp; control7 == 0)
+        if(position_meeting(xx,yy,obj_melee) &amp;&amp; control7 == 0)
         {
             control7 = 1;
             if(obj_melee.alarm[0] = -1)
