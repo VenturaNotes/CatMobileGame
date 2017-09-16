@@ -204,6 +204,22 @@
     <font>fonts\fnt_text</font>
   </fonts>
   <objects name="objects">
+    <objects name="MAKER">
+      <object>objects\obj_boundary</object>
+      <object>objects\obj_player</object>
+      <objects name="Monsters">
+        <object>objects\obj_monster2</object>
+        <object>objects\obj_monster3</object>
+        <object>objects\obj_monster4</object>
+        <object>objects\obj_monster5</object>
+      </objects>
+      <objects name="Ground">
+        <object>objects\obj_hill</object>
+        <object>objects\obj_treadmill</object>
+        <object>objects\obj_stable_ground</object>
+      </objects>
+      <object>objects\obj_flag</object>
+    </objects>
     <objects name="Player">
       <object>objects\obj_player_head</object>
       <objects name="Attack">
@@ -301,6 +317,7 @@
     </objects>
     <objects name="Ground">
       <object>objects\obj_wall</object>
+      <object>objects\obj_gr</object>
     </objects>
     <objects name="Win in Regular Levels">
       <object>objects\obj_win</object>
@@ -311,22 +328,6 @@
     </objects>
     <object>objects\obj_sound</object>
     <object>objects\obj_init</object>
-    <objects name="MAKER">
-      <object>objects\obj_boundary</object>
-      <object>objects\obj_player</object>
-      <objects name="Monsters">
-        <object>objects\obj_monster2</object>
-        <object>objects\obj_monster3</object>
-        <object>objects\obj_monster4</object>
-        <object>objects\obj_monster5</object>
-      </objects>
-      <objects name="Ground">
-        <object>objects\obj_hill</object>
-        <object>objects\obj_treadmill</object>
-        <object>objects\obj_gr</object>
-      </objects>
-      <object>objects\obj_flag</object>
-    </objects>
     <object>objects\obj_background</object>
   </objects>
   <rooms name="rooms">
