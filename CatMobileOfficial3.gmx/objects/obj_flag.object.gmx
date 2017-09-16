@@ -52,6 +52,7 @@
 {
     finish = 1;
     room_goto(rm_init);
+    audio_stop_all();
 }
 
 x -= global.xmo;
