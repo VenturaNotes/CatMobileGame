@@ -77,8 +77,9 @@ instance_create(500,300,obj_background_controls);</code>
     <instance objName="obj_player" x="132" y="2864" name="inst_D26AC1C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stable_ground" x="595" y="2954" name="inst_E71B2A27" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_hill" x="1190" y="2467" name="inst_1BC5FA4C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_stable_ground" x="2740" y="2586" name="inst_BB315989" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_flag" x="3091" y="2607" name="inst_8EAC37A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_stable_ground" x="3402" y="2609" name="inst_BB315989" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_flag" x="3760" y="2635" name="inst_8EAC37A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_stable_ground" x="2680" y="2704" name="inst_EF2B18DC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
