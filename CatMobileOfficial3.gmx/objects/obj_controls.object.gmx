@@ -160,7 +160,7 @@ if(isActive)
     
     if(right)
     {
-        if (obj_player.x &lt; room_width-300 &amp;&amp; (obj_player.state == 0 || obj_player.state == 3 || obj_player.state == 10))
+        if ((obj_player.state == 0 || obj_player.state == 3 || obj_player.state == 10)) //obj_player.x &lt; room_width-300 &amp;&amp; 
             {
                 obj_player.state = 3;
                 obj_player.x += 10;
@@ -173,7 +173,7 @@ if(isActive)
                     }
                  }
             }
-            else if (obj_player.x &lt; room_width-300)
+            else //if (obj_player.x &lt; room_width-300)
             {
                 obj_player.x += 10;
             }
