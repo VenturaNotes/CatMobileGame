@@ -204,7 +204,7 @@
     <font>fonts\fnt_text</font>
   </fonts>
   <objects name="objects">
-    <objects name="MAKER">
+    <objects name="CALTHAOS_MAKER">
       <object>objects\obj_boundary</object>
       <object>objects\obj_player</object>
       <objects name="Monsters">

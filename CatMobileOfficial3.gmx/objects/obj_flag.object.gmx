@@ -54,8 +54,6 @@
     room_goto(rm_init);
     audio_stop_all();
 }
-
-x -= global.xmo;
 </string>
           </argument>
         </arguments>
