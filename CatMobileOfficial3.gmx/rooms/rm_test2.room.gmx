@@ -85,13 +85,8 @@ instance_create(500,300,obj_background_controls);</code>
     <instance objName="obj_hill" x="7095" y="1598" name="inst_210D5E11" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_hill" x="8394" y="1250" name="inst_96E2103D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_hill" x="9693" y="903" name="inst_621FCBEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_hill" x="12305" y="897" name="inst_CE47D07E" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_hill" x="13606" y="1245" name="inst_F51A5DCF" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_hill" x="14902" y="1594" name="inst_6C4B018E" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_hill" x="16202" y="1941" name="inst_AD118646" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_hill" x="17498" y="2289" name="inst_7D6CB7E4" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_hill" x="18800" y="2635" name="inst_3A618ADB" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stable_ground" x="19392" y="3133" name="inst_6946416F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_hill2" x="10993" y="903" name="inst_2490DBAC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

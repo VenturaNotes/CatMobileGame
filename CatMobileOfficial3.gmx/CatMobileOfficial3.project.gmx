@@ -143,6 +143,8 @@
     <sprite>sprites\spr_sound</sprite>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_boundary</sprite>
+    <sprite>sprites\spr_hill2</sprite>
+    <sprite>sprites\spr_wall2</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_sky</background>
@@ -217,6 +219,7 @@
         <object>objects\obj_hill</object>
         <object>objects\obj_treadmill</object>
         <object>objects\obj_stable_ground</object>
+        <object>objects\obj_hill2</object>
       </objects>
       <object>objects\obj_flag</object>
     </objects>
@@ -318,6 +321,7 @@
     <objects name="Ground">
       <object>objects\obj_wall</object>
       <object>objects\obj_gr</object>
+      <object>objects\obj_wall2</object>
     </objects>
     <objects name="Win in Regular Levels">
       <object>objects\obj_win</object>
