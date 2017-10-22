@@ -28,9 +28,10 @@
         <sprite>sprites\spr_player_walk</sprite>
         <sprite>sprites\spr_player_run</sprite>
         <sprite>sprites\spr_player_blink</sprite>
-        <sprite>sprites\spr_player_jump</sprite>
+        <sprite>sprites\spr_player_jump3</sprite>
         <sprite>sprites\spr_player_air_headless</sprite>
         <sprite>sprites\spr_player_ground_headless</sprite>
+        <sprite>sprites\spr_player_jump</sprite>
       </sprites>
       <sprites name="Head States">
         <sprite>sprites\spr_player_down</sprite>

@@ -92,6 +92,7 @@ instance_create(500,300,obj_background_controls);</code>
     <instance objName="obj_hill2" x="14879" y="1948" name="inst_4A123DCF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_hill2" x="16311" y="2312" name="inst_57BA193E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_hill2" x="17500" y="2635" name="inst_184BFC9A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_monster4" x="635" y="3125" name="inst_230C8DCF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

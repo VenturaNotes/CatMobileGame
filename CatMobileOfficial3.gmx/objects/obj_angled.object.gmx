@@ -120,6 +120,7 @@ if(delay &gt;= 0)
                  {
                    image_angle = -30;
                    up = false;
+                   
                  }
         }
     }
