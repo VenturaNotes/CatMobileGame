@@ -248,13 +248,6 @@ if(obj_heart.hearts &lt;= 0)
     instance_deactivate_object(obj_melee);
     instance_deactivate_object(obj_MOD);
     instance_deactivate_object(obj_switch);
-    if(instance_exists(obj_fire))
-    {
-        with(obj_fire)
-        {
-            instance_destroy();
-        }
-    }
     
     if(instance_exists(obj_player_head))
     {

@@ -27,22 +27,40 @@
             <kind>1</kind>
             <string>obj_player.kills += .00005;
 
-if(mouse_check_button(mb_left) &amp;&amp; obj_player.kills&gt;=1)
+if(obj_player.kills &lt; 1)
 {
-    image_alpha = 0.5
+    image_alpha = obj_player.kills/2+.2;
 }
-else
+
+if(obj_player.kills &gt;= 1)
 {
-    if(obj_player.kills &lt; 1)
-    {
-        image_alpha = obj_player.kills/2+.2;
-    }
-    
-    if(obj_player.kills &gt;= 1)
-    {
-        image_alpha = 1;
-    }
-    
+    image_alpha = 1;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(obj_player.kills&gt;=1)
+{
+    image_alpha = 0.5;
 }
 </string>
           </argument>
