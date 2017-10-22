@@ -150,7 +150,7 @@ if (counter &gt;= 1)
     frame+=1;
 }
 
-if (frame == 30)
+if (frame == 15)
 {
     counter = 0;
     frame = 0;
