@@ -52,14 +52,14 @@ global.xmo = 8;
             <kind>1</kind>
             <string>//If the room is not endless level 3, then use the default ground skin
 
-if(instance_exists(obj_player) &amp;&amp; room == rm_game3)
+if(instance_exists(obj_player) &amp;&amp; room == rm_test3)
 {
     if round(obj_player.y&gt;y) mask_index = -1;
     else mask_index = spr_gr2;
 }
-else if(instance_exists(obj_player) &amp;&amp; room == rm_game13)
+else if(instance_exists(obj_player) &amp;&amp; room == rm_test3)
 {
-    mask_index = spr_gr3;
+    mask_index = spr_gr3
 }
 else
 {

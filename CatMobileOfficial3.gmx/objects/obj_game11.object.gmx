@@ -484,7 +484,7 @@ if(stop == 0)
         draw_set_font(fnt_text);
         draw_set_color(c_black);
         draw_set_halign(fa_center);
-        draw_text_ext(room_width/2,100, "Once your Weapon is charged, strike with a powerful slash!", 30, 700);
+        draw_text_ext(room_width/2,100, "Once your Weapon is charged, strike with a powerful Attack!", 30, 700);
     }
     else if(stage8 == 0)
     {
