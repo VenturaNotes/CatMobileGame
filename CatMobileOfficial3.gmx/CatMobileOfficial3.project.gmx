@@ -43,6 +43,7 @@
         <sprite>sprites\spr_player_attack2</sprite>
         <sprite>sprites\spr_laser</sprite>
         <sprite>sprites\spr_MOD</sprite>
+        <sprite>sprites\spr_player_aerial</sprite>
       </sprites>
       <sprites name="Health">
         <sprite>sprites\spr_heart</sprite>

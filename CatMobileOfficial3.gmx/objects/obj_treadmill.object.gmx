@@ -59,7 +59,7 @@ if(instance_exists(obj_player) &amp;&amp; room == rm_game3)
     if round(obj_player.y&gt;y) mask_index = -1;
     else mask_index = spr_gr2;
 }
-else if(instance_exists(obj_player) &amp;&amp; room == rm_game13)
+else if(instance_exists(obj_player))
 {
     mask_index = spr_gr3;
 }
