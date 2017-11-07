@@ -107,8 +107,6 @@
       <sprite>sprites\spr_gr</sprite>
       <sprite>sprites\spr_gr2</sprite>
       <sprite>sprites\spr_gr3</sprite>
-      <sprite>sprites\spr_gr4</sprite>
-      <sprite>sprites\spr_gr5</sprite>
     </sprites>
     <sprites name="World Levels">
       <sprite>sprites\spr_world1</sprite>
@@ -148,13 +146,6 @@
     <sprite>sprites\spr_boundary</sprite>
     <sprite>sprites\spr_hill2</sprite>
     <sprite>sprites\spr_wall2</sprite>
-    <sprite>sprites\spr_shill1</sprite>
-    <sprite>sprites\spr_shill2</sprite>
-    <sprite>sprites\spr_gplatform</sprite>
-    <sprite>sprites\spr_splatform</sprite>
-    <sprite>sprites\spr_icespikes</sprite>
-    <sprite>sprites\spr_gcliff</sprite>
-    <sprite>sprites\spr_scliff</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_sky</background>
@@ -177,8 +168,6 @@
       <background>background\bck_world8</background>
     </backgrounds>
     <background>background\bck_treadmill</background>
-    <background>background\bck_icecavern</background>
-    <background>background\bck_primevalforest</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -229,13 +218,9 @@
       </objects>
       <objects name="Ground">
         <object>objects\obj_hill</object>
-        <object>objects\obj_hill2</object>
-        <object>objects\obj_shill</object>
-        <object>objects\obj_shill2</object>
-        <object>objects\obj_stable_ground</object>
-        <object>objects\obj_stablegplatform</object>
         <object>objects\obj_treadmill</object>
-        <object>objects\obj_stablesplatform</object>
+        <object>objects\obj_stable_ground</object>
+        <object>objects\obj_hill2</object>
       </objects>
       <object>objects\obj_flag</object>
     </objects>
@@ -365,14 +350,14 @@
       <room>rooms\rm_worldSelection</room>
       <rooms name="World1">
         <room>rooms\rm_world1</room>
-        <room>rooms\rm_test</room>
-        <room>rooms\rm_test2</room>
-        <room>rooms\rm_test3</room>
-        <room>rooms\rm_test4</room>
-        <room>rooms\rm_test5</room>
-        <room>rooms\rm_test6</room>
-        <room>rooms\rm_test7</room>
-        <room>rooms\rm_test8</room>
+        <room>rooms\rm_game11</room>
+        <room>rooms\rm_game12</room>
+        <room>rooms\rm_game13</room>
+        <room>rooms\rm_game14</room>
+        <room>rooms\rm_game15</room>
+        <room>rooms\rm_game16</room>
+        <room>rooms\rm_game17</room>
+        <room>rooms\rm_game18</room>
       </rooms>
       <rooms name="World2">
         <room>rooms\rm_world2</room>
@@ -404,6 +389,16 @@
     </rooms>
     <rooms name="Pause">
       <room>rooms\rm_pause</room>
+    </rooms>
+    <rooms name="Tests">
+      <room>rooms\rm_test</room>
+      <room>rooms\rm_test2</room>
+      <room>rooms\rm_test3</room>
+      <room>rooms\rm_test4</room>
+      <room>rooms\rm_test5</room>
+      <room>rooms\rm_test6</room>
+      <room>rooms\rm_test7</room>
+      <room>rooms\rm_test8</room>
     </rooms>
   </rooms>
   <help>

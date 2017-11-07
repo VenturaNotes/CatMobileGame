@@ -60,42 +60,42 @@
     image_alpha = 1;
     if(image_index == 0)
     {
-        room_goto(rm_test);
+        room_goto(rm_game11);
     }
 
     if(image_index == 1)
     {
-        room_goto(rm_test2);
+        room_goto(rm_game12);
     }
     
     if(image_index == 2)
     {
-        room_goto(rm_test3);
+        room_goto(rm_game13);
     }
     
     if(image_index == 3)
     {
-        room_goto(rm_test4);
+        room_goto(rm_game14);
     }
     
     if(image_index == 4)
     {
-        room_goto(rm_test5);
+        room_goto(rm_game15);
     }
     
     if(image_index == 5)
     {
-        room_goto(rm_test6);
+        room_goto(rm_game16);
     }
     
     if(image_index == 6)
     {
-        room_goto(rm_test7);
+        room_goto(rm_game17);
     }
     
     if(image_index == 7)
     {
-        room_goto(rm_test8);
+        room_goto(rm_game18);
     }
    
    }
