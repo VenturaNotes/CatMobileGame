@@ -68,17 +68,14 @@ if(obj_player.x &lt; view_xview[0]+480 &amp;&amp; obj_controls.left == true)
 view_yview[0] = obj_player.y-385;
 background_y[0] = obj_player.y-385;
 
-if(instance_exists(all))
-{
-    obj_left.y = obj_player.y+106;
-    obj_right.y = obj_player.y+106;
-    obj_MOD.y = obj_player.y+106;
-    obj_melee.y = obj_player.y+106;
-    obj_angled.y = obj_player.y+106;
-    obj_straight.y = obj_player.y+106;
-    obj_up.y = obj_player.y+106;
-    obj_switch.y = obj_player.y+106;
-}
+obj_left.y = obj_player.y+106;
+obj_right.y = obj_player.y+106;
+obj_MOD.y = obj_player.y+106;
+obj_melee.y = obj_player.y+106;
+obj_angled.y = obj_player.y+106;
+obj_straight.y = obj_player.y+106;
+obj_up.y = obj_player.y+106;
+obj_switch.y = obj_player.y+106;
 
 obj_heart.y = obj_player.y-320;
 obj_kills.y = obj_player.y-330;
