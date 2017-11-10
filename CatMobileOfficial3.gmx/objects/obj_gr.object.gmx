@@ -52,61 +52,11 @@ global.xmo = 8;
             <kind>1</kind>
             <string>//If the room is not endless level 3, then use the default ground skin
 
-if(instance_exists(obj_player) &amp;&amp; room == rm_test3)
-{
-    if round(obj_player.y&gt;y) mask_index = -1;
-    else mask_index = spr_gr2;
-}
-else if(instance_exists(obj_player) &amp;&amp; room == rm_test3)
-{
-    mask_index = spr_gr3
-}
-else
-{
-    if round(obj_player.y&gt;y) mask_index = -1;
-    else mask_index = spr_gr;
-}
-
 x -= global.xmo;
 if(x &lt;= -1010)
 {
     instance_destroy();
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(room == rm_game3)
-{
-    draw_sprite(spr_gr2,0,x,y);
-}
-else if (room == rm_game13)
-{
-    draw_sprite(spr_gr3,0,x,y);
-}
-else
-{
-    draw_sprite(spr_gr,0,x,y);
-}
-
 </string>
           </argument>
         </arguments>

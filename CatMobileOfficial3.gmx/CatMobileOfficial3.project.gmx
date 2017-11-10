@@ -156,6 +156,11 @@
     <sprite>sprites\spr_icespikes</sprite>
     <sprite>sprites\spr_gcliff</sprite>
     <sprite>sprites\spr_scliff</sprite>
+    <sprite>sprites\spr_leftBarrier</sprite>
+    <sprite>sprites\spr_incline</sprite>
+    <sprite>sprites\spr_incline_collision</sprite>
+    <sprite>sprites\spr_grass</sprite>
+    <sprite>sprites\spr_grass_collision</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_sky</background>
@@ -350,9 +355,12 @@
     <object>objects\obj_sound</object>
     <object>objects\obj_init</object>
     <object>objects\obj_background</object>
+    <object>objects\obj_leftBarrier</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
+    <room>rooms\rm_testing</room>
+    <room>rooms\rm_template</room>
     <rooms name="Main Menu">
       <room>rooms\rm_menu</room>
       <room>rooms\rm_credits</room>

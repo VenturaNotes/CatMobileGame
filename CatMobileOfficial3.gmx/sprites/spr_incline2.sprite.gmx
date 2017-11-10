@@ -2,24 +2,24 @@
 <sprite>
   <type>0</type>
   <xorig>0</xorig>
-  <yorigin>48</yorigin>
+  <yorigin>0</yorigin>
   <colkind>1</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
-  <bbox_right>959</bbox_right>
-  <bbox_top>0</bbox_top>
-  <bbox_bottom>96</bbox_bottom>
+  <bbox_right>2159</bbox_right>
+  <bbox_top>106</bbox_top>
+  <bbox_bottom>449</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>960</width>
-  <height>97</height>
+  <width>2160</width>
+  <height>450</height>
   <frames>
-    <frame index="0">images\spr_background_controls_0.png</frame>
+    <frame index="0">images\spr_incline2_0.png</frame>
   </frames>
 </sprite>

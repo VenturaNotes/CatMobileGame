@@ -5,8 +5,8 @@
   <visible>-1</visible>
   <depth>5</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <parentName>obj_wall</parentName>
+  <maskName>spr_wall</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>global.xmo = 0;
-instance_create(x,y,obj_wall);
+//instance_create(x,y,obj_wall);
 </string>
           </argument>
         </arguments>

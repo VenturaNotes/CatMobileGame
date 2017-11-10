@@ -95,7 +95,7 @@ if(isActive)
 {
     if(left)
     {
-     if (obj_player.x &gt; 75 &amp;&amp; (obj_player.state = 0 || obj_player.state = 1|| obj_player.state == 10))
+     if (obj_player.x &gt; obj_init.leftBarrier &amp;&amp; (obj_player.state = 0 || obj_player.state = 1|| obj_player.state == 10))
         {
             obj_player.state = 1;
             obj_player.x -= 10;
@@ -108,7 +108,7 @@ if(isActive)
                 }
             }
         }
-        else if (obj_player.x &gt; 75)
+        else if(obj_player.x &gt; obj_init.leftBarrier)
         {
             obj_player.x -= 10;
         }

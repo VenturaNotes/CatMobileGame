@@ -68,13 +68,15 @@ for (var i = 0; i &lt; 4;i++) // 4 touch
         {
             obj_straight.counter +=1;
             control = 1;
+            obj_background.control = 1;
             obj_straight.image_alpha = .5;
         }
         
         if(position_meeting(xx,yy,obj_left) &amp;&amp; control2 == 0)
         {
             control2 = 1;
-            if (obj_player.x &gt; 75 &amp;&amp; (obj_player.state = 0 || obj_player.state = 1 || obj_player.state == 10))
+            obj_background.control2 = 1;
+            if (obj_player.x &gt; obj_init.leftBarrier &amp;&amp; (obj_player.state = 0 || obj_player.state = 1 || obj_player.state == 10))
             {
                 obj_player.state = 1;
                 obj_player.x -= 10;
@@ -88,7 +90,7 @@ for (var i = 0; i &lt; 4;i++) // 4 touch
                     }
                  }
             }
-            else if (obj_player.x &gt; 75)
+            else if (obj_player.x &gt; obj_init.leftBarrier)
             {
                 obj_player.x -= 10;
             }
@@ -99,6 +101,7 @@ for (var i = 0; i &lt; 4;i++) // 4 touch
         if(position_meeting(xx,yy,obj_up) &amp;&amp; control3 == 0)
         {
             control3 = 1;
+            obj_background.control3 = 1;
             if (obj_player.grounded)
             {
                 obj_player.state = 2;
@@ -115,6 +118,7 @@ for (var i = 0; i &lt; 4;i++) // 4 touch
         if(position_meeting(xx,yy,obj_right) &amp;&amp; control4 == 0)
         {
             control4 = 1;
+            obj_background.control4 = 1;
              if (obj_player.x &lt; room_width-300 &amp;&amp; (obj_player.state == 0 || obj_player.state == 3 || obj_player.state == 10))
             {
                 obj_player.state = 3;
@@ -138,6 +142,7 @@ for (var i = 0; i &lt; 4;i++) // 4 touch
         if(position_meeting(xx,yy,obj_angled) &amp;&amp; control5 == 0)
         {
             control5 = 1;
+            obj_background.control5 = 1;
             obj_angled.image_alpha = .5;
             obj_angled.counter+=1;
         }
@@ -145,6 +150,7 @@ for (var i = 0; i &lt; 4;i++) // 4 touch
         if(position_meeting(xx,yy,obj_MOD) &amp;&amp; control6 == 0)
         {
             control6 = 1;
+            obj_background.control6 = 1;
             if (obj_player.kills &gt;= 1)
                 {
                     instance_create(obj_player.x,obj_player.y,obj_MOD2);
@@ -157,6 +163,7 @@ for (var i = 0; i &lt; 4;i++) // 4 touch
         if(position_meeting(xx,yy,obj_melee) &amp;&amp; control7 == 0)
         {
             control7 = 1;
+            obj_background.control7 = 1;
             if(obj_melee.alarm[0] = -1 &amp;&amp; obj_player.grounded = 1)
                 {
                     audio_play_sound(snd_meleeAttack,3,false);
