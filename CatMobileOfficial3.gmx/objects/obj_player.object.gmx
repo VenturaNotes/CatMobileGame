@@ -231,7 +231,7 @@ else
     grounded = 0;
 }
 
-if(place_meeting(x,y,obj_hill2))
+if(place_meeting(x,y-5,obj_hill2))
 {
     y-=1;
 }
