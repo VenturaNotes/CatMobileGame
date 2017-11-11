@@ -219,6 +219,7 @@
     </scripts>
     <script>scripts\scr_buttons.gml</script>
     <script>scripts\scr_selection.gml</script>
+    <script>scripts\script19.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_text</font>
@@ -353,9 +354,9 @@
       <object>objects\obj_selecting</object>
     </objects>
     <object>objects\obj_sound</object>
+    <object>objects\obj_leftBarrier</object>
     <object>objects\obj_init</object>
     <object>objects\obj_background</object>
-    <object>objects\obj_leftBarrier</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>

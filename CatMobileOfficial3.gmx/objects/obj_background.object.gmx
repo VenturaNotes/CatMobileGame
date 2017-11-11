@@ -34,6 +34,12 @@ control6 = 0;
 control7 = 0; 
 
 slow = 1;
+change = 0;
+yposition1 = 0;
+yposition2 = 0;
+yposition3 = 0;
+active = 0;
+counter = 0;
 </string>
           </argument>
         </arguments>
@@ -56,9 +62,170 @@ slow = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(obj_player.x &gt; view_xview[0]+480)// &amp;&amp; (obj_controls.right == true || control4 == 1))
+            <string>change = round(abs(view_yview[0] - (yposition3))/10);
+
+if(active == 1)
 {
-    view_xview[0] += 10;
+    if(yposition &lt; obj_left.y &amp;&amp; obj_left.y - (yposition) &gt;= 1)
+    {
+        obj_left.y -= change;
+        obj_right.y -= change;
+        obj_MOD.y -= change;
+        obj_melee.y -= change;
+        obj_angled.y -= change;
+        obj_straight.y -= change;
+        obj_up.y -= change;
+        obj_switch.y-= change;
+        obj_background_controls.y -= change;
+    }
+    else if(obj_left.y - (yposition) &lt;= 1)
+    {
+        obj_left.y = yposition;
+        obj_right.y = yposition;
+        obj_MOD.y = yposition;
+        obj_melee.y = yposition;
+        obj_angled.y = yposition;
+        obj_straight.y = yposition;
+        obj_up.y = yposition;
+        obj_background_controls.y = yposition;
+        obj_switch.y = yposition;
+    }
+    
+    if((yposition2) &lt; obj_heart.y &amp;&amp; abs(obj_heart.y - (yposition2)) &gt;= 1)
+    {
+        obj_heart.y -= change;
+        obj_kills.y -= change;
+        obj_paws.y -=change;
+    }
+    else if(abs(obj_heart.y - (yposition2)) &lt;= 1)
+    {
+        obj_heart.y = yposition2;
+        obj_kills.y = yposition2;
+        obj_paws.y = yposition2;
+    }
+    
+    if((yposition3) &lt; view_yview[0] &amp;&amp; abs(view_yview[0] - (yposition3)) &gt;=1)
+    {
+        view_yview[0] -=change;
+        background_y[0] -=change;
+    }
+    else if (abs(view_yview[0] - (yposition3)) &lt;=1)
+    {
+        view_yview[0] = yposition3;
+        background_y[0] = yposition3;
+    }
+    
+    counter+=1;
+    if(counter &gt;=60 || obj_player.grounded == 1)
+    {
+        active = 0;
+        counter = 0;
+    }
+}
+
+if(instance_exists(obj_left) &amp;&amp; instance_exists(obj_right) &amp;&amp; instance_exists(obj_MOD) &amp;&amp; 
+instance_exists(obj_melee) &amp;&amp; instance_exists(obj_angled) &amp;&amp; instance_exists(obj_straight) 
+&amp;&amp; instance_exists(obj_up) &amp;&amp; instance_exists(obj_switch) &amp;&amp; obj_player.grounded == 1 )
+{
+    yposition = obj_player.y+106;
+
+    if(obj_player.y+106 &lt; obj_left.y &amp;&amp; obj_left.y - (obj_player.y+106) &gt;= 1)
+    {
+        obj_left.y -= change;
+        obj_right.y -= change;
+        obj_MOD.y -= change;
+        obj_melee.y -= change;
+        obj_angled.y -= change;
+        obj_straight.y -= change;
+        obj_up.y -= change;
+        obj_switch.y-= change;
+        obj_background_controls.y -= change;
+    }
+    else if(obj_left.y - (obj_player.y+106) &lt;= 1)
+    {
+        obj_left.y = obj_player.y+106;
+        obj_right.y = obj_player.y+106;
+        obj_MOD.y = obj_player.y+106;
+        obj_melee.y = obj_player.y+106;
+        obj_angled.y = obj_player.y+106;
+        obj_straight.y = obj_player.y+106;
+        obj_up.y = obj_player.y+106;
+        obj_background_controls.y = obj_player.y+106;
+        obj_switch.y = obj_player.y+106;   
+    }
+    
+}
+
+if (obj_player.grounded == 1)
+{
+    yposition2 = obj_player.y-320;
+    if((obj_player.y-320) &lt; obj_heart.y &amp;&amp; abs(obj_heart.y - (obj_player.y-320)) &gt;= 1)
+    {
+        obj_heart.y -= change;
+        obj_kills.y -= change;
+        obj_paws.y -=change;
+    }
+    else if(abs(obj_heart.y - (obj_player.y-320)) &lt;= 1)
+    {
+        obj_heart.y = obj_player.y-320;
+        obj_kills.y = obj_player.y-320;
+        obj_paws.y = obj_player.y-320;
+    }
+    
+    yposition3 = obj_player.y-385;
+    if((obj_player.y-385) &lt; view_yview[0] &amp;&amp; abs(view_yview[0] - (obj_player.y-385)) &gt;=1)
+    {
+        view_yview[0] -=change;
+        background_y[0] -=change;
+    }
+    else if (abs(view_yview[0] - (obj_player.y-385)) &lt;=1)
+    {
+        view_yview[0] = obj_player.y-385;
+        background_y[0] = obj_player.y-385;
+    }
+}
+
+
+
+if(obj_player.land == 0)
+{
+    obj_heart.y = obj_player.y-320;
+    obj_kills.y = obj_player.y-320;
+    obj_paws.y = obj_player.y-320;
+    obj_background_controls.y = obj_player.y+106;
+    
+    view_yview[0] = obj_player.y-385;
+    background_y[0] = obj_player.y-385;
+    
+    if(instance_exists(obj_left) &amp;&amp; instance_exists(obj_right) &amp;&amp; instance_exists(obj_MOD) &amp;&amp; 
+    instance_exists(obj_melee) &amp;&amp; instance_exists(obj_angled) &amp;&amp; instance_exists(obj_straight) 
+    &amp;&amp; instance_exists(obj_up) &amp;&amp; instance_exists(obj_switch))
+        {
+            obj_left.y = obj_player.y+106;
+            obj_right.y = obj_player.y+106;
+            obj_MOD.y = obj_player.y+106;
+            obj_melee.y = obj_player.y+106;
+            obj_angled.y = obj_player.y+106;
+            obj_straight.y = obj_player.y+106;
+            obj_up.y = obj_player.y+106;
+            obj_switch.y = obj_player.y+106;
+        }
+        
+    if(obj_player.grounded == 1)
+    {
+        obj_player.land = 1;
+    }
+}
+
+if(obj_player.vsp &lt; 0)
+{
+    active = 1;
+}
+
+//Horizontal Values
+if(obj_player.x &gt; view_xview[0]+480)// &amp;&amp; (obj_controls.right == true || control4 == 1))
+{
+    view_xview[0] += 10
     background_x[0] += 10;
     
     obj_left.x += 10;
@@ -94,63 +261,6 @@ if(obj_player.x &lt; view_xview[0]+300)// &amp;&amp; (obj_controls.left == true 
     obj_kills.x -= 10;
     obj_paws.x -= 10;
     obj_background_controls.x -= 10;
-}
-
-if(instance_exists(obj_left) &amp;&amp; instance_exists(obj_right) &amp;&amp; instance_exists(obj_MOD) &amp;&amp; 
-instance_exists(obj_melee) &amp;&amp; instance_exists(obj_angled) &amp;&amp; instance_exists(obj_straight) 
-&amp;&amp; instance_exists(obj_up) &amp;&amp; instance_exists(obj_switch) &amp;&amp; obj_player.grounded == 1 )
-{
-        obj_left.y = obj_player.y+106;
-        obj_right.y = obj_player.y+106;
-        obj_MOD.y = obj_player.y+106;
-        obj_melee.y = obj_player.y+106;
-        obj_angled.y = obj_player.y+106;
-        obj_straight.y = obj_player.y+106;
-        obj_up.y = obj_player.y+106;
-        obj_switch.y = obj_player.y+106;
-}
-
-if (obj_player.grounded == 1)
-{
-        obj_heart.y = obj_player.y-320;
-        obj_kills.y = obj_player.y-330;
-        obj_paws.y = obj_player.y-320;
-        obj_background_controls.y = obj_player.y+106;
-        
-        view_yview[0] = obj_player.y-385;
-        background_y[0] = obj_player.y-385;
-}
-
-
-
-if(obj_player.land == 0)
-{
-    obj_heart.y = obj_player.y-320;
-    obj_kills.y = obj_player.y-330;
-    obj_paws.y = obj_player.y-320;
-    obj_background_controls.y = obj_player.y+106;
-    
-    view_yview[0] = obj_player.y-385;
-    background_y[0] = obj_player.y-385;
-    
-    if(instance_exists(obj_left) &amp;&amp; instance_exists(obj_right) &amp;&amp; instance_exists(obj_MOD) &amp;&amp; 
-    instance_exists(obj_melee) &amp;&amp; instance_exists(obj_angled) &amp;&amp; instance_exists(obj_straight) 
-    &amp;&amp; instance_exists(obj_up) &amp;&amp; instance_exists(obj_switch))
-        {
-            obj_left.y = obj_player.y+106;
-            obj_right.y = obj_player.y+106;
-            obj_MOD.y = obj_player.y+106;
-            obj_melee.y = obj_player.y+106;
-            obj_angled.y = obj_player.y+106;
-            obj_straight.y = obj_player.y+106;
-            obj_up.y = obj_player.y+106;
-            obj_switch.y = obj_player.y+106;
-        }
-        
-    if(obj_player.grounded == 1)
-    {
-        obj_player.land = 1;
-    }
 }
 
 control = 0;

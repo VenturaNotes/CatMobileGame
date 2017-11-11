@@ -102,6 +102,7 @@ for (var i = 0; i &lt; 4;i++) // 4 touch
         {
             control3 = 1;
             obj_background.control3 = 1;
+            
             if (obj_player.grounded)
             {
                 obj_player.state = 2;
