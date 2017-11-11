@@ -168,7 +168,9 @@
     <sprite>sprites\spr_scliff</sprite>
     <sprite>sprites\spr_leftBarrier</sprite>
     <sprite>sprites\spr_incline</sprite>
+    <sprite>sprites\spr_incline2</sprite>
     <sprite>sprites\spr_incline_collision</sprite>
+    <sprite>sprites\spr_incline_collision2</sprite>
     <sprite>sprites\spr_grass</sprite>
     <sprite>sprites\spr_grass_collision</sprite>
   </sprites>
@@ -255,6 +257,8 @@
         <object>objects\obj_stablegplatform</object>
         <object>objects\obj_treadmill</object>
         <object>objects\obj_stablesplatform</object>
+        <object>objects\obj_incline</object>
+        <object>objects\obj_grass</object>
       </objects>
       <object>objects\obj_flag</object>
     </objects>

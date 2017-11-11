@@ -3,13 +3,13 @@
   <type>0</type>
   <xorig>0</xorig>
   <yorigin>0</yorigin>
-  <colkind>1</colkind>
+  <colkind>0</colkind>
   <coltolerance>0</coltolerance>
-  <sepmasks>0</sepmasks>
+  <sepmasks>-1</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
   <bbox_right>609</bbox_right>
-  <bbox_top>53</bbox_top>
+  <bbox_top>71</bbox_top>
   <bbox_bottom>224</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
@@ -20,6 +20,6 @@
   <width>610</width>
   <height>225</height>
   <frames>
-    <frame index="0">images\spr_incline2_0.png</frame>
+    <frame index="0">images\spr_incline_collision2_0.png</frame>
   </frames>
 </sprite>

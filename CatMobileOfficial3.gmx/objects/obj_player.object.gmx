@@ -55,6 +55,35 @@ land = 0;
 
 image_speed = 0.5;
 
+twitch = 0;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(twitch &gt;= 3)
+{
+    x+= 10;
+}
+twitch = 0;
 </string>
           </argument>
         </arguments>
@@ -121,7 +150,16 @@ if (place_meeting(x,y+vsp,obj_gr)) //If player meets ground within vertical spee
         grounded = 1; //The cat is now grounded.    
     }
     vsp = 0;
+    if(image_angle == 15 || image_angle == -15)
+    {
+        twitch +=1;
+        if(alarm[1] == -1)
+        {
+            alarm[1] = 5;
+        }
+    }
     image_angle = 0;
+    
 }
 else if (instance_exists(obj_wall) &amp;&amp; place_meeting(x+hsp,y+vsp,obj_wall)) //Horizontal collision for Slopes
 {
@@ -144,11 +182,58 @@ else if (instance_exists(obj_wall) &amp;&amp; place_meeting(x+hsp,y+vsp,obj_wall
     }
     vsp = 0;
     grounded = 1;
+    if(image_angle == 0 )
+    {
+        twitch +=1;
+        if(alarm[1] == -1)
+        {
+            alarm[1] = 5;
+        }
+    }
+    
     image_angle = 15;
+}
+else if (instance_exists(obj_hill2) &amp;&amp; place_meeting(x+hsp,y+vsp,obj_hill2)) //Horizontal collision for Slopes
+{
+    yplus = 0;
+    while(place_meeting(x+hsp,y-yplus,obj_hill2) &amp;&amp; yplus &lt;= abs(1*hsp)) //while player touches wall + his hspeed and - his vspeed, add 1 to yplus. 
+    {
+        yplus += 1;
+    }
+    if(place_meeting(x+hsp, y-yplus, obj_hill2))
+    {
+        while(!place_meeting(x+sign(hsp),y,obj_hill2))
+        {
+            x+= sign(hsp);
+        }   
+        hsp = 0;
+    }
+    else
+    {
+        y-= yplus; 
+    }
+    vsp = 0;
+    grounded = 1;
+    if(image_angle == 0 )
+    {
+        twitch +=1;
+        if(alarm[1] == -1)
+        {
+            alarm[1] = 5;
+        }
+    }
+    
+    image_angle = -15;
+
 }
 else
 {
     grounded = 0;
+}
+
+if(place_meeting(x,y,obj_hill2))
+{
+    y-=1;
 }
 
 y+=vsp;
@@ -251,6 +336,11 @@ if (state == 4) //Attack animation
         state = 0;
         fix = 1;
     }
+}
+
+if(grounded == 1 &amp;&amp; state != 4)
+{
+    sprite_index = spr_player_run;
 }
 
 //Death
