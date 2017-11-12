@@ -42,6 +42,8 @@ active = 0;
 counter = 0;
 
 scroll = 0;
+
+cspeed = 7; //camera speed
 </string>
           </argument>
         </arguments>
@@ -268,90 +270,24 @@ if(obj_player.vsp &lt; 0)
 {
     active = 1;
 }
+    view_xview[0] += cspeed; //10
+    background_x[0] += cspeed;
+    
+    obj_left.x += cspeed;
+    obj_right.x += cspeed;
+    obj_MOD.x += cspeed;
+    obj_melee.x += cspeed;
+    obj_angled.x += cspeed;
+    obj_straight.x += cspeed;
+    obj_up.x += cspeed;
+    obj_switch.x += cspeed;
+    
+    obj_heart.x += cspeed;
+    obj_kills.x += cspeed;
+    obj_paws.x += cspeed;
+    obj_background_controls.x += cspeed;
 
-/*
-//Horizontal Values Before they were 10
-if(obj_player.x &gt; view_xview[0]+480)// &amp;&amp; (obj_controls.right == true || control4 == 1)) //480
-{
-/*
-    view_xview[0] += scroll+1; //10
-    background_x[0] += scroll+1;
     
-    obj_left.x += scroll+1;
-    obj_right.x += scroll+1;
-    obj_MOD.x += scroll+1;
-    obj_melee.x += scroll+1;
-    obj_angled.x += scroll+1;
-    obj_straight.x += scroll+1;
-    obj_up.x += scroll+1;
-    obj_switch.x += scroll+1;
-    
-    obj_heart.x += scroll+1;
-    obj_kills.x += scroll+1;
-    obj_paws.x += scroll+1;
-    obj_background_controls.x += scroll+1;
-    
-}
-else if(obj_player.x &lt; view_xview[0]+300)// &amp;&amp; (obj_controls.left == true || control2 == 1))
-{
-
-
-    view_xview[0] -= scroll+1; //Originally -1
-    background_x[0] -= scroll+1;
-    
-    obj_left.x -= scroll+1;
-    obj_right.x -= scroll+1;
-    obj_MOD.x -= scroll+1;
-    obj_melee.x -= scroll+1;
-    obj_angled.x -= scroll+1;
-    obj_straight.x -= scroll+1;
-    obj_up.x -= scroll+1;
-    obj_switch.x -= scroll+1;
-    
-    obj_heart.x -= scroll+1;
-    obj_kills.x -= scroll+1;
-    obj_paws.x -= scroll+1;
-    obj_background_controls.x -= scroll+1;
-    
-    
-}
-else
-{
-    view_xview[0] += 10; //10
-    background_x[0] += 10;
-    
-    obj_left.x += 10;
-    obj_right.x += 10;
-    obj_MOD.x += 10;
-    obj_melee.x += 10;
-    obj_angled.x += 10;
-    obj_straight.x += 10;
-    obj_up.x += 10;
-    obj_switch.x += 10;
-    
-    obj_heart.x += 10;
-    obj_kills.x += 10;
-    obj_paws.x += 10;
-    obj_background_controls.x += 10;
-}
-*/
-    view_xview[0] += 10; //10
-    background_x[0] += 10;
-    
-    obj_left.x += 10;
-    obj_right.x += 10;
-    obj_MOD.x += 10;
-    obj_melee.x += 10;
-    obj_angled.x += 10;
-    obj_straight.x += 10;
-    obj_up.x += 10;
-    obj_switch.x += 10;
-    
-    obj_heart.x += 10;
-    obj_kills.x += 10;
-    obj_paws.x += 10;
-    obj_background_controls.x += 10;
-
 control = 0;
 control2 = 0;
 control3 = 0;

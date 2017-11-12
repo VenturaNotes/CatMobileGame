@@ -57,8 +57,8 @@ image_speed = 0.5;
 
 twitch = 0; //prevents cat from glitching on two surfaces. 
 
-runLeft = -5; //running speed
-runRight = 5; // running speed
+runLeft = -6; //running speed
+runRight = 6; // running speed
 
 </string>
           </argument>
@@ -139,7 +139,7 @@ if (counter &gt; 5)
     counter = 1;
 }
 
-hsp+=10;
+hsp+=7;
 x+=hsp;
 obj_background.scroll = hsp;
 
