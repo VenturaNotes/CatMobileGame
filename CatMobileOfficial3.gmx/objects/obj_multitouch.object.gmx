@@ -165,11 +165,20 @@ for (var i = 0; i &lt; 4;i++) // 4 touch
         {
             control7 = 1;
             obj_background.control7 = 1;
-            if(obj_melee.alarm[0] = -1 &amp;&amp; obj_player.grounded = 1)
+            if(obj_melee.alarm[0] == -1 &amp;&amp; obj_player.grounded = 1)
                 {
                     audio_play_sound(snd_meleeAttack,3,false);
-                    obj_melee.alarm[0] = 600; //Change to 1200 later for 20 seconds. 60 for testing
                     obj_player.state = 4;
+                    if(obj_melee.initial &lt; 2)
+                    {
+                        obj_melee.initial +=1;
+                        obj_melee.alarm[0] = 60;
+                    }
+                    else
+                    {
+                        obj_melee.alarm[0] = 600;
+                        obj_melee.initial = 0;
+                    }
                         with (obj_player)
                             {
                                 image_index = 0;
@@ -178,10 +187,19 @@ for (var i = 0; i &lt; 4;i++) // 4 touch
                             }
                     obj_melee.image_alpha = .5;
                 }
-            else if(obj_melee.alarm[0] = -1 &amp;&amp; obj_player.grounded = 0)
+            else if(obj_melee.alarm[0] == -1 &amp;&amp; obj_player.grounded = 0)
             {
-                obj_melee.alarm[0] = 600;
                  obj_player.state = 4;
+                   if(obj_melee.initial &lt; 2)
+                    {
+                        obj_melee.initial +=1;
+                        obj_melee.alarm[0] = 60;
+                    }
+                    else
+                    {
+                        obj_melee.alarm[0] = 600;
+                        obj_melee.initial = 0;
+                    }
                         with (obj_player)
                             {
                                 image_index = 0;

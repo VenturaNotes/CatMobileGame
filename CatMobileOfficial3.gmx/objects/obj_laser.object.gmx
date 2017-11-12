@@ -52,7 +52,7 @@ image_yscale = 0.8;
           <argument>
             <kind>1</kind>
             <string>//This is the straight laser shot from the cat
-x += 12;
+x += 18;
 
 if(death == 1)
 {
