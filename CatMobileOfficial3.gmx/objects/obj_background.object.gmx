@@ -43,7 +43,7 @@ counter = 0;
 
 scroll = 0;
 
-cspeed = 7; //camera speed
+cspeed = 6; //camera speed
 </string>
           </argument>
         </arguments>

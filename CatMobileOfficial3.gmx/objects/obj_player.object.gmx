@@ -139,7 +139,7 @@ if (counter &gt; 5)
     counter = 1;
 }
 
-hsp+=7;
+hsp+=6;
 x+=hsp;
 obj_background.scroll = hsp;
 
