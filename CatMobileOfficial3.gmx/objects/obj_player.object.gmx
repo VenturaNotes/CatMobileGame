@@ -55,7 +55,10 @@ land = 0;
 
 image_speed = 0.5;
 
-twitch = 0;
+twitch = 0; //prevents cat from glitching on two surfaces. 
+
+runLeft = -5; //running speed
+runRight = 5; // running speed
 
 </string>
           </argument>
@@ -136,7 +139,9 @@ if (counter &gt; 5)
     counter = 1;
 }
 
-hsp = 10;
+hsp+=10;
+x+=hsp;
+obj_background.scroll = hsp;
 
 //Vertical Collision with the ground
 if (place_meeting(x,y+vsp,obj_gr)) //If player meets ground within vertical speed
@@ -366,6 +371,8 @@ if(obj_heart.hearts &lt;= 0)
     visble = false;
     obj_player.recently_hit = true;
 }
+
+hsp = 0;
 </string>
           </argument>
         </arguments>
