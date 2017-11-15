@@ -173,6 +173,7 @@
     <sprite>sprites\spr_incline_collision2</sprite>
     <sprite>sprites\spr_grass</sprite>
     <sprite>sprites\spr_grass_collision</sprite>
+    <sprite>sprites\spr_spring</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_sky</background>
@@ -261,6 +262,7 @@
         <object>objects\obj_grass</object>
       </objects>
       <object>objects\obj_flag</object>
+      <object>objects\obj_spring</object>
     </objects>
     <objects name="Player">
       <object>objects\obj_player_head</object>
@@ -269,6 +271,7 @@
         <object>objects\obj_laser</object>
         <object>objects\obj_laser2</object>
         <object>objects\obj_MOD2</object>
+        <object>objects\obj_player_attack_hitbox2</object>
       </objects>
       <objects name="Health">
         <object>objects\obj_heart</object>

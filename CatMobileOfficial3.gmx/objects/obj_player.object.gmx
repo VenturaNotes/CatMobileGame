@@ -322,25 +322,44 @@ if(state == 2)
 
 if (state == 4) //Attack animation
 {
-     fix = 0;
-     if(image_index == 5)
-     {
-        instance_create(x+100,y-70,obj_player_attack_hitbox)
-     }
-     
-     if(image_index = 12)
-     {
-        with(obj_player_attack_hitbox)
-        {
-            instance_destroy();
-        }
-     }
-     
-    if(image_index == 15)
+    if(obj_multitouch.air == 0)
     {
-        state = 0;
-        fix = 1;
+            fix = 0;
+         if(image_index == 5)
+         {
+            instance_create(x+100,y-70,obj_player_attack_hitbox)
+         }
+         
+         if(image_index = 12)
+         {
+            with(obj_player_attack_hitbox)
+            {
+                instance_destroy();
+            }
+         }
+         
+        if(image_index == 15)
+        {
+            state = 0;
+            fix = 1;
+        }
     }
+    
+    if(obj_multitouch.air == 1)
+    {
+        if (!instance_exists(obj_player_attack_hitbox2) &amp;&amp; image_index == 2)
+        {
+            instance_create(x+100,y,obj_player_attack_hitbox2);
+        }
+        
+        if(image_index == 9)
+        {
+            image_index = 0;
+            sprite_index = spr_player_run;
+            state = 0;
+        }
+    }
+    
 }
 
 if(grounded == 1 &amp;&amp; state != 4)
