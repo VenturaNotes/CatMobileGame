@@ -44,6 +44,10 @@ counter = 0;
 scroll = 0;
 
 cspeed = 6; //camera speed
+
+spring = 0;
+
+below = 5;
 </string>
           </argument>
         </arguments>
@@ -236,7 +240,7 @@ if (obj_player.grounded == 1)
 
 
 
-if(obj_player.land == 0)
+if(obj_player.land == 0) //This follows the player at the beginning of the game. Has no other effect.
 {
     obj_heart.y = obj_player.y-320;
     obj_kills.y = obj_player.y-320;
@@ -266,10 +270,55 @@ if(obj_player.land == 0)
     }
 }
 
-if(obj_player.vsp &lt; 0)
+if(obj_player.vsp &lt; -26)
+{
+    spring = 1;
+    
+            obj_left.y += obj_player.vsp;
+            obj_right.y += obj_player.vsp;
+            obj_MOD.y += obj_player.vsp;
+            obj_melee.y += obj_player.vsp;
+            obj_angled.y += obj_player.vsp;
+            obj_straight.y += obj_player.vsp;
+            obj_up.y += obj_player.vsp;
+            obj_switch.y += obj_player.vsp;
+            obj_background_controls.y += obj_player.vsp;
+            obj_heart.y += obj_player.vsp;
+            obj_kills.y += obj_player.vsp;
+            obj_paws.y += obj_player.vsp;
+            view_yview[0] += obj_player.vsp;
+            background_y[0] += obj_player.vsp;
+    
+}
+else if(obj_player.vsp &gt; 0)
+{
+            obj_left.y += obj_player.vsp+below;
+            obj_right.y += obj_player.vsp+below;
+            obj_MOD.y += obj_player.vsp+below;
+            obj_melee.y += obj_player.vsp+below;
+            obj_angled.y += obj_player.vsp+below;
+            obj_straight.y += obj_player.vsp+below;
+            obj_up.y += obj_player.vsp+below;
+            obj_switch.y += obj_player.vsp+below;
+            obj_background_controls.y += obj_player.vsp+below;
+            obj_heart.y += obj_player.vsp+below;
+            obj_kills.y += obj_player.vsp+below;
+            obj_paws.y += obj_player.vsp+below;
+            view_yview[0] += obj_player.vsp+below;
+            background_y[0] += obj_player.vsp+below;
+}
+else if (obj_player.grounded == 1)
+{
+    spring = 0;
+}
+
+if(obj_player.vsp &lt; 0 &amp;&amp; spring == 0)
 {
     active = 1;
 }
+
+
+//Horizontal Camera Movement
     view_xview[0] += cspeed; //10
     background_x[0] += cspeed;
     
@@ -286,7 +335,6 @@ if(obj_player.vsp &lt; 0)
     obj_kills.x += cspeed;
     obj_paws.x += cspeed;
     obj_background_controls.x += cspeed;
-
     
 control = 0;
 control2 = 0;
