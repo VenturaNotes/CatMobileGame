@@ -47,7 +47,12 @@ cspeed = 6; //camera speed
 
 spring = 0;
 
-below = 5;
+below = 0;
+
+limit = 0;
+
+drop = 2;
+
 </string>
           </argument>
         </arguments>
@@ -72,7 +77,7 @@ below = 5;
             <kind>1</kind>
             <string>change = round(abs(view_yview[0] - (yposition3))/10);
 
-if(active == 1)
+if(active == 1 &amp;&amp; obj_player.image_angle != -15)
 {
     if(yposition &lt; obj_left.y &amp;&amp; abs(obj_left.y - (yposition)) &gt;= 1)
     {
@@ -156,7 +161,7 @@ if(active == 1)
 
 if(instance_exists(obj_left) &amp;&amp; instance_exists(obj_right) &amp;&amp; instance_exists(obj_MOD) &amp;&amp; 
 instance_exists(obj_melee) &amp;&amp; instance_exists(obj_angled) &amp;&amp; instance_exists(obj_straight) 
-&amp;&amp; instance_exists(obj_up) &amp;&amp; instance_exists(obj_switch) &amp;&amp; obj_player.grounded == 1 )
+&amp;&amp; instance_exists(obj_up) &amp;&amp; instance_exists(obj_switch) &amp;&amp; obj_player.grounded == 1 &amp;&amp; obj_player.image_angle != -15)
 {
     yposition = obj_player.y+106;
 
@@ -198,7 +203,7 @@ instance_exists(obj_melee) &amp;&amp; instance_exists(obj_angled) &amp;&amp; ins
     }
 }
 
-if (obj_player.grounded == 1)
+if (obj_player.grounded == 1 &amp;&amp; obj_player.image_angle != -15)
 {
     yposition2 = obj_player.y-320;
     if((obj_player.y-320) &lt; obj_heart.y &amp;&amp; abs(obj_heart.y - (obj_player.y-320)) &gt;= 1)
@@ -236,9 +241,13 @@ if (obj_player.grounded == 1)
         view_yview[0] = obj_player.y-385;
         background_y[0] = obj_player.y-385;
     }
+    
+    if(limit == 0)
+    {
+        limit = obj_player.y;
+    }
+    
 }
-
-
 
 if(obj_player.land == 0) //This follows the player at the beginning of the game. Has no other effect.
 {
@@ -290,8 +299,9 @@ if(obj_player.vsp &lt; -26)
             background_y[0] += obj_player.vsp;
     
 }
-else if(obj_player.vsp &gt; 0)
+else if(obj_player.vsp &gt; 0 &amp;&amp; view_yview[0] &lt;= obj_player.y-200 &amp;&amp; view_yview[0] &lt; 2500) //-385
 {
+    spring = 1;
             obj_left.y += obj_player.vsp+below;
             obj_right.y += obj_player.vsp+below;
             obj_MOD.y += obj_player.vsp+below;
@@ -315,6 +325,44 @@ else if (obj_player.grounded == 1)
 if(obj_player.vsp &lt; 0 &amp;&amp; spring == 0)
 {
     active = 1;
+}
+
+if(obj_player.image_angle == -15)
+{
+    if(obj_left.y != limit+106 &amp;&amp; abs(obj_left.y - (limit+106)) &gt;= 1 &amp;&amp; view_yview[0] &lt; 2600)
+    {
+            obj_left.y += drop;
+            obj_right.y += drop;
+            obj_MOD.y += drop;
+            obj_melee.y += drop;
+            obj_angled.y += drop;
+            obj_straight.y += drop;
+            obj_up.y += drop;
+            obj_switch.y += drop;
+            obj_heart.y += drop;
+            obj_kills.y += drop;
+            obj_paws.y += drop;
+            obj_background_controls.y += drop;
+            view_yview[0] += drop;
+            background_y[0] += drop;
+    }
+    else
+    {
+            obj_left.y = limit+106;
+            obj_right.y = limit+106;
+            obj_MOD.y = limit+106;
+            obj_melee.y = limit+106;
+            obj_angled.y = limit+106;
+            obj_straight.y = limit+106;
+            obj_up.y = limit+106;
+            obj_switch.y = limit+106;
+            obj_heart.y = limit-320;
+            obj_kills.y = limit-320;
+            obj_paws.y = limit-320;
+            obj_background_controls.y = limit+106;
+            view_yview[0] = limit-385;
+            background_y[0] = limit-385;
+    }
 }
 
 
