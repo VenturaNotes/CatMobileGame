@@ -48,10 +48,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (x &lt; obj_player.x)
+            <string>if (place_meeting(x,y,obj_player))
 {
     finish = 1;
-    room_goto(rm_init);
+    room_goto(rm_menu);
     audio_stop_all();
 }
 

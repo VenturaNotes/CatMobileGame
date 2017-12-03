@@ -16,11 +16,12 @@ background_index[0] = bck_sky;
 
 instance_create(0,0,obj_debugging);
 instance_create(0,1,obj_controls);
-instance_create(300,2,obj_paws);
+instance_create(300,50,obj_paws);
 instance_create(0,3,obj_gameover2);
 instance_create(0,4,obj_multitouch);
-instance_create(0,5,obj_background);
-instance_create(800,6,obj_kills);
+instance_create(0,5,obj_background2); //obj_background
+instance_create(800,30,obj_kills);
+
 
 instance_create(view_xview[0]+50,view_yview[0]+491,obj_left);
 instance_create(view_xview[0]+150,view_yview[0]+491,obj_right);
@@ -31,7 +32,8 @@ instance_create(view_xview[0]+725,view_yview[0]+491,obj_angled);
 instance_create(view_xview[0]+815,view_yview[0]+491,obj_straight);
 instance_create(view_xview[0]+910,view_yview[0]+491,obj_up); 
 
-instance_create(500,300,obj_background_controls);</code>
+
+instance_create(0,491,obj_background_controls);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

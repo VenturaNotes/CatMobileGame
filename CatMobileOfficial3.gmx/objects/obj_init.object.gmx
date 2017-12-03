@@ -29,7 +29,7 @@
 land = false;
 
 global.sound = true;
-leftBarrier = 320; //left barrier
+leftBarrier = 100; //left barrier 320
 </string>
           </argument>
         </arguments>
@@ -58,10 +58,6 @@ leftBarrier = 320; //left barrier
     stop = true;
 }
 
-if(land == false)
-{
-
-}
 </string>
           </argument>
         </arguments>

@@ -16,12 +16,11 @@ background_index[0] = bck_sky;
 
 instance_create(0,0,obj_debugging);
 instance_create(0,1,obj_controls);
-instance_create(300,50,obj_paws);
+instance_create(300,2,obj_paws);
 instance_create(0,3,obj_gameover2);
 instance_create(0,4,obj_multitouch);
-instance_create(0,5,obj_background2); //obj_background
-instance_create(800,30,obj_kills);
-
+instance_create(0,5,obj_background);
+instance_create(800,6,obj_kills);
 
 instance_create(view_xview[0]+50,view_yview[0]+491,obj_left);
 instance_create(view_xview[0]+150,view_yview[0]+491,obj_right);
@@ -32,8 +31,7 @@ instance_create(view_xview[0]+725,view_yview[0]+491,obj_angled);
 instance_create(view_xview[0]+815,view_yview[0]+491,obj_straight);
 instance_create(view_xview[0]+910,view_yview[0]+491,obj_up); 
 
-
-instance_create(0,491,obj_background_controls);</code>
+instance_create(500,300,obj_background_controls);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -75,12 +73,27 @@ instance_create(0,491,obj_background_controls);</code>
   </views>
   <instances>
     <instance objName="obj_heart" x="131" y="55" name="inst_0B27505B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player" x="871" y="1074" name="inst_D26AC1C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_flag" x="3380" y="804" name="inst_8EAC37A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_treadmill" x="577" y="1141" name="inst_25E3FEEA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_stable_ground" x="1170" y="1142" name="inst_724C4E1F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_hill" x="1759" y="651" name="inst_A89842AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_stable_ground" x="3059" y="790" name="inst_E98B3E47" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player" x="258" y="699" name="inst_D26AC1C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_stable_ground" x="5347" y="743" name="inst_BB315989" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_flag" x="5723" y="766" name="inst_8EAC37A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_stable_ground" x="4752" y="742" name="inst_EF2B18DC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_stable_ground" x="547" y="1266" name="inst_C9BC46F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treadmill" x="38" y="745" name="inst_9DF9BAA5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_stable_ground" x="993" y="744" name="inst_9EF54352" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_treadmill" x="1535" y="745" name="inst_4E43BAFB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_stable_ground" x="3376" y="739" name="inst_3E48D9E3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_stable_ground" x="3968" y="740" name="inst_DC292FEB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_stable_ground" x="2042" y="746" name="inst_07C8CD41" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_stable_ground" x="632" y="744" name="inst_A15862F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_stable_ground" x="1140" y="1267" name="inst_168CCCCB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_stable_ground" x="1828" y="1396" name="inst_2BDD9057" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_stable_ground" x="2657" y="1541" name="inst_4DE14CF5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_hill" x="2155" y="1730" name="inst_88853018" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_hill" x="3455" y="1381" name="inst_0AA96737" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_hill" x="861" y="2078" name="inst_FE53EB91" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_stable_ground" x="4796" y="1523" name="inst_298990C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_stable_ground" x="2818" y="739" name="inst_1DB032E0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_stable_ground" x="4513" y="740" name="inst_9F580CAC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
