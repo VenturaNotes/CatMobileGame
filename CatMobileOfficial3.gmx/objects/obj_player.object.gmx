@@ -57,8 +57,11 @@ image_speed = 0.5;
 
 twitch = 0; //prevents cat from glitching on two surfaces. 
 
-runLeft = -6; //running speed
+runLeft = -9; //running speed
 runRight = 6; // running speed
+
+downhill = false;
+uphill = true;
 
 </string>
           </argument>
@@ -82,7 +85,7 @@ runRight = 6; // running speed
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(twitch &gt;= 3)
+            <string>if(twitch &gt;= 10)
 {
     x+= 10;
 }
@@ -141,7 +144,8 @@ if (counter &gt; 5)
 
 hsp+=6;
 x+=hsp;
-obj_background.scroll = hsp;
+
+//obj_background.scroll = hsp;
 
 //Vertical Collision with the ground
 if (place_meeting(x,y+vsp,obj_gr)) //If player meets ground within vertical speed
@@ -155,16 +159,26 @@ if (place_meeting(x,y+vsp,obj_gr)) //If player meets ground within vertical spee
         grounded = 1; //The cat is now grounded.    
     }
     vsp = 0;
-    if(image_angle == 15 || image_angle == -15)
+    if(image_angle != 0)
     {
         twitch +=1;
         if(alarm[1] == -1)
         {
-            alarm[1] = 5;
+            alarm[1] = 15;
         }
     }
-    image_angle = 0;
+    if(image_angle &gt; 0)
+    {
+        image_angle -= 3;
+    }
+    else if(image_angle &lt;0)
+    {
+        image_angle +=3;
+    }
     
+    downhill = false;
+    uphill = false;
+    flat = true;
 }
 else if (instance_exists(obj_wall) &amp;&amp; place_meeting(x+hsp,y+vsp,obj_wall)) //Horizontal collision for Slopes
 {
@@ -187,16 +201,22 @@ else if (instance_exists(obj_wall) &amp;&amp; place_meeting(x+hsp,y+vsp,obj_wall
     }
     vsp = 0;
     grounded = 1;
-    if(image_angle == 0 )
+    if(image_angle != 15 )
     {
         twitch +=1;
         if(alarm[1] == -1)
         {
-            alarm[1] = 5;
+            alarm[1] = 15;
         }
     }
+    if(image_angle &lt; 15)
+    {
+        image_angle +=3;
+    }
     
-    image_angle = 15;
+    downhill = false;
+    flat = false;
+    uphill = true;
 }
 else if (instance_exists(obj_hill2) &amp;&amp; place_meeting(x+hsp,y+vsp,obj_hill2)) //Horizontal collision for Slopes
 {
@@ -219,16 +239,23 @@ else if (instance_exists(obj_hill2) &amp;&amp; place_meeting(x+hsp,y+vsp,obj_hil
     }
     vsp = 0;
     grounded = 1;
-    if(image_angle == 0 )
+    if(image_angle != -15 )
     {
         twitch +=1;
         if(alarm[1] == -1)
         {
-            alarm[1] = 5;
+            alarm[1] = 15;
         }
     }
     
-    image_angle = -15;
+    if(image_angle &gt; -15)
+    {
+        image_angle -= 3;
+    }
+    
+    downhill = true;
+    flat = false;
+    uphill = false;
 
 }
 else
@@ -236,9 +263,17 @@ else
     grounded = 0;
 }
 
-if(place_meeting(x,y-5,obj_hill2))
+if(downhill == true)
 {
-    y-=1;
+    if(image_angle &gt; -15)
+    {
+        image_angle -= 3;
+    }
+}
+
+while(place_meeting(x,y-5,obj_hill2))
+{
+  y-=1;
 }
 
 y+=vsp;
@@ -261,7 +296,6 @@ if (state == 0)
                 eye = 0;
                 eye2 = 0;
             }
-            
         }
     }
     else

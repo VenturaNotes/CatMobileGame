@@ -16,11 +16,11 @@ background_index[0] = bck_sky;
 
 instance_create(0,0,obj_debugging);
 instance_create(0,1,obj_controls);
-instance_create(300,2,obj_paws);
+instance_create(300,50,obj_paws);
 instance_create(0,3,obj_gameover2);
 instance_create(0,4,obj_multitouch);
-instance_create(0,5,obj_background);
-instance_create(800,6,obj_kills);
+instance_create(0,5,obj_background2); //obj_background
+instance_create(800,30,obj_kills);
 
 
 instance_create(view_xview[0]+50,view_yview[0]+491,obj_left);
@@ -33,7 +33,7 @@ instance_create(view_xview[0]+815,view_yview[0]+491,obj_straight);
 instance_create(view_xview[0]+910,view_yview[0]+491,obj_up); 
 
 
-instance_create(0,300,obj_background_controls);</code>
+instance_create(0,491,obj_background_controls);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -75,7 +75,7 @@ instance_create(0,300,obj_background_controls);</code>
   </views>
   <instances>
     <instance objName="obj_heart" x="131" y="55" name="inst_0B27505B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player" x="486" y="2914" name="inst_D26AC1C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player" x="646" y="2910" name="inst_D26AC1C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_leftBarrier" x="310" y="2800" name="inst_A0BD6E23" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="0" y="2960" name="inst_FF980ADF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="377" y="2960" name="inst_B9ED385F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -84,13 +84,17 @@ instance_create(0,300,obj_background_controls);</code>
     <instance objName="obj_stable_ground" x="496" y="2724" name="inst_115953D8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stable_ground" x="754" y="2960" name="inst_E3B7E712" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stable_ground" x="2351" y="2960" name="inst_08D6D9D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_hill" x="5168" y="2480" name="inst_D62FDC1F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_spring" x="1068" y="2918" name="inst_0998A9D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_hill" x="7608" y="2480" name="inst_D62FDC1F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spring" x="1061" y="2907" name="inst_0998A9D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stable_ground" x="1498" y="2375" name="inst_95296D46" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_incline" x="2728" y="2775" name="inst_360D0F06" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_incline" x="3338" y="2630" name="inst_8DD22309" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_hill2" x="3948" y="2630" name="inst_2946A4ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_hill2" x="4558" y="2775" name="inst_00FE7541" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_hill2" x="5168" y="2340" name="inst_2946A4ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_hill2" x="5778" y="2485" name="inst_00FE7541" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_incline" x="3948" y="2485" name="inst_4C02E1D1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_hill2" x="6388" y="2630" name="inst_98B2BCD5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_incline" x="4558" y="2340" name="inst_EDF42851" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_hill2" x="6998" y="2775" name="inst_A345A7E7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
