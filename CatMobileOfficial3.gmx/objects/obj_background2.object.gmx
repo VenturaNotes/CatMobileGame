@@ -39,8 +39,15 @@ newPosition2 = 0;
 range = 0;
 limit = 200;
 
-center = 100;
+center = 0;
 offset = 50;
+
+start = 0;
+long = 0;
+follow = 0;
+position = 0;
+ip = 0; //initial position
+np = 0; //new position
 </string>
           </argument>
         </arguments>
@@ -67,7 +74,7 @@ offset = 50;
     instance_exists(obj_melee) &amp;&amp; instance_exists(obj_angled) &amp;&amp; instance_exists(obj_straight) 
     &amp;&amp; instance_exists(obj_up) &amp;&amp; instance_exists(obj_switch))
 {
-    
+
     // VERTICAL MOVEMENT ATTEMPT #2
     
     //VERTICAL CAMERA MOVEMENT
@@ -89,7 +96,7 @@ offset = 50;
         view_yview[0] = obj_player.y-385; 
         background_y[0] = obj_player.y-385;
         
-        initialPosition = obj_player.y-385;
+        initialPosition = room_height-400; //obj_player.y-385
         
         if(obj_player.grounded == 1)
         {
@@ -115,17 +122,28 @@ offset = 50;
     }
     
     //Going Up
-    if(obj_player.grounded == 1 &amp;&amp; obj_player.y-385 &lt;= view_yview[0] &amp;&amp; obj_player.uphill == true)
+    if(obj_player.grounded == 1 &amp;&amp; initialPosition &gt;= view_yview[0] &amp;&amp; obj_player.uphill == true)
     {
        
         active = true;
         active2 = false;
         active3 = false;
-        yPosition = obj_player.y-320
+        
+        range = abs(initialPosition - (obj_player.y-385));
+        if(range &gt;= 50)
+        {
+            newPosition = obj_player.y+50-385;
+        }
+        else
+        {
+            newPosition = initialPosition;
+        }
+        
+        //yPosition = obj_player.y-320
     }
     
     //Flat Ground
-    if(obj_player.grounded == 1 &amp;&amp; obj_player.flat == true &amp;&amp; initialPosition &gt;= view_yview[0])
+    if(obj_player.grounded == 1 &amp;&amp; initialPosition &gt;= view_yview[0] &amp;&amp; obj_player.flat == true)
     {
         active = false;
         active2 = false;
@@ -142,25 +160,24 @@ offset = 50;
     }
     
     //Changes in height
-    change = round((obj_heart.y - (yPosition))/10);
     change2 = round(((newPosition) - view_yview[0])/10);
     
     if(active == true)
     {
-        obj_left.y -= change;
-        obj_right.y -= change;
-        obj_MOD.y -= change;
-        obj_melee.y -= change;
-        obj_angled.y -= change;
-        obj_straight.y -= change;
-        obj_up.y -= change;
-        obj_switch.y -= change;
-        obj_heart.y -= change;
-        obj_kills.y -= change;
-        obj_paws.y -= change;
-        obj_background_controls.y -= change;
-        view_yview[0] -= change;
-        background_y[0] -= change;
+        obj_left.y += change2;
+        obj_right.y += change2;
+        obj_MOD.y += change2;
+        obj_melee.y += change2;
+        obj_angled.y += change2;
+        obj_straight.y += change2;
+        obj_up.y += change2;
+        obj_switch.y += change2;
+        obj_heart.y += change2;
+        obj_kills.y += change2;
+        obj_paws.y += change2;
+        obj_background_controls.y += change2;
+        view_yview[0] += change2;
+        background_y[0] += change2;
     }
     
     if(active2 == true)
@@ -226,48 +243,124 @@ offset = 50;
         }
     }
     
-    
-    
-    /* VERTICAL MOVEMENT ATTEMPT #3
-    
-    //VERTICAL CAMERA MOVEMENT
-        obj_left.y = obj_player.y+106+center;
-        obj_right.y = obj_player.y+106+center;
-        obj_MOD.y = obj_player.y+106+center;
-        obj_melee.y = obj_player.y+106+center;
-        obj_angled.y = obj_player.y+106+center;
-        obj_straight.y = obj_player.y+106+center;
-        obj_up.y = obj_player.y+106+center;
-        obj_switch.y = obj_player.y+106+center;
-        obj_heart.y = obj_player.y-320+center;
-        obj_kills.y = obj_player.y-320+center;
-        obj_paws.y = obj_player.y-320+center;
-        obj_background_controls.y = obj_player.y+106+center;
-        view_yview[0] = obj_player.y-385+center; 
-        background_y[0] = obj_player.y-385+center;
-        
-    */
-    
-    
-    //HORIZONTAL CAMERA MOVEMENT
-    
-    view_xview[0] += cspeed;
-    background_x[0] += cspeed;
-    
-    obj_left.x += cspeed;
-    obj_right.x += cspeed;
-    obj_MOD.x += cspeed;
-    obj_melee.x += cspeed;
-    obj_angled.x += cspeed;
-    obj_straight.x += cspeed;
-    obj_up.x += cspeed;
-    obj_switch.x += cspeed;
-    
-    obj_heart.x += cspeed;
-    obj_kills.x += cspeed;
-    obj_paws.x += cspeed;
-    obj_background_controls.x += cspeed;
+//HORIZONTAL CAMERA MOVEMENT  
+view_xview[0] += cspeed;
+background_x[0] += cspeed;
+
+obj_left.x += cspeed;
+obj_right.x += cspeed;
+obj_MOD.x += cspeed;
+obj_melee.x += cspeed;
+obj_angled.x += cspeed;
+obj_straight.x += cspeed;
+obj_up.x += cspeed;
+obj_switch.x += cspeed;
+
+obj_heart.x += cspeed;
+obj_kills.x += cspeed;
+obj_paws.x += cspeed;
+obj_background_controls.x += cspeed;
 }
+    
+// VERTICAL MOVEMENT ATTEMPT #4
+/*
+change = round((obj_heart.y - (obj_player.y-320))/10);
+
+if(start == 0)
+{
+    obj_left.y = obj_player.y+106+center;
+    obj_right.y = obj_player.y+106+center;
+    obj_MOD.y = obj_player.y+106+center;
+    obj_melee.y = obj_player.y+106+center;
+    obj_angled.y = obj_player.y+106+center;
+    obj_straight.y = obj_player.y+106+center;
+    obj_up.y = obj_player.y+106+center;
+    obj_switch.y = obj_player.y+106+center;
+    obj_heart.y = obj_player.y-320+center;
+    obj_kills.y = obj_player.y-320+center;
+    obj_paws.y = obj_player.y-320+center;
+    obj_background_controls.y = obj_player.y+106+center;
+    view_yview[0] = obj_player.y-385+center; 
+    background_y[0] = obj_player.y-385+center;
+    
+    if(obj_player.grounded == true)
+    {
+        start = 1;
+    }
+    
+}
+
+if(start == 1)
+{
+
+    for(i = 0; i &lt;= 400; i+= 1)
+    {
+    if(position_meeting(obj_player.x,obj_player.y+i,obj_hill2) || 
+       position_meeting(obj_player.x,obj_player.y+i,obj_wall) ||
+       position_meeting(obj_player.x,obj_player.y+i,obj_gr))
+           {
+                long = 0;
+                i = 401;
+           }
+       else if(i &gt;= 400)
+       {
+            long = 1;
+       }
+    }
+    
+    if(long == 1)
+    {
+        position = obj_player.y;
+        follow = 1;
+        long = 0;
+    }
+    
+    if(follow == 1)
+    {
+        if(obj_player.vsp &lt; 0)
+        {
+            obj_left.y -= change;
+            obj_right.y -= change;
+            obj_MOD.y -= change;
+            obj_melee.y -= change;
+            obj_angled.y -= change;
+            obj_straight.y -= change;
+            obj_up.y -= change;
+            obj_switch.y -= change;
+            obj_heart.y -= change;
+            obj_kills.y -= change;
+            obj_paws.y -= change;
+            obj_background_controls.y -= change;
+            view_yview[0] -= change;
+            background_y[0] -= change;
+        }
+        else if(obj_player.vsp &gt; 0)
+        {
+            obj_left.y += change;
+            obj_right.y += change;
+            obj_MOD.y += change;
+            obj_melee.y += change;
+            obj_angled.y += change;
+            obj_straight.y += change;
+            obj_up.y += change;
+            obj_switch.y += change;
+            obj_heart.y += change;
+            obj_kills.y += change;
+            obj_paws.y += change;
+            obj_background_controls.y += change;
+            view_yview[0] += change;
+            background_y[0] += change;
+        }
+       
+        
+        if(obj_player.grounded == true)
+        {
+            follow = 0;
+        }
+    }
+}
+*/
+        
 </string>
           </argument>
         </arguments>

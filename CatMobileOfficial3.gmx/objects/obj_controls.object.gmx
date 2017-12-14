@@ -57,13 +57,13 @@ left = keyboard_check(ord('A'));
             <kind>1</kind>
             <string>if(up == true)
 {
-    obj_player.vsp -= 25;
+    obj_player.vsp = -23;
     audio_play_sound(snd_jump,3,false);
     audio_sound_gain(snd_jump,0.2,0);
 }
 else
 {
-    obj_player.vsp -= 17;
+    obj_player.vsp = -17;
     audio_play_sound(snd_jump,3,false);
     audio_sound_gain(snd_jump,0.2,0);
 }
