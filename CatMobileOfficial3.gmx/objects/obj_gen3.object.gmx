@@ -340,14 +340,6 @@ stop = 0; //This is so the code in the step method will only print once
     instance_deactivate_object(obj_melee);
     instance_deactivate_object(obj_MOD);
     
-    if(instance_exists(obj_fire))
-    {
-        with(obj_fire)
-        {
-            instance_destroy();
-        }
-    }
-    
     if(instance_exists(obj_player_head))
      {
         with(obj_player_head)
