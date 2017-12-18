@@ -48,6 +48,10 @@ follow = 0;
 position = 0;
 ip = 0; //initial position
 np = 0; //new position
+
+high = 0;
+move = -200;
+first = false;
 </string>
           </argument>
         </arguments>
@@ -74,10 +78,8 @@ np = 0; //new position
     instance_exists(obj_melee) &amp;&amp; instance_exists(obj_angled) &amp;&amp; instance_exists(obj_straight) 
     &amp;&amp; instance_exists(obj_up) &amp;&amp; instance_exists(obj_switch))
 {
-
-    // VERTICAL MOVEMENT ATTEMPT #2
     
-    //VERTICAL CAMERA MOVEMENT
+    //VERTICAL CAMERA MOVEMENT ATTEMPT #2
     //Initializes the camera
     if(initial == false)
     {
@@ -149,9 +151,9 @@ np = 0; //new position
         active2 = false;
         active3 = true;
         range = abs(initialPosition - (obj_player.y-385));
-        if(range &gt;= 150)
+        if(range &gt;= 50) //150
         {
-            newPosition = obj_player.y+150-385;
+            newPosition = obj_player.y+50-385; //150
         }
         else
         {
@@ -242,6 +244,55 @@ np = 0; //new position
             obj_spring.hit = false;
         }
     }
+
+if (obj_player.grounded == false)
+{
+    for(i = 0; i &lt;= 500; i +=1)
+    {
+        if(position_meeting(obj_player.x,obj_player.y+i,obj_hill2) || 
+           position_meeting(obj_player.x,obj_player.y+i,obj_wall) ||
+           position_meeting(obj_player.x,obj_player.y+i,obj_gr))
+               {
+                    i = 501;
+               }
+           else if(i &gt;= 500)
+           {
+                high = 1;
+           }
+    }
+}
+
+if(high == 1)
+{
+    active = false;
+    active2 = false;
+    active3 = false;
+    
+    if (initialPosition &gt;= view_yview[0] + obj_player.vsp - obj_player.grav)
+    {
+        obj_left.y += obj_player.vsp - obj_player.grav;
+        obj_right.y += obj_player.vsp - obj_player.grav;
+        obj_MOD.y += obj_player.vsp - obj_player.grav;
+        obj_melee.y += obj_player.vsp - obj_player.grav;
+        obj_angled.y += obj_player.vsp - obj_player.grav;
+        obj_straight.y += obj_player.vsp - obj_player.grav;
+        obj_up.y += obj_player.vsp - obj_player.grav;
+        obj_switch.y += obj_player.vsp - obj_player.grav;
+        obj_heart.y += obj_player.vsp - obj_player.grav;
+        obj_kills.y += obj_player.vsp - obj_player.grav;
+        obj_paws.y += obj_player.vsp - obj_player.grav;
+        obj_background_controls.y += obj_player.vsp - obj_player.grav;
+        view_yview[0] += obj_player.vsp - obj_player.grav;
+        background_y[0] += obj_player.vsp - obj_player.grav;
+    }
+}
+
+if(obj_player.grounded == true)
+{
+    first = 0;
+    high = 0;
+}
+
     
 //HORIZONTAL CAMERA MOVEMENT  
 view_xview[0] += cspeed;
