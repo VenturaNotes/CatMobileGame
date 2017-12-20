@@ -52,6 +52,8 @@ np = 0; //new position
 high = 0;
 move = -200;
 first = false;
+spring = false;
+rise = 5;
 </string>
           </argument>
         </arguments>
@@ -221,28 +223,36 @@ first = false;
     //SPRING
     if(instance_exists(obj_spring))
     {
+    
         if(obj_spring.hit == true)
         {
-            obj_left.y = obj_player.y+106;
-            obj_right.y = obj_player.y+106;
-            obj_MOD.y = obj_player.y+106;
-            obj_melee.y = obj_player.y+106;
-            obj_angled.y = obj_player.y+106;
-            obj_straight.y = obj_player.y+106;
-            obj_up.y = obj_player.y+106;
-            obj_switch.y = obj_player.y+106;
-            obj_heart.y = obj_player.y-320;
-            obj_kills.y = obj_player.y-320;
-            obj_paws.y = obj_player.y-320;
-            obj_background_controls.y = obj_player.y+106;
-            view_yview[0] = obj_player.y-385; 
-            background_y[0] = obj_player.y-385;
+            spring = true;
+            
+            active = false;
+            active2 = false;
+            active3 = false;
+            
+            obj_left.y += (obj_player.vsp - obj_player.grav)/1.5;
+            obj_right.y += (obj_player.vsp - obj_player.grav)/1.5;
+            obj_MOD.y += (obj_player.vsp - obj_player.grav)/1.5;
+            obj_melee.y += (obj_player.vsp - obj_player.grav)/1.5;
+            obj_angled.y += (obj_player.vsp - obj_player.grav)/1.5;
+            obj_straight.y += (obj_player.vsp - obj_player.grav)/1.5;
+            obj_up.y += (obj_player.vsp - obj_player.grav)/1.5;
+            obj_switch.y += (obj_player.vsp - obj_player.grav)/1.5;
+            obj_heart.y += (obj_player.vsp - obj_player.grav)/1.5;
+            obj_kills.y += (obj_player.vsp - obj_player.grav)/1.5;
+            obj_paws.y += (obj_player.vsp - obj_player.grav)/1.5;
+            obj_background_controls.y += (obj_player.vsp - obj_player.grav)/1.5;
+            view_yview[0] += (obj_player.vsp - obj_player.grav)/1.5; 
+            background_y[0] += (obj_player.vsp - obj_player.grav)/1.5;
         }
         
-        if(obj_player.grounded = 1)
+        if(obj_player.grounded == 1)
         {
+            spring = false;
             obj_spring.hit = false;
-        }
+        }  
     }
 
 if (obj_player.grounded == false)
@@ -262,7 +272,7 @@ if (obj_player.grounded == false)
     }
 }
 
-if(high == 1)
+if(high == 1 &amp;&amp; spring == false)
 {
     active = false;
     active2 = false;

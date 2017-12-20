@@ -54,7 +54,11 @@
     {
         vsp = -40;
     }
-    hit = true;
+    
+    with(obj_spring)
+    {
+        hit = true;
+    }
 }
 </string>
           </argument>
