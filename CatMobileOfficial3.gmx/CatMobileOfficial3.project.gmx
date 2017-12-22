@@ -385,7 +385,6 @@
       <object>objects\obj_selecting</object>
     </objects>
     <object>objects\obj_sound</object>
-    <object>objects\obj_leftBarrier</object>
     <object>objects\obj_init</object>
     <object>objects\obj_background2</object>
   </objects>

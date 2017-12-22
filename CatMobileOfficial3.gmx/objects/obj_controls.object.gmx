@@ -102,22 +102,6 @@ if(isActive)
      if (obj_player.x &gt; obj_init.leftBarrier &amp;&amp; obj_player.x &gt; view_xview[0]+100 &amp;&amp; (obj_player.state = 0 || obj_player.state = 1|| obj_player.state == 10))
         {
             obj_player.state = 1;
-            /*
-            with(obj_player)
-            {
-                if (place_meeting(x-10,y,obj_gr))
-                {
-                    while(!place_meeting(x+sin(-10),y,obj_gr)) 
-                    {
-                        x+=sign(-10);
-                    }
-                }
-                else
-                {
-                    x -= 10;
-                }
-            }
-            */
             
             with(obj_player)
             {
@@ -198,7 +182,7 @@ if(isActive)
             {
                 with(obj_player)
                 {
-                    image_speed = 0.25;
+                    image_speed = 0.5;
                     sprite_index = spr_player_run;
                 }
             }
@@ -257,7 +241,16 @@ if(isActive)
     {
         if (obj_player.x &lt; view_xview[0]+700 &amp;&amp; (obj_player.state == 0 || obj_player.state == 3 || obj_player.state == 10)) //obj_player.x &lt; room_width-300 &amp;&amp; 
             {
-                obj_player.state = 3;
+                obj_player.state = 3; 
+                
+                /*
+                with(obj_player)
+                {
+                    sprite_set_offset(sprite_index, 140, 140);
+                }
+                obj_player.image_xscale = 0.8;
+                sprite_set_offset(sprite_index,75,140);
+                */
                 
                 with(obj_player)
             {
@@ -338,7 +331,7 @@ if(isActive)
                  {
                     with(obj_player)
                     {
-                        image_speed = 0.75;
+                        image_speed = 0.5;
                         sprite_index = spr_player_run;
                     }
                  }
@@ -373,6 +366,24 @@ if(isActive)
         if(obj_player.state == 3)
         {
             obj_player.state = 0;
+        }
+    }
+    
+    if(left == true)
+    {
+        with(obj_player)
+        {
+            sprite_set_offset(sprite_index,sprite_get_width(sprite_index)/2,sprite_get_yoffset(sprite_index));
+            image_xscale = -0.8
+        }
+    }
+    
+    if(right == true)
+    {
+        with(obj_player)
+        {
+            sprite_set_offset(sprite_index,sprite_get_width(sprite_index)/2,sprite_get_yoffset(sprite_index));
+            image_xscale = 0.8;
         }
     }
 }

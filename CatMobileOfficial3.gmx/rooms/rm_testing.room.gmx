@@ -22,7 +22,6 @@ instance_create(0,4,obj_multitouch);
 instance_create(0,5,obj_background2); //obj_background
 instance_create(800,30,obj_kills);
 
-
 instance_create(view_xview[0]+50,view_yview[0]+491,obj_left);
 instance_create(view_xview[0]+150,view_yview[0]+491,obj_right);
 instance_create(view_xview[0]+290,view_yview[0]+491,obj_melee);
@@ -31,7 +30,6 @@ instance_create(view_xview[0]+590,view_yview[0]+491,obj_MOD);
 instance_create(view_xview[0]+725,view_yview[0]+491,obj_angled);
 instance_create(view_xview[0]+815,view_yview[0]+491,obj_straight);
 instance_create(view_xview[0]+910,view_yview[0]+491,obj_up); 
-
 
 instance_create(0,491,obj_background_controls);</code>
   <enableViews>-1</enableViews>
@@ -76,7 +74,6 @@ instance_create(0,491,obj_background_controls);</code>
   <instances>
     <instance objName="obj_heart" x="131" y="55" name="inst_0B27505B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player" x="646" y="2910" name="inst_D26AC1C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_leftBarrier" x="310" y="2800" name="inst_A0BD6E23" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="0" y="2960" name="inst_FF980ADF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="377" y="2960" name="inst_B9ED385F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_incline" x="1131" y="2775" name="inst_BC0640B7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

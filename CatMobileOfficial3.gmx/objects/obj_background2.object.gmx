@@ -305,122 +305,47 @@ if(obj_player.grounded == true)
 
     
 //HORIZONTAL CAMERA MOVEMENT  
-view_xview[0] += cspeed;
-background_x[0] += cspeed;
 
-obj_left.x += cspeed;
-obj_right.x += cspeed;
-obj_MOD.x += cspeed;
-obj_melee.x += cspeed;
-obj_angled.x += cspeed;
-obj_straight.x += cspeed;
-obj_up.x += cspeed;
-obj_switch.x += cspeed;
-
-obj_heart.x += cspeed;
-obj_kills.x += cspeed;
-obj_paws.x += cspeed;
-obj_background_controls.x += cspeed;
-}
-    
-// VERTICAL MOVEMENT ATTEMPT #4
-/*
-change = round((obj_heart.y - (obj_player.y-320))/10);
-
-if(start == 0)
-{
-    obj_left.y = obj_player.y+106+center;
-    obj_right.y = obj_player.y+106+center;
-    obj_MOD.y = obj_player.y+106+center;
-    obj_melee.y = obj_player.y+106+center;
-    obj_angled.y = obj_player.y+106+center;
-    obj_straight.y = obj_player.y+106+center;
-    obj_up.y = obj_player.y+106+center;
-    obj_switch.y = obj_player.y+106+center;
-    obj_heart.y = obj_player.y-320+center;
-    obj_kills.y = obj_player.y-320+center;
-    obj_paws.y = obj_player.y-320+center;
-    obj_background_controls.y = obj_player.y+106+center;
-    view_yview[0] = obj_player.y-385+center; 
-    background_y[0] = obj_player.y-385+center;
-    
-    if(obj_player.grounded == true)
+    if(obj_player.x &lt; view_xview[0]+400 &amp;&amp; obj_controls.left == true)
     {
-        start = 1;
-    }
-    
-}
-
-if(start == 1)
-{
-
-    for(i = 0; i &lt;= 400; i+= 1)
-    {
-    if(position_meeting(obj_player.x,obj_player.y+i,obj_hill2) || 
-       position_meeting(obj_player.x,obj_player.y+i,obj_wall) ||
-       position_meeting(obj_player.x,obj_player.y+i,obj_gr))
-           {
-                long = 0;
-                i = 401;
-           }
-       else if(i &gt;= 400)
-       {
-            long = 1;
-       }
-    }
-    
-    if(long == 1)
-    {
-        position = obj_player.y;
-        follow = 1;
-        long = 0;
-    }
-    
-    if(follow == 1)
-    {
-        if(obj_player.vsp &lt; 0)
-        {
-            obj_left.y -= change;
-            obj_right.y -= change;
-            obj_MOD.y -= change;
-            obj_melee.y -= change;
-            obj_angled.y -= change;
-            obj_straight.y -= change;
-            obj_up.y -= change;
-            obj_switch.y -= change;
-            obj_heart.y -= change;
-            obj_kills.y -= change;
-            obj_paws.y -= change;
-            obj_background_controls.y -= change;
-            view_yview[0] -= change;
-            background_y[0] -= change;
-        }
-        else if(obj_player.vsp &gt; 0)
-        {
-            obj_left.y += change;
-            obj_right.y += change;
-            obj_MOD.y += change;
-            obj_melee.y += change;
-            obj_angled.y += change;
-            obj_straight.y += change;
-            obj_up.y += change;
-            obj_switch.y += change;
-            obj_heart.y += change;
-            obj_kills.y += change;
-            obj_paws.y += change;
-            obj_background_controls.y += change;
-            view_yview[0] += change;
-            background_y[0] += change;
-        }
-       
+        view_xview[0] += obj_player.hsp;
+        background_x[0] += obj_player.hsp;
         
-        if(obj_player.grounded == true)
-        {
-            follow = 0;
-        }
+        obj_left.x += obj_player.hsp;
+        obj_right.x += obj_player.hsp;
+        obj_MOD.x += obj_player.hsp;
+        obj_melee.x += obj_player.hsp;
+        obj_angled.x += obj_player.hsp;
+        obj_straight.x += obj_player.hsp;
+        obj_up.x += obj_player.hsp;
+        obj_switch.x += obj_player.hsp;
+        
+        obj_heart.x += obj_player.hsp;
+        obj_kills.x += obj_player.hsp;
+        obj_paws.x += obj_player.hsp;
+        obj_background_controls.x += obj_player.hsp;
+    }
+    
+     if(obj_player.x &gt; view_xview[0]+600 &amp;&amp; obj_controls.right == true)
+    {
+        view_xview[0] += obj_player.hsp;
+        background_x[0] += obj_player.hsp;
+        
+        obj_left.x += obj_player.hsp;
+        obj_right.x += obj_player.hsp;
+        obj_MOD.x += obj_player.hsp;
+        obj_melee.x += obj_player.hsp;
+        obj_angled.x += obj_player.hsp;
+        obj_straight.x += obj_player.hsp;
+        obj_up.x += obj_player.hsp;
+        obj_switch.x += obj_player.hsp;
+        
+        obj_heart.x += obj_player.hsp;
+        obj_kills.x += obj_player.hsp;
+        obj_paws.x += obj_player.hsp;
+        obj_background_controls.x += obj_player.hsp;
     }
 }
-*/
         
 </string>
           </argument>

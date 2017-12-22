@@ -58,7 +58,7 @@ image_speed = 0.5;
 twitch = 0; //prevents cat from glitching on two surfaces. 
 
 runLeft = -9; //running speed
-runRight = 6; // running speed
+runRight = 9; // running speed
 
 downhill = false;
 uphill = false;
@@ -141,10 +141,12 @@ if (counter &gt; 5)
 {
     counter = 1;
 }
+/*
 if (room != rm_game &amp;&amp; room != rm_game2 &amp;&amp; room != rm_game3)
 {
     hsp+=6;
 }
+*/
 x+=hsp;
 
 //obj_background.scroll = hsp;
