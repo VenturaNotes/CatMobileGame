@@ -384,11 +384,19 @@
       <object>objects\obj_return</object>
       <object>objects\obj_selecting</object>
     </objects>
-    <object>objects\obj_sound</object>
-    <object>objects\obj_init</object>
-    <object>objects\obj_background2</object>
+    <objects name="Initializes the game">
+      <object>objects\obj_init</object>
+    </objects>
+    <objects name="Controls Sound">
+      <object>objects\obj_sound</object>
+    </objects>
+    <objects name="Controls Camera">
+      <object>objects\obj_background2</object>
+    </objects>
+    <object>objects\obj_grid</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room30</room>
     <room>rooms\rm_init</room>
     <room>rooms\rm_testing</room>
     <room>rooms\rm_template</room>
