@@ -306,7 +306,7 @@ if(obj_player.grounded == true)
     
 //HORIZONTAL CAMERA MOVEMENT  
 
-    if(obj_player.x &lt; view_xview[0]+400 &amp;&amp; obj_controls.left == true)
+    if(obj_player.x &lt; view_xview[0]+400 &amp;&amp; obj_controls.left == true) //+400
     {
         view_xview[0] += obj_player.hsp;
         background_x[0] += obj_player.hsp;
@@ -326,7 +326,7 @@ if(obj_player.grounded == true)
         obj_background_controls.x += obj_player.hsp;
     }
     
-     if(obj_player.x &gt; view_xview[0]+600 &amp;&amp; obj_controls.right == true)
+     if(obj_player.x &gt; view_xview[0]+500 &amp;&amp; obj_controls.right == true)
     {
         view_xview[0] += obj_player.hsp;
         background_x[0] += obj_player.hsp;

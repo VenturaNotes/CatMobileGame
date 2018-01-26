@@ -257,7 +257,7 @@ if(isActive)
                 if (instance_exists(obj_gr) &amp;&amp; place_meeting(x+runRight,y+vsp,obj_gr))
                 {
                     yplus = 0;
-                    while(place_meeting(x+runRight,y-yplus,obj_gr) &amp;&amp; yplus &lt;= abs(1*runRight))
+                    while(place_meeting(x+runRight,y-yplus,obj_gr) &amp;&amp; yplus &lt;= abs(2*runRight))
                     {
                         yplus += 1;
                     }
@@ -280,7 +280,7 @@ if(isActive)
                 else if (instance_exists(obj_wall) &amp;&amp; place_meeting(x+runRight,y+vsp,obj_wall))
                 {
                     yplus = 0;
-                    while(place_meeting(x+runRight,y-yplus,obj_wall) &amp;&amp; yplus &lt;= abs(1*runRight))
+                    while(place_meeting(x+runRight,y-yplus,obj_wall) &amp;&amp; yplus &lt;= abs(2*runRight))
                     {
                         yplus += 1;
                     }
@@ -302,7 +302,7 @@ if(isActive)
                 else if (instance_exists(obj_hill2) &amp;&amp; place_meeting(x+runRight,y+vsp,obj_hill2))
                 {
                     yplus = 0;
-                    while(place_meeting(x+runRight,y-yplus,obj_hill2) &amp;&amp; yplus &lt;= abs(1*runRight))
+                    while(place_meeting(x+runRight,y-yplus,obj_hill2) &amp;&amp; yplus &lt;= abs(2*runRight))
                     {
                         yplus += 1;
                     }
