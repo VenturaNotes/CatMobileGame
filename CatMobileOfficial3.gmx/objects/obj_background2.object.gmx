@@ -85,18 +85,18 @@ rise = 5;
     //Initializes the camera
     if(initial == false)
     {
-        obj_left.y = obj_player.y+106;
-        obj_right.y = obj_player.y+106;
-        obj_MOD.y = obj_player.y+106;
-        obj_melee.y = obj_player.y+106;
-        obj_angled.y = obj_player.y+106;
-        obj_straight.y = obj_player.y+106;
-        obj_up.y = obj_player.y+106;
-        obj_switch.y = obj_player.y+106;  
+        obj_left.y = (obj_player.y+179); //106?
+        obj_right.y = obj_player.y+179;
+        obj_MOD.y = obj_player.y+179;
+        obj_melee.y = obj_player.y+179;
+        obj_angled.y = obj_player.y+179;
+        obj_straight.y = obj_player.y+179;
+        obj_up.y = obj_player.y+179;
+        obj_switch.y = obj_player.y+179;  
         obj_heart.y = obj_player.y-320;
         obj_kills.y = obj_player.y-320;
         obj_paws.y = obj_player.y-320;
-        obj_background_controls.y = obj_player.y+106;
+        obj_background_controls.y = obj_player.y+179;
         view_yview[0] = obj_player.y-385; 
         background_y[0] = obj_player.y-385;
         

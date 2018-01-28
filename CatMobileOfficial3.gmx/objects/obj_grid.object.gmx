@@ -25,8 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>my_grid = ds_grid_create(3,9);
+            <string>my_grid = ds_grid_create(3,8);
 
+/*
 for(xp = 0; xp &lt; 3; xp++)
 {
     for(yp = 0; yp &lt; 9; yp++)
@@ -34,6 +35,36 @@ for(xp = 0; xp &lt; 3; xp++)
         ds_grid_add(my_grid,xp,yp,spr_iconcal);
     }
 }
+*/
+
+ds_grid_add(my_grid,0,0,spr_00_Calthaos);
+ds_grid_add(my_grid,1,0,spr_01_Cal);
+ds_grid_add(my_grid,2,0,spr_02_Thaos);
+ds_grid_add(my_grid,0,1,spr_03_Reaperan);
+ds_grid_add(my_grid,1,1,spr_04_ReaperanEx);
+ds_grid_add(my_grid,2,1,spr_05_Reaperos);
+ds_grid_add(my_grid,0,2,spr_06_ReaperosEx);
+ds_grid_add(my_grid,1,2,spr_07_Diverolm);
+ds_grid_add(my_grid,2,2,spr_08_DiverolmEx);
+ds_grid_add(my_grid,0,3,spr_09_Cosineas);
+ds_grid_add(my_grid,1,3,spr_10_CosineasEx);
+
+ds_grid_add(my_grid,2,3,spr_ningen);
+ds_grid_add(my_grid,0,4,spr_ningen);
+
+ds_grid_add(my_grid,1,4,spr_13_Windrus);
+ds_grid_add(my_grid,2,4,spr_14_WindrusEx);
+
+ds_grid_add(my_grid,0,5,spr_ningen);
+ds_grid_add(my_grid,1,5,spr_ningen);
+ds_grid_add(my_grid,2,5,spr_ningen);
+ds_grid_add(my_grid,0,6,spr_ningen);
+ds_grid_add(my_grid,1,6,spr_ningen);
+ds_grid_add(my_grid,2,6,spr_ningen);
+ds_grid_add(my_grid,0,7,spr_ningen);
+
+ds_grid_add(my_grid,1,7,spr_22_Shardagas);
+ds_grid_add(my_grid,2,7,spr_23_ShardagasEx);
 
 click = 0;
 start = 0;
@@ -108,7 +139,7 @@ if(hold == true)
 
 for(xp = 0; xp &lt; 3; xp++)
 {
-    for(yp = 0; yp &lt; 9; yp++)
+    for(yp = 0; yp &lt; 8; yp++)
     {
         draw_sprite(ds_grid_get(my_grid,xp,yp),0,xp*260+90,yp*250+click); //260
     }

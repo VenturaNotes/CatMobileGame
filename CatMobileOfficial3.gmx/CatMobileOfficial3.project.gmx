@@ -145,15 +145,22 @@
     <sprites name="Gallery">
       <sprite>sprites\spr_bestiary</sprite>
       <sprite>sprites\spr_iconcal</sprite>
-      <sprite>sprites\spr_iconcosineas</sprite>
-      <sprite>sprites\spr_icondiverolm</sprite>
-      <sprite>sprites\spr_icondiverolmex</sprite>
-      <sprite>sprites\spr_iconlurrow</sprite>
-      <sprite>sprites\spr_iconreaperan</sprite>
-      <sprite>sprites\spr_iconreaperanex</sprite>
-      <sprite>sprites\spr_iconreaperos</sprite>
-      <sprite>sprites\spr_iconshardagas</sprite>
-      <sprite>sprites\spr_iconthaos</sprite>
+      <sprite>sprites\spr_00_Calthaos</sprite>
+      <sprite>sprites\spr_01_Cal</sprite>
+      <sprite>sprites\spr_02_Thaos</sprite>
+      <sprite>sprites\spr_03_Reaperan</sprite>
+      <sprite>sprites\spr_04_ReaperanEx</sprite>
+      <sprite>sprites\spr_05_Reaperos</sprite>
+      <sprite>sprites\spr_06_ReaperosEx</sprite>
+      <sprite>sprites\spr_07_Diverolm</sprite>
+      <sprite>sprites\spr_08_DiverolmEx</sprite>
+      <sprite>sprites\spr_09_Cosineas</sprite>
+      <sprite>sprites\spr_10_CosineasEx</sprite>
+      <sprite>sprites\spr_13_Windrus</sprite>
+      <sprite>sprites\spr_14_WindrusEx</sprite>
+      <sprite>sprites\spr_22_Shardagas</sprite>
+      <sprite>sprites\spr_23_ShardagasEx</sprite>
+      <sprite>sprites\spr_ningen</sprite>
     </sprites>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_boundary</sprite>
@@ -174,6 +181,7 @@
     <sprite>sprites\spr_grass</sprite>
     <sprite>sprites\spr_grass_collision</sprite>
     <sprite>sprites\spr_spring</sprite>
+    <sprite>sprites\spr_stage1</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_sky</background>
@@ -394,10 +402,12 @@
       <object>objects\obj_background2</object>
     </objects>
     <object>objects\obj_grid</object>
+    <object>objects\obj_stage1</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
     <room>rooms\rm_testing</room>
+    <room>rooms\rm_FirstStage</room>
     <room>rooms\rm_template</room>
     <rooms name="Main Menu">
       <room>rooms\rm_menu</room>
@@ -452,6 +462,7 @@
     <rooms name="Pause">
       <room>rooms\rm_pause</room>
     </rooms>
+    <room>rooms\room30</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
