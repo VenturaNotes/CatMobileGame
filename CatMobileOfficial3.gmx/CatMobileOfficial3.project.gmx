@@ -181,7 +181,6 @@
     <sprite>sprites\spr_grass</sprite>
     <sprite>sprites\spr_grass_collision</sprite>
     <sprite>sprites\spr_spring</sprite>
-    <sprite>sprites\spr_stage1</sprite>
     <sprite>sprites\spr_stage1_part1</sprite>
     <sprite>sprites\spr_stage1_part2</sprite>
     <sprite>sprites\spr_stage1_part3</sprite>
@@ -410,7 +409,6 @@
       <object>objects\obj_background2</object>
     </objects>
     <object>objects\obj_grid</object>
-    <object>objects\obj_stage1</object>
     <object>objects\obj_stage1_part1</object>
     <object>objects\obj_stage1_part2</object>
     <object>objects\obj_stage1_part3</object>
