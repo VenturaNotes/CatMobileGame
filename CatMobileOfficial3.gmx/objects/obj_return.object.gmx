@@ -36,6 +36,7 @@
    {
     image_alpha = 1;
     audio_stop_all();
+    audio_play_sound(snd_return, 1, false);
     room_goto(rm_menu);
    }
 }

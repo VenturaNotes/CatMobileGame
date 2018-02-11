@@ -15,6 +15,8 @@
       <sound>sound\snd_hurt</sound>
       <sound>sound\snd_MOD_shot</sound>
       <sound>sound\snd_monster5_charge</sound>
+      <sound>sound\snd_proceed</sound>
+      <sound>sound\snd_return</sound>
     </sounds>
     <sounds name="Music">
       <sound>sound\snd_AOT</sound>
@@ -189,6 +191,7 @@
     <sprite>sprites\spr_stage1_part6</sprite>
     <sprite>sprites\spr_stage1_part7</sprite>
     <sprite>sprites\spr_stage1_part8</sprite>
+    <sprite>sprites\spr_game_quit</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_sky</background>
@@ -417,6 +420,7 @@
     <object>objects\obj_stage1_part6</object>
     <object>objects\obj_stage1_part7</object>
     <object>objects\obj_stage1_part8</object>
+    <object>objects\obj_game_quit</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
