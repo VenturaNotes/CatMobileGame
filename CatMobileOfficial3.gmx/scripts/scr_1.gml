@@ -3,6 +3,12 @@
 {
 alarm[1] = 120;
 
+    if(!instance_exists(obj_monster6)) //Windrus
+    {
+     instance_create(room_width/2,-50,obj_monster6);
+    }
+
+    /*
     if(!instance_exists(obj_monster2)) //Blue
     {
      instance_create(room_width,300,obj_monster2);
@@ -22,5 +28,6 @@ alarm[1] = 120;
     {
        instance_create(room_width,200,obj_monster5);
     }
+    */
     
 }
