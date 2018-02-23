@@ -183,18 +183,20 @@
     <sprite>sprites\spr_grass</sprite>
     <sprite>sprites\spr_grass_collision</sprite>
     <sprite>sprites\spr_spring</sprite>
-    <sprite>sprites\spr_stage1_part1</sprite>
-    <sprite>sprites\spr_stage1_part2</sprite>
-    <sprite>sprites\spr_stage1_part3</sprite>
-    <sprite>sprites\spr_stage1_part4</sprite>
-    <sprite>sprites\spr_stage1_part5</sprite>
-    <sprite>sprites\spr_stage1_part6</sprite>
-    <sprite>sprites\spr_stage1_part7</sprite>
-    <sprite>sprites\spr_stage1_part8</sprite>
     <sprite>sprites\spr_game_quit</sprite>
     <sprites name="spr_monster6">
       <sprite>sprites\spr_monster6</sprite>
       <sprite>sprites\spr_monster6_suck</sprite>
+    </sprites>
+    <sprites name="World3Level1">
+      <sprite>sprites\spr_stage1_part1</sprite>
+      <sprite>sprites\spr_stage1_part2</sprite>
+      <sprite>sprites\spr_stage1_part3</sprite>
+      <sprite>sprites\spr_stage1_part4</sprite>
+      <sprite>sprites\spr_stage1_part5</sprite>
+      <sprite>sprites\spr_stage1_part6</sprite>
+      <sprite>sprites\spr_stage1_part7</sprite>
+      <sprite>sprites\spr_stage1_part8</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
