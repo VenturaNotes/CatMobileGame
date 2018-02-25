@@ -33,6 +33,28 @@ lposition = 1
 right = keyboard_check(ord('D'));
 up = keyboard_check(ord('W'));
 left = keyboard_check(ord('A'));
+
+/*
+if(keyboard_check_pressed(vk_up))
+{
+    modify-=1;
+}
+
+if(keyboard_check_pressed(vk_down))
+{
+    modify+=1;
+}
+
+if(keyboard_check_pressed(vk_left))
+{
+    modify2-=1;
+}
+
+if(keyboard_check_pressed(vk_right))
+{
+    modify2+=1;
+}
+*/
 </string>
           </argument>
         </arguments>

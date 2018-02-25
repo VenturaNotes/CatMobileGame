@@ -187,6 +187,9 @@
     <sprites name="spr_monster6">
       <sprite>sprites\spr_monster6</sprite>
       <sprite>sprites\spr_monster6_suck</sprite>
+      <sprite>sprites\spr_monster6_attack</sprite>
+      <sprite>sprites\spr_monster6_death</sprite>
+      <sprite>sprites\spr_monster6_wind</sprite>
     </sprites>
     <sprites name="World3Level1">
       <sprite>sprites\spr_stage1_part1</sprite>
@@ -419,15 +422,18 @@
       <object>objects\obj_background2</object>
     </objects>
     <object>objects\obj_grid</object>
-    <object>objects\obj_stage1_part1</object>
-    <object>objects\obj_stage1_part2</object>
-    <object>objects\obj_stage1_part3</object>
-    <object>objects\obj_stage1_part4</object>
-    <object>objects\obj_stage1_part5</object>
-    <object>objects\obj_stage1_part6</object>
-    <object>objects\obj_stage1_part7</object>
-    <object>objects\obj_stage1_part8</object>
     <object>objects\obj_game_quit</object>
+    <objects name="World3Stage1">
+      <object>objects\obj_stage1_part1</object>
+      <object>objects\obj_stage1_part2</object>
+      <object>objects\obj_stage1_part3</object>
+      <object>objects\obj_stage1_part4</object>
+      <object>objects\obj_stage1_part5</object>
+      <object>objects\obj_stage1_part6</object>
+      <object>objects\obj_stage1_part7</object>
+      <object>objects\obj_stage1_part8</object>
+    </objects>
+    <object>objects\obj_monster6_wind</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
