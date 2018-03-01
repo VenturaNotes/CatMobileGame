@@ -17,9 +17,7 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>115</width>
-  <height>112</height>
-  <frames>
-    <frame index="0">images\spr_shop_0.png</frame>
-  </frames>
+  <width>32</width>
+  <height>32</height>
+  <frames/>
 </sprite>
