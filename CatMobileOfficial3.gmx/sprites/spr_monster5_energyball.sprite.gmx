@@ -17,7 +17,10 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>32</width>
-  <height>32</height>
-  <frames/>
+  <width>127</width>
+  <height>118</height>
+  <frames>
+    <frame index="0">images\spr_monster5_energyball_0.png</frame>
+    <frame index="1">images\spr_monster5_energyball_1.png</frame>
+  </frames>
 </sprite>
