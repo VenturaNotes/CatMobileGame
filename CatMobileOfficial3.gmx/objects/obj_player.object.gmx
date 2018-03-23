@@ -53,43 +53,17 @@ fix = 0;
 
 land = 0;
 
-image_speed = 0.5;
-
-twitch = 0; //prevents cat from glitching on two surfaces. 
+image_speed = 0.5; 
 
 runLeft = -9; //running speed
 runRight = 9; // running speed
 
-downhill = false;
-uphill = false;
-flat = false;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(twitch &gt;= 10)
-{
-    x+= 10;
-}
-twitch = 0;
+var diff1X;
+var diff1Y;
+var diff2X;
+average1 = 0;
+average2 = 0;
+
 </string>
           </argument>
         </arguments>
@@ -163,126 +137,141 @@ if (place_meeting(x,y+vsp,obj_gr)) //If player meets ground within vertical spee
         grounded = 1; //The cat is now grounded.    
     }
     vsp = 0;
-    if(image_angle != 0)
-    {
-        twitch +=1;
-        if(alarm[1] == -1)
-        {
-            alarm[1] = 15;
-        }
-    }
-    
-    if(image_angle &gt; 0)
-    {
-        image_angle -= 3;
-    }
-    else if(image_angle &lt;0)
-    {
-        image_angle +=3;
-    }
-    
-    downhill = false;
-    uphill = false;
-    flat = true;
-}
-else if (instance_exists(obj_wall) &amp;&amp; place_meeting(x+hsp,y+vsp,obj_wall)) //Horizontal collision for Slopes
-{
-    yplus = 0;
-    while(place_meeting(x+hsp,y-yplus,obj_wall) &amp;&amp; yplus &lt;= abs(1*hsp)) //while player touches wall + his hspeed and - his vspeed, add 1 to yplus. 
-    {
-        yplus += 1;
-    }
-    if(place_meeting(x+hsp, y-yplus, obj_wall))
-    {
-        while(!place_meeting(x+sign(hsp),y,obj_wall))
-        {
-            x+= sign(hsp);
-        }   
-        hsp = 0;
-    }
-    else
-    {
-        y-= yplus; 
-    }
-    vsp = 0;
-    grounded = 1;
-    if(image_angle != 15 )
-    {
-        twitch +=1;
-        if(alarm[1] == -1)
-        {
-            alarm[1] = 15;
-        }
-    }
-    if(image_angle &lt; 15)
-    {
-        image_angle +=3;
-    }
-    
-    downhill = false;
-    flat = false;
-    uphill = true;
-}
-else if (instance_exists(obj_hill2) &amp;&amp; place_meeting(x+hsp,y+vsp,obj_hill2)) //Horizontal collision for Slopes
-{
-    yplus = 0;
-    while(place_meeting(x+hsp,y-yplus,obj_hill2) &amp;&amp; yplus &lt;= abs(1*hsp)) //while player touches wall + his hspeed and - his vspeed, add 1 to yplus. 
-    {
-        yplus += 1;
-    }
-    if(place_meeting(x+hsp, y-yplus, obj_hill2))
-    {
-        while(!place_meeting(x+sign(hsp),y,obj_hill2))
-        {
-            x+= sign(hsp);
-        }   
-        hsp = 0;
-    }
-    else
-    {
-        y-= yplus; 
-    }
-    vsp = 0;
-    grounded = 1;
-    if(image_angle != -15 )
-    {
-        twitch +=1;
-        if(alarm[1] == -1)
-        {
-            alarm[1] = 15;
-        }
-    }
-    
-    if(image_angle &gt; -15)
-    {
-        image_angle -= 3;
-    }
-    
-    downhill = true;
-    flat = false;
-    uphill = false;
-
 }
 else
 {
     grounded = 0;
 }
 
-if(downhill == true)
-{
-    if(image_angle &gt; -15)
-    {
-        image_angle -= 3;
-    }
-}
-
-while(place_meeting(x,y-5,obj_hill2) || place_meeting(x,y-1,obj_gr))
+while(place_meeting(x,y-1,obj_gr))
 {
   y-=1;
 }
 
 y+=vsp;
 vsp += grav;
+
+if(grounded)
+{
+    grav = 10;
+    
+     for(yy = 0; !position_meeting(x+10,y+yy,obj_stable_ground); yy++)
+        {
+            
+            diff1X = yy;
+            if(yy &gt;= 200)
+            {
+                break;
+            }
+        }
+   
+    for(yy = 0; !position_meeting(x-10,y+yy,obj_stable_ground); yy++)
+        {
+            diff2X = yy;
+            if(yy &gt;= 200)
+            {
+                break;
+            }
+        }
+    
+    for(yy = 0; !position_meeting(x,y+yy,obj_stable_ground); yy++)
+    {
+        diff1Y = yy;
+        if(yy &gt;= 200)
+        {
+            break;
+        }
+    }
+    
+    if(diff1X &gt;= 200 &amp;&amp; diff2X &gt;= 200)
+    {
+       image_angle = 0;
+    }
+    else if(obj_controls.right)
+    {
+        if(image_angle &lt;= radtodeg(arctan2(diff1Y-diff1X,10)))
+        {
+            
+            image_angle+=abs(image_angle-radtodeg(arctan2(diff1Y-diff1X,10)))/2;
+        }
+        
+        if(image_angle &gt;=  radtodeg(arctan2(diff1Y-diff1X,10)))
+        {
+            image_angle -=abs(image_angle-radtodeg(arctan2(diff1Y-diff1X,10)))/2;
+        }
+    }
+    else if(obj_controls.left)
+    {
+        if(image_angle &lt;= radtodeg(arctan2(diff2X-diff1Y,10)))
+            {
+                image_angle+=abs(image_angle-radtodeg(arctan2(diff2X-diff1Y,10)))/2;
+            }
+            
+            if(image_angle &gt;=  radtodeg(arctan2(diff2X-diff1Y,10)))
+            {
+                image_angle -=abs(image_angle-radtodeg(arctan2(diff2X-diff1Y,10)))/2;
+            }
+    }
+    
+    /*
+    for(xx = 0; !position_meeting(x+xx,y,obj_stable_ground); xx++)
+    {
+        diff1X = xx;
+        if(xx &gt;= 400)
+        {
+            break;
+        }
+    }
+    
+    for(xx = 0; !position_meeting(x-xx,y,obj_stable_ground); xx++)
+    {
+        diff2X = xx;
+        if(xx &gt;= 400)
+        {
+            break;
+        }
+    }
+    
+    for(yy = 0; !position_meeting(x,y+yy,obj_stable_ground); yy++)
+    {
+        diff1Y = yy;
+        if(yy &gt;= 400)
+        {
+            break;
+        }
+    }
+    
+    if(diff1X &gt;= 400 &amp;&amp; diff2X &gt;= 400)
+    {
+       image_angle = 0;
+    }
+    else if(diff1X &lt; diff2X)
+    {
+       image_angle = radtodeg(arctan2(diff1Y,diff1X));
+    }
+    else if (diff2X &lt; diff1X)
+    {
+       image_angle = -radtodeg(arctan2(diff1Y,diff2X));
+    }
+    */
+}
+
+if(!grounded)
+{   
+    grav = 1;
+    if(image_angle &gt;= 2)
+    {  
+      image_angle -= 1;  
+    }
+    else if(image_angle &lt;= -2)
+    {
+        image_angle += 1;
+    }
+    else
+    {
+        image_angle = 0;
+    }
+}
 
 //Animation
 if (state == 0)
