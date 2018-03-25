@@ -88,6 +88,20 @@
       <sprite>sprites\spr_monster5_recovery</sprite>
       <sprite>sprites\spr_monster5</sprite>
     </sprites>
+    <sprites name="spr_monster6">
+      <sprite>sprites\spr_monster6</sprite>
+      <sprite>sprites\spr_monster6_suck</sprite>
+      <sprite>sprites\spr_monster6_attack</sprite>
+      <sprite>sprites\spr_monster6_death</sprite>
+      <sprite>sprites\spr_monster6_wind</sprite>
+    </sprites>
+    <sprites name="spr_monster7">
+      <sprite>sprites\spr_monster7_intro</sprite>
+      <sprite>sprites\spr_monster7_death</sprite>
+      <sprite>sprites\spr_monster7_attack</sprite>
+      <sprite>sprites\spr_monster7</sprite>
+      <sprite>sprites\spr_monster7_projectile</sprite>
+    </sprites>
     <sprites name="Endless Levels">
       <sprite>sprites\spr_level1</sprite>
       <sprite>sprites\spr_level2</sprite>
@@ -184,13 +198,6 @@
     <sprite>sprites\spr_grass_collision</sprite>
     <sprite>sprites\spr_spring</sprite>
     <sprite>sprites\spr_game_quit</sprite>
-    <sprites name="spr_monster6">
-      <sprite>sprites\spr_monster6</sprite>
-      <sprite>sprites\spr_monster6_suck</sprite>
-      <sprite>sprites\spr_monster6_attack</sprite>
-      <sprite>sprites\spr_monster6_death</sprite>
-      <sprite>sprites\spr_monster6_wind</sprite>
-    </sprites>
     <sprites name="World3Level1">
       <sprite>sprites\spr_stage1_part1</sprite>
       <sprite>sprites\spr_stage1_part2</sprite>
@@ -276,6 +283,7 @@
         <object>objects\obj_monster4</object>
         <object>objects\obj_monster5</object>
         <object>objects\obj_monster6</object>
+        <object>objects\obj_monster7</object>
       </objects>
       <objects name="Ground">
         <object>objects\obj_stable_ground</object>
@@ -306,6 +314,7 @@
       <object>objects\obj_monster4_gas</object>
       <object>objects\obj_monster5_energyball</object>
       <object>objects\obj_monster6_wind</object>
+      <object>objects\obj_monster7_projectile</object>
     </objects>
     <objects name="Buttons">
       <object>objects\obj_left</object>

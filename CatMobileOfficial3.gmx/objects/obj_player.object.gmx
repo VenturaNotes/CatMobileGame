@@ -154,7 +154,6 @@ vsp += grav;
 if(grounded)
 {
     grav = 10;
-    
      for(yy = 0; !position_meeting(x+10,y+yy,obj_stable_ground); yy++)
         {
             
@@ -212,48 +211,6 @@ if(grounded)
                 image_angle -=abs(image_angle-radtodeg(arctan2(diff2X-diff1Y,10)))/2;
             }
     }
-    
-    /*
-    for(xx = 0; !position_meeting(x+xx,y,obj_stable_ground); xx++)
-    {
-        diff1X = xx;
-        if(xx &gt;= 400)
-        {
-            break;
-        }
-    }
-    
-    for(xx = 0; !position_meeting(x-xx,y,obj_stable_ground); xx++)
-    {
-        diff2X = xx;
-        if(xx &gt;= 400)
-        {
-            break;
-        }
-    }
-    
-    for(yy = 0; !position_meeting(x,y+yy,obj_stable_ground); yy++)
-    {
-        diff1Y = yy;
-        if(yy &gt;= 400)
-        {
-            break;
-        }
-    }
-    
-    if(diff1X &gt;= 400 &amp;&amp; diff2X &gt;= 400)
-    {
-       image_angle = 0;
-    }
-    else if(diff1X &lt; diff2X)
-    {
-       image_angle = radtodeg(arctan2(diff1Y,diff1X));
-    }
-    else if (diff2X &lt; diff1X)
-    {
-       image_angle = -radtodeg(arctan2(diff1Y,diff2X));
-    }
-    */
 }
 
 if(!grounded)
