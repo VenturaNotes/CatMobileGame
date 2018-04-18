@@ -208,6 +208,34 @@
       <sprite>sprites\spr_stage1_part7</sprite>
       <sprite>sprites\spr_stage1_part8</sprite>
     </sprites>
+    <sprites name="World1Level2">
+      <sprite>sprites\spr_stage2_part4</sprite>
+      <sprite>sprites\spr_stage2_part5</sprite>
+      <sprite>sprites\spr_stage2_part6</sprite>
+      <sprite>sprites\spr_stage2_part12</sprite>
+      <sprite>sprites\spr_stage2_part13</sprite>
+      <sprite>sprites\spr_stage2_part14</sprite>
+      <sprite>sprites\spr_stage2_part15</sprite>
+      <sprite>sprites\spr_stage2_part16</sprite>
+      <sprite>sprites\spr_stage2_part17</sprite>
+      <sprite>sprites\spr_stage2_part18</sprite>
+      <sprite>sprites\spr_stage2_part19</sprite>
+      <sprite>sprites\spr_stage2_part20</sprite>
+      <sprite>sprites\spr_stage2_part21</sprite>
+      <sprite>sprites\spr_stage2_part22</sprite>
+      <sprite>sprites\spr_stage2_part23</sprite>
+      <sprite>sprites\spr_stage2_part24</sprite>
+      <sprite>sprites\spr_stage2_part25</sprite>
+      <sprite>sprites\spr_stage2_part26</sprite>
+      <sprite>sprites\spr_stage2_part27</sprite>
+      <sprite>sprites\spr_stage2_part28</sprite>
+      <sprite>sprites\spr_stage2_part29</sprite>
+      <sprite>sprites\spr_stage2_part30</sprite>
+      <sprite>sprites\spr_stage2_part31</sprite>
+      <sprite>sprites\spr_stage2_part32</sprite>
+      <sprite>sprites\spr_stage2_part33</sprite>
+      <sprite>sprites\spr_stage2_reference</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_sky</background>
@@ -284,9 +312,6 @@
         <object>objects\obj_monster5</object>
         <object>objects\obj_monster6</object>
         <object>objects\obj_monster7</object>
-      </objects>
-      <objects name="Ground">
-        <object>objects\obj_stable_ground</object>
       </objects>
       <object>objects\obj_flag</object>
       <object>objects\obj_spring</object>
@@ -403,6 +428,44 @@
     </objects>
     <objects name="Ground">
       <object>objects\obj_gr</object>
+      <object>objects\obj_stable_ground</object>
+      <objects name="World3Stage1">
+        <object>objects\obj_stage1_part1</object>
+        <object>objects\obj_stage1_part2</object>
+        <object>objects\obj_stage1_part3</object>
+        <object>objects\obj_stage1_part4</object>
+        <object>objects\obj_stage1_part5</object>
+        <object>objects\obj_stage1_part6</object>
+        <object>objects\obj_stage1_part7</object>
+        <object>objects\obj_stage1_part8</object>
+      </objects>
+      <objects name="World1Stage2">
+        <object>objects\obj_stage2_part4</object>
+        <object>objects\obj_stage2_part5</object>
+        <object>objects\obj_stage2_part6</object>
+        <object>objects\obj_stage2_part12</object>
+        <object>objects\obj_stage2_part13</object>
+        <object>objects\obj_stage2_part14</object>
+        <object>objects\obj_stage2_part15</object>
+        <object>objects\obj_stage2_part16</object>
+        <object>objects\obj_stage2_part17</object>
+        <object>objects\obj_stage2_part18</object>
+        <object>objects\obj_stage2_part19</object>
+        <object>objects\obj_stage2_part20</object>
+        <object>objects\obj_stage2_part21</object>
+        <object>objects\obj_stage2_part22</object>
+        <object>objects\obj_stage2_part23</object>
+        <object>objects\obj_stage2_part24</object>
+        <object>objects\obj_stage2_part25</object>
+        <object>objects\obj_stage2_part26</object>
+        <object>objects\obj_stage2_part27</object>
+        <object>objects\obj_stage2_part28</object>
+        <object>objects\obj_stage2_part29</object>
+        <object>objects\obj_stage2_part30</object>
+        <object>objects\obj_stage2_part31</object>
+        <object>objects\obj_stage2_part32</object>
+        <object>objects\obj_stage2_part33</object>
+      </objects>
     </objects>
     <objects name="Win in Regular Levels">
       <object>objects\obj_win</object>
@@ -423,20 +486,11 @@
     </objects>
     <object>objects\obj_grid</object>
     <object>objects\obj_game_quit</object>
-    <objects name="World3Stage1">
-      <object>objects\obj_stage1_part1</object>
-      <object>objects\obj_stage1_part2</object>
-      <object>objects\obj_stage1_part3</object>
-      <object>objects\obj_stage1_part4</object>
-      <object>objects\obj_stage1_part5</object>
-      <object>objects\obj_stage1_part6</object>
-      <object>objects\obj_stage1_part7</object>
-      <object>objects\obj_stage1_part8</object>
-    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
     <room>rooms\rm_FirstStage</room>
+    <room>rooms\rm_World1Stage2</room>
     <room>rooms\rm_template</room>
     <rooms name="Main Menu">
       <room>rooms\rm_menu</room>

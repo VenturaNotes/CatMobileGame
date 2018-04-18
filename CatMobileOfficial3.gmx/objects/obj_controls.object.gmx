@@ -119,7 +119,7 @@ fposition = obj_player.x;
 
 if(isActive)
 {
-    if(left)
+    if(left == true &amp;&amp; right == false)
     {
      if (obj_player.x &gt; obj_init.leftBarrier &amp;&amp; obj_player.x &gt; view_xview[0]+100 &amp;&amp; (obj_player.state = 0 || obj_player.state = 1|| obj_player.state == 10))
         {
@@ -147,7 +147,7 @@ if(isActive)
                         hsp+=runLeft;
                     }
                     //vsp = 0;
-                    grounded = 1;
+                    //grounded = 1;
                 }
                 else
                 {
@@ -190,45 +190,18 @@ if(isActive)
         }
          else
          {
-        obj_left.image_alpha = 1;
-        if(obj_player.state == 1)
-        {
-            obj_player.state = 0;
+            obj_left.image_alpha = 1;
+            if(obj_player.state == 1)
+            {
+                obj_player.state = 0;
+            }
         }
-    }
     
-    if(up)
-    {
-       if (obj_player.grounded)
-        {
-            obj_player.grav = 1;
-         obj_player.state = 2;
-         if(alarm[0] == -1)
-         {
-            alarm[0] = 4;
-         }
-        }
-        obj_up.image_alpha = .5;
-    }
-    else
-    {
-        obj_up.image_alpha = 1;
-    }
-    
-    if(right)
+    if(right == true &amp;&amp; left == false)
     {
         if (obj_player.x &lt; view_xview[0]+700 &amp;&amp; (obj_player.state == 0 || obj_player.state == 3 || obj_player.state == 10)) //obj_player.x &lt; room_width-300 &amp;&amp; 
             {
                 obj_player.state = 3; 
-                
-                /*
-                with(obj_player)
-                {
-                    sprite_set_offset(sprite_index, 140, 140);
-                }
-                obj_player.image_xscale = 0.8;
-                sprite_set_offset(sprite_index,75,140);
-                */
                 
                 with(obj_player)
              {   
@@ -252,7 +225,7 @@ if(isActive)
                         hsp+=runRight;
                     }
                     //vsp = 0;
-                    grounded = 1;
+                    //grounded = 1;
                 }
                 else
                 {
@@ -300,6 +273,24 @@ if(isActive)
         {
             obj_player.state = 0;
         }
+    }
+    
+   if(up)
+    {
+       if (obj_player.grounded)
+        {
+         obj_player.grav = 1;
+         obj_player.state = 2;
+         if(alarm[0] == -1)
+         {
+            alarm[0] = 4;
+         }
+        }
+        obj_up.image_alpha = .5;
+    }
+    else
+    {
+        obj_up.image_alpha = 1;
     }
     
     if(left == true)

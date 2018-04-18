@@ -64,6 +64,7 @@ var diff2X;
 average1 = 0;
 average2 = 0;
 
+
 </string>
           </argument>
         </arguments>
@@ -115,15 +116,8 @@ if (counter &gt; 5)
 {
     counter = 1;
 }
-/*
-if (room != rm_game &amp;&amp; room != rm_game2 &amp;&amp; room != rm_game3)
-{
-    hsp+=6;
-}
-*/
-x+=hsp;
 
-//obj_background.scroll = hsp;
+x+=hsp;
 
 //Vertical Collision with the ground
 if (place_meeting(x,y+vsp,obj_gr)) //If player meets ground within vertical speed
@@ -141,11 +135,6 @@ if (place_meeting(x,y+vsp,obj_gr)) //If player meets ground within vertical spee
 else
 {
     grounded = 0;
-}
-
-while(place_meeting(x,y-1,obj_gr))
-{
-  y-=1;
 }
 
 y+=vsp;
@@ -188,20 +177,25 @@ if(grounded)
     }
     else if(obj_controls.right)
     {
-        if(image_angle &lt;= radtodeg(arctan2(diff1Y-diff1X,10)))
+        if(abs(image_angle-radtodeg(arctan2(diff1Y-diff1X,10))) &gt; 10)
         {
+            if(image_angle &lt;= radtodeg(arctan2(diff1Y-diff1X,10)))
+            {
             
             image_angle+=abs(image_angle-radtodeg(arctan2(diff1Y-diff1X,10)))/2;
-        }
+            }
         
-        if(image_angle &gt;=  radtodeg(arctan2(diff1Y-diff1X,10)))
-        {
-            image_angle -=abs(image_angle-radtodeg(arctan2(diff1Y-diff1X,10)))/2;
+            if(image_angle &gt;=  radtodeg(arctan2(diff1Y-diff1X,10)))
+            {
+                image_angle -=abs(image_angle-radtodeg(arctan2(diff1Y-diff1X,10)))/2;
+            }
         }
     }
     else if(obj_controls.left)
     {
-        if(image_angle &lt;= radtodeg(arctan2(diff2X-diff1Y,10)))
+        if(abs(image_angle-radtodeg(arctan2(diff1Y-diff1X,10))) &gt; 10)
+        {
+            if(image_angle &lt;= radtodeg(arctan2(diff2X-diff1Y,10)))
             {
                 image_angle+=abs(image_angle-radtodeg(arctan2(diff2X-diff1Y,10)))/2;
             }
@@ -210,9 +204,11 @@ if(grounded)
             {
                 image_angle -=abs(image_angle-radtodeg(arctan2(diff2X-diff1Y,10)))/2;
             }
+        }
     }
 }
 
+//When not grounded 
 if(!grounded)
 {   
     grav = 1;
@@ -409,7 +405,7 @@ hsp = 0;
         }
         else
         {
-            draw_sprite_ext(sprite_index,image_index,x,y,0.8,0.8,0,c_white,0.25)
+            draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,0.25)
         }
     }
     else
