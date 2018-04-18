@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>spr_player_run</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -63,7 +63,6 @@ var diff1Y;
 var diff2X;
 average1 = 0;
 average2 = 0;
-
 
 </string>
           </argument>
@@ -126,7 +125,7 @@ if (place_meeting(x,y+vsp,obj_gr)) //If player meets ground within vertical spee
     {
         y+=sign(vsp); //1 is added to the y value moving the cat down. 
     }
-    if (sign(vsp) == 1) //This will always be true since the cat is still considered to be in the air. 
+    if (sign(vsp) == 1) //True if cat in air
     {
         grounded = 1; //The cat is now grounded.    
     }
@@ -142,7 +141,7 @@ vsp += grav;
 
 if(grounded)
 {
-    grav = 10;
+     grav = 10;
      for(yy = 0; !position_meeting(x+10,y+yy,obj_stable_ground); yy++)
         {
             
@@ -175,14 +174,14 @@ if(grounded)
     {
        image_angle = 0;
     }
+    
     else if(obj_controls.right)
     {
-        if(abs(image_angle-radtodeg(arctan2(diff1Y-diff1X,10))) &gt; 10)
+        if((abs(image_angle-radtodeg(arctan2(diff1Y-diff1X,10))) &gt; 10))
         {
             if(image_angle &lt;= radtodeg(arctan2(diff1Y-diff1X,10)))
             {
-            
-            image_angle+=abs(image_angle-radtodeg(arctan2(diff1Y-diff1X,10)))/2;
+            image_angle += abs(image_angle-radtodeg(arctan2(diff1Y-diff1X,10)))/2;
             }
         
             if(image_angle &gt;=  radtodeg(arctan2(diff1Y-diff1X,10)))
@@ -193,7 +192,7 @@ if(grounded)
     }
     else if(obj_controls.left)
     {
-        if(abs(image_angle-radtodeg(arctan2(diff1Y-diff1X,10))) &gt; 10)
+        if(abs(image_angle-radtodeg(arctan2(diff2X-diff1Y,10))) &gt; 10)
         {
             if(image_angle &lt;= radtodeg(arctan2(diff2X-diff1Y,10)))
             {
@@ -208,7 +207,6 @@ if(grounded)
     }
 }
 
-//When not grounded 
 if(!grounded)
 {   
     grav = 1;
@@ -226,12 +224,17 @@ if(!grounded)
     }
 }
 
+if(position_meeting(x,y,obj_gr))
+{
+    show_debug_message("ok");
+}
+
 //Animation
 if (state == 0)
 {
     if (grounded)
     {
-        image_speed = 0.5;
+       image_speed = 0.5;
        sprite_index = spr_player_run;
         eye+=1;
         if(eye &gt;= 300 &amp;&amp; (image_index == 0 || eye2 = 1))
@@ -247,12 +250,11 @@ if (state == 0)
     }
     else
    {
-   //state = 2;
     eye = 0;
     eye2 = 0;
    }
 }
-    
+
 if(state == 2)
 {
    if(sprite_index == spr_player_attack2 &amp;&amp; fix == 0)
@@ -305,7 +307,7 @@ if (state == 4) //Attack animation
 {
     if(obj_multitouch.air == 0)
     {
-            fix = 0;
+         fix = 0;
          if(image_index == 5)
          {
             instance_create(x+100,y-70,obj_player_attack_hitbox)

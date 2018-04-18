@@ -121,10 +121,8 @@ if(isActive)
 {
     if(left == true &amp;&amp; right == false)
     {
-     if (obj_player.x &gt; obj_init.leftBarrier &amp;&amp; obj_player.x &gt; view_xview[0]+100 &amp;&amp; (obj_player.state = 0 || obj_player.state = 1|| obj_player.state == 10))
+     if (obj_player.x &gt; obj_init.leftBarrier &amp;&amp; obj_player.x &gt; view_xview[0]+100) //&amp;&amp; (obj_player.state = 0 || obj_player.state = 1|| obj_player.state == 10)
         {
-            obj_player.state = 1;
-            
             with(obj_player)
             {
                 if (instance_exists(obj_gr) &amp;&amp; place_meeting(x+runLeft,y+vsp,obj_gr))
@@ -146,8 +144,6 @@ if(isActive)
                         y-=yplus;
                         hsp+=runLeft;
                     }
-                    //vsp = 0;
-                    //grounded = 1;
                 }
                 else
                 {
@@ -159,8 +155,11 @@ if(isActive)
             {
                 with(obj_player)
                 {
-                    image_speed = 0.5;
-                    sprite_index = spr_player_run;
+                    if (state != 4 &amp;&amp; state!= 2)
+                    {
+                        image_speed = 0.5;
+                        sprite_index = spr_player_run;
+                    }
                 }
             }
         }
@@ -191,17 +190,12 @@ if(isActive)
          else
          {
             obj_left.image_alpha = 1;
-            if(obj_player.state == 1)
-            {
-                obj_player.state = 0;
-            }
         }
     
     if(right == true &amp;&amp; left == false)
     {
-        if (obj_player.x &lt; view_xview[0]+700 &amp;&amp; (obj_player.state == 0 || obj_player.state == 3 || obj_player.state == 10)) //obj_player.x &lt; room_width-300 &amp;&amp; 
+        if (obj_player.x &lt; view_xview[0]+700) //(obj_player.state == 0 || obj_player.state == 3 || obj_player.state == 10)
             {
-                obj_player.state = 3; 
                 
                 with(obj_player)
              {   
@@ -224,8 +218,6 @@ if(isActive)
                         y-=yplus;
                         hsp+=runRight;
                     }
-                    //vsp = 0;
-                    //grounded = 1;
                 }
                 else
                 {
@@ -237,8 +229,11 @@ if(isActive)
                  {
                     with(obj_player)
                     {
-                        image_speed = 0.5;
-                        sprite_index = spr_player_run;
+                        if(state != 4 &amp;&amp; state != 2)
+                        {
+                            image_speed = 0.5;
+                            sprite_index = spr_player_run;
+                        }
                     }
                  }
             }
@@ -269,10 +264,6 @@ if(isActive)
     else
     {
         obj_right.image_alpha = 1;
-        if(obj_player.state == 3)
-        {
-            obj_player.state = 0;
-        }
     }
     
    if(up)
@@ -293,6 +284,7 @@ if(isActive)
         obj_up.image_alpha = 1;
     }
     
+    /*
     if(left == true)
     {
         with(obj_player)
@@ -310,6 +302,7 @@ if(isActive)
             image_xscale = 0.8;
         }
     }
+    */
 }
 
 lposition = obj_player.x;
