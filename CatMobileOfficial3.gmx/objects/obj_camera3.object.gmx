@@ -294,22 +294,22 @@ if(high == 1 &amp;&amp; spring == false)
     active2 = false;
     active3 = false;
     
-    if (initialPosition &gt;= view_yview[0] + obj_player.vsp - obj_player.grav)
+    if (initialPosition &gt;= view_yview[0] + obj_player.vsp - obj_player.gravY)
     {
-        obj_left.y += obj_player.vsp - obj_player.grav;
-        obj_right.y += obj_player.vsp - obj_player.grav;
-        obj_MOD.y += obj_player.vsp - obj_player.grav;
-        obj_melee.y += obj_player.vsp - obj_player.grav;
-        obj_angled.y += obj_player.vsp - obj_player.grav;
-        obj_straight.y += obj_player.vsp - obj_player.grav;
-        obj_up.y += obj_player.vsp - obj_player.grav;
-        obj_switch.y += obj_player.vsp - obj_player.grav;
-        obj_heart.y += obj_player.vsp - obj_player.grav;
-        obj_kills.y += obj_player.vsp - obj_player.grav;
-        obj_paws.y += obj_player.vsp - obj_player.grav;
-        obj_background_controls.y += obj_player.vsp - obj_player.grav;
-        view_yview[0] += obj_player.vsp - obj_player.grav;
-        background_y[0] += obj_player.vsp - obj_player.grav;
+        obj_left.y += obj_player.vsp - obj_player.gravY;
+        obj_right.y += obj_player.vsp - obj_player.gravY;
+        obj_MOD.y += obj_player.vsp - obj_player.gravY;
+        obj_melee.y += obj_player.vsp - obj_player.gravY;
+        obj_angled.y += obj_player.vsp - obj_player.gravY;
+        obj_straight.y += obj_player.vsp - obj_player.gravY;
+        obj_up.y += obj_player.vsp - obj_player.gravY;
+        obj_switch.y += obj_player.vsp - obj_player.gravY;
+        obj_heart.y += obj_player.vsp - obj_player.gravY;
+        obj_kills.y += obj_player.vsp - obj_player.gravY;
+        obj_paws.y += obj_player.vsp - obj_player.gravY;
+        obj_background_controls.y += obj_player.vsp - obj_player.gravY;
+        view_yview[0] += obj_player.vsp - obj_player.gravY;
+        background_y[0] += obj_player.vsp - obj_player.gravY;
     }
 }
 
@@ -322,7 +322,7 @@ if(obj_player.grounded == true)
     
 //HORIZONTAL CAMERA MOVEMENT  
 
-    if(obj_player.x &lt; view_xview[0]+400 &amp;&amp; obj_controls.left == true) //+400
+    if(obj_player.x &lt; view_xview[0]+400 &amp;&amp; obj_player.left == true) //+400 was obj_controls.left
     {
         view_xview[0] += obj_player.hsp;
         background_x[0] += obj_player.hsp;
@@ -342,7 +342,7 @@ if(obj_player.grounded == true)
         obj_background_controls.x += obj_player.hsp;
     }
     
-     if(obj_player.x &gt; view_xview[0]+500 &amp;&amp; obj_controls.right == true)
+     if(obj_player.x &gt; view_xview[0]+500 &amp;&amp; obj_player.right == true) //was obj_controls.right
     {
         view_xview[0] += obj_player.hsp;
         background_x[0] += obj_player.hsp;

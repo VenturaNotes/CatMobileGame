@@ -236,6 +236,7 @@
       <sprite>sprites\spr_stage2_part33</sprite>
       <sprite>sprites\spr_stage2_reference</sprite>
     </sprites>
+    <sprite>sprites\spr_test1</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_sky</background>
@@ -481,16 +482,18 @@
       <object>objects\obj_sound</object>
     </objects>
     <objects name="Controls Camera">
-      <object>objects\obj_background2</object>
       <object>objects\obj_camera3</object>
     </objects>
     <object>objects\obj_grid</object>
     <object>objects\obj_game_quit</object>
+    <object>objects\Lost_Code</object>
+    <object>objects\obj_test1</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
     <room>rooms\rm_FirstStage</room>
     <room>rooms\rm_World1Stage2</room>
+    <room>rooms\rm_test1</room>
     <room>rooms\rm_template</room>
     <rooms name="Main Menu">
       <room>rooms\rm_menu</room>
@@ -538,6 +541,7 @@
       <room>rooms\rm_pause</room>
     </rooms>
     <room>rooms\room30</room>
+    <room>rooms\room24</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

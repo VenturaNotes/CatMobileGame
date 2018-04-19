@@ -28,8 +28,12 @@
             <string>///variables
 image_xscale = 0.8;
 image_yscale = 0.8;
+image_angle = 0;
 
-grav = 1; //Gravity
+gravX = 0;
+gravY = 5;
+//grav = 5;
+
 vsp = 0; //Vertical speed
 hsp = 0; //Horizontal speed
 grounded = 0; //Are you on the ground
@@ -55,14 +59,20 @@ land = 0;
 
 image_speed = 0.5; 
 
-runLeft = -9; //running speed
-runRight = 9; // running speed
+runLeft  = 0; //running speed -9
+runRight = 0; // running speed 9
 
 var diff1X;
 var diff1Y;
-var diff2X;
 average1 = 0;
 average2 = 0;
+
+var x1;
+y1 = 0;
+var x2;
+y2 = 0;
+
+line1 = false;
 
 </string>
           </argument>
@@ -109,40 +119,110 @@ average2 = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Invincibility Frames
+            <string>right = keyboard_check(ord('D'));
+//up = keyboard_check(ord('W'));
+left = keyboard_check(ord('A'));
+grounded = 1;
+//Invincibility Frames
 counter++;
 if (counter &gt; 5)
 {
     counter = 1;
 }
 
-x+=hsp;
-
-//Vertical Collision with the ground
-if (place_meeting(x,y+vsp,obj_gr)) //If player meets ground within vertical speed
+if(right)
 {
-    while(!place_meeting(x,y+sign(vsp),obj_gr)) //While not touching ground, add 1 to vertical height. 
+    hsp += runRight;
+    vsp += y1-y2;
+}
+else if(left)
+{
+    hsp += runLeft;
+    vsp+= y2-y1;    
+}
+
+//hsp += gravX;
+//vsp += gravY;
+
+if (place_meeting(x+hsp,y+vsp,obj_gr))
+{
+    yplus = 0;
+    while(place_meeting(x+hsp,y-yplus,obj_gr) &amp;&amp; yplus &lt;= abs(7*hsp))
     {
-        y+=sign(vsp); //1 is added to the y value moving the cat down. 
+        yplus += 1;
     }
-    if (sign(vsp) == 1) //True if cat in air
+    if(place_meeting(x+hsp,y-yplus,obj_gr))
     {
-        grounded = 1; //The cat is now grounded.    
+        while(!place_meeting(x+sign(hsp),y,obj_gr))
+        {
+            x+= sign(hsp);
+        }   
+    }
+    else
+    {
+        y-=yplus;
+        x+=hsp;
+    }
+    grounded = true;
+    vsp=0;
+    hsp=0;
+}
+else
+{
+    x += hsp;
+    y += vsp;
+}
+
+
+
+/*
+if(place_meeting(x,y+vsp,obj_gr))
+{
+    while(!place_meeting(x,y+sign(vsp),obj_gr))
+    {
+        y+= sign(vsp);
+    }
+    grounded = 1;
+}
+else
+{
+    y+= vsp;
+}
+*/
+
+/*
+if(place_meeting(x+hsp,y,obj_gr))
+{
+    while(!place_meeting(x+hsp,y,obj_gr))
+    {
+        x+=sign(hsp);
+    }
+    hsp = 0;
+}
+else
+{
+    x+=hsp;
+}
+
+if(place_meeting(x,y+vsp,obj_gr))
+{
+    while(!place_meeting(x,y+vsp,obj_gr))
+    {
+        y+=sign(vsp);
     }
     vsp = 0;
 }
 else
 {
-    grounded = 0;
+    y+=vsp;
 }
+*/
 
-y+=vsp;
-vsp += grav;
 
+//Angled Movement
 if(grounded)
 {
-     grav = 10;
-     for(yy = 0; !position_meeting(x+10,y+yy,obj_stable_ground); yy++)
+     for(yy = 0; !position_meeting((x+cos(degtorad(image_angle))*10) + sin(degtorad(image_angle))*yy,(y-sin(degtorad(image_angle))*10)+cos(degtorad(image_angle))*yy,obj_stable_ground); yy++)
         {
             
             diff1X = yy;
@@ -151,17 +231,8 @@ if(grounded)
                 break;
             }
         }
-   
-    for(yy = 0; !position_meeting(x-10,y+yy,obj_stable_ground); yy++)
-        {
-            diff2X = yy;
-            if(yy &gt;= 200)
-            {
-                break;
-            }
-        }
-    
-    for(yy = 0; !position_meeting(x,y+yy,obj_stable_ground); yy++)
+        
+    for(yy = 0; !position_meeting(x+(sin(degtorad(image_angle))*yy),y+(cos(degtorad(image_angle))*yy),obj_stable_ground); yy++)
     {
         diff1Y = yy;
         if(yy &gt;= 200)
@@ -169,47 +240,38 @@ if(grounded)
             break;
         }
     }
-    
-    if(diff1X &gt;= 200 &amp;&amp; diff2X &gt;= 200)
+        x1 = (x+cos(degtorad(image_angle))*10) + sin(degtorad(image_angle))*diff1X;
+        y1 = (y-sin(degtorad(image_angle))*10)+ cos(degtorad(image_angle))*diff1X;
+        x2 = x+(sin(degtorad(image_angle))*diff1Y);
+        y2 = y+(cos(degtorad(image_angle))*diff1Y);
+        
+        runRight = x1-x2;
+        runLeft = x2-x1;
+        gravY = (x1-x2);
+        gravX = (y1-y2);
+        
+        line1 = true;
+        var dist = sqrt(power(x2-x1,2)+power(y2-y1,2));
+        var inverseSlope = -1/((y1-y2)/(x1-x2));
+        
+    if(diff1X &gt;= 200)
     {
        image_angle = 0;
     }
     
-    else if(obj_controls.right)
+    if(radtodeg(arctan2(diff1Y-diff1X,dist)) != 0)
     {
-        if((abs(image_angle-radtodeg(arctan2(diff1Y-diff1X,10))) &gt; 10))
-        {
-            if(image_angle &lt;= radtodeg(arctan2(diff1Y-diff1X,10)))
-            {
-            image_angle += abs(image_angle-radtodeg(arctan2(diff1Y-diff1X,10)))/2;
-            }
-        
-            if(image_angle &gt;=  radtodeg(arctan2(diff1Y-diff1X,10)))
-            {
-                image_angle -=abs(image_angle-radtodeg(arctan2(diff1Y-diff1X,10)))/2;
-            }
-        }
+        image_angle += radtodeg(arctan2(diff1Y-diff1X,dist))/3;
     }
-    else if(obj_controls.left)
-    {
-        if(abs(image_angle-radtodeg(arctan2(diff2X-diff1Y,10))) &gt; 10)
-        {
-            if(image_angle &lt;= radtodeg(arctan2(diff2X-diff1Y,10)))
-            {
-                image_angle+=abs(image_angle-radtodeg(arctan2(diff2X-diff1Y,10)))/2;
-            }
-            
-            if(image_angle &gt;=  radtodeg(arctan2(diff2X-diff1Y,10)))
-            {
-                image_angle -=abs(image_angle-radtodeg(arctan2(diff2X-diff1Y,10)))/2;
-            }
-        }
-    }
+}
+else
+{
+    line1 = false;
 }
 
 if(!grounded)
 {   
-    grav = 1;
+  // grav = 1;
     if(image_angle &gt;= 2)
     {  
       image_angle -= 1;  
@@ -222,11 +284,6 @@ if(!grounded)
     {
         image_angle = 0;
     }
-}
-
-if(position_meeting(x,y,obj_gr))
-{
-    show_debug_message("ok");
 }
 
 //Animation
@@ -353,7 +410,7 @@ if(grounded == 1 &amp;&amp; state != 4)
 //Death
 if(obj_heart.hearts &lt;= 0)
 {
-    obj_controls.isActive = false;
+    //obj_controls.isActive = false;
     instance_deactivate_object(obj_straight);
     instance_deactivate_object(obj_angled);
     instance_deactivate_object(obj_left);
@@ -375,6 +432,7 @@ if(obj_heart.hearts &lt;= 0)
 }
 
 hsp = 0;
+vsp = 0;
 </string>
           </argument>
         </arguments>
@@ -397,7 +455,17 @@ hsp = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !(obj_heart.hearts &lt;= 0)
+            <string>if(line1 == true)
+{
+   draw_set_colour(c_yellow);
+   draw_line(x1,y1,x2,y2);
+   draw_set_colour(c_red);
+   draw_line(x+cos(degtorad(image_angle))*10,y-sin(degtorad(image_angle))*10,(x+cos(degtorad(image_angle))*10) + sin(degtorad(image_angle))*diff1X,(y-sin(degtorad(image_angle))*10)+cos(degtorad(image_angle))*diff1X);
+   draw_set_colour(c_blue);
+   draw_line(x,y,x+(sin(degtorad(image_angle))*diff1Y),y+(cos(degtorad(image_angle))*diff1Y));
+}
+
+if !(obj_heart.hearts &lt;= 0)
 {
     if (recently_hit == true)
     {
@@ -418,6 +486,22 @@ hsp = 0;
 </string>
           </argument>
         </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="82">
+      <action>
+        <libid>1</libid>
+        <id>331</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_restart_game</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
   </events>

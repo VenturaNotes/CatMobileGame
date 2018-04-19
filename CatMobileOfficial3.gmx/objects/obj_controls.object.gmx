@@ -33,28 +33,6 @@ lposition = 1
 right = keyboard_check(ord('D'));
 up = keyboard_check(ord('W'));
 left = keyboard_check(ord('A'));
-
-/*
-if(keyboard_check_pressed(vk_up))
-{
-    modify-=1;
-}
-
-if(keyboard_check_pressed(vk_down))
-{
-    modify+=1;
-}
-
-if(keyboard_check_pressed(vk_left))
-{
-    modify2-=1;
-}
-
-if(keyboard_check_pressed(vk_right))
-{
-    modify2+=1;
-}
-*/
 </string>
           </argument>
         </arguments>
@@ -121,34 +99,34 @@ if(isActive)
 {
     if(left == true &amp;&amp; right == false)
     {
-     if (obj_player.x &gt; obj_init.leftBarrier &amp;&amp; obj_player.x &gt; view_xview[0]+100) //&amp;&amp; (obj_player.state = 0 || obj_player.state = 1|| obj_player.state == 10)
+     if (obj_player.x &gt; obj_init.leftBarrier &amp;&amp; obj_player.x &gt; view_xview[0]+100)
         {
             with(obj_player)
             {
-                if (instance_exists(obj_gr) &amp;&amp; place_meeting(x+runLeft,y+vsp,obj_gr))
-                {
-                    yplus = 0;
-                    while(place_meeting(x+runLeft,y-yplus,obj_gr) &amp;&amp; yplus &lt;= abs(7*runLeft))
+                    if (instance_exists(obj_gr) &amp;&amp; place_meeting(x+runLeft,y+vsp,obj_gr))
                     {
-                        yplus += 1;
-                    }
-                    if(place_meeting(x+runLeft,y-yplus,obj_gr))
-                    {
-                        while(!place_meeting(x+sign(runLeft),y,obj_gr))
+                        yplus = 0;
+                        while(place_meeting(x+runLeft,y-yplus,obj_gr) &amp;&amp; yplus &lt;= abs(7*runLeft))
                         {
-                            x+= sign(runLeft);
-                        }   
+                            yplus += 1;
+                        }
+                        if(place_meeting(x+runLeft,y-yplus,obj_gr))
+                        {
+                            while(!place_meeting(x+sign(runLeft),y,obj_gr))
+                            {
+                                x+= sign(runLeft);
+                            }   
+                        }
+                        else
+                        {
+                            y-=yplus;
+                            hsp+=runLeft;
+                        }
                     }
                     else
                     {
-                        y-=yplus;
-                        hsp+=runLeft;
+                        hsp += runLeft;
                     }
-                }
-                else
-                {
-                    hsp += runLeft;
-                }
             }
             
             if(!instance_exists(obj_player_head))
@@ -194,37 +172,37 @@ if(isActive)
     
     if(right == true &amp;&amp; left == false)
     {
-        if (obj_player.x &lt; view_xview[0]+700) //(obj_player.state == 0 || obj_player.state == 3 || obj_player.state == 10)
+        if (obj_player.x &lt; view_xview[0]+700)
             {
                 
                 with(obj_player)
-             {   
-                if (instance_exists(obj_gr) &amp;&amp; place_meeting(x+runRight,y+vsp,obj_gr))
-                {
-                    yplus = 0;
-                    while(place_meeting(x+runRight,y-yplus,obj_gr) &amp;&amp; yplus &lt;= abs(7*runRight))
+                 {  
+                    if (instance_exists(obj_gr) &amp;&amp; place_meeting(x+runRight,y+vsp,obj_gr))
                     {
-                        yplus += 1;
-                    }
-                    if(place_meeting(x+runRight,y-yplus,obj_gr))
-                    {
-                        while(!place_meeting(x+sign(runRight),y,obj_gr))
+                        yplus = 0;
+                        while(place_meeting(x+runRight,y-yplus,obj_gr) &amp;&amp; yplus &lt;= abs(7*runRight))
                         {
-                            x+= sign(runRight);
-                        }   
+                            yplus += 1;
+                        }
+                        if(place_meeting(x+runRight,y-yplus,obj_gr))
+                        {
+                            while(!place_meeting(x+sign(runRight),y,obj_gr))
+                            {
+                                x+= sign(runRight);
+                            }   
+                        }
+                        else
+                        {
+                            y-=yplus;
+                            hsp+=runRight;
+                        }
                     }
                     else
                     {
-                        y-=yplus;
-                        hsp+=runRight;
+                        hsp += runRight;
                     }
                 }
-                else
-                {
-                    hsp += runRight;
-                }
-            }
-                
+                    
                 if(!instance_exists(obj_player_head))
                  {
                     with(obj_player)
@@ -284,6 +262,7 @@ if(isActive)
         obj_up.image_alpha = 1;
     }
     
+    //TURNS THE CHARACTER AROUND DO NOT DELETE
     /*
     if(left == true)
     {
