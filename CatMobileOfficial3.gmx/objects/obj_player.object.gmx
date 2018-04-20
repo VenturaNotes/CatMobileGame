@@ -139,7 +139,8 @@ if(right)
     hsp += runRight;
     vsp += y1-y2;
 }
-else if(left)
+
+if(left)
 {
     hsp += runLeft;
     vsp+= y2-y1;    
