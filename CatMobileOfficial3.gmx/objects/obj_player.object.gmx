@@ -74,6 +74,7 @@ y2 = 0;
 
 line1 = false;
 
+speedx = 0;
 </string>
           </argument>
         </arguments>
@@ -120,7 +121,7 @@ line1 = false;
           <argument>
             <kind>1</kind>
             <string>right = keyboard_check(ord('D'));
-//up = keyboard_check(ord('W'));
+up = keyboard_check(ord('W'));
 left = keyboard_check(ord('A'));
 grounded = 1;
 //Invincibility Frames
@@ -129,6 +130,9 @@ if (counter &gt; 5)
 {
     counter = 1;
 }
+
+hsp = 0;
+vsp = 0;
 
 if(right)
 {
@@ -141,82 +145,84 @@ else if(left)
     vsp+= y2-y1;    
 }
 
-//hsp += gravX;
+//hsp += -gravX;
 //vsp += gravY;
+//show_debug_message(gravX);
+
 
 if (place_meeting(x+hsp,y+vsp,obj_gr))
 {
-    yplus = 0;
-    while(place_meeting(x+hsp,y-yplus,obj_gr) &amp;&amp; yplus &lt;= abs(7*hsp))
-    {
-        yplus += 1;
-    }
-    if(place_meeting(x+hsp,y-yplus,obj_gr))
-    {
-        while(!place_meeting(x+sign(hsp),y,obj_gr))
+
+      while(place_meeting(x+hsp,y,obj_gr) || place_meeting(x,y+vsp,obj_gr))
+      {
+        y-=gravY;
+        x-=gravX;
+        speedx-= gravX;
+      }
+      
+      if(!place_meeting(x+hsp,y,obj_gr))
         {
-            x+= sign(hsp);
-        }   
-    }
-    else
-    {
-        y-=yplus;
-        x+=hsp;
-    }
-    grounded = true;
-    vsp=0;
-    hsp=0;
+            x+=hsp;
+            speedx+=hsp;
+        }
+        
+     if(!place_meeting(x,y+vsp,obj_gr))
+        {
+            y+=vsp;
+        }
+   
+     /*
+         if(!place_meeting(x+hsp,y,obj_gr))
+        {
+            x+=hsp;
+            speedx+=hsp;
+        }
+        else if(!place_meeting(x,y+vsp,obj_gr))
+        {
+            y+=vsp;
+        }
+    */
 }
 else
 {
     x += hsp;
     y += vsp;
+    speedx += hsp;
 }
 
 
+//x+= hsp;
+//y+= vsp;
 
-/*
-if(place_meeting(x,y+vsp,obj_gr))
+if(place_meeting(x+gravX,y,obj_gr))
 {
-    while(!place_meeting(x,y+sign(vsp),obj_gr))
+    while(!place_meeting(x+gravX,y,obj_gr))
     {
-        y+= sign(vsp);
+        x+=sign(gravX);
+        speedx += sign(gravX);
     }
-    grounded = 1;
+    gravX = 0;
 }
 else
 {
-    y+= vsp;
+    x+=gravX;
+    speedx += gravX;
 }
-*/
 
-/*
-if(place_meeting(x+hsp,y,obj_gr))
+if(place_meeting(x,y+gravY,obj_gr))
 {
-    while(!place_meeting(x+hsp,y,obj_gr))
+    while(!place_meeting(x,y+gravY,obj_gr))
     {
-        x+=sign(hsp);
+        y+=sign(gravY);
     }
-    hsp = 0;
+    gravY = 0;
 }
 else
 {
-    x+=hsp;
+    y+=gravY;
 }
 
-if(place_meeting(x,y+vsp,obj_gr))
-{
-    while(!place_meeting(x,y+vsp,obj_gr))
-    {
-        y+=sign(vsp);
-    }
-    vsp = 0;
-}
-else
-{
-    y+=vsp;
-}
-*/
+
 
 
 //Angled Movement
@@ -247,8 +253,9 @@ if(grounded)
         
         runRight = x1-x2;
         runLeft = x2-x1;
+        
         gravY = (x1-x2);
-        gravX = (y1-y2);
+        gravX = (y2-y1);
         
         line1 = true;
         var dist = sqrt(power(x2-x1,2)+power(y2-y1,2));
@@ -430,9 +437,6 @@ if(obj_heart.hearts &lt;= 0)
     visble = false;
     obj_player.recently_hit = true;
 }
-
-hsp = 0;
-vsp = 0;
 </string>
           </argument>
         </arguments>
@@ -502,6 +506,29 @@ if !(obj_heart.hearts &lt;= 0)
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="9" enumb="81">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>audio_stop_all();
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>
