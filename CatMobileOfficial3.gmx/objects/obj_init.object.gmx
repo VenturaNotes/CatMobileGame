@@ -54,7 +54,7 @@ leftBarrier = 100; //left barrier 320 //100
             <kind>1</kind>
             <string>if (stop == false)
 {
-    room_goto(rm_test1); //rm_menu
+    room_goto(rm_World1Stage2); //rm_menu
     stop = true;
 }
 

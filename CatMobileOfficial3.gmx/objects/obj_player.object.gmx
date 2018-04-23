@@ -260,7 +260,6 @@ if(grounded)
         
         line1 = true;
         var dist = sqrt(power(x2-x1,2)+power(y2-y1,2));
-        var inverseSlope = -1/((y1-y2)/(x1-x2));
         
     if(diff1X &gt;= 200)
     {

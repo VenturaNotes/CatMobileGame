@@ -15,7 +15,7 @@
 background_index[0] = bck_sky;
 
 instance_create(0,0,obj_debugging);
-instance_create(0,1,obj_controls);
+//instance_create(0,1,obj_controls);
 instance_create(300,50,obj_paws);
 instance_create(0,3,obj_gameover2);
 instance_create(0,4,obj_multitouch);
