@@ -80,6 +80,44 @@ speedx = 0;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(up == true)
+{
+    vsp = -23;
+    audio_play_sound(snd_jump,3,false);
+    audio_sound_gain(snd_jump,0.2,0);
+    grounded = false;
+    state = 2;
+}
+else
+{
+    vsp = -17;
+    audio_play_sound(snd_jump,3,false);
+    audio_sound_gain(snd_jump,0.2,0);
+    grounded = false;
+    state = 2;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
@@ -132,83 +170,161 @@ if (counter &gt; 5)
 }
 
 hsp = 0;
-vsp = 0;
 
 if(!grounded)
 {
-    vsp+= 5;
+    vsp+= 1;
+    if(right)
+    {
+        hsp+=10; //runRight
+    }
+    if(left)
+    {
+        hsp+=-10; //runLeft
+    }
+    
+    if(place_meeting(x+hsp,y,obj_gr))
+    {
+         while(!place_meeting(x+hsp,y,obj_gr))
+            {
+                x+=sign(hsp);
+                speedx += sign(hsp);
+            }
+            hsp = 0;
+    }
+    else
+    {
+        x+=hsp;
+        speedx +=hsp;
+    }
+    
+    if(place_meeting(x,y+vsp,obj_gr))
+    {
+       while(!place_meeting(x,y+vsp,obj_gr))
+            {
+                y+=sign(vsp);
+            }
+        vsp = 0;
+        grounded = true;
+    }
+    else
+    {
+        y+=vsp;
+    }
+}
+else
+{
+    vsp = 0;
 }
 
-if(right)
+
+
+if(up)
 {
-    hsp += runRight;
-    vsp += y1-y2;
+   if (grounded)
+    {
+     state = 2;
+     if(alarm[1] == -1)
+     {
+        alarm[1] = 4;
+     }
+    }
+    obj_up.image_alpha = .5;
+}
+else
+{
+    obj_up.image_alpha = 1;
 }
 
-if(left)
+
+if(grounded)
 {
-    hsp += runLeft;
-    vsp+= y2-y1;    
-}
-
-
-if (place_meeting(x+hsp,y+vsp,obj_gr))
-{
-
-      while(place_meeting(x+hsp,y,obj_gr) || place_meeting(x,y+vsp,obj_gr))
-      {
-        y-=gravY;
-        x-=gravX;
-        speedx-= gravX;
-      }
-      
-      if(!place_meeting(x+hsp,y,obj_gr))
+    if(right)
+    {
+        hsp += sign(runRight)*10;
+        vsp += sign(y1-y2)*10;
+    }
+    
+    if(left)
+    {
+        hsp += sign(runLeft)*10; 
+        vsp += sign(y2-y1)*10;   
+    }
+    
+    if (place_meeting(x+hsp,y+vsp,obj_gr))
+    {   
+          while(place_meeting(x+hsp,y,obj_gr) || place_meeting(x,y+vsp,obj_gr))
+          {
+            y-=gravY;
+            x-=gravX;
+            speedx-= gravX;
+          }
+         
+        if(place_meeting(x+hsp,y,obj_gr))
+        {
+             while(!place_meeting(x+hsp,y,obj_gr))
+                {
+                    x+=sign(hsp);
+                    speedx += sign(hsp);
+                }
+                hsp = 0;
+        }
+        else
         {
             x+=hsp;
-            speedx+=hsp;
+            speedx +=hsp;
         }
         
-     if(!place_meeting(x,y+vsp,obj_gr))
+        if(place_meeting(x,y+vsp,obj_gr))
+        {
+           while(!place_meeting(x,y+vsp,obj_gr))
+                {
+                    y+=sign(vsp);
+                }
+            vsp = 0;
+            grounded = true;
+        }
+        else
         {
             y+=vsp;
         }
-   
-    grounded = true;
-}
-else
-{
-    x += hsp;
-    y += vsp;
-    speedx += hsp;
+    }
+    else
+    {
+        x += hsp;
+        y += vsp;
+        speedx += hsp;
+    }
+
+    if(place_meeting(x+gravX,y,obj_gr))
+    {
+        while(!place_meeting(x+gravX,y,obj_gr))
+        {
+            x+=sign(gravX);
+            speedx += sign(gravX);
+        }
+        gravX = 0;
+    }
+    else
+    {
+        x+=gravX;
+        speedx += gravX;
+    }
+    
+    if(place_meeting(x,y+gravY,obj_gr))
+    {
+        while(!place_meeting(x,y+gravY,obj_gr))
+        {
+            y+=sign(gravY);
+        }
+        gravY = 0;
+    }
+    else
+    {
+        y+=gravY;
+    }
 }
 
-if(place_meeting(x+gravX,y,obj_gr))
-{
-    while(!place_meeting(x+gravX,y,obj_gr))
-    {
-        x+=sign(gravX);
-        speedx += sign(gravX);
-    }
-    gravX = 0;
-}
-else
-{
-    x+=gravX;
-    speedx += gravX;
-}
-
-if(place_meeting(x,y+gravY,obj_gr))
-{
-    while(!place_meeting(x,y+gravY,obj_gr))
-    {
-        y+=sign(gravY);
-    }
-    gravY = 0;
-}
-else
-{
-    y+=gravY;
-}
 
 //Angled Movement
 if(grounded)
