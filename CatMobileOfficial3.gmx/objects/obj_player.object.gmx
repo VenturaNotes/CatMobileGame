@@ -123,7 +123,7 @@ speedx = 0;
             <string>right = keyboard_check(ord('D'));
 up = keyboard_check(ord('W'));
 left = keyboard_check(ord('A'));
-grounded = 1;
+
 //Invincibility Frames
 counter++;
 if (counter &gt; 5)
@@ -133,6 +133,11 @@ if (counter &gt; 5)
 
 hsp = 0;
 vsp = 0;
+
+if(!grounded)
+{
+    vsp+= 5;
+}
 
 if(right)
 {
@@ -145,10 +150,6 @@ if(left)
     hsp += runLeft;
     vsp+= y2-y1;    
 }
-
-//hsp += -gravX;
-//vsp += gravY;
-//show_debug_message(gravX);
 
 
 if (place_meeting(x+hsp,y+vsp,obj_gr))
@@ -172,17 +173,7 @@ if (place_meeting(x+hsp,y+vsp,obj_gr))
             y+=vsp;
         }
    
-     /*
-         if(!place_meeting(x+hsp,y,obj_gr))
-        {
-            x+=hsp;
-            speedx+=hsp;
-        }
-        else if(!place_meeting(x,y+vsp,obj_gr))
-        {
-            y+=vsp;
-        }
-    */
+    grounded = true;
 }
 else
 {
@@ -190,10 +181,6 @@ else
     y += vsp;
     speedx += hsp;
 }
-
-
-//x+= hsp;
-//y+= vsp;
 
 if(place_meeting(x+gravX,y,obj_gr))
 {
@@ -223,9 +210,6 @@ else
     y+=gravY;
 }
 
-
-
-
 //Angled Movement
 if(grounded)
 {
@@ -254,7 +238,7 @@ if(grounded)
         
         runRight = x1-x2;
         runLeft = x2-x1;
-        
+    
         gravY = (x1-x2);
         gravX = (y2-y1);
         
