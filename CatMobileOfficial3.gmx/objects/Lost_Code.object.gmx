@@ -47,6 +47,26 @@ if(keyboard_check_pressed(vk_right))
     modify2+=1;
 }
 */
+
+//TURNS PLAYER WHEN IN AIR
+/*
+if(!grounded)
+{   
+  // grav = 1;
+    if(image_angle &gt;= 2)
+    {  
+      image_angle -= 1;  
+    }
+    else if(image_angle &lt;= -2)
+    {
+        image_angle += 1;
+    }
+    else
+    {
+        image_angle = 0;
+    }
+}
+*/
 </string>
           </argument>
         </arguments>
