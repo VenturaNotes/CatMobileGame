@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//USED TO MOVE AN OBJECT IN A DIRECTION PRECISELY
+            <string>///////////////////////////////////////////////////////////////////USED TO MOVE AN OBJECT IN A DIRECTION PRECISELY
 /*
 if(keyboard_check_pressed(vk_up))
 {
@@ -47,8 +47,9 @@ if(keyboard_check_pressed(vk_right))
     modify2+=1;
 }
 */
+///////////////////////////////////////////////////////////////////USED TO MOVE AN OBJECT IN A DIRECTION PRECISELY
 
-//TURNS PLAYER WHEN IN AIR
+///////////////////////////////////////////////////////////ROTATES PLAYER WHEN IN AIR
 /*
 if(!grounded)
 {   
@@ -67,6 +68,239 @@ if(!grounded)
     }
 }
 */
+///////////////////////////////////////////////////////////ROTATES PLAYER WHEN IN AIR
+
+///////////////////////////////////////////////////////////////////////////////////////////CODE FOR MOVEMENT
+/* 
+hsp = 0; //Reset Horizontal Speed
+
+if(up) //Jump button
+{
+   if (grounded)
+    {
+     state = 2;
+     if(alarm[1] == -1)
+     {
+        alarm[1] = 4;
+     }
+    }
+    obj_up.image_alpha = .5;
+}
+else
+{
+    obj_up.image_alpha = 1;
+}
+
+if(!grounded)
+{
+    vsp+= 1;
+    if(right)
+    {
+        hsp+=10; //runRight
+    }
+    if(left)
+    {
+        hsp+=-10; //runLeft
+    }
+    
+    if(place_meeting(x+hsp,y,obj_gr))
+    {
+         while(!place_meeting(x+hsp,y,obj_gr))
+            {
+                x+=sign(hsp);
+                speedx += sign(hsp);
+            }
+            hsp = 0;
+    }
+    else
+    {
+        x+=hsp;
+        speedx +=hsp;
+    }
+    
+    if(place_meeting(x,y+vsp,obj_gr))
+    {
+       while(!place_meeting(x,y+vsp,obj_gr))
+            {
+                y+=sign(vsp);
+            }
+        vsp = 0;
+        grounded = true;
+        show_debug_message("Test");
+    }
+    else
+    {
+        y+=vsp;
+    }
+}
+else
+{
+    vsp = 0;
+}
+
+*/
+
+/*
+//Angled Movement
+if(grounded)
+{
+    var count = 0;
+    var fAngle = image_angle; //first angle
+        for(yy = 0; !position_meeting((x+cos(degtorad(image_angle))*10) + sin(degtorad(image_angle))*yy,(y-sin(degtorad(image_angle))*10)+cos(degtorad(image_angle))*yy,obj_stable_ground); yy++)
+            {
+                diff1X = yy;
+                if(yy &gt;= 100)
+                {
+                    count+=1;
+                    if(right)
+                    {
+                        image_angle+=90;
+                        yy=0;
+                    }
+                    if(left)
+                    {
+                        image_angle-=90;
+                        yy=0;
+                    }
+                    if(count&gt;=3)
+                    {
+                        grounded = false;
+                        image_angle = fAngle;
+                        break;
+                    }
+                }
+            }
+            
+    if(grounded)
+    {
+        for(yy = 0; !position_meeting(x+(sin(degtorad(image_angle))*yy),y+(cos(degtorad(image_angle))*yy),obj_stable_ground); yy++)
+        {
+            diff1Y = yy;
+            if(yy &gt;= 100)
+            {
+                break;
+            }
+        }
+     
+        x1 = (x+cos(degtorad(image_angle))*10) + sin(degtorad(image_angle))*diff1X;
+        y1 = (y-sin(degtorad(image_angle))*10)+ cos(degtorad(image_angle))*diff1X;
+        x2 = x+(sin(degtorad(image_angle))*diff1Y);
+        y2 = y+(cos(degtorad(image_angle))*diff1Y);
+        
+        runRight = x1-x2;
+        runLeft = x2-x1;
+    
+        gravY = (x1-x2);
+        gravX = (y2-y1);
+        
+        line1 = true;
+        var dist = sqrt(power(x2-x1,2)+power(y2-y1,2));
+    
+        if(radtodeg(arctan2(diff1Y-diff1X,dist)) != 0)
+        {
+            image_angle += radtodeg(arctan2(diff1Y-diff1X,dist))/3;
+        }
+    }
+}
+else
+{
+    line1 = false;
+}
+
+if(grounded)
+{
+    if(right)
+    {
+        hsp += sign(runRight)*10;
+        vsp += sign(y1-y2)*10;
+    }
+    
+    if(left)
+    {
+        hsp += sign(runLeft)*10+gravX; 
+        vsp += sign(y2-y1)*10+gravY;   
+    }
+    
+    if (place_meeting(x+hsp,y+vsp,obj_gr))
+    {   
+        while(place_meeting(x+hsp,y,obj_gr) || place_meeting(x,y+vsp,obj_gr))
+        {
+            y-=gravY;
+            x-=gravX;
+            speedx-= gravX;
+        }
+        
+        x+=hsp;
+        speedx +=hsp;
+         
+        /////////////////////////////NOT INCLUDED
+        if(place_meeting(x+hsp,y,obj_gr))
+        {
+             while(!place_meeting(x+hsp,y,obj_gr))
+                {
+                    x+=sign(hsp);
+                    speedx += sign(hsp);
+                }
+                hsp = 0;
+        }
+        else
+        {
+            x+=hsp;
+            speedx +=hsp;
+        }
+        //////////////////////////////////////NOT INCLUDED
+        
+        if(place_meeting(x,y+vsp,obj_gr))
+        {
+           while(place_meeting(x+hsp,y,obj_gr) || place_meeting(x,y+vsp,obj_gr))
+            {
+                y-=gravY;
+                x-=gravX;
+                speedx-= gravX;
+            }
+            y+=vsp;
+        }
+        else
+        {
+            y+=vsp;
+        }
+    }
+    else
+    {
+        x += hsp;
+        y += vsp;
+        speedx += hsp;
+    }
+    
+    if(place_meeting(x+gravX,y,obj_gr))
+    {
+        while(!place_meeting(x+gravX,y,obj_gr))
+        {
+            x+=sign(gravX);
+            speedx += sign(gravX);
+        }
+        gravX = 0;
+    }
+    else
+    {
+        x+=gravX;
+        speedx += gravX;
+    }
+    
+    if(place_meeting(x,y+gravY,obj_gr))
+    {
+        while(!place_meeting(x,y+gravY,obj_gr))
+        {
+            y+=sign(gravY);
+        }
+        gravY = 0;
+    }
+    else
+    {
+        y+=gravY;
+    }
+}
+*/ ///////////////////////////////////CODE FOR MOVEMENT
 </string>
           </argument>
         </arguments>

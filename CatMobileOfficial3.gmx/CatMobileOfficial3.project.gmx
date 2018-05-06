@@ -237,6 +237,7 @@
       <sprite>sprites\spr_stage2_reference</sprite>
     </sprites>
     <sprite>sprites\spr_test1</sprite>
+    <sprite>sprites\spr_test2</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_sky</background>
@@ -488,6 +489,7 @@
     <object>objects\obj_game_quit</object>
     <object>objects\Lost_Code</object>
     <object>objects\obj_test1</object>
+    <object>objects\obj_test2</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
