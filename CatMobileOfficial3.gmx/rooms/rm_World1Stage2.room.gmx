@@ -19,8 +19,8 @@ instance_create(0,0,obj_debugging);
 instance_create(300,50,obj_paws);
 instance_create(0,3,obj_gameover2);
 instance_create(0,4,obj_multitouch);
-//instance_create(0,5,obj_camera3); //This controls the camera and background obj_background2
-//instance_create(800,30,obj_kills);
+instance_create(0,5,obj_camera3); //This controls the camera and background obj_background2
+instance_create(800,30,obj_kills);
 
 instance_create(view_xview[0]+(50*1.15),view_yview[0]+491,obj_left);
 with(obj_left){image_xscale *= 1.15; image_yscale *=1.15;}
@@ -30,8 +30,8 @@ instance_create(view_xview[0]+(290*1.15),view_yview[0]+491,obj_melee);
 with(obj_melee){image_xscale *= 1.15; image_yscale *=1.15;}
 instance_create(view_xview[0]+(440*1.15),view_yview[0]+491,obj_switch);
 with(obj_switch){image_xscale *= 1.15; image_yscale *=1.15;}
-//instance_create(view_xview[0]+(590*1.15),view_yview[0]+491,obj_MOD);
-//with(obj_MOD){image_xscale *= 1.15; image_yscale *=1.15;}
+instance_create(view_xview[0]+(590*1.15),view_yview[0]+491,obj_MOD);
+with(obj_MOD){image_xscale *= 1.15; image_yscale *=1.15;}
 instance_create(view_xview[0]+(725*1.15),view_yview[0]+491,obj_angled);
 with(obj_angled){image_xscale *= 1.15; image_yscale *=1.15;}
 instance_create(view_xview[0]+(815*1.15),view_yview[0]+491,obj_straight);

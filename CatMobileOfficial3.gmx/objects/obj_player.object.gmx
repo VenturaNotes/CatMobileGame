@@ -189,7 +189,7 @@ if (counter &gt; 5)
     counter = 1;
 }
 
-//PLEASE WORK
+//MOVEMENT
 
 if(keyboard_check(ord("D")) &amp;&amp; grounded)
 {
@@ -218,7 +218,6 @@ if(keyboard_check(ord("A")) &amp;&amp; grounded)
         }
     }
 }
-
 
 if(grounded)
 {
@@ -408,7 +407,7 @@ if(!grounded)
        vsp+=1;
     }
 }
-/*
+/* ROTATES BACK TO 0 DEGREES
 if(!grounded)
 {   
     if(image_angle &gt;= 180)
@@ -434,19 +433,35 @@ if(place_meeting(x,y+20,obj_stable_ground) &amp;&amp; grounded)
     }
 }
 
-if(!place_meeting(x,y+1,obj_stable_ground) || !place_meeting(x-10,y+100,obj_stable_ground) || !place_meeting(x+10,y+100,obj_stable_ground))
+if(!place_meeting(x,y+1,obj_stable_ground) || !place_meeting(x-25,y+100,obj_stable_ground) || !place_meeting(x+25,y+100,obj_stable_ground))
 {
     grounded = false;
-    /*
-    if(!place_meeting(x-10,y+100,obj_stable_ground))
+    
+    if(place_meeting(x+5,y,obj_stable_ground) &amp;&amp; !place_meeting(x-25,y+100,obj_stable_ground))
     {
-        x-=hsp+1;
+        if(hsp &lt;= 0)
+        {
+            x-=1;
+        }
+        else
+        {
+            hsp = 0;
+            x-=2;
+        }
     }
-    if(!place_meeting(x+10,y+100,obj_stable_ground))
+    
+    if(place_meeting(x-5,y,obj_stable_ground) &amp;&amp; !place_meeting(x+25,y+100,obj_stable_ground))
     {
-        x+=-hsp+1;
+        if(hsp &gt;= 0)
+        {
+            x+=1;
+        }
+        else
+        {
+            hsp = 0;
+            x+=2;
+        }
     }
-    */
     speed = 0;
 }
 else
@@ -455,7 +470,7 @@ else
     hsp = 0;
     vsp = 0;
 }
-//PLEASE WORK
+//MOVEMENT
 
 
 //Animations
@@ -579,7 +594,6 @@ if(grounded == 1 &amp;&amp; state != 4)
     sprite_index = spr_player_run;
 }
 
-//Death
 /*
 if(obj_heart.hearts &lt;= 0)
 {
