@@ -301,6 +301,24 @@ if(grounded)
     }
 }
 */ ///////////////////////////////////CODE FOR MOVEMENT
+
+/* ////////////////////////////////////////ROTATES BACK TO 0 DEGREES
+if(!grounded)
+{   
+    if(image_angle &gt;= 180)
+    {
+        image_angle +=1;
+    }
+    else if(image_angle &lt;= 180)
+    {
+        image_angle -=1;
+    }
+    if(image_angle &gt;= 355 || image_angle &lt;= 5)
+    {
+        image_angle = 0;
+    }
+}
+*/ ////////////////////////////////////////ROTATES BACK TO 0 DEGREES
 </string>
           </argument>
         </arguments>

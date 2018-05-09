@@ -86,6 +86,10 @@ maxSpeedAir = 10;
 count2 = 0;
 fAngle = 0;
 
+test = 0;
+
+height = 0;
+
 </string>
           </argument>
         </arguments>
@@ -108,7 +112,8 @@ fAngle = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(up == true)
+            <string>
+if(up == true)
 {
     vsp = -23;
     hsp = speed;
@@ -124,12 +129,13 @@ else
     vsp = -17;
     hsp = speed;
     speed = 0;
-    image_angle = 0;
+    //image_angle = 0;
     grounded = false;
     audio_play_sound(snd_jump,3,false);
     audio_sound_gain(snd_jump,0.2,0);
     state = 2;
 }
+
 </string>
           </argument>
         </arguments>
@@ -195,28 +201,84 @@ if(keyboard_check(ord("D")) &amp;&amp; grounded)
 {
     if(image_xscale == -0.8)
     {
+        height = y;
         direction+= 180;
         sprite_set_offset(sprite_index,sprite_get_width(sprite_index)/2,sprite_get_yoffset(sprite_index));
         image_xscale = 0.8;
         while(place_meeting(x,y,obj_stable_ground))
         {
+            count+=1;
+            if(count &gt;= 30)
+            {
+                y = height;
+                break;
+            }
             y-=1;
         }
+        count = 0;
     }
+    
+    if(place_meeting(x,y-40,obj_stable_ground))
+    {
+        height = y;
+        direction+=180;
+        sprite_set_offset(sprite_index,sprite_get_width(sprite_index)/2,sprite_get_yoffset(sprite_index));
+        image_xscale = -0.8;
+        while(place_meeting(x,y,obj_stable_ground))
+        {
+            count+=1;
+            if(count &gt;= 30)
+            {
+                y = height;
+                break;
+            }
+            y-=1;
+        }
+        count = 0;
+    }
+    
 }
 
 if(keyboard_check(ord("A")) &amp;&amp; grounded)
 {
     if(image_xscale == 0.8)
     {
+        height = y;
         direction+=180;
         sprite_set_offset(sprite_index,sprite_get_width(sprite_index)/2,sprite_get_yoffset(sprite_index));
         image_xscale = -0.8;
         while(place_meeting(x,y,obj_stable_ground))
         {
+            count+=1;
+            if(count &gt;= 30)
+            {
+                y = height;
+                break;
+            }
             y-=1;
         }
+        count = 0;
     }
+    
+    if(place_meeting(x,y-40,obj_stable_ground))
+    {
+        height = y;
+        direction+= 180;
+        sprite_set_offset(sprite_index,sprite_get_width(sprite_index)/2,sprite_get_yoffset(sprite_index));
+        image_xscale = 0.8;
+        while(place_meeting(x,y,obj_stable_ground))
+        {
+            count+=1;
+            if(count &gt;= 30)
+            {
+                y = height;
+                break;
+            }
+            y-=1;
+        }
+        count = 0;
+    }
+    
 }
 
 if(grounded)
@@ -267,10 +329,18 @@ if(grounded)
         }
     }
     
+    height = y;
     while(place_meeting(x,y,obj_stable_ground))
     {
+        count+=1
+        if(count &gt;= 30)
+        {
+            y = height;
+            break;
+        }
         y-=1;
     }
+    count = 0;
     line1 = true;
 }
 else
@@ -307,6 +377,15 @@ if(grounded)
         {
             speed-=1;
         }
+       
+        if(place_meeting(x+hspeed,y+vspeed,obj_stable_ground))
+        {
+            if(place_meeting(x+hspeed,y-25,obj_stable_ground))
+            {
+                speed = 0;   
+            }
+        }
+        
     }
     else if(keyboard_check(ord("D")))
     {
@@ -323,6 +402,14 @@ if(grounded)
         else
         {
             speed+=1;
+        }
+        
+      if(place_meeting(x+hspeed,y+vspeed,obj_stable_ground))
+        {
+            if(place_meeting(x+hspeed,y-25,obj_stable_ground))
+            {
+                speed = 0;   
+            }
         }
     }
     else
@@ -407,23 +494,6 @@ if(!grounded)
        vsp+=1;
     }
 }
-/* ROTATES BACK TO 0 DEGREES
-if(!grounded)
-{   
-    if(image_angle &gt;= 180)
-    {
-        image_angle +=1;
-    }
-    else if(image_angle &lt;= 180)
-    {
-        image_angle -=1;
-    }
-    if(image_angle &gt;= 355 || image_angle &lt;= 5)
-    {
-        image_angle = 0;
-    }
-}
-*/
 
 if(place_meeting(x,y+20,obj_stable_ground) &amp;&amp; grounded)
 {
@@ -433,11 +503,11 @@ if(place_meeting(x,y+20,obj_stable_ground) &amp;&amp; grounded)
     }
 }
 
-if(!place_meeting(x,y+1,obj_stable_ground) || !place_meeting(x-25,y+100,obj_stable_ground) || !place_meeting(x+25,y+100,obj_stable_ground))
+if(!place_meeting(x,y+1,obj_stable_ground) || (abs(speed) == 0) &amp;&amp; (!place_meeting(x+15,y+50,obj_stable_ground) || !place_meeting(x-15,y+50,obj_stable_ground)))
 {
     grounded = false;
-    
-    if(place_meeting(x+5,y,obj_stable_ground) &amp;&amp; !place_meeting(x-25,y+100,obj_stable_ground))
+    show_debug_message(speed);
+    if(place_meeting(x+15,y-10,obj_stable_ground))
     {
         if(hsp &lt;= 0)
         {
@@ -450,7 +520,7 @@ if(!place_meeting(x,y+1,obj_stable_ground) || !place_meeting(x-25,y+100,obj_stab
         }
     }
     
-    if(place_meeting(x-5,y,obj_stable_ground) &amp;&amp; !place_meeting(x+25,y+100,obj_stable_ground))
+    if(place_meeting(x-15,y-10,obj_stable_ground))
     {
         if(hsp &gt;= 0)
         {
@@ -472,6 +542,13 @@ else
 }
 //MOVEMENT
 
+/*
+if(!place_meeting(x-25,y+100,obj_stable_ground)) //|| !place_meeting(x-25,y+100,obj_stable_ground) || !place_meeting(x+25,y+100,obj_stable_ground) !place_meeting(x,y+1,obj_stable_ground
+{
+    test+=1;
+    show_debug_message(test);
+}
+*/
 
 //Animations
 if (state == 0)
@@ -594,6 +671,7 @@ if(grounded == 1 &amp;&amp; state != 4)
     sprite_index = spr_player_run;
 }
 
+
 /*
 if(obj_heart.hearts &lt;= 0)
 {
@@ -641,13 +719,20 @@ if(obj_heart.hearts &lt;= 0)
             <kind>1</kind>
             <string>if(line1 == true)
 {
-   draw_set_colour(c_yellow);
-   draw_line(x1,y1,x2,y2);
-   draw_set_colour(c_red);
-   draw_line(x+cos(degtorad(image_angle))*10,y-sin(degtorad(image_angle))*10,(x+cos(degtorad(image_angle))*10) + sin(degtorad(image_angle))*diff1X,(y-sin(degtorad(image_angle))*10)+cos(degtorad(image_angle))*diff1X);
-   draw_set_colour(c_blue);
-   draw_line(x,y,x+(sin(degtorad(image_angle))*diff1Y),y+(cos(degtorad(image_angle))*diff1Y));
+   //draw_set_colour(c_yellow);
+  // draw_line(x1,y1,x2,y2);
+  // draw_set_colour(c_red);
+   //draw_line(x+cos(degtorad(image_angle))*10,y-sin(degtorad(image_angle))*10,(x+cos(degtorad(image_angle))*10) + sin(degtorad(image_angle))*diff1X,(y-sin(degtorad(image_angle))*10)+cos(degtorad(image_angle))*diff1X);
+  // draw_set_colour(c_blue);
+  // draw_line(x,y,x+(sin(degtorad(image_angle))*diff1Y),y+(cos(degtorad(image_angle))*diff1Y));
+   
 }
+draw_set_colour(c_red)
+draw_line(x,y,x+5,y-40)
+draw_line(x,y,x-5,y-40)
+draw_set_colour(c_blue)
+draw_line(x,y,x-45,y+50)
+draw_line(x,y,x+45,y+50)
 
 draw_self();
 
