@@ -364,7 +364,7 @@ stop = 0; //This is so the code in the step method will only print once
     
     obj_player.state = 0;
     
-    audio_stop_sound(snd_music1);
+    audio_stop_all();
     stop+=1;
 }
 </string>

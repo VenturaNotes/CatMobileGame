@@ -235,8 +235,36 @@ if(keyboard_check(ord("D")) &amp;&amp; grounded)
             y-=1;
         }
         count = 0;
+        if(place_meeting(x,y,obj_stable_ground))
+        {
+            height = y;
+            direction+= 180;
+            sprite_set_offset(sprite_index,sprite_get_width(sprite_index)/2,sprite_get_yoffset(sprite_index));
+            image_xscale = 0.8;
+            while(place_meeting(x,y,obj_stable_ground))
+            {
+                count+=1;
+                if(count &gt;= 30)
+                {
+                    y = height;
+                    break;
+                }
+                y-=1;
+            }
+            count = 0;
+            for(xx = 0; place_meeting(x+xx,y,obj_stable_ground) &amp;&amp; xx &lt;= 15;xx++)
+            {
+               count = xx;
+                if(xx == 11)
+                {
+                    count = 0;
+                    break;
+                }
+            }
+           x+=count;
+           count = 0;
+        }
     }
-    
 }
 
 if(keyboard_check(ord("A")) &amp;&amp; grounded)
@@ -277,6 +305,35 @@ if(keyboard_check(ord("A")) &amp;&amp; grounded)
             y-=1;
         }
         count = 0;
+        if(place_meeting(x,y,obj_stable_ground))
+        {
+            height = y;
+            direction+=180;
+            sprite_set_offset(sprite_index,sprite_get_width(sprite_index)/2,sprite_get_yoffset(sprite_index));
+            image_xscale = -0.8;
+            while(place_meeting(x,y,obj_stable_ground))
+            {
+                count+=1;
+                if(count &gt;= 30)
+                {
+                    y = height;
+                    break;
+                }
+                y-=1;
+            }
+            count = 0;
+            for(xx = 0; place_meeting(x-xx,y,obj_stable_ground) &amp;&amp; xx &lt;= 15;xx++)
+            {
+                count = xx;
+                if(xx == 11)
+                {
+                    count = 0;
+                    break;
+                }
+            }
+            x-= count;
+            count = 0;
+        }
     }
     
 }
