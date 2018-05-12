@@ -41,6 +41,10 @@
     game_end();
    }
 }
+else
+{
+    image_alpha = 1;
+}
 </string>
           </argument>
         </arguments>

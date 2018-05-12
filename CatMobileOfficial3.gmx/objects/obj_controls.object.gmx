@@ -174,7 +174,6 @@ if(isActive)
     {
         if (obj_player.x &lt; view_xview[0]+700)
             {
-                
                 with(obj_player)
                  {  
                     if (instance_exists(obj_gr) &amp;&amp; place_meeting(x+runRight,y+vsp,obj_gr))
@@ -261,27 +260,6 @@ if(isActive)
     {
         obj_up.image_alpha = 1;
     }
-    
-    //TURNS THE CHARACTER AROUND DO NOT DELETE
-    /*
-    if(left == true)
-    {
-        with(obj_player)
-        {
-            sprite_set_offset(sprite_index,sprite_get_width(sprite_index)/2,sprite_get_yoffset(sprite_index));
-            image_xscale = -0.8
-        }
-    }
-    
-    if(right == true)
-    {
-        with(obj_player)
-        {
-            sprite_set_offset(sprite_index,sprite_get_width(sprite_index)/2,sprite_get_yoffset(sprite_index));
-            image_xscale = 0.8;
-        }
-    }
-    */
 }
 
 lposition = obj_player.x;

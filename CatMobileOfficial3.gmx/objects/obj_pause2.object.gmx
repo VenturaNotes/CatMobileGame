@@ -56,6 +56,7 @@
 if(global.quit == 1)
 {
     global.quit = 0;
+    audio_stop_all();
     room_goto(rm_endless);
 }
 </string>
@@ -80,7 +81,9 @@ if(global.quit == 1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.constant = 0;
+            <string>audio_pause_all();
+
+global.constant = 0;
 var width = surface_get_width(application_surface),
 height = surface_get_height(application_surface);
 

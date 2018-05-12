@@ -238,6 +238,7 @@
     </sprites>
     <sprite>sprites\spr_test1</sprite>
     <sprite>sprites\spr_test_ledge</sprite>
+    <sprite>sprites\spr_ceiling</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_sky</background>
@@ -298,7 +299,6 @@
     </scripts>
     <script>scripts\scr_buttons.gml</script>
     <script>scripts\scr_selection.gml</script>
-    <script>scripts\script19.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_text</font>
@@ -307,6 +307,7 @@
     <objects name="MAKER">
       <object>objects\obj_boundary</object>
       <object>objects\obj_player</object>
+      <object>objects\obj_player_2</object>
       <objects name="Monsters">
         <object>objects\obj_monster2</object>
         <object>objects\obj_monster3</object>
@@ -394,7 +395,6 @@
       <object>objects\obj_paws</object>
       <object>objects\obj_pause2</object>
       <object>objects\obj_pause3</object>
-      <object>objects\obj_unpause</object>
       <object>objects\obj_quit</object>
     </objects>
     <objects name="Main Menu">
@@ -488,15 +488,13 @@
     <object>objects\obj_grid</object>
     <object>objects\obj_game_quit</object>
     <object>objects\Lost_Code</object>
-    <object>objects\obj_test1</object>
-    <object>objects\obj_test_ledge</object>
+    <object>objects\obj_ceiling</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
     <room>rooms\rm_FirstStage</room>
     <room>rooms\rm_World1Stage2</room>
-    <room>rooms\rm_test1</room>
-    <room>rooms\rm_template</room>
+    <room>rooms\rm_test</room>
     <rooms name="Main Menu">
       <room>rooms\rm_menu</room>
       <room>rooms\rm_credits</room>
@@ -542,8 +540,6 @@
     <rooms name="Pause">
       <room>rooms\rm_pause</room>
     </rooms>
-    <room>rooms\room30</room>
-    <room>rooms\room24</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
