@@ -26,7 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>///Variables
-stop = 0; //This is so the code in the step method will only print once
+stop = 0; //Code in Step Method Prints Once
+top = 0; //Top Enemy spawns
+side = 0; //Side Enemy Spawns
+
 </string>
           </argument>
         </arguments>

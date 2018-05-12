@@ -181,8 +181,8 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_deactivate_all(true);
-instance_activate_region(view_xview[1]-500, view_yview[1]-500, view_wview[1]+500, view_hview[1]+500, true);
+            <string>//instance_deactivate_all(true);
+//instance_activate_region(view_xview[1]-500, view_yview[1]-500, view_wview[1]+500, view_hview[1]+500, true);
 
 right = keyboard_check(ord('D'));
 up = keyboard_check(ord('W'));
@@ -439,12 +439,14 @@ if(!grounded)
         {
             while(!place_meeting(x+sign(hsp),y,obj_stable_ground))
             {
-             x+= sign(hsp);   
+             x+= sign(hsp);
+             speedx +=sign(hsp);
             }
         }
         else
         {
             x+= hsp;
+            speedx +=hsp;
         }
     }
     else if(keyboard_check(ord("D")))
@@ -459,11 +461,13 @@ if(!grounded)
             while(!place_meeting(x+sign(hsp),y,obj_stable_ground))
             {
              x+= sign(hsp);   
+             speedx =+ sign(hsp);
             }
         }
         else
         {
             x+= hsp;
+            speedx += hsp;
         }
     }
     else if(place_meeting(x+hsp,y,obj_stable_ground))
@@ -471,12 +475,14 @@ if(!grounded)
         while(!place_meeting(x+sign(hsp),y,obj_stable_ground))
             {
              x+= sign(hsp);   
+             speedx +=sign(hsp);
             }
             hsp = 0;
     }
     else
     {
         x+= hsp;
+        speedx += hsp;
     }
     
     if(place_meeting(x,y+vsp,obj_stable_ground))
@@ -506,17 +512,19 @@ if(place_meeting(x,y+20,obj_stable_ground) &amp;&amp; grounded)
 if(!place_meeting(x,y+1,obj_stable_ground) || (abs(speed) == 0) &amp;&amp; (!place_meeting(x+15,y+50,obj_stable_ground) || !place_meeting(x-15,y+50,obj_stable_ground)))
 {
     grounded = false;
-    show_debug_message(speed);
     if(place_meeting(x+15,y-10,obj_stable_ground))
     {
         if(hsp &lt;= 0)
         {
             x-=1;
+            speedx -=1;
         }
         else
         {
             hsp = 0;
             x-=2;
+            speedx = 0;
+            speedx -=2;
         }
     }
     
@@ -525,11 +533,14 @@ if(!place_meeting(x,y+1,obj_stable_ground) || (abs(speed) == 0) &amp;&amp; (!pla
         if(hsp &gt;= 0)
         {
             x+=1;
+            speedx+=1;
         }
         else
         {
             hsp = 0;
             x+=2;
+            speedx = 0;
+            speedx +=2;
         }
     }
     speed = 0;
@@ -671,8 +682,6 @@ if(grounded == 1 &amp;&amp; state != 4)
     sprite_index = spr_player_run;
 }
 
-
-/*
 if(obj_heart.hearts &lt;= 0)
 {
     //obj_controls.isActive = false;
@@ -695,6 +704,7 @@ if(obj_heart.hearts &lt;= 0)
     visble = false;
     obj_player.recently_hit = true;
 }
+speedx += hspeed;
 </string>
           </argument>
         </arguments>
@@ -727,16 +737,9 @@ if(obj_heart.hearts &lt;= 0)
   // draw_line(x,y,x+(sin(degtorad(image_angle))*diff1Y),y+(cos(degtorad(image_angle))*diff1Y));
    
 }
-draw_set_colour(c_red)
-draw_line(x,y,x+5,y-40)
-draw_line(x,y,x-5,y-40)
-draw_set_colour(c_blue)
-draw_line(x,y,x-45,y+50)
-draw_line(x,y,x+45,y+50)
-
 draw_self();
 
-/*
+
 if !(obj_heart.hearts &lt;= 0)
 {
     if (recently_hit == true)

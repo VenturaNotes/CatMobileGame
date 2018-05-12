@@ -319,6 +319,42 @@ if(!grounded)
     }
 }
 */ ////////////////////////////////////////ROTATES BACK TO 0 DEGREES
+
+/*////////////////////////////////////////////////// SPRING CODE
+    if(instance_exists(obj_spring))
+    {
+    
+        if(obj_spring.hit == true)
+        {
+            spring = true;
+            
+            active = false;
+            active2 = false;
+            active3 = false;
+            
+            obj_left.y += (obj_player.vsp - obj_player.grav)/1.5;
+            obj_right.y += (obj_player.vsp - obj_player.grav)/1.5;
+            obj_MOD.y += (obj_player.vsp - obj_player.grav)/1.5;
+            obj_melee.y += (obj_player.vsp - obj_player.grav)/1.5;
+            obj_angled.y += (obj_player.vsp - obj_player.grav)/1.5;
+            obj_straight.y += (obj_player.vsp - obj_player.grav)/1.5;
+            obj_up.y += (obj_player.vsp - obj_player.grav)/1.5;
+            obj_switch.y += (obj_player.vsp - obj_player.grav)/1.5;
+            obj_heart.y += (obj_player.vsp - obj_player.grav)/1.5;
+            obj_kills.y += (obj_player.vsp - obj_player.grav)/1.5;
+            obj_paws.y += (obj_player.vsp - obj_player.grav)/1.5;
+            obj_background_controls.y += (obj_player.vsp - obj_player.grav)/1.5;
+            view_yview[0] += (obj_player.vsp - obj_player.grav)/1.5; 
+            background_y[0] += (obj_player.vsp - obj_player.grav)/1.5;
+        }
+        
+        if(obj_player.grounded == 1)
+        {
+            spring = false;
+            obj_spring.hit = false;
+        }  
+    }
+*/
 </string>
           </argument>
         </arguments>

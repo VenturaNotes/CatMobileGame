@@ -239,6 +239,16 @@
     <sprite>sprites\spr_test1</sprite>
     <sprite>sprites\spr_test_ledge</sprite>
     <sprite>sprites\spr_ceiling</sprite>
+    <sprites name="World1Stage1">
+      <sprite>sprites\spr_w1s1p1</sprite>
+      <sprite>sprites\spr_w1s1p2</sprite>
+      <sprite>sprites\spr_w1s1p3</sprite>
+      <sprite>sprites\spr_w1s1p4</sprite>
+      <sprite>sprites\spr_w1s1p5</sprite>
+      <sprite>sprites\spr_w1s1p6</sprite>
+      <sprite>sprites\spr_w1s1p7</sprite>
+      <sprite>sprites\spr_w1s1p8</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_sky</background>
@@ -489,11 +499,20 @@
     <object>objects\obj_game_quit</object>
     <object>objects\Lost_Code</object>
     <object>objects\obj_ceiling</object>
+    <object>objects\obj_w1s1p1</object>
+    <object>objects\obj_w1s1p2</object>
+    <object>objects\obj_w1s1p3</object>
+    <object>objects\obj_w1s1p4</object>
+    <object>objects\obj_w1s1p5</object>
+    <object>objects\obj_w1s1p6</object>
+    <object>objects\obj_w1s1p7</object>
+    <object>objects\obj_w1s1p8</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
     <room>rooms\rm_FirstStage</room>
     <room>rooms\rm_World1Stage2</room>
+    <room>rooms\rm_World1Stage1</room>
     <room>rooms\rm_test</room>
     <rooms name="Main Menu">
       <room>rooms\rm_menu</room>
