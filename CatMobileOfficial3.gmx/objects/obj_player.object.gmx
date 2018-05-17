@@ -90,6 +90,10 @@ test = 0;
 
 height = 0;
 
+up    = false;
+left  = false
+right = false;
+
 </string>
           </argument>
         </arguments>
@@ -184,8 +188,6 @@ else
             <string>//instance_deactivate_all(true);
 //instance_activate_region(view_xview[1]-500, view_yview[1]-500, view_wview[1]+500, view_hview[1]+500, true);
 
-up = keyboard_check(ord('W'));
-
 if(keyboard_check(ord('A')) == false &amp;&amp; obj_multitouch.left == false)
 {
     left = false;
@@ -202,6 +204,15 @@ if(keyboard_check(ord('D')) == false &amp;&amp; obj_multitouch.right == false)
 else
 {
     right = true;
+}
+
+if(keyboard_check(ord('W')) == false &amp;&amp; obj_multitouch.up == false)
+{
+    up = false;
+}
+else
+{
+    up = true;
 }
 
 //Invincibility Frames

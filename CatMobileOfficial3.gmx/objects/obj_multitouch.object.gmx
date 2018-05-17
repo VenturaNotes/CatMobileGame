@@ -38,6 +38,7 @@ air = 0;
 
 left = false;
 right = false;
+up = true;
 </string>
           </argument>
         </arguments>
@@ -107,18 +108,19 @@ for (var i = 0; i &lt; 4;i++) // 4 touch
         if(position_meeting(xx,yy,obj_up) &amp;&amp; control3 == 0)
         {
             control3 = 1;
-            
-            if (obj_player.grounded)
+            if(instance_exists(obj_controls))
             {
-                obj_player.state = 2;
-                
-                 if(obj_up.alarm[0] == -1)
-                 {
-                    obj_up.alarm[0] = 4;
-                 }
+                if (obj_player.grounded)
+                {
+                    obj_player.state = 2;
+                    
+                     if(obj_up.alarm[0] == -1)
+                     {
+                        obj_up.alarm[0] = 4;
+                     }
+                }
+                obj_up.image_alpha = .5;
             }
-            
-            obj_up.image_alpha = .5;
         }
         
         if(position_meeting(xx,yy,obj_right) &amp;&amp; control4 == 0)
@@ -227,6 +229,17 @@ else
 {
     left = false;
     obj_left.image_alpha = 1;
+}
+
+if(control3 == 1)
+{
+    up = true;
+    obj_up.image_alpha = 0.5;
+}
+else
+{
+    up = false;
+    obj_up.image_alpha = 1;
 }
 
 if(control4 == 1)
