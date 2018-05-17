@@ -184,9 +184,25 @@ else
             <string>//instance_deactivate_all(true);
 //instance_activate_region(view_xview[1]-500, view_yview[1]-500, view_wview[1]+500, view_hview[1]+500, true);
 
-right = keyboard_check(ord('D'));
 up = keyboard_check(ord('W'));
-left = keyboard_check(ord('A'));
+
+if(keyboard_check(ord('A')) == false &amp;&amp; obj_multitouch.left == false)
+{
+    left = false;
+}
+else
+{
+    left = true;
+}
+
+if(keyboard_check(ord('D')) == false &amp;&amp; obj_multitouch.right == false)
+{
+    right = false;
+}
+else
+{
+    right = true;
+}
 
 //Invincibility Frames
 counter++;
@@ -197,7 +213,7 @@ if (counter &gt; 5)
 
 //MOVEMENT
 
-if(keyboard_check(ord("D")) &amp;&amp; grounded)
+if(right &amp;&amp; grounded)
 {
     if(image_xscale == -0.8)
     {
@@ -267,7 +283,7 @@ if(keyboard_check(ord("D")) &amp;&amp; grounded)
     }
 }
 
-if(keyboard_check(ord("A")) &amp;&amp; grounded)
+if(left &amp;&amp; grounded)
 {
     if(image_xscale == 0.8)
     {
@@ -405,7 +421,7 @@ else
     line1 = false;
 }
 
-if(keyboard_check(ord("W")))
+if(up)
 {
     if(grounded)
     {
@@ -419,7 +435,7 @@ if(keyboard_check(ord("W")))
 if(grounded)
 {
     direction = image_angle;
-    if(keyboard_check(ord("A")))
+    if(left)
     {
         if(speed &gt; 0)
         {
@@ -444,7 +460,7 @@ if(grounded)
         }
         
     }
-    else if(keyboard_check(ord("D")))
+    else if(right)
     {
         
         if(speed &lt; 0)
@@ -485,7 +501,7 @@ if(grounded)
 
 if(!grounded)
 {
-    if(keyboard_check(ord("A")))
+    if(left)
     {
         hsp-=1;
             if(hsp &lt;= -maxSpeedAir)
@@ -506,7 +522,7 @@ if(!grounded)
             speedx +=hsp;
         }
     }
-    else if(keyboard_check(ord("D")))
+    else if(right)
     {
         hsp+=1;
             if(hsp &gt;= maxSpeedAir)

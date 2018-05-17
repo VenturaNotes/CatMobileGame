@@ -35,6 +35,9 @@ control6 = 0;
 control7 = 0;
 
 air = 0;
+
+left = false;
+right = false;
 </string>
           </argument>
         </arguments>
@@ -76,26 +79,29 @@ for (var i = 0; i &lt; 4;i++) // 4 touch
         if(position_meeting(xx,yy,obj_left) &amp;&amp; control2 == 0)
         {
             control2 = 1;
-            if (obj_player.x &gt; obj_init.leftBarrier &amp;&amp; (obj_player.state = 0 || obj_player.state = 1 || obj_player.state == 10))
+            if(instance_exists(obj_controls))
             {
-                obj_player.state = 1;
-                obj_player.x -= 10;
+                if (obj_player.x &gt; obj_init.leftBarrier &amp;&amp; (obj_player.state = 0 || obj_player.state = 1 || obj_player.state == 10))
+                {
+                    obj_player.state = 1;
+                    obj_player.x -= 10;
+                    
+                     if(!instance_exists(obj_player_head))
+                     {
+                        with(obj_player)
+                        {
+                            image_speed = 0.25;
+                            sprite_index = spr_player_run;
+                        }
+                     }
+                }
+                else if (obj_player.x &gt; obj_init.leftBarrier)
+                {
+                    obj_player.x -= 10;
+                }
                 
-                 if(!instance_exists(obj_player_head))
-                 {
-                    with(obj_player)
-                    {
-                        image_speed = 0.25;
-                        sprite_index = spr_player_run;
-                    }
-                 }
+                obj_left.image_alpha = .5;
             }
-            else if (obj_player.x &gt; obj_init.leftBarrier)
-            {
-                obj_player.x -= 10;
-            }
-            
-            obj_left.image_alpha = .5;
         }
         
         if(position_meeting(xx,yy,obj_up) &amp;&amp; control3 == 0)
@@ -118,24 +124,27 @@ for (var i = 0; i &lt; 4;i++) // 4 touch
         if(position_meeting(xx,yy,obj_right) &amp;&amp; control4 == 0)
         {
             control4 = 1;
-             if (obj_player.x &lt; room_width-300 &amp;&amp; (obj_player.state == 0 || obj_player.state == 3 || obj_player.state == 10))
+            if(instance_exists(obj_controls))
             {
-                obj_player.state = 3;
-                obj_player.x += 10;
-                if(!instance_exists(obj_player_head))
+                if (obj_player.x &lt; room_width-300 &amp;&amp; (obj_player.state == 0 || obj_player.state == 3 || obj_player.state == 10))
                 {
-                    with(obj_player)
+                    obj_player.state = 3;
+                    obj_player.x += 10;
+                    if(!instance_exists(obj_player_head))
                     {
-                        image_speed = 0.75;
-                        sprite_index = spr_player_run;
+                        with(obj_player)
+                        {
+                            image_speed = 0.75;
+                            sprite_index = spr_player_run;
+                        }
                     }
                 }
+                else if (obj_player.x &lt; room_width-300)
+                {
+                    obj_player.x += 10;
+                }
+                obj_right.image_alpha = .5;
             }
-            else if (obj_player.x &lt; room_width-300)
-            {
-                obj_player.x += 10;
-            }
-            obj_right.image_alpha = .5;
         }
         
         if(position_meeting(xx,yy,obj_angled) &amp;&amp; control5 == 0)
@@ -208,6 +217,30 @@ for (var i = 0; i &lt; 4;i++) // 4 touch
         }  
     }
 }
+
+if(control2 == 1)
+{
+    left = true;
+    obj_left.image_alpha = 0.5
+}
+else
+{
+    left = false;
+    obj_left.image_alpha = 1;
+}
+
+if(control4 == 1)
+{
+    right = true;
+    obj_right.image_alpha = 0.5
+}
+else
+{
+    right = false;
+    obj_right.image_alpha = 1;
+}
+
+
 control = 0;
 control2 = 0;
 control3 = 0;
