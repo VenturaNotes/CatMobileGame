@@ -29,6 +29,10 @@
 counter = 0;
 
 delay = -1;
+
+angle = 0;
+
+increase = 0;
 </string>
           </argument>
         </arguments>
@@ -110,20 +114,20 @@ delay = -1;
         {
             if(obj_player.grounded == 1)
             {
-                 with instance_create(obj_player_head.x+14, obj_player_head.y+2, obj_laser2) //up
+               with instance_create(obj_player_head.x+14, obj_player_head.y+2, obj_laser2) //up
                  {
                     image_angle = 30;
                     up = true;
-                 }
+                 }   
             }
             else
             {
                 with instance_create(obj_player_head.x+8, obj_player_head.y+9, obj_laser2) //down
-                     {
-                       image_angle = -30;
-                       up = false;
-                       
-                     }
+                 {
+                   image_angle = -30;
+                   up = false;
+                   
+                 }
             }
         }
     }
@@ -167,7 +171,7 @@ else
         obj_player.state = 10;
         delay = 5;
         
-        instance_create(obj_player.x+68,obj_player.y-20,obj_player_head);
+        instance_create(obj_player.x+(cos(degtorad(obj_player.image_angle))*68)-sin(degtorad(obj_player.image_angle))*20,obj_player.y-(sin(degtorad(obj_player.image_angle))*68)-cos(degtorad(obj_player.image_angle))*20,obj_player_head);
         
         with(obj_player)
         {
@@ -182,11 +186,19 @@ else
             if(obj_player.grounded != 1)
             {
                 sprite_index = spr_player_up;
-                image_angle = -45;
+                if(sign(obj_player.image_xscale &gt; 0))
+                {
+                    obj_angled.angle = 1;
+                }
+                else
+                {
+                    obj_angled.angle = 2;
+                }
             }
             else
             {
                 sprite_index = spr_player_up;
+                obj_angled.angle = 3;
             }
         }
         
@@ -202,35 +214,77 @@ else
         
         delay-= 1;
         
-        obj_player_head.y = obj_player.y-20; 
-        
-          if(obj_controls.left == true &amp;&amp; obj_controls.right == true)
+        with(obj_player_head)
+        {
+            if(sign(obj_player.image_xscale &gt; 0))
             {
-                obj_player_head.x = obj_player.x +68;
+                x = obj_player.x+(cos(degtorad(obj_player.image_angle))*68)-sin(degtorad(obj_player.image_angle))*20+obj_player.hspeed;
+                y = obj_player.y-(sin(degtorad(obj_player.image_angle))*68)-cos(degtorad(obj_player.image_angle))*20+obj_player.vspeed;
+                image_xscale = 0.8;
             }
             else
             {
-                obj_player_head.x = obj_player.x +68;
-            }   
+                x = obj_player.x-(cos(degtorad(obj_player.image_angle))*68)-sin(degtorad(obj_player.image_angle))*20+obj_player.hspeed;
+                y = obj_player.y+(sin(degtorad(obj_player.image_angle))*68)-cos(degtorad(obj_player.image_angle))*20+obj_player.vspeed
+                image_xscale = -0.8;
+            }
+            
+            if(obj_angled.angle == 1)
+            {
+                image_angle = obj_player.image_angle-45;
+            }
+            else if (obj_angled.angle == 2)
+            {
+                image_angle = obj_player.image_angle+45;
+            }
+            else
+            {
+                image_angle = obj_player.image_angle;
+            }
+        }
+        
         
         if(delay == 1)
         {
             if(obj_player.grounded == 1)
             {
-                 with instance_create(obj_player_head.x+14, obj_player_head.y+2, obj_laser2) //up
-                 {
-                    image_angle = 30;
-                    up = true;
-                 }
+              if(sign(obj_player.image_xscale&gt;0))
+                {
+                   with instance_create(obj_player_head.x+14, obj_player_head.y+2, obj_laser2) //up
+                     {
+                        image_angle = 30;
+                        up = true;
+                     }   
+                }
+                else
+                {
+                     with instance_create(obj_player_head.x, obj_player_head.y+10, obj_laser2) //up
+                         {
+                            image_angle = -30;
+                            up = true;
+                         }    
+                }
             }
             else
             {
-                with instance_create(obj_player_head.x+8, obj_player_head.y+9, obj_laser2) //down
-                     {
-                       image_angle = -30;
-                       up = false;
-                       
-                     }
+                 if(sign(obj_player.image_xscale&gt;0))
+                 {
+                    with instance_create(obj_player_head.x+8, obj_player_head.y+9, obj_laser2) //down
+                         {
+                           image_angle = -30;
+                           up = false;
+                           
+                         }
+                 }
+                 else
+                 {
+                    with instance_create(obj_player_head.x+8, obj_player_head.y+9, obj_laser2) //down
+                         {
+                           image_angle = 30;
+                           up = false;
+                           
+                         }
+                 }
             }
         }
     }

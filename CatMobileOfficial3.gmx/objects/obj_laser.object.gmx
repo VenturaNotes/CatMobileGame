@@ -33,15 +33,15 @@ image_yscale = 0.8;
 count = 0;
 
 if(x &gt; obj_player.x)
-    {
-        count = 18;
-        image_xscale = 1;
-    }
-    else
-    {
-        count = -18;
-        image_xscale = -1;
-    }
+{
+    count = 18;
+    image_xscale = 1;
+}
+else
+{
+    count = -18;
+    image_xscale = -1;
+}
 </string>
           </argument>
         </arguments>
