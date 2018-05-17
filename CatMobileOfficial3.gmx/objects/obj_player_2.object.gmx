@@ -60,6 +60,10 @@ runLeft  = -10;
 runRight = 10;
 
 test = 0;
+
+right = keyboard_check(ord('D'));
+up = keyboard_check(ord('W'));
+left = keyboard_check(ord('A'));
 </string>
           </argument>
         </arguments>

@@ -51,85 +51,190 @@ delay = -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (frame == 4 &amp;&amp; !instance_exists(obj_player_head) &amp;&amp; (obj_player.state == 0 || obj_player.state = 3 || obj_player.state = 1 || obj_player.state == 2)) //&amp;&amp; obj_player.vsp &gt;= 0)
+            <string>if(instance_exists(obj_controls))
 {
-    audio_play_sound(snd_Shots,3,false);
-    audio_sound_gain(snd_Shots,0.3,0);
-    obj_player.state = 10;
-    delay = 5;
+    if (frame == 4 &amp;&amp; !instance_exists(obj_player_head) &amp;&amp; (obj_player.state == 0 || obj_player.state = 3 || obj_player.state = 1 || obj_player.state == 2)) //&amp;&amp; obj_player.vsp &gt;= 0)
+    {
+        audio_play_sound(snd_Shots,3,false);
+        audio_sound_gain(snd_Shots,0.3,0);
+        obj_player.state = 10;
+        delay = 5;
+        
+        instance_create(obj_player.x+105,obj_player.y-1,obj_player_head);
+        
+        with(obj_player)
+        {
+            image_speed = 0.5
+            sprite_index = spr_player_ground_headless;
+        }
     
-    instance_create(obj_player.x+105,obj_player.y-1,obj_player_head);
-    
-    with(obj_player)
-    {
-        image_speed = 0.5
-        sprite_index = spr_player_ground_headless;
-    }
-
-    with(obj_player_head)
-    {
-        image_index = 0;
-        image_speed = 1;
-        sprite_index = spr_player_forward;
-    }
-}
-
-if(delay &gt;= 0)
-{   
-    with(obj_player)
-    {
-        image_speed = 0.5;
-        sprite_index = spr_player_ground_headless;
-    }
-    
-    delay-= 1;
-    
-    obj_player_head.y = obj_player.y-1;
-    
-    if(obj_controls.left == true &amp;&amp; obj_controls.right == true)
-    {
-        obj_player_head.x = obj_player.x +105;
-    }
-    else
-    {
-        obj_player_head.x = obj_player.x +105;
-    }
-    
-    if(delay == 1)
-    {
-        instance_create(obj_player_head.x-30, obj_player_head.y-13, obj_laser)
-    }
-}
-
-if(delay == 0)
-{
-    delay-=1;
-    if(instance_exists(obj_player_head))
-    {
         with(obj_player_head)
         {
-            instance_destroy();
+            image_index = 0;
+            image_speed = 1;
+            sprite_index = spr_player_forward;
         }
     }
     
-    with(obj_player)
-    {
-        sprite_index = spr_player_run;
+    if(delay &gt;= 0)
+    {   
+        with(obj_player)
+        {
+            image_speed = 0.5;
+            sprite_index = spr_player_ground_headless;
+        }
+        
+        delay-= 1;
+        
+        obj_player_head.y = obj_player.y-1;
+        
+        if(obj_controls.left == true &amp;&amp; obj_controls.right == true)
+        {
+            obj_player_head.x = obj_player.x +105;
+        }
+        else
+        {
+            obj_player_head.x = obj_player.x +105;
+        }
+        
+        if(delay == 1)
+        {
+            instance_create(obj_player_head.x-30, obj_player_head.y-13, obj_laser)
+        }
     }
     
-    obj_player.state = 0;
+    if(delay == 0)
+    {
+        delay-=1;
+        if(instance_exists(obj_player_head))
+        {
+            with(obj_player_head)
+            {
+                instance_destroy();
+            }
+        }
+        
+        with(obj_player)
+        {
+            sprite_index = spr_player_run;
+        }
+        
+        obj_player.state = 0;
+    }
+    
+    if (counter &gt;= 1)
+    {
+        frame+=1;
+    }
+    
+    if (frame == 10) //Cool down?
+    {
+        counter = 0;
+        frame = 0;
+    }
+}
+else
+{
+    if (frame == 4 &amp;&amp; !instance_exists(obj_player_head) &amp;&amp; (obj_player.state == 0 || obj_player.state = 3 || obj_player.state = 1 || obj_player.state == 2)) //&amp;&amp; obj_player.vsp &gt;= 0)
+    {
+        audio_play_sound(snd_Shots,3,false);
+        audio_sound_gain(snd_Shots,0.3,0);
+        obj_player.state = 10;
+        delay = 5;
+        
+        instance_create(obj_player.x+(cos(degtorad(obj_player.image_angle))*105),obj_player.y-(sin(degtorad(obj_player.image_angle))*105),obj_player_head);
+        
+        with(obj_player)
+        {
+            image_speed = 0.5
+            sprite_index = spr_player_ground_headless;
+        }
+    
+        with(obj_player_head)
+        {
+            image_index = 0;
+            image_speed = 1;
+            sprite_index = spr_player_forward;
+        }
+    }
+    
+    if(delay &gt;= 0)
+    {   
+        with(obj_player)
+        {
+            image_speed = 0.5;
+            sprite_index = spr_player_ground_headless;
+        }
+        
+        delay-= 1;
+        
+        //MANIPULATE HEAD
+        
+        with(obj_player_head)
+        {
+            //speed = obj_player.speed;
+            if(sign(obj_player.image_xscale &gt; 0))
+            {
+                x = obj_player.x+(cos(degtorad(obj_player.image_angle))*105)+obj_player.hspeed;
+                y = obj_player.y-(sin(degtorad(obj_player.image_angle))*105)+obj_player.vspeed;
+                image_xscale = 0.8;
+            }
+            else
+            {
+                x = obj_player.x-(cos(degtorad(obj_player.image_angle))*105)+obj_player.hspeed;
+                y = obj_player.y+(sin(degtorad(obj_player.image_angle))*105)+obj_player.vspeed;
+                image_xscale = -0.8;
+            }
+            image_angle = obj_player.image_angle;
+            
+        }
+        
+        //MANIPULATE HEAD
+        
+        if(delay == 1)
+        {
+            if(sign(obj_player.image_xscale&gt;0))
+            {
+               instance_create(obj_player_head.x-30, obj_player_head.y-13, obj_laser)   
+            }
+            else
+            {
+                 instance_create(obj_player_head.x+30, obj_player_head.y-13, obj_laser)   
+            }
+        }
+    }
+    
+    if(delay == 0)
+    {
+        delay-=1;
+        if(instance_exists(obj_player_head))
+        {
+            with(obj_player_head)
+            {
+                instance_destroy();
+            }
+        }
+        
+        with(obj_player)
+        {
+            sprite_index = spr_player_run;
+        }
+        
+        obj_player.state = 0;
+    }
+    
+    if (counter &gt;= 1)
+    {
+        frame+=1;
+    }
+    
+    if (frame == 10) //Cool down?
+    {
+        counter = 0;
+        frame = 0;
+    }
 }
 
-if (counter &gt;= 1)
-{
-    frame+=1;
-}
-
-if (frame == 10) //Cool down?
-{
-    counter = 0;
-    frame = 0;
-}
 
 </string>
           </argument>

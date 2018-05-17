@@ -29,6 +29,19 @@
 image_speed = 1/3;
 image_xscale = 0.8;
 image_yscale = 0.8;
+
+count = 0;
+
+if(x &gt; obj_player.x)
+    {
+        count = 18;
+        image_xscale = 1;
+    }
+    else
+    {
+        count = -18;
+        image_xscale = -1;
+    }
 </string>
           </argument>
         </arguments>
@@ -52,7 +65,22 @@ image_yscale = 0.8;
           <argument>
             <kind>1</kind>
             <string>//This is the straight laser shot from the cat
-x += 18;
+/*
+if(count == 0)
+{
+    if(x &gt; obj_player.x)
+    {
+        count = 18;
+        image_xscale = 1;
+    }
+    else
+    {
+        count = -18;
+        image_xscale = -1;
+    }
+}
+*/
+x += count;
 
 if(death == 1)
 {

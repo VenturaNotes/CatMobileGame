@@ -203,7 +203,7 @@ if(keyboard_check(ord("D")) &amp;&amp; grounded)
     {
         height = y;
         direction+= 180;
-        sprite_set_offset(sprite_index,sprite_get_width(sprite_index)/2,sprite_get_yoffset(sprite_index));
+        //sprite_set_offset(sprite_index,sprite_get_width(sprite_index)/2,sprite_get_yoffset(sprite_index));
         image_xscale = 0.8;
         while(place_meeting(x,y,obj_stable_ground))
         {
@@ -222,7 +222,7 @@ if(keyboard_check(ord("D")) &amp;&amp; grounded)
     {
         height = y;
         direction+=180;
-        sprite_set_offset(sprite_index,sprite_get_width(sprite_index)/2,sprite_get_yoffset(sprite_index));
+        //sprite_set_offset(sprite_index,sprite_get_width(sprite_index)/2,sprite_get_yoffset(sprite_index));
         image_xscale = -0.8;
         while(place_meeting(x,y,obj_stable_ground))
         {
@@ -239,7 +239,7 @@ if(keyboard_check(ord("D")) &amp;&amp; grounded)
         {
             height = y;
             direction+= 180;
-            sprite_set_offset(sprite_index,sprite_get_width(sprite_index)/2,sprite_get_yoffset(sprite_index));
+           // sprite_set_offset(sprite_index,sprite_get_width(sprite_index)/2,sprite_get_yoffset(sprite_index));
             image_xscale = 0.8;
             while(place_meeting(x,y,obj_stable_ground))
             {
@@ -273,7 +273,7 @@ if(keyboard_check(ord("A")) &amp;&amp; grounded)
     {
         height = y;
         direction+=180;
-        sprite_set_offset(sprite_index,sprite_get_width(sprite_index)/2,sprite_get_yoffset(sprite_index));
+       // sprite_set_offset(sprite_index,sprite_get_width(sprite_index)/2,sprite_get_yoffset(sprite_index));
         image_xscale = -0.8;
         while(place_meeting(x,y,obj_stable_ground))
         {
@@ -292,7 +292,7 @@ if(keyboard_check(ord("A")) &amp;&amp; grounded)
     {
         height = y;
         direction+= 180;
-        sprite_set_offset(sprite_index,sprite_get_width(sprite_index)/2,sprite_get_yoffset(sprite_index));
+        //sprite_set_offset(sprite_index,sprite_get_width(sprite_index)/2,sprite_get_yoffset(sprite_index));
         image_xscale = 0.8;
         while(place_meeting(x,y,obj_stable_ground))
         {
@@ -309,7 +309,7 @@ if(keyboard_check(ord("A")) &amp;&amp; grounded)
         {
             height = y;
             direction+=180;
-            sprite_set_offset(sprite_index,sprite_get_width(sprite_index)/2,sprite_get_yoffset(sprite_index));
+            //sprite_set_offset(sprite_index,sprite_get_width(sprite_index)/2,sprite_get_yoffset(sprite_index));
             image_xscale = -0.8;
             while(place_meeting(x,y,obj_stable_ground))
             {
