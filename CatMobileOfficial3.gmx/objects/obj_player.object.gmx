@@ -826,12 +826,12 @@ positionx = (lpositionx-fpositionx)+hspeed;
             <kind>1</kind>
             <string>if(line1 == true)
 {
-   draw_set_colour(c_yellow);
-   draw_line(x1,y1,x2,y2);
-  draw_set_colour(c_red);
-   draw_line(x+cos(degtorad(image_angle))*10,y-sin(degtorad(image_angle))*10,(x+cos(degtorad(image_angle))*10) + sin(degtorad(image_angle))*diff1X,(y-sin(degtorad(image_angle))*10)+cos(degtorad(image_angle))*diff1X);
-   draw_set_colour(c_blue);
-   draw_line(x,y,x+(sin(degtorad(image_angle))*diff1Y),y+(cos(degtorad(image_angle))*diff1Y));
+   //draw_set_colour(c_yellow);
+   //draw_line(x1,y1,x2,y2);
+ // draw_set_colour(c_red);
+  // draw_line(x+cos(degtorad(image_angle))*10,y-sin(degtorad(image_angle))*10,(x+cos(degtorad(image_angle))*10) + sin(degtorad(image_angle))*diff1X,(y-sin(degtorad(image_angle))*10)+cos(degtorad(image_angle))*diff1X);
+ //  draw_set_colour(c_blue);
+  // draw_line(x,y,x+(sin(degtorad(image_angle))*diff1Y),y+(cos(degtorad(image_angle))*diff1Y));
    
 }
 draw_self();

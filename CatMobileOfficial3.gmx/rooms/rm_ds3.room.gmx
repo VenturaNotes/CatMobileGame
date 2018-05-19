@@ -89,6 +89,7 @@ with(obj_background_controls){image_xscale *= 1.15; image_yscale *=1.15;}</code>
     <instance objName="obj_ds3p4" x="5757" y="819" name="inst_BC8AC1A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ds3p5" x="7676" y="819" name="inst_1E6CA61A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ds3p6" x="9595" y="819" name="inst_E01BD6D9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_flag" x="11409" y="966" name="inst_F2A7CED3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

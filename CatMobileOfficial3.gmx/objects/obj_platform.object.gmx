@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(y-40 &gt; obj_player.y)
+            <string>if(y-30 &gt; obj_player.y)
 {
     mask_index = spr_platform;
 }
