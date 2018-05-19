@@ -111,12 +111,8 @@ instance_deactivate_object(obj_stage2_part33);
   </views>
   <instances>
     <instance objName="obj_heart" x="131" y="55" name="inst_0B27505B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player" x="1225" y="1342" name="inst_EAE072D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_ceiling" x="1270" y="894" name="inst_A9EE9F3C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_ceiling" x="1270" y="1621" name="inst_43D54DD4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_ceiling" x="1627" y="1222" name="inst_B2EC495E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_ceiling" x="882" y="1228" name="inst_E7B128E4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_pause3" x="1214" y="1132" name="inst_D2056AEF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player" x="1240" y="1157" name="inst_EAE072D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_platform" x="1073" y="1263" name="inst_2413C556" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

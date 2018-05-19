@@ -57,7 +57,7 @@ if(global.quit == 1)
 {
     global.quit = 0;
     audio_stop_all();
-    room_goto(rm_endless);
+    room_goto(rm_demoEndless);
 }
 </string>
           </argument>

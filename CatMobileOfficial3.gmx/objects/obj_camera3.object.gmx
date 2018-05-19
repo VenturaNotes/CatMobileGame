@@ -286,22 +286,22 @@ if(obj_player.grounded == true)
 
     
 //HORIZONTAL CAMERA MOVEMENT  
-view_xview[0] += obj_player.speedx;
-background_x[0] += obj_player.speedx;
+view_xview[0] += obj_player.positionx;
+background_x[0] += obj_player.positionx;
 
-obj_left.x += obj_player.speedx;
-obj_right.x += obj_player.speedx;
-obj_MOD.x += obj_player.speedx;
-obj_melee.x += obj_player.speedx;
-obj_angled.x += obj_player.speedx;
-obj_straight.x += obj_player.speedx;
-obj_up.x += obj_player.speedx;
-obj_switch.x += obj_player.speedx;
+obj_left.x += obj_player.positionx;
+obj_right.x += obj_player.positionx;
+obj_MOD.x += obj_player.positionx;
+obj_melee.x += obj_player.positionx;
+obj_angled.x += obj_player.positionx;
+obj_straight.x += obj_player.positionx;
+obj_up.x += obj_player.positionx;
+obj_switch.x += obj_player.positionx;
 
-obj_heart.x += obj_player.speedx;
-obj_kills.x += obj_player.speedx;
-obj_paws.x += obj_player.speedx;
-obj_background_controls.x += obj_player.speedx;
+obj_heart.x += obj_player.positionx;
+obj_kills.x += obj_player.positionx;
+obj_paws.x += obj_player.positionx;
+obj_background_controls.x += obj_player.positionx;
 }
 obj_player.speedx = 0;
 </string>

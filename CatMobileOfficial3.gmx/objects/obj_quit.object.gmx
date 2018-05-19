@@ -31,7 +31,7 @@
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="0">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -48,17 +48,31 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_stop_sound(snd_music1);
-
-global.quit = 1;
-global.constant = 1;
-
-room_goto(global.RoomBeforePause);
-
-if (global.RoomBeforePause != -1) 
+            <string>if position_meeting(mouse_x,mouse_y,self)
 {
-global.RoomBeforePause = -1;
-sprite_delete(global.PauseScreenShot);
+   if (mouse_check_button(mb_left))
+   {
+    image_alpha = 0.5;
+   }
+   
+   if mouse_check_button_released(mb_left)
+   {
+        audio_stop_all();
+        global.quit = 1;
+        global.constant = 1;
+        
+        room_goto(global.RoomBeforePause);
+        
+        if (global.RoomBeforePause != -1) 
+        {
+        global.RoomBeforePause = -1;
+        sprite_delete(global.PauseScreenShot);
+        }
+   }
+}
+else
+{
+    image_alpha = 1;
 }
 </string>
           </argument>

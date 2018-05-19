@@ -59,7 +59,7 @@ scr_loadgame();</code>
     <instance objName="obj_level2" x="454" y="268" name="inst_52E8CE56" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_level3" x="623" y="277" name="inst_24F26DDC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_kill25" x="612" y="157" name="inst_E847D440" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_return" x="81" y="57" name="inst_81E8D7F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_return" x="154" y="62" name="inst_81E8D7F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_cosineas" x="475" y="445" name="inst_F03BD3FA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>

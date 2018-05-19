@@ -239,16 +239,60 @@
     <sprite>sprites\spr_test1</sprite>
     <sprite>sprites\spr_test_ledge</sprite>
     <sprite>sprites\spr_ceiling</sprite>
-    <sprites name="World1Stage1">
-      <sprite>sprites\spr_w1s1p1</sprite>
-      <sprite>sprites\spr_w1s1p2</sprite>
-      <sprite>sprites\spr_w1s1p3</sprite>
-      <sprite>sprites\spr_w1s1p4</sprite>
-      <sprite>sprites\spr_w1s1p5</sprite>
-      <sprite>sprites\spr_w1s1p6</sprite>
-      <sprite>sprites\spr_w1s1p7</sprite>
-      <sprite>sprites\spr_w1s1p8</sprite>
+    <sprites name="Demo">
+      <sprites name="Stage1">
+        <sprite>sprites\spr_ds1p1</sprite>
+        <sprite>sprites\spr_ds1p2</sprite>
+        <sprite>sprites\spr_ds1p3</sprite>
+        <sprite>sprites\spr_ds1p4</sprite>
+        <sprite>sprites\spr_ds1p5</sprite>
+        <sprite>sprites\spr_ds1p6</sprite>
+      </sprites>
+      <sprites name="Stage2">
+        <sprite>sprites\spr_ds2p1</sprite>
+        <sprite>sprites\spr_ds2p2</sprite>
+        <sprite>sprites\spr_ds2p3</sprite>
+        <sprite>sprites\spr_ds2p4</sprite>
+        <sprite>sprites\spr_ds2p5</sprite>
+        <sprite>sprites\spr_ds2p6</sprite>
+      </sprites>
+      <sprites name="Stage3">
+        <sprite>sprites\spr_ds3p1</sprite>
+        <sprite>sprites\spr_ds3p2</sprite>
+        <sprite>sprites\spr_ds3p3</sprite>
+        <sprite>sprites\spr_ds3p4</sprite>
+        <sprite>sprites\spr_ds3p5</sprite>
+        <sprite>sprites\spr_ds3p6</sprite>
+      </sprites>
+      <sprites name="Stage4">
+        <sprite>sprites\spr_ds4p2</sprite>
+        <sprite>sprites\spr_ds4p4</sprite>
+        <sprite>sprites\spr_ds4p6</sprite>
+        <sprite>sprites\spr_ds4p7</sprite>
+        <sprite>sprites\spr_ds4p8</sprite>
+        <sprite>sprites\spr_ds4p9</sprite>
+        <sprite>sprites\spr_ds4p10</sprite>
+        <sprite>sprites\spr_ds4p11</sprite>
+        <sprite>sprites\spr_ds4p12</sprite>
+        <sprite>sprites\spr_ds4p13</sprite>
+        <sprite>sprites\spr_ds4p14</sprite>
+        <sprite>sprites\spr_ds4p15</sprite>
+        <sprite>sprites\spr_ds4p16</sprite>
+      </sprites>
+      <sprites name="Stage5">
+        <sprite>sprites\spr_ds5p1</sprite>
+        <sprite>sprites\spr_ds5p2</sprite>
+        <sprite>sprites\spr_ds5p3</sprite>
+        <sprite>sprites\spr_ds5p4</sprite>
+        <sprite>sprites\spr_ds5p5</sprite>
+        <sprite>sprites\spr_ds5p6</sprite>
+      </sprites>
+      <sprites name="Selection">
+        <sprite>sprites\spr_demoStage1</sprite>
+      </sprites>
     </sprites>
+    <sprite>sprites\spr_platform</sprite>
+    <sprite>sprites\spr_none</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_sky</background>
@@ -275,6 +319,8 @@
     <background>background\bck_primevalforest</background>
     <background>background\background20</background>
     <background>background\bck_bestiaryroom</background>
+    <background>background\bck_Select</background>
+    <background>background\bck_endless</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -499,20 +545,62 @@
     <object>objects\obj_game_quit</object>
     <object>objects\Lost_Code</object>
     <object>objects\obj_ceiling</object>
-    <object>objects\obj_w1s1p1</object>
-    <object>objects\obj_w1s1p2</object>
-    <object>objects\obj_w1s1p3</object>
-    <object>objects\obj_w1s1p4</object>
-    <object>objects\obj_w1s1p5</object>
-    <object>objects\obj_w1s1p6</object>
-    <object>objects\obj_w1s1p7</object>
-    <object>objects\obj_w1s1p8</object>
+    <objects name="Demo">
+      <objects name="Stage1">
+        <object>objects\obj_ds1p1</object>
+        <object>objects\obj_ds1p2</object>
+        <object>objects\obj_ds1p3</object>
+        <object>objects\obj_ds1p4</object>
+        <object>objects\obj_ds1p5</object>
+        <object>objects\obj_ds1p6</object>
+      </objects>
+      <objects name="Stage2">
+        <object>objects\obj_ds2p1</object>
+        <object>objects\obj_ds2p2</object>
+        <object>objects\obj_ds2p3</object>
+        <object>objects\obj_ds2p4</object>
+        <object>objects\obj_ds2p5</object>
+        <object>objects\obj_ds2p6</object>
+      </objects>
+      <objects name="Stage3">
+        <object>objects\obj_ds3p1</object>
+        <object>objects\obj_ds3p2</object>
+        <object>objects\obj_ds3p3</object>
+        <object>objects\obj_ds3p4</object>
+        <object>objects\obj_ds3p5</object>
+        <object>objects\obj_ds3p6</object>
+      </objects>
+      <objects name="Stage4">
+        <object>objects\obj_ds4p2</object>
+        <object>objects\obj_ds4p4</object>
+        <object>objects\obj_ds4p6</object>
+        <object>objects\obj_ds4p7</object>
+        <object>objects\obj_ds4p8</object>
+        <object>objects\obj_ds4p9</object>
+        <object>objects\obj_ds4p10</object>
+        <object>objects\obj_ds4p11</object>
+        <object>objects\obj_ds4p12</object>
+        <object>objects\obj_ds4p13</object>
+        <object>objects\obj_ds4p14</object>
+        <object>objects\obj_ds4p15</object>
+        <object>objects\obj_ds4p16</object>
+      </objects>
+      <objects name="Stage5">
+        <object>objects\obj_ds5p1</object>
+        <object>objects\obj_ds5p2</object>
+        <object>objects\obj_ds5p3</object>
+        <object>objects\obj_ds5p4</object>
+        <object>objects\obj_ds5p5</object>
+        <object>objects\obj_ds5p6</object>
+      </objects>
+    </objects>
+    <object>objects\obj_platform</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
     <room>rooms\rm_FirstStage</room>
     <room>rooms\rm_World1Stage2</room>
-    <room>rooms\rm_World1Stage1</room>
+    <room>rooms\rm_Template</room>
     <room>rooms\rm_test</room>
     <rooms name="Main Menu">
       <room>rooms\rm_menu</room>
@@ -558,6 +646,17 @@
     </rooms>
     <rooms name="Pause">
       <room>rooms\rm_pause</room>
+    </rooms>
+    <rooms name="Demo">
+      <room>rooms\rm_ds1</room>
+      <room>rooms\rm_ds2</room>
+      <room>rooms\rm_ds3</room>
+      <room>rooms\rm_ds4</room>
+      <room>rooms\rm_ds5</room>
+      <rooms name="Selection Screen">
+        <room>rooms\rm_demoSelection</room>
+        <room>rooms\rm_demoEndless</room>
+      </rooms>
     </rooms>
   </rooms>
   <help>
