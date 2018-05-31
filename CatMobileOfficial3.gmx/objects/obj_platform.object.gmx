@@ -25,13 +25,21 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(y-30 &gt; obj_player.y)
+            <string>if(obj_player.grounded || obj_player.vsp &gt; 0)
 {
     mask_index = spr_platform;
 }
 else
 {
     mask_index = spr_none;
+}
+
+with(obj_player)
+{
+    while(place_meeting(x,y-2,obj_platform))
+    {
+        y-=1;
+    }
 }
 </string>
           </argument>

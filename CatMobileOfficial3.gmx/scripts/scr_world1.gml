@@ -1,2 +1,3 @@
 // Takes you to world1 map room
-room_goto(rm_world1);
+audio_stop_all();
+room_goto(rm_demoSelection);

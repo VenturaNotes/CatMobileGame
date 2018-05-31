@@ -28,6 +28,7 @@
             <string>///variables
 image_xscale = 0.8;
 image_yscale = 0.8;
+image_speed = 0.5; 
 image_angle = 0;
 
 gravX = 0;
@@ -56,8 +57,6 @@ eye2 = 0;
 fix = 0;
 
 land = 0;
-
-image_speed = 0.5; 
 
 runLeft  = 0; //running speed -9
 runRight = 0; // running speed 9
@@ -97,6 +96,8 @@ right = false;
 fpositionx = 0;
 lpositionx = 0;
 positionx = 0;
+
+old = 0;
 
 </string>
           </argument>
@@ -775,6 +776,12 @@ if(grounded == 1 &amp;&amp; state != 4)
     sprite_index = spr_player_run;
 }
 
+if(obj_player.y &gt;= room_height+500)
+{
+    audio_stop_all();
+    room_goto(rm_demoSelection);
+}
+
 if(obj_heart.hearts &lt;= 0)
 {
     //obj_controls.isActive = false;
@@ -834,7 +841,7 @@ positionx = (lpositionx-fpositionx)+hspeed;
   // draw_line(x,y,x+(sin(degtorad(image_angle))*diff1Y),y+(cos(degtorad(image_angle))*diff1Y));
    
 }
-draw_self();
+//draw_self();
 
 
 if !(obj_heart.hearts &lt;= 0)

@@ -55,7 +55,6 @@ instance_create(300,50,obj_pause2);</code>
   </views>
   <instances>
     <instance objName="obj_multitouch" x="45" y="96" name="inst_82010BDC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_gen" x="30" y="96" name="inst_4570925B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_gr" x="-226" y="397" name="inst_DCE3B2D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_gr" x="369" y="397" name="inst_05FFEB7F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_heart" x="131" y="55" name="inst_0B27505B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -64,6 +63,7 @@ instance_create(300,50,obj_pause2);</code>
     <instance objName="obj_kills" x="864" y="32" name="inst_8AC0C2CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_background_controls" x="0" y="491" name="inst_F6F58C24" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player_2" x="208" y="300" name="inst_246532C0" locked="0" code="" scaleX="0.800000011920929" scaleY="0.800000011920929" colour="4294967295" rotation="0"/>
+    <instance objName="obj_gen" x="30" y="96" name="inst_4570925B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_controls" x="60" y="96" name="inst_33CA9420" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>

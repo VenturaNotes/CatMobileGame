@@ -10,7 +10,12 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>0</showcolour>
-  <code>scr_level();
+  <code>background_hspeed[1] = -0.5;
+if(global.sound == true)
+{
+    audio_play_sound(snd_scurd,5,true);
+    audio_sound_gain(snd_scurd,0.25,0);
+}
 
 background_index[0] = bck_sky;
 
@@ -90,6 +95,8 @@ with(obj_background_controls){image_xscale *= 1.15; image_yscale *=1.15;}</code>
     <instance objName="obj_ds5p5" x="7149" y="899" name="inst_5FE00A03" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ds5p6" x="8936" y="899" name="inst_2E901FC6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_flag" x="10634" y="899" name="inst_E319583B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_monster7" x="9398" y="512" name="inst_0D2ECD45" locked="0" code="" scaleX="7" scaleY="7" colour="4294967295" rotation="0"/>
+    <instance objName="obj_monster7" x="5579" y="493" name="inst_D4EC937A" locked="0" code="" scaleX="7" scaleY="7" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

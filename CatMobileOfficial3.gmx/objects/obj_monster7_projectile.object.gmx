@@ -34,6 +34,12 @@ var yposition;
 var xdifference;
 var ydifference;
 var distance;
+
+if(room == rm_ds5)
+{
+    image_xscale = 7;
+    image_yscale = 7;
+}
 </string>
           </argument>
         </arguments>
@@ -84,7 +90,14 @@ with(instance_place(x,y,obj_player))
 {
    if (obj_player.recently_hit == false)
       {
-          obj_heart.hearts -= 1;
+          if(room == rm_ds5)
+          {
+            obj_heart.hearts -= 6;
+          }
+          else
+          {
+            obj_heart.hearts -= 1; 
+          }
           obj_player.recently_hit = true;
           obj_player.alarm[0] = 2.5* room_speed;
       }

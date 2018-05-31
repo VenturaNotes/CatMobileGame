@@ -220,39 +220,47 @@ for (var i = 0; i &lt; 4;i++) // 4 touch
     }
 }
 
-if(control2 == 1)
+if(instance_exists(obj_left))
 {
-    left = true;
-    obj_left.image_alpha = 0.5
-}
-else
-{
-    left = false;
-    obj_left.image_alpha = 1;
-}
-
-if(control3 == 1)
-{
-    up = true;
-    obj_up.image_alpha = 0.5;
-}
-else
-{
-    up = false;
-    obj_up.image_alpha = 1;
+    if(control2 == 1)
+    {
+        left = true;
+        obj_left.image_alpha = 0.5
+    }
+    else
+    {
+        left = false;
+        obj_left.image_alpha = 1;
+    }
 }
 
-if(control4 == 1)
+if(instance_exists(obj_up))
 {
-    right = true;
-    obj_right.image_alpha = 0.5
-}
-else
-{
-    right = false;
-    obj_right.image_alpha = 1;
+    if(control3 == 1)
+    {
+        up = true;
+        obj_up.image_alpha = 0.5;
+    }
+    else
+    {
+        up = false;
+        obj_up.image_alpha = 1;
+    }
 }
 
+if(instance_exists(obj_right))
+{
+    if(control4 == 1)
+    {
+        right = true;
+        obj_right.image_alpha = 0.5
+    }
+    else
+    {
+        right = false;
+        obj_right.image_alpha = 1;
+    }
+}
 
 control = 0;
 control2 = 0;
