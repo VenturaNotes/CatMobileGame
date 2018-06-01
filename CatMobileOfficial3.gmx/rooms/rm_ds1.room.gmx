@@ -94,10 +94,7 @@ with(obj_background_controls){image_xscale *= 1.15; image_yscale *=1.15;}</code>
     <instance objName="obj_ds1p5" x="7384" y="855" name="inst_078F82E9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ds1p6" x="9230" y="855" name="inst_8A0143AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_flag" x="10959" y="855" name="inst_45F1B7C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player" x="305" y="768" name="inst_2A1B79CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_monster7" x="2311" y="781" name="inst_CA447935" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_monster7" x="3514" y="767" name="inst_4B50D065" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_monster7" x="4591" y="741" name="inst_9076FD06" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_t3Player" x="215" y="715" name="inst_4EBA8C16" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

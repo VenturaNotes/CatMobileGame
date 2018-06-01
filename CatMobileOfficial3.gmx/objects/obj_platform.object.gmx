@@ -25,7 +25,25 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(obj_player.grounded || obj_player.vsp &gt; 0)
+            <string>if(obj_t3Player.grounded || obj_t3Player.vsp &gt; 0)
+{
+    mask_index = spr_platform;
+}
+else
+{
+     mask_index = spr_none;
+}
+
+with(obj_t3Player)
+{
+    while(place_meeting(x,y,obj_stable_ground))
+    {
+        y-=1;
+    }
+}
+
+
+/*if(obj_player.grounded || obj_player.vsp &gt; 0)
 {
     mask_index = spr_platform;
 }
@@ -41,6 +59,7 @@ with(obj_player)
         y-=1;
     }
 }
+*/
 </string>
           </argument>
         </arguments>

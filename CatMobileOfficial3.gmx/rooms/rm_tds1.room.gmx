@@ -99,7 +99,7 @@ with(obj_background_controls){image_xscale *= 1.15; image_yscale *=1.15;}</code>
     <instance objName="obj_ceiling" x="3070" y="1364" name="inst_A86D2020" locked="0" code="" scaleX="0.46000000834465" scaleY="1.87969923019409" colour="4294967295" rotation="0"/>
     <instance objName="obj_ceiling" x="2452" y="1830" name="inst_34A933B7" locked="0" code="" scaleX="1.66999995708466" scaleY="0.675000011920929" colour="4294967295" rotation="0"/>
     <instance objName="obj_loop" x="3443" y="1098" name="inst_32785FE3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_t3Player" x="4003" y="1795" name="inst_3DF9AFFA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_t3Player" x="521" y="758" name="inst_3DF9AFFA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_curve" x="2875" y="1659" name="inst_D9CFE16B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_curve" x="2655" y="1653" name="inst_535DD940" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>

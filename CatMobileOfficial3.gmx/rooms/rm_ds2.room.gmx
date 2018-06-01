@@ -87,7 +87,6 @@ with(obj_background_controls){image_xscale *= 1.15; image_yscale *=1.15;}</code>
   </views>
   <instances>
     <instance objName="obj_heart" x="131" y="55" name="inst_0B27505B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player" x="378" y="565" name="inst_EAE072D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ds2p1" x="0" y="930" name="inst_F842EE0B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ds2p2" x="1897" y="930" name="inst_CFCB500D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ds2p3" x="3794" y="930" name="inst_81507B85" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -95,9 +94,7 @@ with(obj_background_controls){image_xscale *= 1.15; image_yscale *=1.15;}</code>
     <instance objName="obj_ds2p5" x="7588" y="930" name="inst_F72566FE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ds2p6" x="9485" y="930" name="inst_23B966AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_flag" x="11265" y="930" name="inst_F1D94FF2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_monster7" x="11001" y="801" name="inst_6A051D47" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_monster7" x="9246" y="820" name="inst_478E5528" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_monster7" x="1984" y="777" name="inst_8E261410" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_t3Player" x="347" y="866" name="inst_6DC06C33" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

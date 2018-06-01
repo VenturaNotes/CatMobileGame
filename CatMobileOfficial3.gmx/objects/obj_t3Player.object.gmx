@@ -61,6 +61,9 @@ kills = 0; //Number of Kills Player Gets
 rightLast = false; //Right is the Last Direction Pressed
 leftLast = false; //Left is the Last Direction Pressed
 
+lastXPosition = 0; //Last x coordinate of player
+lastYPosition = 0; //Last y coordinate of player 
+
 test = 0; //Testing Variables
 </string>
           </argument>
@@ -163,6 +166,17 @@ else
     drawLine = false;
 }
 
+//LOOPS ANGLE BY 360 DEGREES. 
+
+if(angle &gt; 360)
+{
+    angle -= 360;
+}
+if(angle &lt; 0)
+{
+    angle+= 360;
+}
+
 ////////////////////////////////////////////////////PHYSICS PROPERTIES
 
 //BUTTON PROPERTIES
@@ -255,25 +269,23 @@ if(grounded)
 
 if(jump &amp;&amp; grounded) &amp;&amp; place_meeting(x,y+1,obj_stable_ground)
 {
+    show_debug_message(angle);
     if(angle &lt;= 30 || angle &gt;= 330)
     {
         vsp -= jumpSpeed;
         grounded = false;
-        //angle = 0;
     }
     else if(angle &gt;= 30 &amp;&amp; angle &lt;= 90)
     {
         vsp -= jumpSpeed/2;
         hsp -= jumpSpeed/2;
         grounded = false;
-        //angle = 0;
     }
     else if(angle &gt;= 270 &amp;&amp; angle &lt;= 330)
     {
         vsp -= jumpSpeed/2;
         hsp += jumpSpeed/2;
         grounded = false;
-        //angle = 0;
     }
 }
 
@@ -293,6 +305,14 @@ if(!grounded)
     }
 }
 
+if (!collision_circle( x, y, 20, obj_stable_ground, true, true ))
+{
+    grounded = false;
+}
+
+lastXPosition = x;
+lastYPosition = y;
+
 //MAKES SURE YOU STAY NEXT TO WALL
 for(i=0; !place_meeting(x+hsp,y+vsp,obj_stable_ground) &amp;&amp; grounded; i++)
 {
@@ -304,10 +324,19 @@ for(i=0; !place_meeting(x+hsp,y+vsp,obj_stable_ground) &amp;&amp; grounded; i++)
     }
 }
 
-while(place_meeting(x+hsp,y+vsp,obj_stable_ground) &amp;&amp; grounded)
+for(i = 0; place_meeting(x+hsp,y+vsp,obj_stable_ground) &amp;&amp; grounded; i++)
 {
     y-= (cos(degtorad(angle))*abs(x2-x1) + cos(degtorad(angle))*abs(y2-y1))/10;
     x-= (sin(degtorad(angle))*abs(y2-y1) + sin(degtorad(angle))*abs(x2-x1))/10;
+    if(i &gt; 30)
+    {
+        x = lastXPosition;
+        y = lastYPosition;
+        hsp = 0;
+        vsp = 0;
+        gsp = 0;
+        break;
+    }
 }
 
 //CHECKING HORIZONTAL COLLISIONs IN AIR
@@ -332,20 +361,21 @@ if(place_meeting(x,y+vsp,obj_stable_ground) &amp;&amp; !grounded)
     if(place_meeting(x,y+1,obj_stable_ground))
     {
         grounded = true;
+        if(place_meeting(x-1,y,obj_stable_ground))
+        {
+            angle = 270;
+        }
+        else if(place_meeting(x+1,y,obj_stable_ground))
+        {
+            angle = 90;
+        }
+        else
+        {
+            angle = 0;
+        }
     }
 }
 y+=vsp;
-
-//LOOPS ANGLE BY 360 DEGREES. 
-
-if(angle &gt; 360)
-{
-    angle -= 360;
-}
-if(angle &lt; 0)
-{
-    angle+= 360;
-}
 
 lpositionx = x
 positionx = (lpositionx-fpositionx);
@@ -355,7 +385,7 @@ if(place_meeting(x,y,obj_stable_ground))
 {
     show_debug_message("AYY");
 }
-show_debug_message(grounded);
+
 </string>
           </argument>
         </arguments>
@@ -452,6 +482,8 @@ if(drawLine == true)
    draw_line(x,y,x+(sin(degtorad(angle))*diff1Y),y+(cos(degtorad(angle))*diff1Y));
 }
 
+draw_set_colour(c_blue);
+draw_circle(x, y, 20, false);
 </string>
           </argument>
         </arguments>
