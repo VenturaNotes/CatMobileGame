@@ -52,9 +52,12 @@ y2 = 0; //Distance from Top Left to Bottom Left
 diff1X = 0; //Length of the Right Line.
 diff1Y = 0;  //Length of the Left Line.
 
-fpositionx = 0; //Initial Position of Cat Before Movement
-lpositionx = 0; //Final Position of Cat After Movement
-positionx = 0; //Difference in Positions of Cat
+fpositionx = 0; //Initial X Position of Cat Before Movement
+lpositionx = 0; //Final X Position of Cat After Movement
+positionx = 0; //Difference in X Positions of Cat
+
+fpositiony = 0; //Initial Y Position of Cat Before Movement
+lpositiony = 0; //Final Y Position of Cat After Movement
 
 kills = 0; //Number of Kills Player Gets
 
@@ -63,6 +66,8 @@ leftLast = false; //Left is the Last Direction Pressed
 
 lastXPosition = 0; //Last x coordinate of player
 lastYPosition = 0; //Last y coordinate of player 
+
+saveAngle = 0; //Saves angle before lines drawn
 
 test = 0; //Testing Variables
 </string>
@@ -87,7 +92,9 @@ test = 0; //Testing Variables
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>fpositionx = x;
+            <string>//INITIAL POSITION OF CAT
+fpositionx = x;
+fpositiony = y;
 
 //BUTTONS
 right = keyboard_check(ord("D"));
@@ -122,6 +129,7 @@ if(vsp &lt; -vspl) {vsp = -vspl;}
 //DRAWS LINE FROM PLAYER TO GROUND
 if(grounded)
 {
+    saveAngle = angle;
     //RIGHT LINE
     for(yy = 0; !position_meeting((x+cos(degtorad(angle))*10) + sin(degtorad(angle))*yy,(y-sin(degtorad(angle))*10)+cos(degtorad(angle))*yy,obj_stable_ground); yy++)
          {
@@ -140,26 +148,35 @@ if(grounded)
              break;
          }
      }
-    
-    //Point of bottom right line. 
-    x1 = (x+cos(degtorad(angle))*10) + sin(degtorad(angle))*diff1X; //Distance between top left line and top right line. 
-    y1 = (y-sin(degtorad(angle))*10)+ cos(degtorad(angle))*diff1X; //Distance from top right to bottom right. 
-    
-    //Point of bottom left line. 
-    x2 = x+(sin(degtorad(angle))*diff1Y); //Point of top left line. 
-    y2 = y+(cos(degtorad(angle))*diff1Y); //Distance from top left to bottom left. 
-    
-    //Distance of slope
-    var dist = sqrt(power(x2-x1,2)+power(y2-y1,2));
-    
-    //The distance of the slope is always costant. The difference in the lengths
-    //of the lines will be 0 when angle is equal to the angle of the slope. 
-    if(radtodeg(arctan2(diff1Y-diff1X,dist)) != 0)
-    {
-        angle += radtodeg(arctan2(diff1Y-diff1X,dist));
+     
+     if(diff1X &gt;= 100 || diff1Y &gt;= 100)
+     {
+        angle = saveAngle;
+        grounded = false;
+     }
+     
+     if(grounded)
+     {
+        //Point of bottom right line. 
+        x1 = (x+cos(degtorad(angle))*10) + sin(degtorad(angle))*diff1X; //Distance between top left line and top right line. 
+        y1 = (y-sin(degtorad(angle))*10)+ cos(degtorad(angle))*diff1X; //Distance from top right to bottom right. 
+        
+        //Point of bottom left line. 
+        x2 = x+(sin(degtorad(angle))*diff1Y); //Point of top left line. 
+        y2 = y+(cos(degtorad(angle))*diff1Y); //Distance from top left to bottom left. 
+        
+        //Distance of slope
+        var dist = sqrt(power(x2-x1,2)+power(y2-y1,2));
+        
+        //The distance of the slope is always costant. The difference in the lengths
+        //of the lines will be 0 when angle is equal to the angle of the slope. 
+        if(radtodeg(arctan2(diff1Y-diff1X,dist)) != 0)
+        {
+            angle += radtodeg(arctan2(diff1Y-diff1X,dist));
+        }
+        
+        drawLine = true;
     }
-    
-    drawLine = true;
 }
 else
 {
@@ -269,7 +286,6 @@ if(grounded)
 
 if(jump &amp;&amp; grounded) &amp;&amp; place_meeting(x,y+1,obj_stable_ground)
 {
-    show_debug_message(angle);
     if(angle &lt;= 30 || angle &gt;= 330)
     {
         vsp -= jumpSpeed;
@@ -377,7 +393,24 @@ if(place_meeting(x,y+vsp,obj_stable_ground) &amp;&amp; !grounded)
 }
 y+=vsp;
 
-lpositionx = x
+//FIXES GETTING STUCK ON EDGES
+if(fpositionx == x &amp;&amp; fpositiony == y &amp;&amp; right == true)
+{
+    if(!place_meeting(x-5,y,obj_stable_ground))
+    {
+        x-=5;
+    }
+}
+else if(fpositionx == x &amp;&amp; fpositiony == y &amp;&amp; left == true)
+{
+    if(!place_meeting(x+5,y,obj_stable_ground))
+    {
+        x+=5;
+    }
+}
+
+lpositionx = x;
+
 positionx = (lpositionx-fpositionx);
 
 //(TEMPORARY) CHECKING TO SEE IF YOU GET STUCK IN THE GROUND
@@ -386,6 +419,7 @@ if(place_meeting(x,y,obj_stable_ground))
     show_debug_message("AYY");
 }
 
+    show_debug_message(angle);
 </string>
           </argument>
         </arguments>
@@ -482,8 +516,8 @@ if(drawLine == true)
    draw_line(x,y,x+(sin(degtorad(angle))*diff1Y),y+(cos(degtorad(angle))*diff1Y));
 }
 
-draw_set_colour(c_blue);
-draw_circle(x, y, 20, false);
+//draw_set_colour(c_blue);
+//draw_circle(x, y, 20, false);
 </string>
           </argument>
         </arguments>
