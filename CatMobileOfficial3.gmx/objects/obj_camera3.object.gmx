@@ -56,6 +56,10 @@ spring = false;
 rise = 5;
 
 playerObject = obj_t3Player
+
+scale = 0.8;
+yHeight = 92.5;
+yView = 300; //385
 </string>
           </argument>
         </arguments>
@@ -87,40 +91,41 @@ playerObject = obj_t3Player
     //Initializes the camera
     if(initial == false)
     {
-        obj_left.y = (playerObject.y+179); //106?
-        obj_right.y = playerObject.y+179;
-        obj_MOD.y = playerObject.y+179;
-        obj_melee.y = playerObject.y+179;
-        obj_angled.y = playerObject.y+179;
-        obj_straight.y = playerObject.y+179;
-        obj_up.y = playerObject.y+179;
-        obj_switch.y = playerObject.y+179;  
-        obj_heart.y = playerObject.y-320;
-        obj_kills.y = playerObject.y-320;
-        obj_paws.y = playerObject.y-320;
-        obj_background_controls.y = playerObject.y+179;
-        view_yview[0] = playerObject.y-385; 
-        background_y[0] = playerObject.y-385;
+        //179? for 1.15 //106
+        obj_left.y = playerObject.y+yHeight; 
+        obj_right.y = playerObject.y+yHeight;
+        obj_MOD.y = playerObject.y+yHeight;
+        obj_melee.y = playerObject.y+yHeight;
+        obj_angled.y = playerObject.y+yHeight;
+        obj_straight.y = playerObject.y+yHeight;
+        obj_up.y = playerObject.y+yHeight;
+        obj_switch.y = playerObject.y+yHeight;  
+        obj_background_controls.y = playerObject.y+yHeight;
+        obj_heart.y = playerObject.y-240;
+        obj_kills.y = playerObject.y-240; //??? 320
+        obj_paws.y = playerObject.y-240;
+        view_yview[0] = playerObject.y-yView; 
+        background_y[0] = playerObject.y-yView;
         
         view_xview[0] = playerObject.x-view_wview[0]/2;
         
         background_x[0] = playerObject.x-view_wview[0]/2;
         
-        obj_left.x = view_xview[0]+(50*1.15);
-        obj_right.x = view_xview[0]+(150*1.15);
-        obj_MOD.x = view_xview[0]+(590*1.15);
-        obj_melee.x = view_xview[0]+(290*1.15);
-        obj_angled.x = view_xview[0]+(725*1.15);
-        obj_straight.x = view_xview[0]+(815*1.15);
-        obj_up.x = view_xview[0]+(910*1.15);
-        obj_switch.x = view_xview[0]+(440*1.15);
+        obj_left.x = view_xview[0]+(50*scale);
+        obj_right.x = view_xview[0]+(150*scale);
+        obj_MOD.x = view_xview[0]+(590*scale);
+        obj_melee.x = view_xview[0]+(290*scale);
+        obj_angled.x = view_xview[0]+(725*scale);
+        obj_straight.x = view_xview[0]+(815*scale);
+        obj_up.x = view_xview[0]+(910*scale);
+        obj_switch.x = view_xview[0]+(440*scale);
+        obj_heart.x =  view_xview[0]+(125*scale);
+        obj_paws.x = view_xview[0]+(300*scale);
         
-        obj_heart.x =  view_xview[0]+125;
         obj_kills.x = view_xview[0]+(800);
-        obj_paws.x = view_xview[0]+(300);
         obj_background_controls.x = view_xview[0];
         
-        initialPosition = room_height-400; //playerObject.y-385
+        initialPosition = room_height-yView; //playerObject.y-385  //400?
         
         if(playerObject.grounded == 1)
         {
@@ -134,10 +139,10 @@ playerObject = obj_t3Player
         active = false;
         active2 = true;
         active3 = false;
-        range = abs(initialPosition - (playerObject.y-385));
+        range = abs(initialPosition - (playerObject.y-yView));
         if(range &gt;= 200)
         {
-            newPosition = playerObject.y+200-385;
+            newPosition = playerObject.y+200-yView;
         }
         else
         {
@@ -153,10 +158,10 @@ playerObject = obj_t3Player
         active2 = false;
         active3 = false;
         
-        range = abs(initialPosition - (playerObject.y-385));
+        range = abs(initialPosition - (playerObject.y-yView));
         if(range &gt;= 50)
         {
-            newPosition = playerObject.y+50-385;
+            newPosition = playerObject.y+50-yView;
         }
         else
         {
@@ -172,10 +177,10 @@ playerObject = obj_t3Player
         active = false;
         active2 = false;
         active3 = true;
-        range = abs(initialPosition - (playerObject.y-385));
+        range = abs(initialPosition - (playerObject.y-yView));
         if(range &gt;= 50) //150
         {
-            newPosition = playerObject.y+50-385; //150
+            newPosition = playerObject.y+50-yView; //150
         }
         else
         {
@@ -305,6 +310,8 @@ obj_kills.x += playerObject.positionx;
 obj_paws.x += playerObject.positionx;
 obj_background_controls.x += playerObject.positionx;
 }
+
+
 </string>
           </argument>
         </arguments>

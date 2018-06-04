@@ -615,13 +615,10 @@
     </objects>
     <object>objects\obj_platform</object>
     <objects name="Test">
-      <object>objects\obj_tPLayer</object>
-      <object>objects\obj_t2Player</object>
       <object>objects\obj_loop</object>
       <object>objects\obj_ceiling</object>
-      <object>objects\obj_t3Player</object>
-      <object>objects\obj_t3Player_backup</object>
       <object>objects\obj_curve</object>
+      <object>objects\obj_t3Player</object>
     </objects>
   </objects>
   <rooms name="rooms">

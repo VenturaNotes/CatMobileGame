@@ -18,34 +18,38 @@ if(global.sound == true)
 }
 
 background_index[0] = bck_sky;
-
 instance_create(0,0,obj_debugging);
 //instance_create(0,1,obj_controls);
-instance_create(300,50,obj_paws);
 instance_create(0,3,obj_gameover2);
 instance_create(0,4,obj_multitouch);
 instance_create(0,5,obj_camera3); //This controls the camera and background obj_background2
 instance_create(800,30,obj_kills);
 
-instance_create(view_xview[0]+(50*1.15),view_yview[0]+491,obj_left);
-with(obj_left){image_xscale *= 1.15; image_yscale *=1.15;}
-instance_create(view_xview[0]+(150*1.15),view_yview[0]+491,obj_right);
-with(obj_right){image_xscale *= 1.15; image_yscale *=1.15;}
-instance_create(view_xview[0]+(290*1.15),view_yview[0]+491,obj_melee);
-with(obj_melee){image_xscale *= 1.15; image_yscale *=1.15;}
-instance_create(view_xview[0]+(440*1.15),view_yview[0]+491,obj_switch);
-with(obj_switch){image_xscale *= 1.15; image_yscale *=1.15;}
-instance_create(view_xview[0]+(590*1.15),view_yview[0]+491,obj_MOD);
-with(obj_MOD){image_xscale *= 1.15; image_yscale *=1.15;}
-instance_create(view_xview[0]+(725*1.15),view_yview[0]+491,obj_angled);
-with(obj_angled){image_xscale *= 1.15; image_yscale *=1.15;}
-instance_create(view_xview[0]+(815*1.15),view_yview[0]+491,obj_straight);
-with(obj_straight){image_xscale *= 1.15; image_yscale *=1.15;}
-instance_create(view_xview[0]+(910*1.15),view_yview[0]+491,obj_up); 
-with(obj_up){image_xscale *= 1.15; image_yscale *=1.15;}
+//106? 491
 
-instance_create(0,491,obj_background_controls);
-with(obj_background_controls){image_xscale *= 1.15; image_yscale *=1.15;}</code>
+instance_create(view_xview[0]+(50*0.800),view_yview[0]+106,obj_left);
+with(obj_left){image_xscale *= 0.800; image_yscale *=0.800;}
+instance_create(view_xview[0]+(150*0.800),view_yview[0]+106,obj_right);
+with(obj_right){image_xscale *= 0.800; image_yscale *=0.800;}
+instance_create(view_xview[0]+(290*0.800),view_yview[0]+106,obj_melee);
+with(obj_melee){image_xscale *= 0.800; image_yscale *=0.800;}
+instance_create(view_xview[0]+(440*0.800),view_yview[0]+106,obj_switch);
+with(obj_switch){image_xscale *= 0.800; image_yscale *=0.800;}
+instance_create(view_xview[0]+(590*0.800),view_yview[0]+106,obj_MOD);
+with(obj_MOD){image_xscale *= 0.800; image_yscale *=0.800;}
+instance_create(view_xview[0]+(725*0.800),view_yview[0]+106,obj_angled);
+with(obj_angled){image_xscale *= 0.800; image_yscale *=0.800;}
+instance_create(view_xview[0]+(815*0.800),view_yview[0]+106,obj_straight);
+with(obj_straight){image_xscale *= 0.800; image_yscale *=0.800;}
+instance_create(view_xview[0]+(910*0.800),view_yview[0]+106,obj_up); 
+with(obj_up){image_xscale *= 0.800; image_yscale *=0.800;}
+instance_create(view_xview[0]+(131*0.800),view_yview[0]+55,obj_heart);
+with(obj_heart){image_xscale *= 0.800; image_yscale *=0.800;}
+instance_create(view_xview[0]+(300*0.800),view_yview[0]+50,obj_paws);
+with(obj_paws){image_xscale *= 0.800; image_yscale *=0.800;}
+
+instance_create(0,106,obj_background_controls);
+with(obj_background_controls){image_xscale *= 0.800; image_yscale *=0.800;}</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -76,7 +80,7 @@ with(obj_background_controls){image_xscale *= 1.15; image_yscale *=1.15;}</code>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>
   <views>
-    <view visible="-1" objName="obj_player" xview="0" yview="0" wview="1104" hview="621" xport="0" yport="0" wport="960" hport="540" hborder="480" vborder="270" hspeed="0" vspeed="0"/>
+    <view visible="-1" objName="obj_player" xview="0" yview="0" wview="768" hview="432" xport="0" yport="0" wport="960" hport="540" hborder="480" vborder="270" hspeed="0" vspeed="0"/>
     <view visible="0" objName="obj_player" xview="0" yview="0" wview="1104" hview="621" xport="0" yport="0" wport="960" hport="540" hborder="960" vborder="540" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
@@ -86,7 +90,6 @@ with(obj_background_controls){image_xscale *= 1.15; image_yscale *=1.15;}</code>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_heart" x="131" y="55" name="inst_0B27505B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ds1p1" x="0" y="855" name="inst_758F4BFB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ds1p2" x="1846" y="855" name="inst_0182C13C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ds1p3" x="3692" y="855" name="inst_FC0E82F0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
