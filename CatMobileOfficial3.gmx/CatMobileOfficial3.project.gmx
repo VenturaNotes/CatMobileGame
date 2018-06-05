@@ -182,65 +182,6 @@
       <sprite>sprites\spr_23_ShardagasEx</sprite>
       <sprite>sprites\spr_ningen</sprite>
     </sprites>
-    <sprite>sprites\spr_wall</sprite>
-    <sprite>sprites\spr_boundary</sprite>
-    <sprite>sprites\spr_hill2</sprite>
-    <sprite>sprites\spr_wall2</sprite>
-    <sprite>sprites\spr_shill1</sprite>
-    <sprite>sprites\spr_shill2</sprite>
-    <sprite>sprites\spr_gplatform</sprite>
-    <sprite>sprites\spr_splatform</sprite>
-    <sprite>sprites\spr_icespikes</sprite>
-    <sprite>sprites\spr_gcliff</sprite>
-    <sprite>sprites\spr_scliff</sprite>
-    <sprite>sprites\spr_leftBarrier</sprite>
-    <sprite>sprites\spr_incline</sprite>
-    <sprite>sprites\spr_incline2</sprite>
-    <sprite>sprites\spr_incline_collision</sprite>
-    <sprite>sprites\spr_incline_collision2</sprite>
-    <sprite>sprites\spr_grass</sprite>
-    <sprite>sprites\spr_grass_collision</sprite>
-    <sprite>sprites\spr_spring</sprite>
-    <sprite>sprites\spr_game_quit</sprite>
-    <sprites name="World3Level1">
-      <sprite>sprites\spr_stage1_part1</sprite>
-      <sprite>sprites\spr_stage1_part2</sprite>
-      <sprite>sprites\spr_stage1_part3</sprite>
-      <sprite>sprites\spr_stage1_part4</sprite>
-      <sprite>sprites\spr_stage1_part5</sprite>
-      <sprite>sprites\spr_stage1_part6</sprite>
-      <sprite>sprites\spr_stage1_part7</sprite>
-      <sprite>sprites\spr_stage1_part8</sprite>
-    </sprites>
-    <sprites name="World1Level2">
-      <sprite>sprites\spr_stage2_part4</sprite>
-      <sprite>sprites\spr_stage2_part5</sprite>
-      <sprite>sprites\spr_stage2_part6</sprite>
-      <sprite>sprites\spr_stage2_part12</sprite>
-      <sprite>sprites\spr_stage2_part13</sprite>
-      <sprite>sprites\spr_stage2_part14</sprite>
-      <sprite>sprites\spr_stage2_part15</sprite>
-      <sprite>sprites\spr_stage2_part16</sprite>
-      <sprite>sprites\spr_stage2_part17</sprite>
-      <sprite>sprites\spr_stage2_part18</sprite>
-      <sprite>sprites\spr_stage2_part19</sprite>
-      <sprite>sprites\spr_stage2_part20</sprite>
-      <sprite>sprites\spr_stage2_part21</sprite>
-      <sprite>sprites\spr_stage2_part22</sprite>
-      <sprite>sprites\spr_stage2_part23</sprite>
-      <sprite>sprites\spr_stage2_part24</sprite>
-      <sprite>sprites\spr_stage2_part25</sprite>
-      <sprite>sprites\spr_stage2_part26</sprite>
-      <sprite>sprites\spr_stage2_part27</sprite>
-      <sprite>sprites\spr_stage2_part28</sprite>
-      <sprite>sprites\spr_stage2_part29</sprite>
-      <sprite>sprites\spr_stage2_part30</sprite>
-      <sprite>sprites\spr_stage2_part31</sprite>
-      <sprite>sprites\spr_stage2_part32</sprite>
-      <sprite>sprites\spr_stage2_part33</sprite>
-      <sprite>sprites\spr_stage2_reference</sprite>
-    </sprites>
-    <sprite>sprites\spr_test_ledge</sprite>
     <sprites name="Demo">
       <sprites name="Stage1">
         <sprite>sprites\spr_ds1p1</sprite>
@@ -293,14 +234,54 @@
         <sprite>sprites\spr_demoStage1</sprite>
       </sprites>
     </sprites>
-    <sprite>sprites\spr_platform</sprite>
-    <sprite>sprites\spr_none</sprite>
     <sprites name="Tests">
       <sprite>sprites\spr_tPlayer</sprite>
       <sprite>sprites\spr_trunning</sprite>
       <sprite>sprites\spr_ceiling</sprite>
       <sprite>sprites\spr_test1</sprite>
       <sprite>sprites\spr_curve</sprite>
+    </sprites>
+    <sprites name="Organize">
+      <sprite>sprites\spr_test_ledge</sprite>
+      <sprite>sprites\spr_platform</sprite>
+      <sprite>sprites\spr_none</sprite>
+      <sprite>sprites\spr_game_quit</sprite>
+      <sprite>sprites\spr_grass_collision</sprite>
+      <sprite>sprites\spr_incline_collision2</sprite>
+      <sprite>sprites\spr_incline2</sprite>
+      <sprite>sprites\spr_incline</sprite>
+      <sprite>sprites\spr_scliff</sprite>
+      <sprite>sprites\spr_gcliff</sprite>
+      <sprite>sprites\spr_icespikes</sprite>
+      <sprite>sprites\spr_shill2</sprite>
+      <sprite>sprites\spr_incline_collision</sprite>
+      <sprite>sprites\spr_leftBarrier</sprite>
+      <sprite>sprites\spr_grass</sprite>
+      <sprite>sprites\spr_splatform</sprite>
+      <sprite>sprites\spr_wall2</sprite>
+      <sprite>sprites\spr_boundary</sprite>
+      <sprite>sprites\spr_hill2</sprite>
+      <sprite>sprites\spr_gplatform</sprite>
+      <sprite>sprites\spr_shill1</sprite>
+      <sprite>sprites\spr_spring</sprite>
+      <sprite>sprites\spr_wall</sprite>
+    </sprites>
+    <sprites name="World1Stage1">
+      <sprite>sprites\spr_w1s1p1</sprite>
+      <sprite>sprites\spr_w1s1p2</sprite>
+      <sprite>sprites\spr_w1s1p3</sprite>
+      <sprite>sprites\spr_w1s1p4</sprite>
+      <sprite>sprites\spr_w1s1p5</sprite>
+      <sprite>sprites\spr_w1s1p6</sprite>
+      <sprite>sprites\spr_w1s1p7</sprite>
+      <sprite>sprites\spr_w1s1p8</sprite>
+      <sprite>sprites\spr_w1s1p9</sprite>
+      <sprite>sprites\spr_w1s1p10</sprite>
+      <sprite>sprites\spr_w1s1p11</sprite>
+      <sprite>sprites\spr_w1s1p12</sprite>
+      <sprite>sprites\spr_w1s1p13</sprite>
+      <sprite>sprites\spr_w1s1p14</sprite>
+      <sprite>sprites\spr_w1s1p15</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -362,19 +343,10 @@
       <script>scripts\scr_savegame.gml</script>
       <script>scripts\scr_reset.gml</script>
     </scripts>
-    <script>scripts\scr_buttons.gml</script>
-    <script>scripts\scr_selection.gml</script>
-    <script>scripts\p_physics.gml</script>
-    <script>scripts\p_move.gml</script>
-    <script>scripts\collision_script_main.gml</script>
-    <script>scripts\collision_script_right.gml</script>
-    <script>scripts\collision_script_left.gml</script>
-    <script>scripts\collision_script_top.gml</script>
-    <script>scripts\collision_script_bottom.gml</script>
-    <script>scripts\collision_script_ground.gml</script>
-    <script>scripts\collision_script_right_line.gml</script>
-    <script>scripts\collision_script_left_line.gml</script>
-    <script>scripts\find_angle.gml</script>
+    <scripts name="Need">
+      <script>scripts\scr_selection.gml</script>
+      <script>scripts\scr_buttons.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_text</font>
@@ -507,43 +479,6 @@
     <objects name="Ground">
       <object>objects\obj_gr</object>
       <object>objects\obj_stable_ground</object>
-      <objects name="World3Stage1">
-        <object>objects\obj_stage1_part1</object>
-        <object>objects\obj_stage1_part2</object>
-        <object>objects\obj_stage1_part3</object>
-        <object>objects\obj_stage1_part4</object>
-        <object>objects\obj_stage1_part5</object>
-        <object>objects\obj_stage1_part6</object>
-        <object>objects\obj_stage1_part7</object>
-        <object>objects\obj_stage1_part8</object>
-      </objects>
-      <objects name="World1Stage2">
-        <object>objects\obj_stage2_part4</object>
-        <object>objects\obj_stage2_part5</object>
-        <object>objects\obj_stage2_part6</object>
-        <object>objects\obj_stage2_part12</object>
-        <object>objects\obj_stage2_part13</object>
-        <object>objects\obj_stage2_part14</object>
-        <object>objects\obj_stage2_part15</object>
-        <object>objects\obj_stage2_part16</object>
-        <object>objects\obj_stage2_part17</object>
-        <object>objects\obj_stage2_part18</object>
-        <object>objects\obj_stage2_part19</object>
-        <object>objects\obj_stage2_part20</object>
-        <object>objects\obj_stage2_part21</object>
-        <object>objects\obj_stage2_part22</object>
-        <object>objects\obj_stage2_part23</object>
-        <object>objects\obj_stage2_part24</object>
-        <object>objects\obj_stage2_part25</object>
-        <object>objects\obj_stage2_part26</object>
-        <object>objects\obj_stage2_part27</object>
-        <object>objects\obj_stage2_part28</object>
-        <object>objects\obj_stage2_part29</object>
-        <object>objects\obj_stage2_part30</object>
-        <object>objects\obj_stage2_part31</object>
-        <object>objects\obj_stage2_part32</object>
-        <object>objects\obj_stage2_part33</object>
-      </objects>
     </objects>
     <objects name="Win in Regular Levels">
       <object>objects\obj_win</object>
@@ -561,9 +496,6 @@
     <objects name="Controls Camera">
       <object>objects\obj_camera3</object>
     </objects>
-    <object>objects\obj_grid</object>
-    <object>objects\obj_game_quit</object>
-    <object>objects\Lost_Code</object>
     <objects name="Demo">
       <objects name="Stage1">
         <object>objects\obj_ds1p1</object>
@@ -613,20 +545,39 @@
         <object>objects\obj_ds5p6</object>
       </objects>
     </objects>
-    <object>objects\obj_platform</object>
     <objects name="Test">
       <object>objects\obj_loop</object>
       <object>objects\obj_ceiling</object>
       <object>objects\obj_curve</object>
       <object>objects\obj_t3Player</object>
     </objects>
+    <objects name="Organize">
+      <object>objects\obj_platform</object>
+      <object>objects\Lost_Code</object>
+      <object>objects\obj_grid</object>
+      <object>objects\obj_game_quit</object>
+    </objects>
+    <objects name="World1Stage1">
+      <object>objects\obj_w1s1p1</object>
+      <object>objects\obj_w1s1p2</object>
+      <object>objects\obj_w1s1p3</object>
+      <object>objects\obj_w1s1p4</object>
+      <object>objects\obj_w1s1p5</object>
+      <object>objects\obj_w1s1p6</object>
+      <object>objects\obj_w1s1p7</object>
+      <object>objects\obj_w1s1p8</object>
+      <object>objects\obj_w1s1p9</object>
+      <object>objects\obj_w1s1p10</object>
+      <object>objects\obj_w1s1p11</object>
+      <object>objects\obj_w1s1p12</object>
+      <object>objects\obj_w1s1p13</object>
+      <object>objects\obj_w1s1p14</object>
+      <object>objects\obj_w1s1p15</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
-    <room>rooms\rm_FirstStage</room>
-    <room>rooms\rm_World1Stage2</room>
-    <room>rooms\rm_Template</room>
-    <room>rooms\rm_test</room>
+    <room>rooms\rm_w1s1</room>
     <rooms name="Main Menu">
       <room>rooms\rm_menu</room>
       <room>rooms\rm_credits</room>
@@ -646,21 +597,6 @@
       </rooms>
       <rooms name="World3">
         <room>rooms\rm_world3</room>
-      </rooms>
-      <rooms name="World4">
-        <room>rooms\rm_world4</room>
-      </rooms>
-      <rooms name="World5">
-        <room>rooms\rm_world5</room>
-      </rooms>
-      <rooms name="World6">
-        <room>rooms\rm_world6</room>
-      </rooms>
-      <rooms name="World7">
-        <room>rooms\rm_world7</room>
-      </rooms>
-      <rooms name="World8">
-        <room>rooms\rm_world8</room>
       </rooms>
     </rooms>
     <rooms name="Endless Runs">

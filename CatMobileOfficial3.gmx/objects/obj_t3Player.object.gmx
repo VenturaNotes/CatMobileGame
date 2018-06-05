@@ -25,27 +25,30 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_xscale = 0.5; //X Scale Size of Cat
-image_yscale = 0.5; //Y Scale Size of Cat
+            <string>image_xscale = 0.3; //X Scale Size of Cat
+image_yscale = 0.3; //Y Scale Size of Cat
 image_speed = 0.5;  //Animation SPeed
 
 hsp = 0; //Horizontal Speed
 vsp = 0; //Vertical Speed
 gsp = 0; //Ground Speed
-hspl = 5; //Horizontal Speed Limit
-vspl = 5; //Vertical Speed Limit 
+hspl = 4.5; //Horizontal Speed Limit
+vspl = 10; //Vertical Speed Limit 
 
 grav = 0.5; //Gravity; 
 
 grounded = false; //On the Ground
 
-fric = 0.2; //Friction; 0.2
+fric = 0.1; //Friction; 0.2
 
-jumpSpeed = 15; //Speed Added When Pressing Jump Button (W)
-rightSpeed = 1; //Speed Added When Holding Right Button (D)
-leftSpeed = 1; //Speed Added When Holding Left Button (A)
+jumpSpeed = 9; //Speed Added When Pressing Jump Button (W)
+rightSpeed = 0.5; //Speed Added When Holding Right Button (D)
+leftSpeed = 0.5; //Speed Added When Holding Left Button (A)
 
 angle = 0; //Angle of the Cat Relative to Ground.
+angle2 = 0; //Actual Angle of Ground
+angleJump = true; //Checks if Jumping After Landing
+angleTime = true; //Landing Within Number of Frames
 
 drawLine = false; //Draws Line from Player to Ground
 
@@ -77,6 +80,30 @@ faceLeft = false; //Set true by pressing left key last
 faceRight = false; //Set true by pressing right key last
 
 test = 0; //Testing Variables
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>angleTime = false;
+alarm[0] = -1;
 </string>
           </argument>
         </arguments>
@@ -138,10 +165,10 @@ if(grounded)
 {
     saveAngle = angle;
     //RIGHT LINE
-    for(yy = 0; !position_meeting((x+cos(degtorad(angle))*10) + sin(degtorad(angle))*yy,(y-sin(degtorad(angle))*10)+cos(degtorad(angle))*yy,obj_stable_ground); yy++)
+    for(yy = 0; !position_meeting((x+cos(degtorad(angle))*5) + sin(degtorad(angle))*yy,(y-sin(degtorad(angle))*5)+cos(degtorad(angle))*yy,obj_stable_ground); yy++)
          {
              diff1X = yy; //Length of the right line.
-             if(yy &gt;= 100)
+             if(yy &gt;= 90)
              {
                  break;
              }
@@ -150,13 +177,13 @@ if(grounded)
     for(yy = 0; !position_meeting(x+(sin(degtorad(angle))*yy),y+(cos(degtorad(angle))*yy),obj_stable_ground); yy++)
      {
          diff1Y = yy; //Length of the left line. 
-         if(yy &gt;= 100)
+         if(yy &gt;= 90)
          {
              break;
          }
      }
      
-     if(diff1X &gt;= 100 || diff1Y &gt;= 100)
+     if(diff1X &gt;= 90 || diff1Y &gt;= 90)
      {
         angle = saveAngle;
         grounded = false;
@@ -165,8 +192,8 @@ if(grounded)
      if(grounded)
      {
         //Point of bottom right line. 
-        x1 = (x+cos(degtorad(angle))*10) + sin(degtorad(angle))*diff1X; //Distance between top left line and top right line. 
-        y1 = (y-sin(degtorad(angle))*10)+ cos(degtorad(angle))*diff1X; //Distance from top right to bottom right. 
+        x1 = (x+cos(degtorad(angle))*5) + sin(degtorad(angle))*diff1X; //Distance between top left line and top right line. 
+        y1 = (y-sin(degtorad(angle))*5)+ cos(degtorad(angle))*diff1X; //Distance from top right to bottom right. 
         
         //Point of bottom left line. 
         x2 = x+(sin(degtorad(angle))*diff1Y); //Point of top left line. 
@@ -177,9 +204,17 @@ if(grounded)
         
         //The distance of the slope is always costant. The difference in the lengths
         //of the lines will be 0 when angle is equal to the angle of the slope. 
+        
         if(radtodeg(arctan2(diff1Y-diff1X,dist)) != 0)
         {
-            angle += radtodeg(arctan2(diff1Y-diff1X,dist))/3;
+            angle += radtodeg(arctan2(diff1Y-diff1X,dist))/6;
+            if(angleJump == true)
+            {
+                angle2 = radtodeg(arctan2(diff1Y-diff1X,dist))
+                angleJump = false;
+                angleTime = true;
+                alarm[0] = 6;
+            }
         }
         
         drawLine = true;
@@ -198,7 +233,16 @@ if(angle &gt; 360)
 }
 if(angle &lt; 0)
 {
-    angle+= 360;
+    angle += 360;
+}
+
+if(angle2 &gt; 360)
+{
+    angle2 -= 360;
+}
+if(angle2 &lt; 0)
+{
+    angle2 += 360;
 }
 
 ////////////////////////////////////////////////////PHYSICS PROPERTIES
@@ -293,23 +337,48 @@ if(grounded)
 
 if(jump &amp;&amp; grounded) &amp;&amp; place_meeting(x,y+1,obj_stable_ground)
 {
-    if(angle &lt;= 30 || angle &gt;= 330)
+    if(angleTime == true)
     {
-        vsp -= jumpSpeed;
-        grounded = false;
+        if(angle2 &lt;= 30 || angle2 &gt;= 330)
+        {
+            vsp -= jumpSpeed;
+            grounded = false;
+        }
+        else if(angle2 &gt;= 30 &amp;&amp; angle2 &lt;= 90)
+        {
+            vsp -= jumpSpeed/2;
+            hsp -= jumpSpeed/2;
+            grounded = false;
+        }
+        else if(angle2 &gt;= 270 &amp;&amp; angle2 &lt;= 330)
+        {
+            vsp -= jumpSpeed/2;
+            hsp += jumpSpeed/2;
+            grounded = false;
+        }
     }
-    else if(angle &gt;= 30 &amp;&amp; angle &lt;= 90)
+    else
     {
-        vsp -= jumpSpeed/2;
-        hsp -= jumpSpeed/2;
-        grounded = false;
+        if(angle &lt;= 30 || angle &gt;= 330)
+        {
+            vsp -= jumpSpeed;
+            grounded = false;
+        }
+        else if(angle &gt;= 30 &amp;&amp; angle &lt;= 90)
+        {
+            vsp -= jumpSpeed/2;
+            hsp -= jumpSpeed/2;
+            grounded = false;
+        }
+        else if(angle &gt;= 270 &amp;&amp; angle &lt;= 330)
+        {
+            vsp -= jumpSpeed/2;
+            hsp += jumpSpeed/2;
+            grounded = false;
+        }
     }
-    else if(angle &gt;= 270 &amp;&amp; angle &lt;= 330)
-    {
-        vsp -= jumpSpeed/2;
-        hsp += jumpSpeed/2;
-        grounded = false;
-    }
+    angleTime = false;
+    angleJump = true;
 }
 
 if(!grounded)
@@ -328,7 +397,7 @@ if(!grounded)
     }
 }
 
-if (!collision_circle( x, y, 30, obj_stable_ground, true, true ))
+if (!collision_circle( x, y, 20, obj_stable_ground, true, true ))
 {
     grounded = false;
 }
@@ -384,37 +453,47 @@ if(place_meeting(x,y+vsp,obj_stable_ground) &amp;&amp; !grounded)
     if(place_meeting(x,y+1,obj_stable_ground))
     {
         grounded = true;
-        if(place_meeting(x-1,y,obj_stable_ground))
-        {
-            angle = 270;
-        }
-        else if(place_meeting(x+1,y,obj_stable_ground))
-        {
-            angle = 90;
-        }
-        else
-        {
-            angle = 0;
-        }
+        angle = 0;
     }
 }
 y+=vsp;
 
-//FIXES GETTING STUCK ON EDGES
-if(fpositionx == x &amp;&amp; fpositiony == y &amp;&amp; right == true)
+//FIXES GETTING STUCK ON EDGES Problem: Fidgets against vertical ground
+/*
+if(fpositionx == x &amp;&amp; fpositiony == y &amp;&amp; !grounded &amp;&amp; position_meeting(x+5,y,obj_stable_ground))
 {
     if(!place_meeting(x-5,y,obj_stable_ground))
     {
         x-=5;
     }
 }
-else if(fpositionx == x &amp;&amp; fpositiony == y &amp;&amp; left == true)
+else if(fpositionx == x &amp;&amp; fpositiony == y &amp;&amp; !grounded &amp;&amp; position_meeting(x-5,y,obj_stable_ground))
 {
     if(!place_meeting(x+5,y,obj_stable_ground))
     {
         x+=5;
     }
 }
+*/
+
+/*
+if(fpositionx == x &amp;&amp; fpositiony == y &amp;&amp; right == true &amp;&amp; !grounded)
+{
+    if(!place_meeting(x-5,y,obj_stable_ground))
+    {
+        x-=5;
+    }
+}
+else if(fpositionx == x &amp;&amp; fpositiony == y &amp;&amp; left == true &amp;&amp; !grounded)
+{
+    if(!place_meeting(x+5,y,obj_stable_ground))
+    {
+        x+=5;
+    }
+}
+*/
+
+
 
 lpositionx = x;
 
@@ -423,7 +502,7 @@ positionx = (lpositionx-fpositionx);
 //SETS CAT'S ANIMATION SPEED
 
 gsp = sqrt(power(hsp,2)+power(vsp,2));
-image_speed = gsp*(.5/21);
+image_speed = gsp*(.5/5);
 
 //(TEMPORARY) CHECKING TO SEE IF YOU GET STUCK IN THE GROUND
 if(place_meeting(x,y,obj_stable_ground))
@@ -431,62 +510,7 @@ if(place_meeting(x,y,obj_stable_ground))
     show_debug_message("AYY");
 }
 
-show_debug_message(gsp);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///TEST
-
-
-/*
-if(grounded)
-{
-    for(yy = 0; !position_meeting((x+cos(degtorad(image_angle))*10) + sin(degtorad(image_angle))*yy,(y-sin(degtorad(image_angle))*10)+cos(degtorad(image_angle))*yy,obj_stable_ground); yy++)
-         {
-             diff1X = yy;
-             if(yy &gt;= 100)
-             {
-                 
-             }
-         }
-    for(yy = 0; !position_meeting(x+(sin(degtorad(image_angle))*yy),y+(cos(degtorad(image_angle))*yy),obj_stable_ground); yy++)
-     {
-         diff1Y = yy;
-         if(yy &gt;= 100)
-         {
-             break;
-         }
-     }
-    
-    x1 = (x+cos(degtorad(image_angle))*10) + sin(degtorad(image_angle))*diff1X;
-    y1 = (y-sin(degtorad(image_angle))*10)+ cos(degtorad(image_angle))*diff1X;
-    x2 = x+(sin(degtorad(image_angle))*diff1Y);
-    y2 = y+(cos(degtorad(image_angle))*diff1Y);
-    
-    var dist = sqrt(power(x2-x1,2)+power(y2-y1,2));
-    drawLine = true;
-}
-else
-{
-    drawLine = false;
-}
+show_debug_message(angle2);
 </string>
           </argument>
         </arguments>
@@ -548,14 +572,14 @@ if(drawLine == true)
    draw_line(x1,y1,x2,y2);
    draw_set_colour(c_red);
    //Top right point of line to bottom right point of line
-   draw_line(x+cos(degtorad(angle))*10,y-sin(degtorad(angle))*10,(x+cos(degtorad(angle))*10) + sin(degtorad(angle))*diff1X,(y-sin(degtorad(angle))*10)+cos(degtorad(angle))*diff1X);
+   draw_line(x+cos(degtorad(angle))*5,y-sin(degtorad(angle))*5,(x+cos(degtorad(angle))*5) + sin(degtorad(angle))*diff1X,(y-sin(degtorad(angle))*5)+cos(degtorad(angle))*diff1X);
    draw_set_colour(c_blue);
    //top left point of line to bottom left point of line. 
    draw_line(x,y,x+(sin(degtorad(angle))*diff1Y),y+(cos(degtorad(angle))*diff1Y));
 }
 
 //draw_set_colour(c_blue);
-//draw_circle(x, y, 30, false);
+//draw_circle(x, y, 20, false);
 </string>
           </argument>
         </arguments>

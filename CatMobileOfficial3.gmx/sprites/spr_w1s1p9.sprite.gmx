@@ -10,7 +10,7 @@
   <bbox_left>0</bbox_left>
   <bbox_right>1799</bbox_right>
   <bbox_top>548</bbox_top>
-  <bbox_bottom>648</bbox_bottom>
+  <bbox_bottom>999</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -20,6 +20,6 @@
   <width>1800</width>
   <height>1000</height>
   <frames>
-    <frame index="0">images\spr_w1s1p6_0.png</frame>
+    <frame index="0">images\spr_w1s1p9_0.png</frame>
   </frames>
 </sprite>

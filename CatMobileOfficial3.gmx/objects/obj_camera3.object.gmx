@@ -52,14 +52,14 @@ np = 0; //new position
 high = 0;
 move = -200;
 first = false;
-spring = false;
 rise = 5;
 
 playerObject = obj_t3Player
 
-scale = 0.8;
-yHeight = 92.5;
-yView = 300; //385
+scale = 0.45; //Scales Objects
+yHeight = 26; //Moves Bottom UI
+yView = 195; //Moves Screen
+moveTop = 160; //Moves top UI
 </string>
           </argument>
         </arguments>
@@ -101,9 +101,9 @@ yView = 300; //385
         obj_up.y = playerObject.y+yHeight;
         obj_switch.y = playerObject.y+yHeight;  
         obj_background_controls.y = playerObject.y+yHeight;
-        obj_heart.y = playerObject.y-240;
-        obj_kills.y = playerObject.y-240; //??? 320
-        obj_paws.y = playerObject.y-240;
+        obj_heart.y = playerObject.y-moveTop;
+        obj_kills.y = playerObject.y-moveTop; //??? 320
+        obj_paws.y = playerObject.y-moveTop;
         view_yview[0] = playerObject.y-yView; 
         background_y[0] = playerObject.y-yView;
         
@@ -247,20 +247,20 @@ yView = 300; //385
 
 if (playerObject.grounded == false)
 {
-    for(i = 0; i &lt;= 500; i +=1)
+    for(i = 0; i &lt;= 150; i +=1)
     {
         if(position_meeting(playerObject.x,playerObject.y+i,obj_stable_ground))
                {
-                    i = 501;
+                    i = 151;
                }
-           else if(i &gt;= 500)
+           else if(i &gt;= 150)
            {
                 high = 1;
            }
     }
 }
 
-if(high == 1 &amp;&amp; spring == false)
+if(high == 1)
 {
     active = false;
     active2 = false;

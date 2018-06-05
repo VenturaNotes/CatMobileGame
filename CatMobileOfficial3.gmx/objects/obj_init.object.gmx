@@ -55,7 +55,7 @@ global.quit = 0;
             <kind>1</kind>
             <string>if (stop == false)
 {
-    room_goto(rm_tds1); //rm_menu
+    room_goto(rm_w1s1); //rm_menu
     stop = true;
 }
 
