@@ -2,12 +2,37 @@
 <object>
   <spriteName>spr_boundary</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>activated = false;
+fpositionx = 0;
+lpositionx = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -25,9 +50,50 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(obj_player.x &gt;= x-90)
+            <string>if(place_meeting(x,y,obj_t3Player))
 {
-    obj_player.x = x-90-1;
+    if(instance_exists(obj_camera3))
+    {
+        //instance_destroy(obj_camera3);
+        instance_deactivate_object(obj_camera3);
+        fpositionx = obj_t3Player.x;
+        activated = true;
+    }
+}
+
+if(activated == true &amp;&amp; room == rm_w1s2)
+{
+    if(x &gt; obj_player.x+202)
+    {
+        obj_player.x = x-202;
+    }
+    
+    if(x &lt; obj_player.x-149)
+    {
+        obj_player.x = x+149;
+    }
+    
+    if(!instance_exists(obj_monster2_adv))
+    {
+        randomize();
+        instance_create(1090,random_range(400,480),obj_monster2_adv);
+    }
+    if(instance_exists(obj_t3Player))
+    {
+        if(obj_t3Player.slay &gt;= 60) //60
+        {
+            if(instance_exists(obj_monster2_adv))
+            {
+                instance_destroy(obj_monster2_adv);
+            }   
+           // instance_create(729.80,368.50,obj_camera3);
+            instance_activate_object(obj_camera3);
+            lpositionx = obj_t3Player.x;
+            obj_t3Player.positionx = (lpositionx-fpositionx)
+            instance_create(1090,450,obj_collectable);
+            instance_destroy();
+        }
+    }
 }
 </string>
           </argument>

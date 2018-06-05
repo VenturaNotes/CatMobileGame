@@ -42,7 +42,7 @@ grounded = 0; //Are you on the ground
 jumping = -25; //Jumping force
 kills = 0; //Enemies killed
 recently_hit = false; //Checks to see if you were recently hit
-counter = 0; //Animation?
+counter = 0; //Blinking Animation
 
 slay = 0; //Number need to slay?
 state = 0; //For priority

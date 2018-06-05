@@ -66,7 +66,8 @@ positionx = 0; //Difference in X Positions of Cat
 fpositiony = 0; //Initial Y Position of Cat Before Movement
 lpositiony = 0; //Final Y Position of Cat After Movement
 
-kills = 0; //Number of Kills Player Gets
+kills = 0; //Number of Kills Player Needs
+slay = 0; //Number of Kills
 
 rightLast = false; //Right is the Last Direction Pressed
 leftLast = false; //Left is the Last Direction Pressed
@@ -79,7 +80,35 @@ saveAngle = 0; //Saves angle before lines drawn
 faceLeft = false; //Set true by pressing left key last
 faceRight = false; //Set true by pressing right key last
 
+counter = 0; //Blinker Animation
+recently_hit = false; //Checks to see if Cat Attacked
+
+//DELETE LATER
 test = 0; //Testing Variables
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>angleTime = false;
+alarm[1] = -1;
 </string>
           </argument>
         </arguments>
@@ -102,8 +131,7 @@ test = 0; //Testing Variables
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>angleTime = false;
-alarm[0] = -1;
+            <string>recently_hit = false;
 </string>
           </argument>
         </arguments>
@@ -134,6 +162,13 @@ fpositiony = y;
 right = keyboard_check(ord("D"));
 left = keyboard_check(ord("A"));
 jump = keyboard_check(ord("W"));
+
+//INVINCIBILITY FRAMES
+counter++;
+if (counter &gt; 5)
+{
+    counter = 1;
+}
 
 ////////////////////////////////////////////////////PHYSICS PROPERTIES
 //GRAVITY
@@ -213,7 +248,7 @@ if(grounded)
                 angle2 = radtodeg(arctan2(diff1Y-diff1X,dist))
                 angleJump = false;
                 angleTime = true;
-                alarm[0] = 6;
+                alarm[1] = 6;
             }
         }
         
@@ -510,7 +545,7 @@ if(place_meeting(x,y,obj_stable_ground))
     show_debug_message("AYY");
 }
 
-show_debug_message(angle2);
+//show_debug_message(slay);
 </string>
           </argument>
         </arguments>
@@ -533,37 +568,33 @@ show_debug_message(angle2);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(right)
+            <string>
+if (obj_heart.hearts &gt; 0)
 {
-    draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, angle, image_blend, image_alpha); 
-    faceRight = true;
-    faceLeft = false;
-} else if (left)
-{
-    draw_sprite_ext(sprite_index, image_index, x, y, -image_xscale, image_yscale, angle, image_blend, image_alpha); 
-    faceRight = false;
-    faceLeft = true;
-}
-else
-{
-    if(faceRight)
+    if (recently_hit == true)
     {
-        draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, angle, image_blend, image_alpha);    
-    }
-    else if (faceLeft)
-    {
-        draw_sprite_ext(sprite_index, image_index, x, y, -image_xscale, image_yscale, angle, image_blend, image_alpha); 
+        if counter mod 5 == 0
+        {
+            scr_draw_player();
+            //draw_self();
+        }
+        else
+        {
+            scr_draw_player_hit();
+            //draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,0.25)
+        }
     }
     else
     {
-        draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, angle, image_blend, image_alpha);    
+        scr_draw_player();
+       // draw_self();
     }
 }
 
 
+//VISUAL CHARACTERISTICS OF THE CAT
 draw_set_colour(c_red)
 draw_line(x,y,x+(hsp*5),y+(vsp*5));
-
 
 if(drawLine == true)
 {

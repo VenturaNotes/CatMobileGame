@@ -283,6 +283,11 @@
       <sprite>sprites\spr_w1s1p14</sprite>
       <sprite>sprites\spr_w1s1p15</sprite>
     </sprites>
+    <sprites name="Word1Stage2">
+      <sprite>sprites\spr_w1s2p1</sprite>
+      <sprite>sprites\spr_w1s2p2</sprite>
+    </sprites>
+    <sprite>sprites\spr_collectable</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_sky</background>
@@ -347,24 +352,16 @@
       <script>scripts\scr_selection.gml</script>
       <script>scripts\scr_buttons.gml</script>
     </scripts>
+    <script>scripts\scr_draw_player.gml</script>
+    <script>scripts\scr_draw_player_hit.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_text</font>
   </fonts>
   <objects name="objects">
     <objects name="MAKER">
-      <object>objects\obj_boundary</object>
       <object>objects\obj_player</object>
       <object>objects\obj_player_2</object>
-      <objects name="Monsters">
-        <object>objects\obj_monster2</object>
-        <object>objects\obj_monster3</object>
-        <object>objects\obj_monster4</object>
-        <object>objects\obj_monster5</object>
-        <object>objects\obj_monster6</object>
-        <object>objects\obj_monster7</object>
-      </objects>
-      <object>objects\obj_flag</object>
       <object>objects\obj_spring</object>
     </objects>
     <objects name="Player">
@@ -574,10 +571,29 @@
       <object>objects\obj_w1s1p14</object>
       <object>objects\obj_w1s1p15</object>
     </objects>
+    <objects name="World1Stage2">
+      <object>objects\obj_w1s2p1</object>
+      <object>objects\obj_w1s2p2</object>
+    </objects>
+    <objects name="Monsters(Endless)">
+      <object>objects\obj_monster2</object>
+      <object>objects\obj_monster3</object>
+      <object>objects\obj_monster4</object>
+      <object>objects\obj_monster5</object>
+      <object>objects\obj_monster6</object>
+      <object>objects\obj_monster7</object>
+    </objects>
+    <object>objects\obj_collectable</object>
+    <object>objects\obj_flag</object>
+    <object>objects\obj_boundary</object>
+    <objects name="Monsters(Adventure)">
+      <object>objects\obj_monster2_adv</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
     <room>rooms\rm_w1s1</room>
+    <room>rooms\rm_w1s2</room>
     <rooms name="Main Menu">
       <room>rooms\rm_menu</room>
       <room>rooms\rm_credits</room>

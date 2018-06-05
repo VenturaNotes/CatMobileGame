@@ -311,7 +311,7 @@ obj_paws.x += playerObject.positionx;
 obj_background_controls.x += playerObject.positionx;
 }
 
-
+show_debug_message(string(view_xview) + " AND " + string(view_yview));
 </string>
           </argument>
         </arguments>
