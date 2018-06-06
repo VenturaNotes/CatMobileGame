@@ -80,7 +80,7 @@ if(activated == true &amp;&amp; room == rm_w1s2)
     }
     if(instance_exists(obj_t3Player))
     {
-        if(obj_t3Player.slay &gt;= 60) //60
+        if(obj_t3Player.slay &gt;= 15) //60
         {
             if(instance_exists(obj_monster2_adv))
             {

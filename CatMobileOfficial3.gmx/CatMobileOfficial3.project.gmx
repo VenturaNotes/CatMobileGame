@@ -243,7 +243,6 @@
     </sprites>
     <sprites name="Organize">
       <sprite>sprites\spr_test_ledge</sprite>
-      <sprite>sprites\spr_platform</sprite>
       <sprite>sprites\spr_none</sprite>
       <sprite>sprites\spr_game_quit</sprite>
       <sprite>sprites\spr_grass_collision</sprite>
@@ -287,7 +286,25 @@
       <sprite>sprites\spr_w1s2p1</sprite>
       <sprite>sprites\spr_w1s2p2</sprite>
     </sprites>
-    <sprite>sprites\spr_collectable</sprite>
+    <sprites name="World1Stage3">
+      <sprite>sprites\spr_w1s3p1</sprite>
+      <sprite>sprites\spr_w1s3p2</sprite>
+      <sprite>sprites\spr_w1s3p3</sprite>
+      <sprite>sprites\spr_w1s3p4</sprite>
+    </sprites>
+    <sprites name="World1Stage4">
+      <sprite>sprites\spr_w1s4p1</sprite>
+      <sprite>sprites\spr_w1s4p2</sprite>
+      <sprite>sprites\spr_w1s4p3</sprite>
+      <sprite>sprites\spr_w1s4p4</sprite>
+      <sprite>sprites\spr_w1s4p5</sprite>
+    </sprites>
+    <sprites name="Important">
+      <sprite>sprites\spr_collectable</sprite>
+      <sprite>sprites\spr_platform_small</sprite>
+      <sprite>sprites\spr_platform_medium</sprite>
+      <sprite>sprites\spr_platform_large</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_sky</background>
@@ -549,7 +566,6 @@
       <object>objects\obj_t3Player</object>
     </objects>
     <objects name="Organize">
-      <object>objects\obj_platform</object>
       <object>objects\Lost_Code</object>
       <object>objects\obj_grid</object>
       <object>objects\obj_game_quit</object>
@@ -581,19 +597,41 @@
       <object>objects\obj_monster4</object>
       <object>objects\obj_monster5</object>
       <object>objects\obj_monster6</object>
-      <object>objects\obj_monster7</object>
     </objects>
-    <object>objects\obj_collectable</object>
-    <object>objects\obj_flag</object>
-    <object>objects\obj_boundary</object>
     <objects name="Monsters(Adventure)">
       <object>objects\obj_monster2_adv</object>
+      <object>objects\obj_monster7_adv</object>
+    </objects>
+    <objects name="World1Stage3">
+      <object>objects\obj_w1s3p1</object>
+      <object>objects\obj_w1s3p2</object>
+      <object>objects\obj_w1s3p3</object>
+      <object>objects\obj_w1s3p4</object>
+    </objects>
+    <objects name="World1Stage4">
+      <object>objects\obj_w1s4p1</object>
+      <object>objects\obj_w1s4p2</object>
+      <object>objects\obj_w1s4p3</object>
+      <object>objects\obj_w1s4p4</object>
+      <object>objects\obj_w1s4p5</object>
+    </objects>
+    <objects name="Important">
+      <object>objects\obj_platform_small</object>
+      <object>objects\obj_platform_medium</object>
+      <object>objects\obj_platform_large</object>
+      <object>objects\obj_boundary</object>
+      <object>objects\obj_flag</object>
+      <object>objects\obj_collectable</object>
+      <object>objects\obj_w1s4_condition</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
     <room>rooms\rm_w1s1</room>
     <room>rooms\rm_w1s2</room>
+    <room>rooms\rm_w1s3</room>
+    <room>rooms\rm_w1s4</room>
+    <room>rooms\rm_test</room>
     <rooms name="Main Menu">
       <room>rooms\rm_menu</room>
       <room>rooms\rm_credits</room>

@@ -100,10 +100,10 @@ with(obj_background_controls){image_xscale *= 1.15; image_yscale *=1.15;}</code>
     <instance objName="obj_ds4p14" x="11814" y="1250" name="inst_A41802B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ds4p15" x="13783" y="0" name="inst_2F32D323" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ds4p16" x="13783" y="1250" name="inst_D14CB36C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_platform" x="11038" y="896" name="inst_D815C0BD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_platform" x="11618" y="759" name="inst_56096CA6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_platform" x="12170" y="605" name="inst_663BE891" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_platform" x="12671" y="438" name="inst_A373B0A5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_platform_small" x="11038" y="896" name="inst_D815C0BD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_platform_small" x="11618" y="759" name="inst_56096CA6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_platform_small" x="12170" y="605" name="inst_663BE891" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_platform_small" x="12671" y="438" name="inst_A373B0A5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_flag" x="15213" y="2241" name="inst_99FAA803" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_t3Player" x="258" y="2038" name="inst_029E04DF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>

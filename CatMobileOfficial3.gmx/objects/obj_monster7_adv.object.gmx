@@ -33,12 +33,12 @@ stage = 0;
 vsp = 0;
 hsp = 0;
 grav = 10;
-runLeft = -5;
-runRight = 5;
+runLeft = -1;
+runRight = 1;
 
 //Default
-image_xscale = 0.8;
-image_yscale = 0.8;
+image_xscale = 0.3;
+image_yscale = 0.3;
 ac = 0;
 fall = 0;
 hit = 5;
@@ -83,7 +83,7 @@ death = 0;
 {
     if(stage == 0)
     {
-     if(instance_exists(obj_player) &amp;&amp; abs(x - obj_player.x) &lt;= 400)
+     if(instance_exists(obj_player) &amp;&amp; abs(x - obj_player.x) &lt;= 10)
         {
             stage = 1;
             sprite_index = spr_monster7_attack;
@@ -92,9 +92,9 @@ death = 0;
         }
         else if(obj_player.x &lt; x)
         {
-            if (place_meeting(x,y+vsp,obj_stable_ground)) //If player meets ground within vertical speed
+            if (place_meeting(x,y+vsp,obj_stable_ground) || place_meeting(x,y+vsp,obj_monster7_adv)) //If player meets ground within vertical speed
             {
-                while(!place_meeting(x,y+sign(vsp),obj_stable_ground)) //While not touching ground, add 1 to vertical height. 
+                while(!place_meeting(x,y+sign(vsp),obj_stable_ground) &amp;&amp; !place_meeting(x,y+sign(vsp),obj_monster7_adv)) //While not touching ground, add 1 to vertical height. 
                 {
                     y+=sign(vsp); //1 is added to the y value moving the cat down. 
                 }
@@ -105,16 +105,16 @@ death = 0;
                 vsp = 0;
             }
     
-            if (instance_exists(obj_stable_ground) &amp;&amp; place_meeting(x+runLeft,y+vsp,obj_stable_ground))
+            if (instance_exists(obj_stable_ground) &amp;&amp; (place_meeting(x+runLeft,y+vsp,obj_stable_ground) || place_meeting(x+runLeft,y+vsp,obj_monster7_adv)))
                 {
                     yplus = 0;
-                    while(place_meeting(x+runLeft,y-yplus,obj_stable_ground) &amp;&amp; yplus &lt;= abs(7*runLeft))
+                    while((place_meeting(x+runLeft,y-yplus,obj_stable_ground) || place_meeting(x+runLeft,y-yplus,obj_monster7_adv)) &amp;&amp; yplus &lt;= abs(7*runLeft))
                     {
                         yplus += 1;
                     }
-                    if(place_meeting(x+runLeft,y-yplus,obj_stable_ground))
+                    if(place_meeting(x+runLeft,y-yplus,obj_stable_ground) || place_meeting(x+runLeft,y-yplus,obj_monster7_adv))
                     {
-                        while(!place_meeting(x+sign(runLeft),y,obj_stable_ground))
+                        while(!place_meeting(x+sign(runLeft),y,obj_stable_ground) &amp;&amp; !place_meeting(x+sign(runLeft),y,obj_monster7_adv))
                         {
                             x+= sign(runLeft);
                         }   
@@ -129,16 +129,16 @@ death = 0;
                 {
                     hsp += runLeft;
                 }
-            
+                
             x+=hsp;
             y+=vsp;
             vsp+=grav;
         }
         else if(obj_player.x &gt; x)
         {
-            if (place_meeting(x,y+vsp,obj_stable_ground)) //If player meets ground within vertical speed
+            if (place_meeting(x,y+vsp,obj_stable_ground) || place_meeting(x,y+vsp,obj_monster7_adv)) //If player meets ground within vertical speed
             {
-                while(!place_meeting(x,y+sign(vsp),obj_stable_ground)) //While not touching ground, add 1 to vertical height. 
+                while(!place_meeting(x,y+sign(vsp),obj_stable_ground) &amp;&amp; !place_meeting(x,y+sign(vsp),obj_monster7_adv)) //While not touching ground, add 1 to vertical height. 
                 {
                     y+=sign(vsp); //1 is added to the y value moving the cat down. 
                 }
@@ -149,16 +149,16 @@ death = 0;
                 vsp = 0;
             }
     
-            if (instance_exists(obj_stable_ground) &amp;&amp; place_meeting(x+runRight,y+vsp,obj_stable_ground))
+            if (instance_exists(obj_stable_ground) &amp;&amp; (place_meeting(x+runRight,y+vsp,obj_stable_ground) || place_meeting(x+runRight,y+vsp,obj_monster7_adv)))
                 {
                     yplus = 0;
-                    while(place_meeting(x+runRight,y-yplus,obj_stable_ground) &amp;&amp; yplus &lt;= abs(7*runRight))
+                    while((place_meeting(x+runRight,y-yplus,obj_stable_ground) || place_meeting(x+runRight,y-yplus,obj_monster7_adv)) &amp;&amp; yplus &lt;= abs(7*runRight))
                     {
                         yplus += 1;
                     }
-                    if(place_meeting(x+runRight,y-yplus,obj_stable_ground))
+                    if(place_meeting(x+runRight,y-yplus,obj_stable_ground) || place_meeting(x+runRight,y-yplus,obj_monster7_adv))
                     {
-                        while(!place_meeting(x+sign(runRight),y,obj_stable_ground))
+                        while(!place_meeting(x+sign(runRight),y,obj_stable_ground) &amp;&amp; !place_meeting(x+sign(runRight),y,obj_monster7_adv))
                         {
                             x+= sign(runRight);
                         }   
@@ -336,8 +336,8 @@ if(death &gt;= 1) &amp;&amp; (blink &lt; 30)
 }
 else
 {
-    image_xscale = 0.8;
-    image_yscale = 0.8;
+    image_xscale = 0.3;
+    image_yscale = 0.3;
 }
 
 if(instance_exists(obj_player) &amp;&amp; obj_player.x &lt; x)
