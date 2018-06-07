@@ -51,15 +51,10 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_selection" x="160" y="192" name="inst_2CCE0BAA" locked="0" code="image_index = 0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_selection" x="352" y="192" name="inst_FEC024ED" locked="0" code="image_index = 1;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_selection" x="544" y="192" name="inst_968FE49A" locked="0" code="image_index = 2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_selection" x="736" y="192" name="inst_0A08BEA3" locked="0" code="image_index = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_selection" x="160" y="352" name="inst_BA09B18D" locked="0" code="image_index = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_selection" x="352" y="352" name="inst_1CE6EFF6" locked="0" code="image_index = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_selection" x="544" y="352" name="inst_E30682C6" locked="0" code="image_index = 6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_selection" x="736" y="352" name="inst_E06BA4A8" locked="0" code="image_index = 7;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_return" x="64" y="64" name="inst_17B184DC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_return" x="96" y="64" name="inst_17B184DC" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
+    <instance objName="obj_world1" x="132" y="228" name="inst_F018D54E" locked="0" code="image_index = 0;&#xA;" scaleX="3" scaleY="3" colour="4294967295" rotation="0"/>
+    <instance objName="obj_world1" x="416" y="224" name="inst_749DA9F7" locked="0" code="image_index = 1;&#xA;" scaleX="3" scaleY="3" colour="4294967295" rotation="0"/>
+    <instance objName="obj_world1" x="704" y="224" name="inst_7DBFA70A" locked="0" code="image_index = 2;&#xA;" scaleX="3" scaleY="3" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

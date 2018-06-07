@@ -133,6 +133,12 @@ moveTop = 160; //Moves top UI
         } 
     }
     
+  if(playerObject.grounded == true)
+    {
+        first = 0;
+        high = 0;
+    }
+    
     //Going down playerObject.vsp &gt; 10 || 
     if(playerObject.grounded == 1 &amp;&amp; initialPosition &gt;= view_yview[0])
     {
@@ -284,13 +290,6 @@ if(high == 1)
         background_y[0] += playerObject.vsp;
     }
 }
-
-if(playerObject.grounded == true)
-{
-    first = 0;
-    high = 0;
-}
-
     
 //HORIZONTAL CAMERA MOVEMENT  
 view_xview[0] += playerObject.positionx;

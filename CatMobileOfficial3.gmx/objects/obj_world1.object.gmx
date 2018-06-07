@@ -57,47 +57,21 @@
    
    if mouse_check_button_released(mb_left)
    {
-    image_alpha = 1;
-    if(image_index == 0)
-    {
-        room_goto(rm_ds1);
-    }
-
-    if(image_index == 1)
-    {
-        room_goto(rm_ds2);
-    }
+        image_alpha = 1;
+        if(image_index == 0)
+        {
+            room_goto(rm_world1);
+        }
     
-    if(image_index == 2)
-    {
-        room_goto(rm_ds3);
-    }
-    
-    if(image_index == 3)
-    {
-        room_goto(rm_ds4);
-    }
-    
-    if(image_index == 4)
-    {
-        room_goto(rm_ds5);
-    }
-    
-    if(image_index == 5)
-    {
-        room_goto(rm_test6);
-    }
-    
-    if(image_index == 6)
-    {
-        room_goto(rm_test7);
-    }
-    
-    if(image_index == 7)
-    {
-        room_goto(rm_test8);
-    }
-   
+        if(image_index == 1)
+        {
+            room_goto(rm_world2);
+        }
+        
+        if(image_index == 2)
+        {
+            room_goto(rm_world3);
+        }
    }
 }
 else

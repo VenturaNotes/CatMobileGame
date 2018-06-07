@@ -36,7 +36,7 @@
    {
     image_alpha = 1;
     audio_play_sound(snd_proceed, 1, false);
-    room_goto(rm_demoSelection);
+    room_goto(rm_world1);
    }
 }
 else

@@ -31,6 +31,8 @@ land = false;
 global.sound = true;
 leftBarrier = 100; //left barrier 320 //100
 global.quit = 0;
+mode = 0; //0 is demo and 1 is adventure
+
 </string>
           </argument>
         </arguments>
@@ -55,7 +57,7 @@ global.quit = 0;
             <kind>1</kind>
             <string>if (stop == false)
 {
-    room_goto(rm_w1s3); //rm_menu
+    room_goto(rm_menu); //rm_menu
     stop = true;
 }
 

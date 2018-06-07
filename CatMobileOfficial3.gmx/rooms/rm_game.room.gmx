@@ -13,7 +13,9 @@
   <code>scr_level();
 scr_buttons();
 
-instance_create(300,50,obj_pause2);</code>
+instance_create(300,50,obj_pause2);
+
+obj_init.mode = 0;</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

@@ -17,6 +17,8 @@ if(global.sound == true)
     audio_sound_gain(snd_groovetown,0.25,0);
 }
 
+obj_init.mode = 1;
+
 background_index[0] = bck_sky;
 instance_create(0,0,obj_debugging);
 //instance_create(0,1,obj_controls);

@@ -51,7 +51,7 @@
             <string>if (place_meeting(x,y,obj_player))
 {
     finish = 1;
-    room_goto(rm_demoSelection);
+    room_goto(rm_world1);
     audio_stop_all();
 }
 

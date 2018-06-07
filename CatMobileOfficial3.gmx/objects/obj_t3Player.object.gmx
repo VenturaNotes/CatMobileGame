@@ -65,6 +65,7 @@ positionx = 0; //Difference in X Positions of Cat
 
 fpositiony = 0; //Initial Y Position of Cat Before Movement
 lpositiony = 0; //Final Y Position of Cat After Movement
+positiony = 0; //Difference in Y Positions of Cat
 
 kills = 0; //Number of Kills Player Needs
 slay = 0; //Number of Kills
@@ -82,6 +83,9 @@ faceRight = false; //Set true by pressing right key last
 
 counter = 0; //Blinker Animation
 recently_hit = false; //Checks to see if Cat Attacked
+
+cameraLock = false; //Fixes Camera Lock Execution Order
+cameraLock2 = false; //Y Position for Camera Lock
 
 //DELETE LATER
 test = 0; //Testing Variables
@@ -192,8 +196,12 @@ if(grounded)
 //SPEED LIMITS
 if(hsp &gt; hspl) {hsp = hspl;}
 if(hsp &lt; -hspl) {hsp = -hspl;}
-if(vsp &gt; vspl) {vsp = vspl;}
-if(vsp &lt; -vspl) {vsp = -vspl;}
+
+if(grounded)
+{
+    if(vsp &gt; vspl) {vsp = vspl;}
+    if(vsp &lt; -vspl) {vsp = -vspl;}
+}
 
 //DRAWS LINE FROM PLAYER TO GROUND
 if(grounded)
@@ -493,51 +501,36 @@ if(place_meeting(x,y+vsp,obj_stable_ground) &amp;&amp; !grounded)
 }
 y+=vsp;
 
-//FIXES GETTING STUCK ON EDGES Problem: Fidgets against vertical ground
-/*
-if(fpositionx == x &amp;&amp; fpositiony == y &amp;&amp; !grounded &amp;&amp; position_meeting(x+5,y,obj_stable_ground))
-{
-    if(!place_meeting(x-5,y,obj_stable_ground))
-    {
-        x-=5;
-    }
-}
-else if(fpositionx == x &amp;&amp; fpositiony == y &amp;&amp; !grounded &amp;&amp; position_meeting(x-5,y,obj_stable_ground))
-{
-    if(!place_meeting(x+5,y,obj_stable_ground))
-    {
-        x+=5;
-    }
-}
-*/
-
-/*
-if(fpositionx == x &amp;&amp; fpositiony == y &amp;&amp; right == true &amp;&amp; !grounded)
-{
-    if(!place_meeting(x-5,y,obj_stable_ground))
-    {
-        x-=5;
-    }
-}
-else if(fpositionx == x &amp;&amp; fpositiony == y &amp;&amp; left == true &amp;&amp; !grounded)
-{
-    if(!place_meeting(x+5,y,obj_stable_ground))
-    {
-        x+=5;
-    }
-}
-*/
-
-
-
 lpositionx = x;
 
-positionx = (lpositionx-fpositionx);
+if(cameraLock == false)
+{
+    positionx = (lpositionx-fpositionx);
+}
+else
+{
+    cameraLock = false;
+}
 
 //SETS CAT'S ANIMATION SPEED
-
 gsp = sqrt(power(hsp,2)+power(vsp,2));
-image_speed = gsp*(.5/5);
+
+if(gsp &gt; 5)
+{
+    image_speed = 0.5;
+}
+else
+{
+    image_speed = gsp*(.5/5);   
+}
+
+//CHARACTER FALLS BELOW SCREEN
+if(obj_player.y &gt;= room_height+200)
+{
+    audio_stop_all();
+    room_goto(rm_world1);
+}
+
 
 //(TEMPORARY) CHECKING TO SEE IF YOU GET STUCK IN THE GROUND
 if(place_meeting(x,y,obj_stable_ground))
@@ -545,7 +538,7 @@ if(place_meeting(x,y,obj_stable_ground))
     show_debug_message("AYY");
 }
 
-//show_debug_message(slay);
+//show_debug_message(x);
 </string>
           </argument>
         </arguments>

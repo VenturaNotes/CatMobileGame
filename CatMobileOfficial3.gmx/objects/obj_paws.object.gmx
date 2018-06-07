@@ -57,7 +57,7 @@ global.quit = 0;
 if(global.quit == 1)
 {
     global.quit = 0;
-    room_goto(rm_demoSelection);
+    room_goto(rm_world1);
 }
 </string>
           </argument>

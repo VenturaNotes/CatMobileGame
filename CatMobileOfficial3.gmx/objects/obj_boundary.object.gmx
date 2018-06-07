@@ -28,6 +28,8 @@
             <string>activated = false;
 fpositionx = 0;
 lpositionx = 0;
+yposition = 0;
+difference = 0;
 </string>
           </argument>
         </arguments>
@@ -50,11 +52,32 @@ lpositionx = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(place_meeting(x,y,obj_t3Player))
+            <string>if(obj_t3Player.grounded)
+{
+   yposition = view_yview[0]
+}
+
+if(place_meeting(x,y,obj_t3Player))
 {
     if(instance_exists(obj_camera3))
     {
-        //instance_destroy(obj_camera3);
+        difference = yposition - view_yview[0];
+        view_yview[0] += difference;
+        background_y[0] += difference;
+        
+        obj_left.y += difference;
+        obj_right.y += difference;
+        obj_MOD.y += difference;
+        obj_melee.y += difference;
+        obj_angled.y += difference;
+        obj_straight.y += difference;
+        obj_up.y += difference;
+        obj_switch.y += difference;
+        
+        obj_heart.y += difference;
+        obj_kills.y += difference;
+        obj_paws.y += difference;
+        obj_background_controls.y += difference;
         instance_deactivate_object(obj_camera3);
         fpositionx = obj_t3Player.x;
         activated = true;
@@ -63,14 +86,14 @@ lpositionx = 0;
 
 if(activated == true &amp;&amp; room == rm_w1s2)
 {
-    if(x &gt; obj_player.x+202)
+   if(obj_player.x &lt; view_xview[0]+45)
     {
-        obj_player.x = x-202;
+        obj_player.x = view_xview[0] + 45;
     }
     
-    if(x &lt; obj_player.x-149)
+    if(obj_player.x &gt; view_xview[0]+380)
     {
-        obj_player.x = x+149;
+        obj_player.x = view_xview[0] + 380;
     }
     
     if(!instance_exists(obj_monster2_adv))
@@ -78,22 +101,147 @@ if(activated == true &amp;&amp; room == rm_w1s2)
         randomize();
         instance_create(1090,random_range(400,480),obj_monster2_adv);
     }
+    
     if(instance_exists(obj_t3Player))
     {
-        if(obj_t3Player.slay &gt;= 15) //60
+        if(obj_t3Player.slay &gt;= 1) //60
         {
             if(instance_exists(obj_monster2_adv))
             {
                 instance_destroy(obj_monster2_adv);
             }   
-           // instance_create(729.80,368.50,obj_camera3);
             instance_activate_object(obj_camera3);
             lpositionx = obj_t3Player.x;
             obj_t3Player.positionx = (lpositionx-fpositionx)
+            obj_t3Player.cameraLock = true;
             instance_create(1090,450,obj_collectable);
             instance_destroy();
         }
     }
+}
+
+if(activated == true &amp;&amp; room == rm_w1s6)
+{
+    if(obj_player.x &lt; view_xview[0]+45)
+    {
+        obj_player.x = view_xview[0] + 45;
+    }
+    
+    if(obj_player.x &gt; view_xview[0]+380)
+    {
+        obj_player.x = view_xview[0] + 380;
+    }
+    
+    if(!instance_exists(obj_monster3_adv))
+    {
+        randomize();
+        instance_create(4408.40,random_range(250,300),obj_monster3_adv);
+    }
+    
+    if(!instance_exists(obj_monster7_adv))
+    {
+        randomize();
+        instance_create(4150,random_range(250,300),obj_monster7_adv);
+    }
+    
+    if(!instance_exists(obj_monster6_adv))
+    {
+        instance_create(4280,250,obj_monster6_adv);
+    }
+    
+  if(instance_exists(obj_t3Player))
+    {
+        if(obj_t3Player.slay &gt;= 15) //60
+        {
+            if(instance_exists(obj_monster3_adv))
+            {
+                instance_destroy(obj_monster3_adv);
+            }   
+            
+            if(instance_exists(obj_monster7_adv))
+            {
+                instance_destroy(obj_monster7_adv);
+            }  
+            
+            if(instance_exists(obj_monster6_adv))
+            {
+                instance_destroy(obj_monster6_adv);
+            }  
+            
+            instance_activate_object(obj_camera3);
+            lpositionx = obj_t3Player.x;
+            obj_t3Player.positionx = (lpositionx-fpositionx)
+            obj_t3Player.cameraLock = true;
+            instance_create(4877,1046,obj_flag);
+            instance_destroy();
+        }
+    } 
+}
+
+if(activated == true &amp;&amp; rm_w1s8)
+{
+    if(obj_player.x &lt; view_xview[0]+45)
+    {
+        obj_player.x = view_xview[0] + 45;
+    }
+    
+    if(obj_player.x &gt; view_xview[0]+380)
+    {
+        obj_player.x = view_xview[0] + 380;
+    }
+    
+    if(!instance_exists(obj_monster3_adv))
+    {
+        instance_create(view_xview[0]+380,view_yview[0]+50,obj_monster3_adv);
+    }
+    
+    if(!instance_exists(obj_monster7_adv))
+    {
+        instance_create(view_xview[0]+50,view_yview[0]+150,obj_monster7_adv);
+    }
+    
+    if(!instance_exists(obj_monster6_adv))
+    {
+        instance_create(view_xview[0]+(view_hview/2),view_yview[0]+50,obj_monster6_adv);
+    }
+    
+    if(!instance_exists(obj_monster2_adv))
+    {
+        instance_create(view_xview[0]+380,view_yview[0]+150,obj_monster2_adv);
+    }
+    
+    if(instance_exists(obj_t3Player))
+    {
+        if(obj_t3Player.slay &gt;= 15) //60
+        {
+            if(instance_exists(obj_monster3_adv))
+            {
+                instance_destroy(obj_monster3_adv);
+            }   
+            
+            if(instance_exists(obj_monster7_adv))
+            {
+                instance_destroy(obj_monster7_adv);
+            }  
+            
+            if(instance_exists(obj_monster6_adv))
+            {
+                instance_destroy(obj_monster6_adv);
+            }  
+            
+            if(instance_exists(obj_monster2_adv))
+            {
+                instance_destroy(obj_monster2_adv);
+            }  
+            
+            instance_activate_object(obj_camera3);
+            lpositionx = obj_t3Player.x;
+            obj_t3Player.positionx = (lpositionx-fpositionx)
+            obj_t3Player.cameraLock = true;
+            instance_destroy();
+        }
+    } 
+    
 }
 </string>
           </argument>
