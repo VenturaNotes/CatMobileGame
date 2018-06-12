@@ -10,7 +10,14 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>0</showcolour>
-  <code>instance_create(300,50,obj_pause3);</code>
+  <code>if(obj_init.mode == 1)
+{
+    instance_create(300,78,obj_pause3);
+}
+else
+{
+    instance_create(300,50,obj_pause3);
+}</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

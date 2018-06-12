@@ -95,12 +95,13 @@ with(obj_background_controls){image_xscale *= 0.450; image_yscale *=0.450;}</cod
     <instance objName="obj_w1s5p1" x="0" y="269" name="inst_092192DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_w1s5p2" x="1360" y="269" name="inst_478CD30E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_w1s5p3" x="2720" y="269" name="inst_F9179582" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_platform_large" x="4016" y="239" name="inst_65FBD98A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_flag" x="5092" y="432" name="inst_0133333C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_t3Player" x="82" y="318" name="inst_C6114832" locked="0" code="" scaleX="0.300000011920929" scaleY="0.300000011920929" colour="4294967295" rotation="0"/>
     <instance objName="obj_spring" x="2136" y="1362" name="inst_D8085FB0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_platform_small" x="2032" y="104" name="inst_7E870288" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collectable" x="2197" y="71" name="inst_701ECE41" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_platform_large" x="3983" y="208" name="inst_CD7240DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_collectable" x="4675" y="344" name="inst_DB8D8B8E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

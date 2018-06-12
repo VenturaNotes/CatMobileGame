@@ -52,14 +52,14 @@
   </views>
   <instances>
     <instance objName="obj_return" x="100" y="60" name="inst_4E79A437" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
-    <instance objName="obj_selection" x="207" y="174" name="inst_430E0E2E" locked="0" code="image_index = 0;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_selection" x="388" y="171" name="inst_FF08C07D" locked="0" code="image_index = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_selection" x="568" y="170" name="inst_5EFDD424" locked="0" code="image_index = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_selection" x="748" y="172" name="inst_860EBFB0" locked="0" code="image_index = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_selection" x="748" y="390" name="inst_AC61370E" locked="0" code="image_index = 7;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_selection" x="568" y="389" name="inst_4D18E4C7" locked="0" code="image_index = 6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_selection" x="390" y="392" name="inst_266703AA" locked="0" code="image_index = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_selection" x="207" y="392" name="inst_310B6265" locked="0" code="image_index = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_selection" x="207" y="174" name="inst_430E0E2E" locked="0" code="image_index = 0;&#xA;if(global.w2s1 == 1)&#xA;{&#xA;    image_blend = c_green;&#xA;}&#xA;else if(global.w2s1 == 2)&#xA;{&#xA;    image_blend = c_yellow;&#xA;}" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_selection" x="388" y="171" name="inst_FF08C07D" locked="0" code="image_index = 1;&#xA;if(global.w2s2 == 1)&#xA;{&#xA;    image_blend = c_green;&#xA;}&#xA;else if(global.w2s2 == 2)&#xA;{&#xA;    image_blend = c_yellow;&#xA;}" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_selection" x="568" y="170" name="inst_5EFDD424" locked="0" code="image_index = 2;&#xA;if(global.w2s3 == 1)&#xA;{&#xA;    image_blend = c_green;&#xA;}&#xA;else if(global.w2s3 == 2)&#xA;{&#xA;    image_blend = c_yellow;&#xA;}&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_selection" x="748" y="172" name="inst_860EBFB0" locked="0" code="image_index = 3;&#xA;if(global.w2s4 == 1)&#xA;{&#xA;    image_blend = c_green;&#xA;}&#xA;else if(global.w2s4 == 2)&#xA;{&#xA;    image_blend = c_yellow;&#xA;}&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_selection" x="748" y="390" name="inst_AC61370E" locked="0" code="image_index = 7;&#xA;if(global.w2s8 == 1)&#xA;{&#xA;    image_blend = c_green;&#xA;}&#xA;else if(global.w2s8 == 2)&#xA;{&#xA;    image_blend = c_yellow;&#xA;}&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_selection" x="568" y="389" name="inst_4D18E4C7" locked="0" code="image_index = 6;&#xA;if(global.w2s7 == 1)&#xA;{&#xA;    image_blend = c_green;&#xA;}&#xA;else if(global.w2s7 == 2)&#xA;{&#xA;    image_blend = c_yellow;&#xA;}&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_selection" x="390" y="392" name="inst_266703AA" locked="0" code="image_index = 5;&#xA;if(global.w2s6 == 1)&#xA;{&#xA;    image_blend = c_green;&#xA;}&#xA;else if(global.w2s6 == 2)&#xA;{&#xA;    image_blend = c_yellow;&#xA;}&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_selection" x="207" y="392" name="inst_310B6265" locked="0" code="image_index = 4;&#xA;if(global.w2s5 == 1)&#xA;{&#xA;    image_blend = c_green;&#xA;}&#xA;else if(global.w2s5 == 2)&#xA;{&#xA;    image_blend = c_yellow;&#xA;}&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

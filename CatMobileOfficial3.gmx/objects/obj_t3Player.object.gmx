@@ -3,7 +3,7 @@
   <spriteName>spr_trunning</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
   <parentName>obj_player</parentName>
   <maskName>spr_trunning</maskName>
@@ -28,6 +28,10 @@
             <string>image_xscale = 0.3; //X Scale Size of Cat
 image_yscale = 0.3; //Y Scale Size of Cat
 image_speed = 0.5;  //Animation SPeed
+
+right = false; //Move right;
+left = false; //Move left;
+jump = false; //Cat Jumps
 
 hsp = 0; //Horizontal Speed
 vsp = 0; //Vertical Speed
@@ -67,7 +71,7 @@ fpositiony = 0; //Initial Y Position of Cat Before Movement
 lpositiony = 0; //Final Y Position of Cat After Movement
 positiony = 0; //Difference in Y Positions of Cat
 
-kills = 0; //Number of Kills Player Needs
+kills = 0; //Number of Kills Player Needs for Big MOD
 slay = 0; //Number of Kills
 
 rightLast = false; //Right is the Last Direction Pressed
@@ -87,8 +91,80 @@ recently_hit = false; //Checks to see if Cat Attacked
 cameraLock = false; //Fixes Camera Lock Execution Order
 cameraLock2 = false; //Y Position for Camera Lock
 
+state = 0; //Index of the cat. 10 is lasers
+fix = 0; //???
+reset = 0; //???
+
+collectable = 0; //Number of Collectables Gathered
+sit = 0; //For Sitting Animation
+count = 0; //Counting Frames for Siitting Animation
+
 //DELETE LATER
 test = 0; //Testing Variables
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(angleTime == true)
+{
+    if(angle2 &lt;= 30 || angle2 &gt;= 330)
+    {
+        vsp -= jumpSpeed;
+        grounded = false;
+    }
+    else if(angle2 &gt;= 30 &amp;&amp; angle2 &lt;= 90)
+    {
+        vsp -= jumpSpeed/2;
+        hsp -= jumpSpeed/2;
+        grounded = false;
+    }
+    else if(angle2 &gt;= 270 &amp;&amp; angle2 &lt;= 330)
+    {
+        vsp -= jumpSpeed/2;
+        hsp += jumpSpeed/2;
+        grounded = false;
+    }
+}
+else
+{
+    if(angle &lt;= 30 || angle &gt;= 330)
+    {
+        vsp -= jumpSpeed;
+        grounded = false;
+    }
+    else if(angle &gt;= 30 &amp;&amp; angle &lt;= 90)
+    {
+        vsp -= jumpSpeed/2;
+        hsp -= jumpSpeed/2;
+        grounded = false;
+    }
+    else if(angle &gt;= 270 &amp;&amp; angle &lt;= 330)
+    {
+        vsp -= jumpSpeed/2;
+        hsp += jumpSpeed/2;
+        grounded = false;
+    }
+}
+angleTime = false;
+angleJump = true;
 </string>
           </argument>
         </arguments>
@@ -162,7 +238,7 @@ alarm[1] = -1;
 fpositionx = x;
 fpositiony = y;
 
-//BUTTONS
+//BUTTONS (FOR KEYBOARD)
 right = keyboard_check(ord("D"));
 left = keyboard_check(ord("A"));
 jump = keyboard_check(ord("W"));
@@ -380,48 +456,17 @@ if(grounded)
 
 if(jump &amp;&amp; grounded) &amp;&amp; place_meeting(x,y+1,obj_stable_ground)
 {
-    if(angleTime == true)
+    if(alarm[2] == -1)
     {
-        if(angle2 &lt;= 30 || angle2 &gt;= 330)
+        if(state != 4)
         {
-            vsp -= jumpSpeed;
-            grounded = false;
+            state = 2;
+            sprite_index = spr_tjumping;
+            image_index = 0;
+            image_speed = 0.25;
         }
-        else if(angle2 &gt;= 30 &amp;&amp; angle2 &lt;= 90)
-        {
-            vsp -= jumpSpeed/2;
-            hsp -= jumpSpeed/2;
-            grounded = false;
-        }
-        else if(angle2 &gt;= 270 &amp;&amp; angle2 &lt;= 330)
-        {
-            vsp -= jumpSpeed/2;
-            hsp += jumpSpeed/2;
-            grounded = false;
-        }
+        alarm[2] = 3;
     }
-    else
-    {
-        if(angle &lt;= 30 || angle &gt;= 330)
-        {
-            vsp -= jumpSpeed;
-            grounded = false;
-        }
-        else if(angle &gt;= 30 &amp;&amp; angle &lt;= 90)
-        {
-            vsp -= jumpSpeed/2;
-            hsp -= jumpSpeed/2;
-            grounded = false;
-        }
-        else if(angle &gt;= 270 &amp;&amp; angle &lt;= 330)
-        {
-            vsp -= jumpSpeed/2;
-            hsp += jumpSpeed/2;
-            grounded = false;
-        }
-    }
-    angleTime = false;
-    angleJump = true;
 }
 
 if(!grounded)
@@ -515,13 +560,172 @@ else
 //SETS CAT'S ANIMATION SPEED
 gsp = sqrt(power(hsp,2)+power(vsp,2));
 
-if(gsp &gt; 5)
+if(state == 0)
 {
-    image_speed = 0.5;
+    if(gsp &gt; 5)
+    {
+        image_speed = 0.5;
+    }
+    else
+    {
+        image_speed = gsp*(.5/5);   
+    }
+}
+
+//ANIMATIONS
+
+//STATE 4 = MELEE ATTACK
+//STATE 10 = LASER ATTACK
+//STATE 0 = REGULAR RUNNING
+//STATE 1 = SITTING
+//STATE 2 = JUMPING
+
+if (state == 4)
+{
+    if(obj_multitouch.air == 0)
+    {
+         fix = 0;
+         if(image_index == 5)
+         {
+            instance_create(x+5,y-40,obj_player_attack_hitbox)
+         }
+         
+         if(image_index = 12)
+         {
+            with(obj_player_attack_hitbox)
+            {
+                instance_destroy();
+            }
+         }
+         
+        if(image_index == 15)
+        {
+            state = 0;
+            fix = 1;
+        }
+    }
+    
+    if(obj_multitouch.air == 1)
+    {
+        if (!instance_exists(obj_player_attack_hitbox2) &amp;&amp; image_index == 2)
+        {
+            instance_create(x,y,obj_player_attack_hitbox2);
+        }
+        
+        if(image_index == 9)
+        {
+            image_index = 0;
+            sprite_index = spr_trunning;
+            state = 0;
+        }
+    }
+}
+
+if(grounded == 1 &amp;&amp; state == 0)
+{
+    sprite_index = spr_trunning;
+}
+
+if(right == false &amp;&amp; left == false &amp;&amp; grounded == true &amp;&amp; gsp == 0 &amp;&amp; state != 2 &amp;&amp; state != 10 &amp;&amp; state !=4)
+{
+    if(sit == 6)
+    {
+        sit = 2;
+    }
+    
+    if(sit == 5)
+    {
+        image_index = 6;
+        count+=1;
+        if(count == 5)
+        {
+            sit = 6;
+            count = 0;
+        }
+    }
+    
+    if(sit == 4)
+    {
+        image_index = 5;
+        count+=1;
+        if(count == 5)
+        {
+            sit = 5;
+            count = 0;
+        }
+    }
+    
+    if(sit == 3)
+    {
+        image_index = 4;
+        count+=1;
+        if(count == 5)
+        {
+            sit = 4;
+            count = 0;
+        }
+    }
+    
+    if(sit == 2)
+    {
+        image_index = 5;
+        count+=1;
+        if(count == 5)
+        {
+            sit = 3;
+            count = 0;
+        }
+    }
+
+    if(sit == 1)
+    {
+      if(image_index == 6)
+      {
+        sit = 2;
+      }  
+    }
+    
+    if(sit == 0)
+    {
+        sprite_index = spr_tsitting;
+        image_index = 0;
+        image_speed = 0.25;
+        state = 1;
+        sit = 1;
+    }
 }
 else
 {
-    image_speed = gsp*(.5/5);   
+    if(state == 1)
+    {
+        state = 0;
+    }
+    sit = 0;
+    count = 0;
+}
+
+if(state == 2)
+{
+    if(image_index == 2)
+    {
+        image_speed = 0; 
+    }
+    
+    if(vsp &gt; 0)
+    {
+        image_speed = 0.25;
+    }
+    
+    if(image_index == 6)
+    {
+        image_speed = 0;
+    }
+    
+    if(alarm[2] == -1 &amp;&amp; grounded)
+    {
+        image_index = 7;
+        state = 0;
+    }
 }
 
 //CHARACTER FALLS BELOW SCREEN
@@ -531,14 +735,11 @@ if(obj_player.y &gt;= room_height+200)
     room_goto(rm_world1);
 }
 
-
 //(TEMPORARY) CHECKING TO SEE IF YOU GET STUCK IN THE GROUND
 if(place_meeting(x,y,obj_stable_ground))
 {
     show_debug_message("AYY");
 }
-
-//show_debug_message(x);
 </string>
           </argument>
         </arguments>
@@ -627,6 +828,29 @@ if(drawLine == true)
           <argument>
             <kind>1</kind>
             <string>game_restart();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="67">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>obj_player.kills = 1;
 </string>
           </argument>
         </arguments>

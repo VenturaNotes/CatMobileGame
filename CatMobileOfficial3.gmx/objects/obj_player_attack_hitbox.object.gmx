@@ -25,7 +25,28 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle = 160;
+            <string>right = false;
+if(obj_init.mode == 1)
+{
+    image_xscale = 0.3;
+    image_yscale = 0.3;
+    if(sign(obj_t3Player.image_xscale) &gt; 0)
+    {
+        image_angle = 160;
+        right = true;
+    }
+    else
+    {
+        image_angle = -160;
+        right = false;
+    }
+}
+else
+{
+    image_xscale = 1;
+    image_yscale = 1;
+      image_angle = 160;
+}
 </string>
           </argument>
         </arguments>
@@ -48,19 +69,35 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with(obj_player)
+            <string>if(obj_init.mode == 1)
 {
-    if !(image_index &gt;= 11)
+    x = obj_player.x+5;
+    y = obj_player.y-40;
+    image_xscale = 0.3;
+    image_yscale = 0.3;
+    if !(obj_t3Player.image_index &gt;= 11)
     {
-        with(obj_player_attack_hitbox)
+        if(right)
         {
             image_angle -= 15;
         }
+        else
+        {
+            image_angle += 15;
+        }
     }
 }
-
-x = obj_player.x+100;
-y = obj_player.y-70;
+else
+{
+    x = obj_player.x+100;
+    y = obj_player.y-70;
+    image_xscale = 1;
+    image_yscale = 1;
+    if !(obj_player.image_index &gt;= 11)
+    {
+        image_angle -= 15;
+    }
+}
 </string>
           </argument>
         </arguments>

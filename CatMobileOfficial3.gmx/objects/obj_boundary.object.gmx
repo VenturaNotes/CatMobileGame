@@ -30,6 +30,14 @@ fpositionx = 0;
 lpositionx = 0;
 yposition = 0;
 difference = 0;
+
+grounded = false;
+
+height = 0; 
+leftBoundary = 0;
+rightBoundary = 0;
+
+top = false;
 </string>
           </argument>
         </arguments>
@@ -59,7 +67,11 @@ difference = 0;
 
 if(place_meeting(x,y,obj_t3Player))
 {
-    if(instance_exists(obj_camera3))
+    if(instance_exists(obj_camera3) &amp;&amp; room == rm_w2s3)
+    {
+        grounded = true;
+    }
+    else if(instance_exists(obj_camera3) &amp;&amp; room != rm_w2s3)
     {
         difference = yposition - view_yview[0];
         view_yview[0] += difference;
@@ -84,6 +96,163 @@ if(place_meeting(x,y,obj_t3Player))
     }
 }
 
+if(obj_t3Player.grounded == true &amp;&amp; grounded == true)
+{
+    grounded = false; 
+    with(obj_up)
+    {
+        for(xx = 1;!position_meeting(x,y-sprite_height/2,obj_stable_ground);xx+=1)
+        {
+            view_yview[0] += 1;
+            background_y[0] += 1;
+            
+            obj_left.y += 1;
+            obj_right.y += 1;
+            obj_MOD.y += 1;
+            obj_melee.y += 1;
+            obj_angled.y += 1;
+            obj_straight.y +=1;
+            obj_up.y += 1;
+            obj_switch.y += 1;
+            
+            obj_heart.y += 1;
+            obj_kills.y += 1;
+            obj_paws.y += 1;
+            obj_background_controls.y += 1;
+            if(xx == 150)
+            {
+                    view_yview[0] += -xx;
+                    background_y[0] += -xx;
+                    
+                    obj_left.y += -xx;
+                    obj_right.y += -xx;
+                    obj_MOD.y += -xx;
+                    obj_melee.y += -xx;
+                    obj_angled.y += -xx;
+                    obj_straight.y += -xx;
+                    obj_up.y += -xx;
+                    obj_switch.y += -xx;
+                    
+                    obj_heart.y += -xx;
+                    obj_kills.y += -xx;
+                    obj_paws.y += -xx;
+                    obj_background_controls.y += -xx;
+                    break;
+            }
+        }
+    }
+    
+    with(obj_left)
+    {
+         for(xx = 1;!position_meeting(x,y-sprite_height/2,obj_stable_ground);xx+=1)
+        {
+            view_yview[0] += 1;
+            background_y[0] += 1;
+            
+            obj_left.y += 1;
+            obj_right.y += 1;
+            obj_MOD.y += 1;
+            obj_melee.y += 1;
+            obj_angled.y += 1;
+            obj_straight.y +=1;
+            obj_up.y += 1;
+            obj_switch.y += 1;
+            
+            obj_heart.y += 1;
+            obj_kills.y += 1;
+            obj_paws.y += 1;
+            obj_background_controls.y += 1;
+            if(xx == 150)
+            {
+                    view_yview[0] += -xx;
+                    background_y[0] += -xx;
+                    
+                    obj_left.y += -xx;
+                    obj_right.y += -xx;
+                    obj_MOD.y += -xx;
+                    obj_melee.y += -xx;
+                    obj_angled.y += -xx;
+                    obj_straight.y += -xx;
+                    obj_up.y += -xx;
+                    obj_switch.y += -xx;
+                    
+                    obj_heart.y += -xx;
+                    obj_kills.y += -xx;
+                    obj_paws.y += -xx;
+                    obj_background_controls.y += -xx;
+                    break;
+            }
+        }
+    }
+    
+    instance_deactivate_object(obj_camera3);
+    fpositionx = obj_t3Player.x;
+    activated = true;  
+    
+     height = obj_up.y-obj_up.sprite_height/2;
+    
+     for(xx = 0;instance_position(view_xview[0]+xx,height,obj_stable_ground) == noone;xx+=1)
+     {
+          leftBoundary = xx;
+          if(xx &gt; 50)
+          {
+            for(xxx = 0; instance_position(view_xview[0]+xxx,view_yview[0],obj_stable_ground) == noone;xxx+=1)
+            {
+                leftBoundary = xxx;
+                top = true;
+                if(xxx &gt; 200)
+                {
+                    leftBoundary = 50;
+                    top = false;
+                    break;
+                }
+            }
+            if(top == true)
+            {
+                leftBoundary+=1;
+                for(xxx = leftBoundary; instance_position(view_xview[0]+xxx,view_yview[0],obj_stable_ground) != noone;xxx+=1)
+                {
+                    leftBoundary = xxx;
+                    top = false;
+                }
+                leftBoundary+=60;
+            }
+            break;
+          }
+     }
+     top = false;
+     
+     for(xx = 0;instance_position(view_xview[0]+view_wview[0]-xx,height,obj_stable_ground) == noone;xx+=1)
+     {
+          rightBoundary = xx;
+          if(xx &gt; 50)
+          {
+            for(xxx = 0; instance_position(view_xview[0]+view_wview[0]-xxx,view_yview[0],obj_stable_ground) == noone; xxx+=1)
+            {
+                rightBoundary = xxx;
+                top = true;
+                if(xxx &gt; 200)
+                {
+                    rightBoundary = 50;
+                    top = false;
+                    break;
+                }
+                if(top == true)
+                {
+                    rightBoundary +=1;
+                    for(xxx = rightBoundary; instance_position(view_xview[0]+view_wview[0]-xxx,view_yview[0],obj_stable_ground) != noone;xxx+=1)
+                    {
+                        rightBoundary = xxx;
+                    }
+                    rightBoundary+=60;
+                }
+            }
+            break;
+          }
+     }
+     top = false;
+}
+
 if(activated == true &amp;&amp; room == rm_w1s2)
 {
    if(obj_player.x &lt; view_xview[0]+45)
@@ -104,12 +273,13 @@ if(activated == true &amp;&amp; room == rm_w1s2)
     
     if(instance_exists(obj_t3Player))
     {
-        if(obj_t3Player.slay &gt;= 1) //60
+        if(obj_t3Player.slay &gt;= 15) //60
         {
             if(instance_exists(obj_monster2_adv))
             {
                 instance_destroy(obj_monster2_adv);
             }   
+            
             instance_activate_object(obj_camera3);
             lpositionx = obj_t3Player.x;
             obj_t3Player.positionx = (lpositionx-fpositionx)
@@ -178,7 +348,7 @@ if(activated == true &amp;&amp; room == rm_w1s6)
     } 
 }
 
-if(activated == true &amp;&amp; rm_w1s8)
+if(activated == true &amp;&amp; room == rm_w1s8)
 {
     if(obj_player.x &lt; view_xview[0]+45)
     {
@@ -241,7 +411,113 @@ if(activated == true &amp;&amp; rm_w1s8)
             instance_destroy();
         }
     } 
+}
+
+if(activated == true &amp;&amp; room == rm_w2s2)
+{
+    if(obj_player.x &lt; view_xview[0]+45)
+    {
+        obj_player.x = view_xview[0] + 45;
+    }
     
+    if(obj_player.x &gt; view_xview[0]+380)
+    {
+        obj_player.x = view_xview[0] + 380;
+    }
+    
+    if(!instance_exists(obj_monster4_adv))
+    {
+        instance_create(view_xview[0]+(view_wview)/2,view_yview[0]+50,obj_monster4_adv);
+    }
+    
+    if(instance_exists(obj_t3Player))
+    {
+        if(obj_t3Player.slay &gt;= 10) //60
+        {   
+            if(instance_exists(obj_monster4_adv))
+            {
+                instance_destroy(obj_monster4_adv);
+            }  
+            
+            instance_activate_object(obj_camera3);
+            lpositionx = obj_t3Player.x;
+            obj_t3Player.positionx = (lpositionx-fpositionx)
+            obj_t3Player.cameraLock = true;
+            instance_create(3098,894,obj_spring);
+            instance_destroy();
+        }
+    } 
+}
+
+if(activated == true &amp;&amp; room == rm_w2s3)
+{
+    if(obj_player.x &lt; view_xview[0]+leftBoundary+25)
+    {
+        obj_player.x = view_xview[0] + leftBoundary+25;
+    }
+    
+    if(obj_player.x &gt; view_xview[0]+view_wview[0] - rightBoundary-25)
+    {
+        obj_player.x = view_xview[0]+view_wview[0] - rightBoundary-25;
+    }
+    
+    if(!instance_exists(obj_monster4_adv))
+    {
+        instance_create(view_xview[0]+(view_wview)/2,view_yview[0]+50,obj_monster4_adv);
+    }
+    
+    if(instance_exists(obj_t3Player))
+    {
+        if(obj_t3Player.slay &gt;= 10) //60
+        {   
+            if(instance_exists(obj_monster4_adv))
+            {
+                instance_destroy(obj_monster4_adv);
+            }  
+            
+            instance_activate_object(obj_camera3);
+            lpositionx = obj_t3Player.x;
+            obj_t3Player.positionx = (lpositionx-fpositionx)
+            obj_t3Player.cameraLock = true;
+            instance_create(2950,1063,obj_collectable);
+            instance_destroy();
+        }
+    } 
+}
+
+if(activated == true &amp;&amp; room == rm_w2s4)
+{
+    if(obj_player.x &lt; view_xview[0]+45)
+    {
+        obj_player.x = view_xview[0] + 45;
+    }
+    
+    if(obj_player.x &gt; view_xview[0]+380)
+    {
+        obj_player.x = view_xview[0] + 380;
+    }
+    
+    if(!instance_exists(obj_monster4_adv))
+    {
+        instance_create(view_xview[0]+(view_wview)/2,view_yview[0]+50,obj_monster4_adv);
+    }
+    
+    if(instance_exists(obj_t3Player))
+    {
+        if(obj_t3Player.slay &gt;= 10) //60
+        {   
+            if(instance_exists(obj_monster4_adv))
+            {
+                instance_destroy(obj_monster4_adv);
+            }  
+            
+            instance_activate_object(obj_camera3);
+            lpositionx = obj_t3Player.x;
+            obj_t3Player.positionx = (lpositionx-fpositionx)
+            obj_t3Player.cameraLock = true;
+            instance_destroy();
+        }
+    } 
 }
 </string>
           </argument>

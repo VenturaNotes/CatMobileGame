@@ -75,7 +75,12 @@ sound = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(death1 &lt;= 0)
+            <string>if(x-sprite_width/2 &gt; view_xview[0]+view_wview[0] || x+sprite_width/2 &lt; view_xview[0])
+{
+    instance_deactivate_object(self);
+}
+
+if(death1 &lt;= 0)
 {
     //Goes into the taunting Animation
     if (stage1 &lt; limit1)

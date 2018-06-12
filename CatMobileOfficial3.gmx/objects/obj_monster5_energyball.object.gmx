@@ -28,6 +28,12 @@
             <string>count = 0;
 image_speed = 0.5;
 sprite_index = spr_monster5_energyball;
+
+if(obj_init.mode == 1)
+{
+    image_xscale = 0.3;
+    image_yscale = 0.3;
+}
 </string>
           </argument>
         </arguments>
@@ -50,8 +56,17 @@ sprite_index = spr_monster5_energyball;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>y += 15* sin(count/5)
-x-=15;
+            <string>if(obj_init.mode == 1)
+{
+    y+= 5 * sin(count/5);
+    x-=2;
+}
+else
+{
+    y += 15* sin(count/5)
+    x-=15;
+}
+
 
 count+=1;
 

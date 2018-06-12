@@ -355,6 +355,28 @@ if(!grounded)
         }  
     }
 */
+
+//FROM OBJ_GRID
+/*
+var w = 2;
+
+draw_set_color(c_orange);
+
+//horizontal lines
+for (var i = 0; i &lt; room_height; i += 260)
+{
+    draw_line_width(0,i,room_width,i,w)
+}
+
+//vertical lines
+for(var i = 0; i &lt; room_width; i += 250)
+{
+    draw_line_width(i,0,i,room_height,w);
+}
+
+//260 by 250
+
+*/
 </string>
           </argument>
         </arguments>

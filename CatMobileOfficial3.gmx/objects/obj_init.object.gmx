@@ -30,8 +30,37 @@ land = false;
 
 global.sound = true;
 leftBarrier = 100; //left barrier 320 //100
-global.quit = 0;
+global.quit = 0; //Used for pausing
 mode = 0; //0 is demo and 1 is adventure
+
+//0 is not complete, 1 is completed level, 2 is completed level + collectables
+global.w1s1 = 0;
+global.w1s2 = 0;
+global.w1s3 = 0;
+global.w1s4 = 0;
+global.w1s5 = 0;
+global.w1s6 = 0;
+global.w1s7 = 0;
+global.w1s8 = 0;
+
+global.w2s1 = 0;
+global.w2s2 = 0;
+global.w2s3 = 0;
+global.w2s4 = 0;
+global.w2s5 = 0;
+global.w2s6 = 0;
+global.w2s7 = 0;
+global.w2s8 = 0;
+
+global.w3s1 = 0;
+global.w3s2 = 0;
+global.w3s3 = 0;
+global.w3s4 = 0;
+global.w3s5 = 0;
+global.w3s6 = 0;
+global.w3s7 = 0;
+global.w3s8 = 0;
+
 
 </string>
           </argument>
@@ -57,6 +86,7 @@ mode = 0; //0 is demo and 1 is adventure
             <kind>1</kind>
             <string>if (stop == false)
 {
+    scr_loadgame();
     room_goto(rm_menu); //rm_menu
     stop = true;
 }

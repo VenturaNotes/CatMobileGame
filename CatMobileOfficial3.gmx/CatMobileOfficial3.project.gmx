@@ -110,9 +110,6 @@
       <sprite>sprites\spr_level1</sprite>
       <sprite>sprites\spr_level2</sprite>
       <sprite>sprites\spr_level3</sprite>
-      <sprite>sprites\spr_kill10</sprite>
-      <sprite>sprites\spr_kill100</sprite>
-      <sprite>sprites\spr_kill25</sprite>
     </sprites>
     <sprites name="Buttons">
       <sprite>sprites\spr_left</sprite>
@@ -148,9 +145,6 @@
       <sprite>sprites\spr_settings</sprite>
       <sprite>sprites\spr_shop</sprite>
       <sprite>sprites\spr_sound</sprite>
-    </sprites>
-    <sprites name="Memory">
-      <sprite>sprites\spr_reset</sprite>
     </sprites>
     <sprites name="End of World Levels">
       <sprite>sprites\spr_flag</sprite>
@@ -190,21 +184,31 @@
     <sprites name="Tests">
       <sprite>sprites\spr_tPlayer</sprite>
       <sprite>sprites\spr_trunning</sprite>
+      <sprite>sprites\spr_tplayer_ground_headless</sprite>
+      <sprite>sprites\spr_tsitting</sprite>
+      <sprite>sprites\spr_tjumping</sprite>
+      <sprite>sprites\spr_tplayer_attack2</sprite>
+      <sprite>sprites\spr_tplayer_aerial</sprite>
       <sprite>sprites\spr_ceiling</sprite>
       <sprite>sprites\spr_test1</sprite>
       <sprite>sprites\spr_curve</sprite>
     </sprites>
+    <sprites name="Important">
+      <sprite>sprites\spr_collectable</sprite>
+      <sprite>sprites\spr_platform_small</sprite>
+      <sprite>sprites\spr_platform_medium</sprite>
+      <sprite>sprites\spr_platform_large</sprite>
+    </sprites>
     <sprites name="Organize">
       <sprite>sprites\spr_test_ledge</sprite>
       <sprite>sprites\spr_none</sprite>
-      <sprite>sprites\spr_game_quit</sprite>
       <sprite>sprites\spr_grass_collision</sprite>
       <sprite>sprites\spr_incline_collision2</sprite>
       <sprite>sprites\spr_incline2</sprite>
       <sprite>sprites\spr_incline</sprite>
       <sprite>sprites\spr_scliff</sprite>
       <sprite>sprites\spr_gcliff</sprite>
-      <sprite>sprites\spr_icespikes</sprite>
+      <sprite>sprites\spr_spikes_ice</sprite>
       <sprite>sprites\spr_shill2</sprite>
       <sprite>sprites\spr_incline_collision</sprite>
       <sprite>sprites\spr_leftBarrier</sprite>
@@ -218,64 +222,111 @@
       <sprite>sprites\spr_spring</sprite>
       <sprite>sprites\spr_wall</sprite>
     </sprites>
-    <sprites name="World1Stage1">
-      <sprite>sprites\spr_w1s1p1</sprite>
-      <sprite>sprites\spr_w1s1p2</sprite>
-      <sprite>sprites\spr_w1s1p3</sprite>
-      <sprite>sprites\spr_w1s1p4</sprite>
-      <sprite>sprites\spr_w1s1p5</sprite>
-      <sprite>sprites\spr_w1s1p6</sprite>
-      <sprite>sprites\spr_w1s1p7</sprite>
-      <sprite>sprites\spr_w1s1p8</sprite>
-      <sprite>sprites\spr_w1s1p9</sprite>
-      <sprite>sprites\spr_w1s1p10</sprite>
-      <sprite>sprites\spr_w1s1p11</sprite>
-      <sprite>sprites\spr_w1s1p12</sprite>
-      <sprite>sprites\spr_w1s1p13</sprite>
-      <sprite>sprites\spr_w1s1p14</sprite>
-      <sprite>sprites\spr_w1s1p15</sprite>
+    <sprite>sprites\spr_reset</sprite>
+    <sprite>sprites\spr_platform_small_jungle</sprite>
+    <sprite>sprites\spr_platform_medium_jungle</sprite>
+    <sprite>sprites\spr_platform_large_jungle</sprite>
+    <sprite>sprites\spr_platform_small_snow</sprite>
+    <sprite>sprites\spr_platform_medium_snow</sprite>
+    <sprite>sprites\spr_platform_large_snow</sprite>
+    <sprite>sprites\spr_platform_small_ice</sprite>
+    <sprite>sprites\spr_platform_medium_ice</sprite>
+    <sprite>sprites\spr_platform_large_ice</sprite>
+    <sprites name="World1">
+      <sprites name="World1Stage1">
+        <sprite>sprites\spr_w1s1p1</sprite>
+        <sprite>sprites\spr_w1s1p2</sprite>
+        <sprite>sprites\spr_w1s1p3</sprite>
+        <sprite>sprites\spr_w1s1p4</sprite>
+        <sprite>sprites\spr_w1s1p5</sprite>
+        <sprite>sprites\spr_w1s1p6</sprite>
+        <sprite>sprites\spr_w1s1p7</sprite>
+        <sprite>sprites\spr_w1s1p8</sprite>
+        <sprite>sprites\spr_w1s1p9</sprite>
+        <sprite>sprites\spr_w1s1p10</sprite>
+        <sprite>sprites\spr_w1s1p11</sprite>
+        <sprite>sprites\spr_w1s1p12</sprite>
+        <sprite>sprites\spr_w1s1p13</sprite>
+        <sprite>sprites\spr_w1s1p14</sprite>
+        <sprite>sprites\spr_w1s1p15</sprite>
+      </sprites>
+      <sprites name="Word1Stage2">
+        <sprite>sprites\spr_w1s2p1</sprite>
+        <sprite>sprites\spr_w1s2p2</sprite>
+      </sprites>
+      <sprites name="World1Stage3">
+        <sprite>sprites\spr_w1s3p1</sprite>
+        <sprite>sprites\spr_w1s3p2</sprite>
+        <sprite>sprites\spr_w1s3p3</sprite>
+        <sprite>sprites\spr_w1s3p4</sprite>
+      </sprites>
+      <sprites name="World1Stage4">
+        <sprite>sprites\spr_w1s4p1</sprite>
+        <sprite>sprites\spr_w1s4p2</sprite>
+        <sprite>sprites\spr_w1s4p3</sprite>
+        <sprite>sprites\spr_w1s4p4</sprite>
+        <sprite>sprites\spr_w1s4p5</sprite>
+      </sprites>
+      <sprites name="World1Stage5">
+        <sprite>sprites\spr_w1s5p1</sprite>
+        <sprite>sprites\spr_w1s5p2</sprite>
+        <sprite>sprites\spr_w1s5p3</sprite>
+      </sprites>
+      <sprites name="World1Stage6">
+        <sprite>sprites\spr_w1s6p1</sprite>
+      </sprites>
+      <sprites name="World1Stage7">
+        <sprite>sprites\spr_w1s7p1</sprite>
+        <sprite>sprites\spr_w1s7p2</sprite>
+        <sprite>sprites\spr_w1s7p3</sprite>
+        <sprite>sprites\spr_w1s7p4</sprite>
+      </sprites>
+      <sprites name="World1Stage8">
+        <sprite>sprites\spr_w1s8p1</sprite>
+        <sprite>sprites\spr_w1s8p2</sprite>
+      </sprites>
     </sprites>
-    <sprites name="Word1Stage2">
-      <sprite>sprites\spr_w1s2p1</sprite>
-      <sprite>sprites\spr_w1s2p2</sprite>
+    <sprites name="World2">
+      <sprites name="World2Stage1">
+        <sprite>sprites\spr_w2s1p1</sprite>
+        <sprite>sprites\spr_w2s1p2</sprite>
+      </sprites>
+      <sprites name="World2Stage2">
+        <sprite>sprites\spr_w2s2p1</sprite>
+        <sprite>sprites\spr_w2s2p2</sprite>
+        <sprite>sprites\spr_w2s2p3</sprite>
+      </sprites>
+      <sprites name="World2Stage3">
+        <sprite>sprites\spr_w2s3p1</sprite>
+        <sprite>sprites\spr_w2s3p2</sprite>
+        <sprite>sprites\spr_w2s3p3</sprite>
+      </sprites>
+      <sprites name="World2Stage4">
+        <sprite>sprites\spr_w2s4p1</sprite>
+        <sprite>sprites\spr_w2s4p2</sprite>
+      </sprites>
     </sprites>
-    <sprites name="World1Stage3">
-      <sprite>sprites\spr_w1s3p1</sprite>
-      <sprite>sprites\spr_w1s3p2</sprite>
-      <sprite>sprites\spr_w1s3p3</sprite>
-      <sprite>sprites\spr_w1s3p4</sprite>
+    <sprites name="World3">
+      <sprites name="World3Stage1">
+        <sprite>sprites\spr_w3s1p1</sprite>
+        <sprite>sprites\spr_w3s1p2</sprite>
+        <sprite>sprites\spr_w3s1p3</sprite>
+        <sprite>sprites\spr_w3s1p4</sprite>
+        <sprite>sprites\spr_w3s1p5</sprite>
+        <sprite>sprites\spr_w3s1p6</sprite>
+        <sprite>sprites\spr_w3s1p7</sprite>
+        <sprite>sprites\spr_w3s1p8</sprite>
+      </sprites>
     </sprites>
-    <sprites name="World1Stage4">
-      <sprite>sprites\spr_w1s4p1</sprite>
-      <sprite>sprites\spr_w1s4p2</sprite>
-      <sprite>sprites\spr_w1s4p3</sprite>
-      <sprite>sprites\spr_w1s4p4</sprite>
-      <sprite>sprites\spr_w1s4p5</sprite>
-    </sprites>
-    <sprites name="Important">
-      <sprite>sprites\spr_collectable</sprite>
-      <sprite>sprites\spr_platform_small</sprite>
-      <sprite>sprites\spr_platform_medium</sprite>
-      <sprite>sprites\spr_platform_large</sprite>
-    </sprites>
-    <sprites name="World1Stage5">
-      <sprite>sprites\spr_w1s5p1</sprite>
-      <sprite>sprites\spr_w1s5p2</sprite>
-      <sprite>sprites\spr_w1s5p3</sprite>
-    </sprites>
-    <sprites name="World1Stage6">
-      <sprite>sprites\spr_w1s6p1</sprite>
-    </sprites>
-    <sprites name="World1Stage7">
-      <sprite>sprites\spr_w1s7p1</sprite>
-      <sprite>sprites\spr_w1s7p2</sprite>
-      <sprite>sprites\spr_w1s7p3</sprite>
-      <sprite>sprites\spr_w1s7p4</sprite>
-    </sprites>
-    <sprites name="World1Stage8">
-      <sprite>sprites\spr_w1s8p1</sprite>
-      <sprite>sprites\spr_w1s8p2</sprite>
-    </sprites>
+    <sprite>sprites\spr_w3s2p1</sprite>
+    <sprite>sprites\spr_w3s2p2</sprite>
+    <sprite>sprites\spr_w3s2p3</sprite>
+    <sprite>sprites\spr_w3s2p4</sprite>
+    <sprite>sprites\spr_fire</sprite>
+    <sprite>sprites\spr_boulder</sprite>
+    <sprite>sprites\spr_rope</sprite>
+    <sprite>sprites\spr_block</sprite>
+    <sprite>sprites\spr_glass</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_sky</background>
@@ -332,8 +383,8 @@
       <script>scripts\scr_level.gml</script>
     </scripts>
     <scripts name="Memory">
-      <script>scripts\scr_loadgame.gml</script>
       <script>scripts\scr_savegame.gml</script>
+      <script>scripts\scr_loadgame.gml</script>
       <script>scripts\scr_reset.gml</script>
     </scripts>
     <scripts name="Need">
@@ -347,47 +398,7 @@
     <font>fonts\fnt_text</font>
   </fonts>
   <objects name="objects">
-    <objects name="MAKER">
-      <object>objects\obj_player</object>
-      <object>objects\obj_player_2</object>
-    </objects>
-    <objects name="Player">
-      <object>objects\obj_player_head</object>
-      <objects name="Attack">
-        <object>objects\obj_player_attack_hitbox</object>
-        <object>objects\obj_laser</object>
-        <object>objects\obj_laser2</object>
-        <object>objects\obj_MOD2</object>
-        <object>objects\obj_player_attack_hitbox2</object>
-      </objects>
-      <objects name="Health">
-        <object>objects\obj_heart</object>
-      </objects>
-      <objects name="Draws number of kills">
-        <object>objects\obj_kills</object>
-      </objects>
-    </objects>
-    <objects name="Monsters">
-      <object>objects\obj_monster2_attack</object>
-      <object>objects\obj_monster3_attack</object>
-      <object>objects\obj_monster4_ice</object>
-      <object>objects\obj_monster4_gas</object>
-      <object>objects\obj_monster5_energyball</object>
-      <object>objects\obj_monster6_wind</object>
-      <object>objects\obj_monster7_projectile</object>
-    </objects>
-    <objects name="Buttons">
-      <object>objects\obj_left</object>
-      <object>objects\obj_right</object>
-      <object>objects\obj_MOD</object>
-      <object>objects\obj_melee</object>
-      <object>objects\obj_angled</object>
-      <object>objects\obj_straight</object>
-      <object>objects\obj_up</object>
-      <object>objects\obj_switch</object>
-    </objects>
     <objects name="tests">
-      <object>objects\obj_debugging</object>
       <object>objects\obj_controls</object>
       <object>objects\obj_multitouch</object>
     </objects>
@@ -410,9 +421,6 @@
           <object>objects\obj_level1</object>
           <object>objects\obj_level2</object>
           <object>objects\obj_level3</object>
-          <object>objects\obj_kill10</object>
-          <object>objects\obj_kill100</object>
-          <object>objects\obj_kill25</object>
         </objects>
       </objects>
       <objects name="rm_worldSelection">
@@ -422,19 +430,6 @@
     <objects name="Displays gameover and takes you to a room">
       <object>objects\obj_gameover2</object>
       <object>objects\obj_gameover</object>
-    </objects>
-    <objects name="Pause">
-      <object>objects\obj_paws</object>
-      <object>objects\obj_pause2</object>
-      <object>objects\obj_pause3</object>
-      <object>objects\obj_quit</object>
-    </objects>
-    <objects name="Main Menu">
-      <object>objects\obj_calthaos</object>
-      <object>objects\obj_adventure</object>
-      <object>objects\obj_endless</object>
-      <object>objects\obj_gallery</object>
-      <object>objects\obj_settings</object>
     </objects>
     <objects name="Gallery">
       <object>objects\obj_bestiary</object>
@@ -451,14 +446,8 @@
         <object>objects\obj_iconthaos</object>
       </objects>
     </objects>
-    <objects name="Level Design">
-      <object>objects\obj_background_controls</object>
-    </objects>
     <objects name="Memory">
       <object>objects\obj_reset</object>
-    </objects>
-    <objects name="Persistence in endless levels">
-      <object>objects\obj_cosineas</object>
     </objects>
     <objects name="Ground">
       <object>objects\obj_gr</object>
@@ -480,96 +469,226 @@
     <objects name="Controls Camera">
       <object>objects\obj_camera3</object>
     </objects>
-    <objects name="Test">
-      <object>objects\obj_loop</object>
-      <object>objects\obj_ceiling</object>
-      <object>objects\obj_curve</object>
-    </objects>
     <objects name="Organize">
-      <object>objects\Lost_Code</object>
       <object>objects\obj_grid</object>
-      <object>objects\obj_game_quit</object>
-    </objects>
-    <objects name="World1Stage1">
-      <object>objects\obj_w1s1p1</object>
-      <object>objects\obj_w1s1p2</object>
-      <object>objects\obj_w1s1p3</object>
-      <object>objects\obj_w1s1p4</object>
-      <object>objects\obj_w1s1p5</object>
-      <object>objects\obj_w1s1p6</object>
-      <object>objects\obj_w1s1p7</object>
-      <object>objects\obj_w1s1p8</object>
-      <object>objects\obj_w1s1p9</object>
-      <object>objects\obj_w1s1p10</object>
-      <object>objects\obj_w1s1p11</object>
-      <object>objects\obj_w1s1p12</object>
-      <object>objects\obj_w1s1p13</object>
-      <object>objects\obj_w1s1p14</object>
-      <object>objects\obj_w1s1p15</object>
-    </objects>
-    <objects name="World1Stage2">
-      <object>objects\obj_w1s2p1</object>
-      <object>objects\obj_w1s2p2</object>
-    </objects>
-    <objects name="Monsters(Endless)">
-      <object>objects\obj_monster2</object>
-      <object>objects\obj_monster3</object>
-      <object>objects\obj_monster4</object>
-      <object>objects\obj_monster5</object>
-      <object>objects\obj_monster6</object>
-    </objects>
-    <objects name="Monsters(Adventure)">
-      <object>objects\obj_monster2_adv</object>
-      <object>objects\obj_monster7_adv</object>
-      <object>objects\obj_monster3_adv</object>
-      <object>objects\obj_monster6_adv</object>
-    </objects>
-    <objects name="World1Stage3">
-      <object>objects\obj_w1s3p1</object>
-      <object>objects\obj_w1s3p2</object>
-      <object>objects\obj_w1s3p3</object>
-      <object>objects\obj_w1s3p4</object>
-    </objects>
-    <objects name="World1Stage4">
-      <object>objects\obj_w1s4p1</object>
-      <object>objects\obj_w1s4p2</object>
-      <object>objects\obj_w1s4p3</object>
-      <object>objects\obj_w1s4p4</object>
-      <object>objects\obj_w1s4p5</object>
     </objects>
     <objects name="Important">
-      <object>objects\obj_platform_small</object>
-      <object>objects\obj_platform_medium</object>
-      <object>objects\obj_platform_large</object>
       <object>objects\obj_boundary</object>
       <object>objects\obj_flag</object>
       <object>objects\obj_collectable</object>
       <object>objects\obj_w1s4_condition</object>
       <object>objects\obj_spring</object>
-      <object>objects\obj_t3Player</object>
     </objects>
-    <objects name="World1Stage5">
-      <object>objects\obj_w1s5p1</object>
-      <object>objects\obj_w1s5p2</object>
-      <object>objects\obj_w1s5p3</object>
+    <objects name="Organized">
+      <objects name="Enemies">
+        <objects name="Monster Properties">
+          <object>objects\obj_monster2_attack</object>
+          <object>objects\obj_monster3_attack</object>
+          <object>objects\obj_monster4_ice</object>
+          <object>objects\obj_monster4_gas</object>
+          <object>objects\obj_monster5_energyball</object>
+          <object>objects\obj_monster6_wind</object>
+          <object>objects\obj_monster7_projectile</object>
+        </objects>
+        <objects name="Monsters(Endless)">
+          <object>objects\obj_monster2</object>
+          <object>objects\obj_monster3</object>
+          <object>objects\obj_monster4</object>
+          <object>objects\obj_monster5</object>
+          <object>objects\obj_monster6</object>
+        </objects>
+        <objects name="Monsters(Adventure)">
+          <object>objects\obj_monster2_adv</object>
+          <object>objects\obj_monster7_adv</object>
+          <object>objects\obj_monster3_adv</object>
+          <object>objects\obj_monster6_adv</object>
+          <object>objects\obj_monster4_adv</object>
+          <object>objects\obj_monster5_adv</object>
+        </objects>
+      </objects>
+      <objects name="Worlds">
+        <objects name="World1">
+          <objects name="World1Stage1">
+            <object>objects\obj_w1s1p1</object>
+            <object>objects\obj_w1s1p2</object>
+            <object>objects\obj_w1s1p3</object>
+            <object>objects\obj_w1s1p4</object>
+            <object>objects\obj_w1s1p5</object>
+            <object>objects\obj_w1s1p6</object>
+            <object>objects\obj_w1s1p7</object>
+            <object>objects\obj_w1s1p8</object>
+            <object>objects\obj_w1s1p9</object>
+            <object>objects\obj_w1s1p10</object>
+            <object>objects\obj_w1s1p11</object>
+            <object>objects\obj_w1s1p12</object>
+            <object>objects\obj_w1s1p13</object>
+            <object>objects\obj_w1s1p14</object>
+            <object>objects\obj_w1s1p15</object>
+          </objects>
+          <objects name="World1Stage2">
+            <object>objects\obj_w1s2p1</object>
+            <object>objects\obj_w1s2p2</object>
+          </objects>
+          <objects name="World1Stage3">
+            <object>objects\obj_w1s3p1</object>
+            <object>objects\obj_w1s3p2</object>
+            <object>objects\obj_w1s3p3</object>
+            <object>objects\obj_w1s3p4</object>
+          </objects>
+          <objects name="World1Stage4">
+            <object>objects\obj_w1s4p1</object>
+            <object>objects\obj_w1s4p2</object>
+            <object>objects\obj_w1s4p3</object>
+            <object>objects\obj_w1s4p4</object>
+            <object>objects\obj_w1s4p5</object>
+          </objects>
+          <objects name="World1Stage5">
+            <object>objects\obj_w1s5p1</object>
+            <object>objects\obj_w1s5p2</object>
+            <object>objects\obj_w1s5p3</object>
+          </objects>
+          <objects name="World1Stage6">
+            <object>objects\obj_w1s6p1</object>
+          </objects>
+          <objects name="World1Stage7">
+            <object>objects\obj_w1s7p1</object>
+            <object>objects\obj_w1s7p2</object>
+            <object>objects\obj_w1s7p3</object>
+            <object>objects\obj_w1s7p4</object>
+          </objects>
+          <objects name="World1Stage8">
+            <object>objects\obj_w1s8p1</object>
+            <object>objects\obj_w1s8p2</object>
+          </objects>
+        </objects>
+        <objects name="World2">
+          <objects name="World2Stage1">
+            <object>objects\obj_w2s1p1</object>
+            <object>objects\obj_w2s1p2</object>
+          </objects>
+          <objects name="World2Stage2">
+            <object>objects\obj_w2s2p1</object>
+            <object>objects\obj_w2s2p2</object>
+            <object>objects\obj_w2s2p3</object>
+          </objects>
+        </objects>
+      </objects>
+      <objects name="Platforms">
+        <objects name="Ice">
+          <object>objects\obj_platform_small_ice</object>
+          <object>objects\obj_platform_medium_ice</object>
+          <object>objects\obj_platform_large_ice</object>
+        </objects>
+        <objects name="Jungle">
+          <object>objects\obj_platform_small_jungle</object>
+          <object>objects\obj_platform_medium_jungle</object>
+          <object>objects\obj_platform_large_jungle</object>
+        </objects>
+        <objects name="Snow">
+          <object>objects\obj_platform_small_snow</object>
+          <object>objects\obj_platform_medium_snow</object>
+          <object>objects\obj_platform_large_snow</object>
+        </objects>
+        <objects name="Default">
+          <object>objects\obj_platform_small</object>
+          <object>objects\obj_platform_medium</object>
+          <object>objects\obj_platform_large</object>
+        </objects>
+      </objects>
+      <objects name="Main Menu Buttons">
+        <object>objects\obj_calthaos</object>
+        <object>objects\obj_adventure</object>
+        <object>objects\obj_endless</object>
+        <object>objects\obj_gallery</object>
+        <object>objects\obj_settings</object>
+      </objects>
+      <objects name="Player">
+        <objects name="Player (Endless)">
+          <object>objects\obj_player_2</object>
+        </objects>
+        <objects name="Player [Adventure]">
+          <object>objects\obj_t3Player</object>
+        </objects>
+        <objects name="Attacks">
+          <object>objects\obj_player_attack_hitbox</object>
+          <object>objects\obj_laser</object>
+          <object>objects\obj_laser2</object>
+          <object>objects\obj_MOD2</object>
+          <object>objects\obj_player_attack_hitbox2</object>
+        </objects>
+        <objects name="Head">
+          <object>objects\obj_player_head</object>
+        </objects>
+        <objects name="UserInterface">
+          <objects name="Buttons">
+            <object>objects\obj_left</object>
+            <object>objects\obj_right</object>
+            <object>objects\obj_MOD</object>
+            <object>objects\obj_melee</object>
+            <object>objects\obj_angled</object>
+            <object>objects\obj_straight</object>
+            <object>objects\obj_up</object>
+            <object>objects\obj_switch</object>
+            <object>objects\obj_background_controls</object>
+          </objects>
+          <objects name="Health">
+            <object>objects\obj_heart</object>
+          </objects>
+          <object>objects\obj_kills</object>
+        </objects>
+      </objects>
+      <objects name="Test Objects">
+        <object>objects\obj_loop</object>
+        <object>objects\obj_ceiling</object>
+        <object>objects\obj_curve</object>
+      </objects>
+      <objects name="Pause">
+        <objects name="Pause [Endless]">
+          <object>objects\obj_pause2</object>
+        </objects>
+        <objects name="Pause [Adventure]">
+          <object>objects\obj_paws</object>
+        </objects>
+        <object>objects\obj_pause3</object>
+        <object>objects\obj_quit</object>
+      </objects>
+      <objects name="Debug">
+        <object>objects\obj_debugging</object>
+      </objects>
+      <objects name="Unused">
+        <object>objects\Lost_Code</object>
+        <object>objects\obj_player</object>
+      </objects>
     </objects>
-    <objects name="World1Stage6">
-      <object>objects\obj_w1s6p1</object>
-    </objects>
-    <objects name="World1Stage7">
-      <object>objects\obj_w1s7p1</object>
-      <object>objects\obj_w1s7p2</object>
-      <object>objects\obj_w1s7p3</object>
-      <object>objects\obj_w1s7p4</object>
-    </objects>
-    <objects name="obj_w1s8p1">
-      <object>objects\obj_w1s8p1</object>
-      <object>objects\obj_w1s8p2</object>
-    </objects>
+    <object>objects\obj_spikes_ice</object>
+    <object>objects\obj_w2s3p1</object>
+    <object>objects\obj_w2s3p2</object>
+    <object>objects\obj_w2s3p3</object>
+    <object>objects\obj_w2s4p1</object>
+    <object>objects\obj_w2s4p2</object>
+    <object>objects\obj_w3s1p1</object>
+    <object>objects\obj_w3s1p2</object>
+    <object>objects\obj_w3s1p3</object>
+    <object>objects\obj_w3s1p4</object>
+    <object>objects\obj_w3s1p5</object>
+    <object>objects\obj_w3s1p6</object>
+    <object>objects\obj_w3s1p7</object>
+    <object>objects\obj_w3s1p8</object>
+    <object>objects\obj_w3s2p1</object>
+    <object>objects\obj_w3s2p2</object>
+    <object>objects\obj_w3s2p3</object>
+    <object>objects\obj_w3s2p4</object>
+    <object>objects\obj_fire</object>
+    <object>objects\obj_boulder</object>
+    <object>objects\obj_rope</object>
+    <object>objects\obj_block</object>
+    <object>objects\obj_glass</object>
+    <object>objects\obj_particle</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
-    <room>rooms\rm_test</room>
+    <room>rooms\rm_Particles</room>
+    <room>rooms\rm_demoEndless</room>
     <rooms name="Main Menu">
       <room>rooms\rm_menu</room>
       <room>rooms\rm_credits</room>
@@ -579,7 +698,7 @@
       <room>rooms\rm_gallery</room>
       <room>rooms\rm_bestiary</room>
     </rooms>
-    <rooms name="Levels">
+    <rooms name="Adventure">
       <room>rooms\rm_worldSelection</room>
       <rooms name="World1">
         <room>rooms\rm_world1</room>
@@ -630,15 +749,8 @@
     <rooms name="Pause">
       <room>rooms\rm_pause</room>
     </rooms>
-    <rooms name="Demo">
-      <rooms name="Selection Screen">
-        <room>rooms\rm_demoSelection</room>
-        <room>rooms\rm_demoEndless</room>
-      </rooms>
-    </rooms>
     <rooms name="Test">
-      <room>rooms\rm_tds1</room>
-      <room>rooms\rm_tds4</room>
+      <room>rooms\rm_test</room>
     </rooms>
   </rooms>
   <help>

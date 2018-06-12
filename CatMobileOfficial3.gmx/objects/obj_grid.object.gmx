@@ -27,16 +27,6 @@
             <kind>1</kind>
             <string>my_grid = ds_grid_create(3,8);
 
-/*
-for(xp = 0; xp &lt; 3; xp++)
-{
-    for(yp = 0; yp &lt; 9; yp++)
-    {
-        ds_grid_add(my_grid,xp,yp,spr_iconcal);
-    }
-}
-*/
-
 ds_grid_add(my_grid,0,0,spr_00_Calthaos);
 ds_grid_add(my_grid,1,0,spr_01_Cal);
 ds_grid_add(my_grid,2,0,spr_02_Thaos);
@@ -114,7 +104,7 @@ hold = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(mouse_button == mb_left)
+            <string>if(device_mouse_check_button(0, mb_left))
 {
     if(hold == false)
     {
@@ -144,28 +134,6 @@ for(xp = 0; xp &lt; 3; xp++)
         draw_sprite(ds_grid_get(my_grid,xp,yp),0,xp*260+90,yp*250+click); //260
     }
 }
-
-
-/*
-var w = 2;
-
-draw_set_color(c_orange);
-
-//horizontal lines
-for (var i = 0; i &lt; room_height; i += 260)
-{
-    draw_line_width(0,i,room_width,i,w)
-}
-
-//vertical lines
-for(var i = 0; i &lt; room_width; i += 250)
-{
-    draw_line_width(i,0,i,room_height,w);
-}
-
-//260 by 250
-
-*/
 </string>
           </argument>
         </arguments>

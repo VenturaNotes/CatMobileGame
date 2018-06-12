@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>if(place_meeting(x,y,obj_t3Player))
 {
+    obj_t3Player.collectable +=1;
     instance_destroy();
 }
 </string>

@@ -17,6 +17,8 @@ if(global.sound == true)
     audio_sound_gain(snd_groovetown,0.25,0);
 }
 
+obj_init.mode = 1;
+
 background_index[0] = bck_sky;
 instance_create(0,0,obj_debugging);
 //instance_create(0,1,obj_controls);
@@ -91,13 +93,11 @@ with(obj_background_controls){image_xscale *= 0.450; image_yscale *=0.450;}</cod
   </views>
   <instances>
     <instance objName="obj_ceiling" x="269" y="365" name="inst_218BB4FE" locked="0" code="" scaleX="0.0651629045605659" scaleY="0.300000011920929" colour="4294967295" rotation="0"/>
-    <instance objName="obj_monster7_adv" x="371" y="440" name="inst_235B9EFA" locked="0" code="" scaleX="0.300000011920929" scaleY="0.300000011920929" colour="4294967295" rotation="0"/>
-    <instance objName="obj_monster7_adv" x="418" y="439" name="inst_2C9CE2C9" locked="0" code="" scaleX="0.300000011920929" scaleY="0.300000011920929" colour="4294967295" rotation="0"/>
-    <instance objName="obj_monster7_adv" x="465" y="439" name="inst_7624F4D0" locked="0" code="" scaleX="0.300000011920929" scaleY="0.300000011920929" colour="4294967295" rotation="0"/>
-    <instance objName="obj_t3Player" x="237" y="441" name="inst_B63B02C9" locked="0" code="" scaleX="0.300000011920929" scaleY="0.300000011920929" colour="4294967295" rotation="0"/>
+    <instance objName="obj_t3Player" x="472" y="694" name="inst_B63B02C9" locked="0" code="" scaleX="0.300000011920929" scaleY="0.300000011920929" colour="4294967295" rotation="0"/>
     <instance objName="obj_ceiling" x="511" y="358" name="inst_15C5E73B" locked="0" code="" scaleX="0.0651629045605659" scaleY="0.300000011920929" colour="4294967295" rotation="0"/>
     <instance objName="obj_ceiling" x="196" y="464" name="inst_6D7E0962" locked="0" code="" scaleX="1.16999995708466" scaleY="0.0599999986588955" colour="4294967295" rotation="0"/>
     <instance objName="obj_ceiling" x="191" y="559" name="inst_24A1CC71" locked="0" code="" scaleX="1.16999995708466" scaleY="0.0599999986588955" colour="4294967295" rotation="0"/>
+    <instance objName="obj_loop" x="-45" y="107" name="inst_798A42BF" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

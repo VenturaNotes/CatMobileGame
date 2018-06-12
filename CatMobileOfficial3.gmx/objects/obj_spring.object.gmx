@@ -29,8 +29,26 @@
 {
     with(obj_t3Player)
     {
-        vsp = -40;
-        grounded = false;
+        if(room == rm_w2s2)
+        {
+            vsp = -20;
+            grounded = false;
+        }
+        else if(room == rm_w2s4)
+        {
+            vsp = -20;
+            grounded = false;
+        }
+        else if(room == rm_w3s2)
+        {
+            vsp = -28;
+            grounded = false;
+        }
+        else
+        {
+            vsp = -40;
+            grounded = false;
+        }
     }
 }
 </string>

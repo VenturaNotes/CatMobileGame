@@ -82,7 +82,12 @@ hp = 20;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (death &lt;= 0)
+            <string>if(x-sprite_width/2 &gt; view_xview[0]+view_wview[0] || x+sprite_width/2 &lt; view_xview[0])
+{
+    instance_deactivate_object(self);
+}
+
+if (death &lt;= 0)
 {
    if(stage1 == limit1)
    {

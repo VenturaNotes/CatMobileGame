@@ -10,8 +10,7 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>global.quit = 0;
-scr_loadgame();</code>
+  <code>global.quit = 0;</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -54,13 +53,9 @@ scr_loadgame();</code>
   <instances>
     <instance objName="obj_level1" x="300" y="283" name="inst_7BC0A015" locked="0" code="var_room = rm_game" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_debugging" x="0" y="0" name="inst_1FED85F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_kill10" x="288" y="160" name="inst_C8637ECE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_kill100" x="456" y="156" name="inst_84CDE91E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_level2" x="454" y="268" name="inst_52E8CE56" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_level3" x="623" y="277" name="inst_24F26DDC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_kill25" x="612" y="157" name="inst_E847D440" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_return" x="154" y="62" name="inst_81E8D7F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_cosineas" x="475" y="445" name="inst_F03BD3FA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

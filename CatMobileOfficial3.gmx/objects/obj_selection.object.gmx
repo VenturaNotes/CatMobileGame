@@ -143,6 +143,50 @@
                 room_goto(rm_w2s8);
             }
         }
+        
+        if(room == rm_world3)
+        {
+            if(image_index == 0)
+            {
+                room_goto(rm_w3s1);
+            }
+        
+            if(image_index == 1)
+            {
+                room_goto(rm_w3s2);
+            }
+            
+            if(image_index == 2)
+            {
+                room_goto(rm_w3s3);
+            }
+            
+            if(image_index == 3)
+            {
+                room_goto(rm_w3s4);
+            }
+            
+            if(image_index == 4)
+            {
+                room_goto(rm_w3s5);
+            }
+            
+            if(image_index == 5)
+            {
+                room_goto(rm_w3s6);
+            }
+            
+            if(image_index == 6)
+            {
+                room_goto(rm_w3s7);
+            }
+            
+            if(image_index == 7)
+            {
+                room_goto(rm_w3s8);
+            }
+        }
+        
    }
 }
 else

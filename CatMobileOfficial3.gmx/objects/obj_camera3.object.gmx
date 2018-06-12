@@ -139,7 +139,6 @@ moveTop = 160; //Moves top UI
         high = 0;
     }
     
-    //Going down playerObject.vsp &gt; 10 || 
     if(playerObject.grounded == 1 &amp;&amp; initialPosition &gt;= view_yview[0])
     {
         active = false;
@@ -195,7 +194,14 @@ moveTop = 160; //Moves top UI
     }
     
     //Changes in height
-    change2 = round(((newPosition) - view_yview[0])/10);
+    if(obj_t3Player. vsp &gt; 0)
+    {
+        change2 = round(((newPosition) - view_yview[0])/3);
+    }
+    else
+    {
+        change2 = round(((newPosition) - view_yview[0])/10);
+    }
     
     if(active == true)
     {
@@ -253,13 +259,13 @@ moveTop = 160; //Moves top UI
 
 if (playerObject.grounded == false)
 {
-    for(i = 0; i &lt;= 150; i +=1)
+    for(i = 0; i &lt;= 120; i +=1)
     {
         if(position_meeting(playerObject.x,playerObject.y+i,obj_stable_ground))
                {
-                    i = 151;
+                    i = 121;
                }
-           else if(i &gt;= 150)
+           else if(i &gt;= 120)
            {
                 high = 1;
            }
@@ -310,7 +316,9 @@ obj_paws.x += playerObject.positionx;
 obj_background_controls.x += playerObject.positionx;
 }
 
-show_debug_message(string(view_xview) + " AND " + string(view_yview));
+instance_activate_region(view_xview[0],view_yview[0],view_wview[0],view_hview[0],true);
+
+//show_debug_message(string(view_xview) + " AND " + string(view_yview));
 </string>
           </argument>
         </arguments>

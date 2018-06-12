@@ -73,7 +73,12 @@ sound = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (death &lt;= 0)
+            <string>if(x-sprite_width/2 &gt; view_xview[0]+view_wview[0] || x+sprite_width/2 &lt; view_xview[0])
+{
+    instance_deactivate_object(self);
+}
+
+if (death &lt;= 0)
 {   
     if (stage1 &lt; limit1)
     {
@@ -313,6 +318,14 @@ if(death &gt;= 1) &amp;&amp; (blink &lt; 30)
     if(alpha_level &lt; 0 || alpha_level &gt; 1)
         alpha_increment = -alpha_increment;
         blink++;
+}
+
+if(instance_exists(obj_boulder))
+{
+    if(obj_boulder.stage1 == true &amp;&amp; place_meeting(x,y,obj_boulder))
+    {
+        instance_destroy();
+    }
 }
 </string>
           </argument>

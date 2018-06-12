@@ -51,8 +51,430 @@
             <string>if (place_meeting(x,y,obj_player))
 {
     finish = 1;
-    room_goto(rm_world1);
     audio_stop_all();
+    /*
+    for(World = 1; World &lt;= 3; World+=1)
+    {
+        for(Stage = 1; Stage&lt;= 8; Stage+=1)
+        {
+            if(room == rm_w+string(World)+s+string(Stage))
+            {
+                if(obj_t3Player.collectable == 2)
+                {
+                    global. = 2;
+                }
+            }
+        }
+    }
+    */
+    
+    if(room == rm_w1s1)
+    {
+        if(obj_t3Player.collectable == 2)
+        {
+             global.w1s1 = 2;
+        }
+        else
+        {
+             if(global.w1s1 != 2)
+             {
+                 global.w1s1 = 1;
+             }
+        }
+        scr_savegame();
+        room_goto(rm_world1);
+    }
+    
+    if(room == rm_w1s2)
+    {
+        if(obj_t3Player.collectable == 2)
+        {
+             global.w1s2 = 2;
+        }
+        else
+        {
+             if(global.w1s2 != 2)
+             {
+                 global.w1s2 = 1;
+             }
+        }
+        scr_savegame();
+        room_goto(rm_world1);
+    }
+    
+    if(room == rm_w1s3)
+    {
+        if(obj_t3Player.collectable == 2)
+        {
+             global.w1s3 = 2;
+        }
+        else
+        {
+             if(global.w1s3 != 2)
+             {
+                 global.w1s3 = 1;
+             }
+        }
+        scr_savegame();
+        room_goto(rm_world1);
+    }
+    
+    if(room == rm_w1s4)
+    {
+        if(obj_t3Player.collectable == 2)
+        {
+             global.w1s4 = 2;
+        }
+        else
+        {
+             if(global.w1s4 != 2)
+             {
+                 global.w1s4 = 1;
+             }
+        }
+        scr_savegame();
+        room_goto(rm_world1);
+    }
+    
+    if(room == rm_w1s5)
+    {
+        if(obj_t3Player.collectable == 2)
+        {
+             global.w1s5 = 2;
+        }
+        else
+        {
+             if(global.w1s5 != 2)
+             {
+                 global.w1s5 = 1;
+             }
+        }
+        scr_savegame();
+        room_goto(rm_world1);
+    }
+    
+    if(room == rm_w1s6)
+    {
+        if(obj_t3Player.collectable == 2)
+        {
+             global.w1s6 = 2;
+        }
+        else
+        {
+             if(global.w1s6 != 2)
+             {
+                 global.w1s6 = 1;
+             }
+        }
+        scr_savegame();
+        room_goto(rm_world1);
+    }
+    
+    if(room == rm_w1s7)
+    {
+        if(obj_t3Player.collectable == 2)
+        {
+             global.w1s7 = 2;
+        }
+        else
+        {
+            if(global.w1s7 != 2)
+             {
+                 global.w1s7 = 1;
+             }
+        }
+        scr_savegame();
+        room_goto(rm_world1);
+    }
+    
+    if(room == rm_w1s8)
+    {
+        if(obj_t3Player.collectable == 2)
+        {
+             global.w1s8 = 2;
+        }
+        else
+        {
+             if(global.w1s8 != 2)
+             {
+                 global.w1s8 = 1;
+             }
+        }
+        scr_savegame();
+        room_goto(rm_world1);
+    }
+    
+    if(room == rm_w2s1)
+    {
+        if(obj_t3Player.collectable == 2)
+        {
+             global.w2s1 = 2;
+        }
+        else
+        {
+             if(global.w2s1 != 2)
+             {
+                 global.w2s1 = 1;
+             }
+        }
+        scr_savegame();
+        room_goto(rm_world2);
+    }
+    
+    if(room == rm_w2s2)
+    {
+        if(obj_t3Player.collectable == 2)
+        {
+             global.w2s2 = 2;
+        }
+        else
+        {
+             if(global.w2s2 != 2)
+             {
+                 global.w2s2 = 1;
+             }
+        }
+        scr_savegame();
+        room_goto(rm_world2);
+    }
+    
+    if(room == rm_w2s3)
+    {
+        if(obj_t3Player.collectable == 2)
+        {
+             global.w2s3 = 2;
+        }
+        else
+        {
+            if(global.w2s3 != 2)
+             {
+                 global.w2s3 = 1;
+             }
+        }
+        scr_savegame();
+        room_goto(rm_world2);
+    }
+    
+    if(room == rm_w2s4)
+    {
+        if(obj_t3Player.collectable == 2)
+        {
+             global.w2s4 = 2;
+        }
+        else
+        {
+             if(global.w2s4 != 2)
+             {
+                 global.w2s4 = 1;
+             }
+        }
+        scr_savegame();
+        room_goto(rm_world2);
+    }
+    
+    if(room == rm_w2s5)
+    {
+       if(obj_t3Player.collectable == 2)
+        {
+             global.w2s5 = 2;
+        }
+        else
+        {
+            if(global.w2s5 != 2)
+             {
+                 global.w2s5 = 1;
+             }
+        }
+        scr_savegame();
+        room_goto(rm_world2);
+    }
+    
+    if(room == rm_w2s6)
+    {
+        if(obj_t3Player.collectable == 2)
+        {
+             global.w2s6 = 2;
+        }
+        else
+        {
+             if(global.w2s6 != 2)
+             {
+                 global.w2s6 = 1;
+             }
+        }
+        scr_savegame();
+        room_goto(rm_world2);
+    }
+    
+    if(room == rm_w2s7)
+    {
+        if(obj_t3Player.collectable == 2)
+        {
+             global.w2s7 = 2;
+        }
+        else
+        {
+             if(global.w2s7 != 2)
+             {
+                 global.w2s7 = 1;
+             }
+        }
+        scr_savegame();
+        room_goto(rm_world2);
+    }
+    
+    if(room == rm_w2s8)
+    {
+        if(obj_t3Player.collectable == 2)
+        {
+             global.w2s8 = 2;
+        }
+        else
+        {
+             if(global.w2s8 != 2)
+             {
+                 global.w2s8 = 1;
+             }
+        }
+        scr_savegame();
+        room_goto(rm_world2);
+    }
+    
+    if(room == rm_w3s1)
+    {
+        if(obj_t3Player.collectable == 2)
+        {
+             global.w3s1 = 2;
+        }
+        else
+        {
+             if(global.w3s1 != 2)
+             {
+                 global.w3s1 = 1;
+             }
+        }
+        scr_savegame();
+        room_goto(rm_world3);
+    }
+    
+    if(room == rm_w3s2)
+    {
+        if(obj_t3Player.collectable == 2)
+        {
+             global.w3s2 = 2;
+        }
+        else
+        {
+             if(global.w3s2 != 2)
+             {
+                 global.w3s2 = 1;
+             }
+        }
+        scr_savegame();
+        room_goto(rm_world3);
+    }
+    
+    if(room == rm_w3s3)
+    {
+        if(obj_t3Player.collectable == 2)
+        {
+             global.w3s3 = 2;
+        }
+        else
+        {
+             if(global.w3s3 != 2)
+             {
+                 global.w3s3 = 1;
+             }
+        }
+        scr_savegame();
+        room_goto(rm_world3);
+    }
+    
+    if(room == rm_w3s4)
+    {
+        if(obj_t3Player.collectable == 2)
+        {
+             global.w3s4 = 2;
+        }
+        else
+        {
+             if(global.w3s4 != 2)
+             {
+                 global.w3s4 = 1;
+             }
+        }
+        scr_savegame();
+        room_goto(rm_world3);
+    }
+    
+    if(room == rm_w3s5)
+    {
+        if(obj_t3Player.collectable == 2)
+        {
+             global.w3s5 = 2;
+        }
+        else
+        {
+             if(global.w3s5 != 2)
+             {
+                 global.w3s5 = 1;
+             }
+        }
+        scr_savegame();
+        room_goto(rm_world3);
+    }
+    
+    if(room == rm_w3s6)
+    {
+        if(obj_t3Player.collectable == 2)
+        {
+             global.w3s6 = 2;
+        }
+        else
+        {
+             if(global.w3s6 != 2)
+             {
+                 global.w3s6 = 1;
+             }
+        }
+        scr_savegame();
+        room_goto(rm_world3);
+    }
+    
+    if(room == rm_w3s7)
+    {
+        if(obj_t3Player.collectable == 2)
+        {
+             global.w3s7 = 2;
+        }
+        else
+        {
+             if(global.w3s7 != 2)
+             {
+                 global.w3s7 = 1;
+             }
+        }
+        scr_savegame();
+        room_goto(rm_world3);
+    }
+    
+    if(room == rm_w3s8)
+    {
+        if(obj_t3Player.collectable == 2)
+        {
+             global.w3s8 = 2;
+        }
+        else
+        {
+             if(global.w3s8 != 2)
+             {
+                 global.w3s8 = 1;
+             }
+        }
+        scr_savegame();
+        room_goto(rm_world3);
+    }    
 }
 
 x -= global.xmo;

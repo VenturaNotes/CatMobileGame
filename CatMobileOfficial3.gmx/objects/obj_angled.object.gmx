@@ -162,31 +162,31 @@ increase = 0;
         frame = 0;
     }
 }
-else
+else if(obj_t3Player.state != 4)
 {
-    if (frame == 4 &amp;&amp; !instance_exists(obj_player_head) &amp;&amp; (obj_player.state == 0 || obj_player.state = 3 || obj_player.state = 1 || obj_player.state == 2))
+    if (frame == 4 &amp;&amp; !instance_exists(obj_player_head))
     {
         audio_play_sound(snd_Shots,3,false);
         audio_sound_gain(snd_Shots,0.3,0);
         obj_player.state = 10;
         delay = 5;
         
-        instance_create(obj_player.x+(cos(degtorad(obj_player.image_angle))*68)-sin(degtorad(obj_player.image_angle))*20,obj_player.y-(sin(degtorad(obj_player.image_angle))*68)-cos(degtorad(obj_player.image_angle))*20,obj_player_head);
+        instance_create(obj_t3Player.x+(cos(degtorad(obj_t3Player.angle))*20)-sin(degtorad(obj_t3Player.angle))*20,obj_t3Player.y-(sin(degtorad(obj_t3Player.angle))*20)-cos(degtorad(obj_t3Player.angle))*20,obj_player_head);
         
-        with(obj_player)
+        with(obj_t3Player)
         {
             image_speed = 0.5
-            sprite_index = spr_player_ground_headless;
+            sprite_index = spr_tplayer_ground_headless;
         }
         
         with(obj_player_head)
         {
             image_index = 0;
             image_speed = 1;
-            if(obj_player.grounded != 1)
+            if(obj_t3Player.grounded != 1)
             {
                 sprite_index = spr_player_up;
-                if(sign(obj_player.image_xscale &gt; 0))
+                if(sign(obj_t3Player.image_xscale) &gt; 0)
                 {
                     obj_angled.angle = 1;
                 }
@@ -206,51 +206,51 @@ else
     
     if(delay &gt;= 0)
     {
-        with(obj_player)
+        with(obj_t3Player)
         {
             image_speed = 0.5;
-            sprite_index = spr_player_ground_headless;
+            sprite_index = spr_tplayer_ground_headless;
         }
         
         delay-= 1;
         
         with(obj_player_head)
         {
-            if(sign(obj_player.image_xscale &gt; 0))
+            if(sign(obj_t3Player.image_xscale &gt; 0))
             {
-                x = obj_player.x+(cos(degtorad(obj_player.image_angle))*68)-sin(degtorad(obj_player.image_angle))*20+obj_player.hspeed;
-                y = obj_player.y-(sin(degtorad(obj_player.image_angle))*68)-cos(degtorad(obj_player.image_angle))*20+obj_player.vspeed;
-                image_xscale = 0.8;
+                x = obj_t3Player.x+(cos(degtorad(obj_t3Player.angle))*7)-sin(degtorad(obj_t3Player.angle))*5; //+obj_t3Player.hsp
+                y = obj_t3Player.y-(sin(degtorad(obj_t3Player.angle))*7)-cos(degtorad(obj_t3Player.angle))*6; //+obj_t3Player.vsp
+                image_xscale = 0.3;
             }
             else
             {
-                x = obj_player.x-(cos(degtorad(obj_player.image_angle))*68)-sin(degtorad(obj_player.image_angle))*20+obj_player.hspeed;
-                y = obj_player.y+(sin(degtorad(obj_player.image_angle))*68)-cos(degtorad(obj_player.image_angle))*20+obj_player.vspeed
-                image_xscale = -0.8;
+                x = obj_t3Player.x-(cos(degtorad(obj_t3Player.angle))*7)-sin(degtorad(obj_t3Player.angle))*5; //+obj_t3Player.hsp
+                y = obj_t3Player.y+(sin(degtorad(obj_t3Player.angle))*7)-cos(degtorad(obj_t3Player.angle))*5; //+obj_t3Player.vsp
+                image_xscale = -0.3;
             }
             
             if(obj_angled.angle == 1)
             {
-                image_angle = obj_player.image_angle-45;
+                image_angle = obj_t3Player.angle-45;
             }
             else if (obj_angled.angle == 2)
             {
-                image_angle = obj_player.image_angle+45;
+                image_angle = obj_t3Player.angle+45;
             }
             else
             {
-                image_angle = obj_player.image_angle;
+                image_angle = obj_t3Player.angle;
             }
         }
         
         
         if(delay == 1)
         {
-            if(obj_player.grounded == 1)
+            if(obj_t3Player.grounded == 1)
             {
-              if(sign(obj_player.image_xscale&gt;0))
+              if(sign(obj_t3Player.image_xscale) &gt; 0)
                 {
-                   with instance_create(obj_player_head.x+14, obj_player_head.y+2, obj_laser2) //up
+                   with instance_create(obj_player_head.x+8, obj_player_head.y+2, obj_laser2) //up
                      {
                         image_angle = 30;
                         up = true;
@@ -258,7 +258,7 @@ else
                 }
                 else
                 {
-                     with instance_create(obj_player_head.x, obj_player_head.y+10, obj_laser2) //up
+                     with instance_create(obj_player_head.x-5, obj_player_head.y+3, obj_laser2) //up
                          {
                             image_angle = -30;
                             up = true;
@@ -267,22 +267,20 @@ else
             }
             else
             {
-                 if(sign(obj_player.image_xscale&gt;0))
+                 if(sign(obj_t3Player.image_xscale) &gt; 0)
                  {
                     with instance_create(obj_player_head.x+8, obj_player_head.y+9, obj_laser2) //down
                          {
                            image_angle = -30;
-                           up = false;
-                           
+                           up = false;  
                          }
                  }
                  else
                  {
-                    with instance_create(obj_player_head.x+8, obj_player_head.y+9, obj_laser2) //down
+                    with instance_create(obj_player_head.x-5, obj_player_head.y+9, obj_laser2) //down
                          {
                            image_angle = 30;
-                           up = false;
-                           
+                           up = false;         
                          }
                  }
             }
@@ -300,12 +298,12 @@ else
             }
         }
         
-        with(obj_player)
+        with(obj_t3Player)
         {
-            sprite_index = spr_player_run;
+            sprite_index = spr_trunning;
         }
         
-        obj_player.state = 0;
+        obj_t3Player.state = 0;
     }
     
     if (counter &gt;= 1)

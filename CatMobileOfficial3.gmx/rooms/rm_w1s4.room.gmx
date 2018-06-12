@@ -115,6 +115,7 @@ with(obj_background_controls){image_xscale *= 0.450; image_yscale *=0.450;}</cod
     <instance objName="obj_collectable" x="8208" y="641" name="inst_9EE84CA3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_platform_small" x="5741" y="1308" name="inst_3F655515" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_platform_medium" x="7782" y="504" name="inst_0E9AFD5D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_collectable" x="1481" y="1305" name="inst_DBD45045" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
