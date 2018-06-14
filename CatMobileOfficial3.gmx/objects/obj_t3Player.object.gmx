@@ -740,6 +740,8 @@ if(place_meeting(x,y,obj_stable_ground))
 {
     show_debug_message("AYY");
 }
+
+show_debug_message(x);
 </string>
           </argument>
         </arguments>
@@ -762,26 +764,22 @@ if(place_meeting(x,y,obj_stable_ground))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if (obj_heart.hearts &gt; 0)
+            <string>if (obj_heart.hearts &gt; 0)
 {
     if (recently_hit == true)
     {
         if counter mod 5 == 0
         {
             scr_draw_player();
-            //draw_self();
         }
         else
         {
             scr_draw_player_hit();
-            //draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,0.25)
         }
     }
     else
     {
         scr_draw_player();
-       // draw_self();
     }
 }
 

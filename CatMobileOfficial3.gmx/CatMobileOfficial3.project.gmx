@@ -682,12 +682,15 @@
     <object>objects\obj_boulder</object>
     <object>objects\obj_rope</object>
     <object>objects\obj_block</object>
-    <object>objects\obj_glass</object>
     <object>objects\obj_particle</object>
+    <object>objects\obj_lighting</object>
+    <object>objects\obj_explode</object>
+    <object>objects\obj_explode2</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
-    <room>rooms\rm_Particles</room>
+    <room>rooms\rm_test</room>
+    <room>rooms\rm_particles</room>
     <room>rooms\rm_demoEndless</room>
     <rooms name="Main Menu">
       <room>rooms\rm_menu</room>
@@ -748,9 +751,6 @@
     </rooms>
     <rooms name="Pause">
       <room>rooms\rm_pause</room>
-    </rooms>
-    <rooms name="Test">
-      <room>rooms\rm_test</room>
     </rooms>
   </rooms>
   <help>

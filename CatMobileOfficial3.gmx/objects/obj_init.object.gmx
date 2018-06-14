@@ -33,6 +33,8 @@ leftBarrier = 100; //left barrier 320 //100
 global.quit = 0; //Used for pausing
 mode = 0; //0 is demo and 1 is adventure
 
+global.light = surface_create(view_wview[0],view_hview[0]);
+
 //0 is not complete, 1 is completed level, 2 is completed level + collectables
 global.w1s1 = 0;
 global.w1s2 = 0;

@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>effect_create_below(ef_smokeup, x, y, choose(.1, .2), c_red); 
+            <string>effect_create_above(ef_explosion, x, y, 2, c_red)
 
 /*
 effect_create_below(ef_smokeup, x, y, choose(0, 1, 2), c_gray); //A lot of smoke
@@ -40,6 +40,7 @@ effect_create_below(ef_smoke, x, y, choose(0, 1, 2), c_gray);
 effect_create_above(ef_snow, 0, 0, 1, c_gray);
 effect_create_above(ef_spark, bbox_left + random(sprite_width), bbox_top + random(sprite_height), choose(0, 1), merge_colour(c_white, c_yellow, random(1)));
 effect_create_above(ef_star, x - 32 + random(64), y - 32 + random(64), choose(0, 1, 2), c_yellow);
+effect_create_below(ef_smokeup, x, y, choose(.1, .2), c_red); 
 
 
 </string>
