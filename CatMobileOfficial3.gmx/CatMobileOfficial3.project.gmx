@@ -106,6 +106,16 @@
       <sprite>sprites\spr_monster7</sprite>
       <sprite>sprites\spr_monster7_projectile</sprite>
     </sprites>
+    <sprites name="spr_monster8">
+      <sprite>sprites\spr_monster8_intro</sprite>
+      <sprite>sprites\spr_monster8_preAttack</sprite>
+      <sprite>sprites\spr_monster8_attack</sprite>
+      <sprite>sprites\spr_monster8_death</sprite>
+      <sprite>sprites\spr_monster8_topProjectile</sprite>
+      <sprite>sprites\spr_monster8_bottomProjectile</sprite>
+      <sprite>sprites\spr_monster8_topSpark</sprite>
+      <sprite>sprites\spr_monster8_bottomSpark</sprite>
+    </sprites>
     <sprites name="Endless Levels">
       <sprite>sprites\spr_level1</sprite>
       <sprite>sprites\spr_level2</sprite>
@@ -489,6 +499,10 @@
           <object>objects\obj_monster5_energyball</object>
           <object>objects\obj_monster6_wind</object>
           <object>objects\obj_monster7_projectile</object>
+          <object>objects\obj_monster8_topProjectile</object>
+          <object>objects\obj_monster8_bottomProjectile</object>
+          <object>objects\obj_monster8_topSpark</object>
+          <object>objects\obj_monster8_bottomSpark</object>
         </objects>
         <objects name="Monsters(Endless)">
           <object>objects\obj_monster2</object>
@@ -496,14 +510,16 @@
           <object>objects\obj_monster4</object>
           <object>objects\obj_monster5</object>
           <object>objects\obj_monster6</object>
+          <object>objects\obj_monster8</object>
         </objects>
         <objects name="Monsters(Adventure)">
           <object>objects\obj_monster2_adv</object>
-          <object>objects\obj_monster7_adv</object>
           <object>objects\obj_monster3_adv</object>
-          <object>objects\obj_monster6_adv</object>
           <object>objects\obj_monster4_adv</object>
           <object>objects\obj_monster5_adv</object>
+          <object>objects\obj_monster6_adv</object>
+          <object>objects\obj_monster7_adv</object>
+          <object>objects\obj_monster8_adv</object>
         </objects>
       </objects>
       <objects name="Worlds">
@@ -641,6 +657,7 @@
         <object>objects\obj_loop</object>
         <object>objects\obj_ceiling</object>
         <object>objects\obj_curve</object>
+        <object>objects\obj_endless_block</object>
       </objects>
       <objects name="Pause">
         <objects name="Pause [Endless]">

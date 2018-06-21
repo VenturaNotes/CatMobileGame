@@ -64,7 +64,7 @@ obj_init.mode = 0;</code>
     <instance objName="obj_debugging" x="0" y="96" name="inst_72815635" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_kills" x="864" y="32" name="inst_8AC0C2CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_background_controls" x="0" y="491" name="inst_F6F58C24" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player_2" x="208" y="300" name="inst_246532C0" locked="0" code="" scaleX="0.800000011920929" scaleY="0.800000011920929" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player_2" x="195" y="351" name="inst_246532C0" locked="0" code="" scaleX="0.800000011920929" scaleY="0.800000011920929" colour="4294967295" rotation="0"/>
     <instance objName="obj_gen" x="30" y="96" name="inst_4570925B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_controls" x="60" y="96" name="inst_33CA9420" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>

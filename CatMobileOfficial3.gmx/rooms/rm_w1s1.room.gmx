@@ -93,7 +93,7 @@ with(obj_background_controls){image_xscale *= 0.450; image_yscale *=0.450;}</cod
   </views>
   <instances>
     <instance objName="obj_flag" x="26927" y="748" name="inst_45F1B7C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_t3Player" x="77" y="173" name="inst_4EBA8C16" locked="0" code="" scaleX="0.300000011920929" scaleY="0.300000011920929" colour="4294967295" rotation="0"/>
+    <instance objName="obj_t3Player" x="74" y="194" name="inst_4EBA8C16" locked="0" code="" scaleX="0.300000011920929" scaleY="0.300000011920929" colour="4294967295" rotation="0"/>
     <instance objName="obj_w1s1p1" x="0" y="200" name="inst_174AB4A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_w1s1p2" x="1800" y="200" name="inst_D37D399F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_w1s1p3" x="3600" y="200" name="inst_E0B556B4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

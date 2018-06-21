@@ -308,7 +308,7 @@ lposition = obj_player.x;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Drops the framrate to 1
+            <string>///Drops the framrate to 5
 
 if(room_speed == 60)
 {
